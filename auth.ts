@@ -10,6 +10,7 @@ const sql = neon(`${process.env.DATABASE_URL}`);
 async function getUser(email: string): Promise<User | undefined> {
   try {
     const user = await sql`SELECT * FROM users WHERE email=${email}`;
+    console.log(user)
     return user[0] as User;
   } catch (error) {
     console.error("Failed to fetch user:", error);
@@ -25,7 +26,6 @@ export const { auth, signIn, signOut } = NextAuth({
         const parsedCredentials = z
           .object({ email: z.string().email(), password: z.string().min(6) })
           .safeParse(credentials);
-
         if (parsedCredentials.success) {
           const { email, password } = parsedCredentials.data;
           const user = await getUser(email);
@@ -35,6 +35,7 @@ export const { auth, signIn, signOut } = NextAuth({
           if (passwordsMatch) return user;
         }
 
+        console.log("Invalid credentials");
         return null;
       },
     }),
