@@ -12,15 +12,7 @@ const sql = neon(`${process.env.DATABASE_URL}`);
 
 export async function fetchRevenue() {
   try {
-    // Artificially delay a response for demo purposes.
-    // Don't do this in production :)
-
-    // console.log('Fetching revenue data...');
-    // await new Promise((resolve) => setTimeout(resolve, 3000));
-
     const data = await sql`SELECT * FROM revenue`;
-
-    // console.log('Data fetch completed after 3 seconds.');
 
     return data as Revenue[];
   } catch (error) {
@@ -50,6 +42,8 @@ export async function fetchLatestInvoices() {
 }
 
 export async function fetchCardData() {
+  await new Promise((resolve) => setTimeout(resolve, 5000));
+
   try {
     // You can probably combine these into a single SQL query
     // However, we are intentionally splitting them to demonstrate
@@ -66,6 +60,8 @@ export async function fetchCardData() {
       customerCountPromise,
       invoiceStatusPromise,
     ])) as any;
+
+    new Promise((resolve) => setTimeout(resolve, 1000));
 
     const numberOfInvoices = Number(data[0][0].count ?? "0");
     const numberOfCustomers = Number(data[1][0].count ?? "0");
