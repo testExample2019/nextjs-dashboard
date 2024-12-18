@@ -1,15 +1,14 @@
 import "@/app/ui/global.css";
-import { inter } from "@/app/ui/fonts";
+import { openSans } from "@/app/ui/fonts";
 import { Metadata } from "next";
-
+import NavBar from "@/app/ui/nav-bar";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Acme Dashboard",
-    default: "Acme Dashboard",
+    template: "Dashboard",
+    default: "Dashboard",
   },
-  description: "The official Next.js Learn Dashboard built with App Router.",
-  metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
+  description: "Dashboard",
 };
 
 export default function RootLayout({
@@ -19,9 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
-        {children}
-
+      <body className={`${openSans.className} antialiased`}>
+        <div className="flex flex-col h-screen md:overflow-hidden max-w-screen-2xl m-auto">
+          <div className="w-full">
+            <NavBar />
+          </div>
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );

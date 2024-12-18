@@ -1,147 +1,207 @@
-// This file contains placeholder data that you'll be replacing with real data in the Data Fetching chapter:
-// https://nextjs.org/learn/dashboard-app/fetching-data
-const users = [
+import { Deal } from "@/app/lib/definitions";
+
+const deals: Deal[] = [
   {
-    id: '410544b2-4001-4271-9855-fec4b6a6442a',
-    name: 'User',
-    email: 'user@nextmail.com',
-    password: '123456',
+    id: 1,
+    name: "Soultrain",
+    totalCommitment: "$2,000,000",
+    funded: "A$540,000",
+    unfunded: "$1,460",
+    lender: {
+      covenantsTracking: [
+        {
+          title: "Quick Ratio",
+          value: 6.68,
+          change: "+12.5%",
+          status: "Passed",
+          prevPeriodValue: "Min 5.00",
+        },
+        {
+          title: "Debt-to-EBITDA",
+          value: 2.51,
+          change: "-10.2%",
+          status: "Failed",
+          prevPeriodValue: "Max 2.50",
+        },
+        {
+          title: "Fixed Charge Coverage Ratio",
+          value: 6.68,
+          change: "+12.5%",
+          status: "Passed",
+          prevPeriodValue: "Min 5.00",
+        },
+      ],
+      upcomingPayments: {
+        credits: [
+          {
+            dueDate: "2024-01-18",
+            status: "5 days overdue",
+            prepaymentFee: "$1,601.94",
+            total: "$1,601.94",
+          },
+          {
+            dueDate: "2024-01-24",
+            status: "in 10 days",
+            interest: "$6,997.51",
+            principalRepayment: "$50,000.00",
+            total: "$56,978.00",
+          },
+        ],
+      },
+      positions: [
+        {
+          deal: "Soultrain",
+          instrument: "Soultrain Revolver",
+          borrower: "Soultrain",
+          ccy: "USD",
+          counterparty: "Bruno",
+          role: "LENDER",
+          committed: "$100,000,000.00",
+          funded: "$0.0",
+          unfunded: "$100,000,000.00",
+          docs: "$0.0",
+        },
+      ],
+      asOfDate: "2024-02-04",
+    },
+    borrower: {
+      covenantsTracking: [
+        {
+          title: "Quick Ratio",
+          value: 6.5,
+          change: "-10.0%",
+          status: "Failed",
+          prevPeriodValue: "Min 5.00",
+        },
+        {
+          title: "Debt-to-EBITDA",
+          value: 2.8,
+          change: "-8.0%",
+          status: "Failed",
+          prevPeriodValue: "Max 2.50",
+        },
+        {
+          title: "Fixed Charge Coverage Ratio",
+          value: 6.4,
+          change: "+11.0%",
+          status: "Passed",
+          prevPeriodValue: "Min 5.00",
+        },
+      ],
+      upcomingPayments: {
+        credits: [
+          {
+            dueDate: "2024-01-22",
+            status: "2 days overdue",
+            prepaymentFee: "$1,500.00",
+            total: "$1,500.00",
+          },
+        ],
+      },
+      positions: [],
+      asOfDate: "2024-02-04",
+    },
+  },
+  {
+    id: 2,
+    name: "abcCapital",
+    totalCommitment: "$2,500,000",
+    funded: "A$680,000",
+    unfunded: "$1,820",
+    lender: {
+      covenantsTracking: [
+        {
+          title: "Quick Ratio",
+          value: 5.5,
+          change: "+10.0%",
+          status: "Passed",
+          prevPeriodValue: "Min 5.00",
+        },
+        {
+          title: "Debt-to-EBITDA",
+          value: 3.1,
+          change: "-8.0%",
+          status: "Failed",
+          prevPeriodValue: "Max 2.50",
+        },
+        {
+          title: "Fixed Charge Coverage Ratio",
+          value: 5.75,
+          change: "+8.5%",
+          status: "Passed",
+          prevPeriodValue: "Min 5.00",
+        },
+      ],
+      upcomingPayments: {
+        credits: [
+          {
+            dueDate: "2024-01-20",
+            status: "3 days overdue",
+            prepaymentFee: "$2,000.00",
+            total: "$2,000.00",
+          },
+          {
+            dueDate: "2024-01-28",
+            status: "in 14 days",
+            interest: "$7,200.00",
+            principalRepayment: "$60,000.00",
+            total: "$67,200.00",
+          },
+        ],
+      },
+      positions: [
+        {
+          deal: "ABC Capital",
+          instrument: "Capital Loan",
+          borrower: "ABC Corp",
+          ccy: "USD",
+          counterparty: "Michael",
+          role: "LENDER",
+          committed: "$150,000,000.00",
+          funded: "$0.0",
+          unfunded: "$150,000,000.00",
+          docs: "$0.0",
+        },
+      ],
+      asOfDate: "2024-02-04",
+    },
+    borrower: {
+      covenantsTracking: [
+        {
+          title: "Quick Ratio",
+          value: 5.2,
+          change: "+9.0%",
+          status: "Passed",
+          prevPeriodValue: "Min 5.00",
+        },
+        {
+          title: "Debt-to-EBITDA",
+          value: 3.3,
+          change: "-7.0%",
+          status: "Failed",
+          prevPeriodValue: "Max 2.50",
+        },
+        {
+          title: "Fixed Charge Coverage Ratio",
+          value: 5.6,
+          change: "-8.0%",
+          status: "Failed",
+          prevPeriodValue: "Min 5.00",
+        },
+      ],
+      upcomingPayments: {
+        credits: [
+          {
+            dueDate: "2024-01-25",
+            status: "in 7 days",
+            interest: "$6,500.00",
+            total: "$6,500.00",
+          },
+        ],
+      },
+      positions: [],
+      asOfDate: "2024-02-04",
+    },
   },
 ];
-
-const customers = [
-  {
-    id: 'd6e15727-9fe1-4961-8c5b-ea44a9bd81aa',
-    name: 'Evil Rabbit',
-    email: 'evil@rabbit.com',
-    image_url: '/customers/evil-rabbit.png',
-  },
-  {
-    id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
-    name: 'Delba de Oliveira',
-    email: 'delba@oliveira.com',
-    image_url: '/customers/delba-de-oliveira.png',
-  },
-  {
-    id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
-    name: 'Lee Robinson',
-    email: 'lee@robinson.com',
-    image_url: '/customers/lee-robinson.png',
-  },
-  {
-    id: '76d65c26-f784-44a2-ac19-586678f7c2f2',
-    name: 'Michael Novotny',
-    email: 'michael@novotny.com',
-    image_url: '/customers/michael-novotny.png',
-  },
-  {
-    id: 'CC27C14A-0ACF-4F4A-A6C9-D45682C144B9',
-    name: 'Amy Burns',
-    email: 'amy@burns.com',
-    image_url: '/customers/amy-burns.png',
-  },
-  {
-    id: '13D07535-C59E-4157-A011-F8D2EF4E0CBB',
-    name: 'Balazs Orban',
-    email: 'balazs@orban.com',
-    image_url: '/customers/balazs-orban.png',
-  },
-];
-
-const invoices = [
-  {
-    customer_id: customers[0].id,
-    amount: 15795,
-    status: 'pending',
-    date: '2022-12-06',
-  },
-  {
-    customer_id: customers[1].id,
-    amount: 20348,
-    status: 'pending',
-    date: '2022-11-14',
-  },
-  {
-    customer_id: customers[4].id,
-    amount: 3040,
-    status: 'paid',
-    date: '2022-10-29',
-  },
-  {
-    customer_id: customers[3].id,
-    amount: 44800,
-    status: 'paid',
-    date: '2023-09-10',
-  },
-  {
-    customer_id: customers[5].id,
-    amount: 34577,
-    status: 'pending',
-    date: '2023-08-05',
-  },
-  {
-    customer_id: customers[2].id,
-    amount: 54246,
-    status: 'pending',
-    date: '2023-07-16',
-  },
-  {
-    customer_id: customers[0].id,
-    amount: 666,
-    status: 'pending',
-    date: '2023-06-27',
-  },
-  {
-    customer_id: customers[3].id,
-    amount: 32545,
-    status: 'paid',
-    date: '2023-06-09',
-  },
-  {
-    customer_id: customers[4].id,
-    amount: 1250,
-    status: 'paid',
-    date: '2023-06-17',
-  },
-  {
-    customer_id: customers[5].id,
-    amount: 8546,
-    status: 'paid',
-    date: '2023-06-07',
-  },
-  {
-    customer_id: customers[1].id,
-    amount: 500,
-    status: 'paid',
-    date: '2023-08-19',
-  },
-  {
-    customer_id: customers[5].id,
-    amount: 8945,
-    status: 'paid',
-    date: '2023-06-03',
-  },
-  {
-    customer_id: customers[2].id,
-    amount: 1000,
-    status: 'paid',
-    date: '2022-06-05',
-  },
-];
-
-const revenue = [
-  { month: 'Jan', revenue: 2000 },
-  { month: 'Feb', revenue: 1800 },
-  { month: 'Mar', revenue: 2200 },
-  { month: 'Apr', revenue: 2500 },
-  { month: 'May', revenue: 2300 },
-  { month: 'Jun', revenue: 3200 },
-  { month: 'Jul', revenue: 3500 },
-  { month: 'Aug', revenue: 3700 },
-  { month: 'Sep', revenue: 2500 },
-  { month: 'Oct', revenue: 2800 },
-  { month: 'Nov', revenue: 3000 },
-  { month: 'Dec', revenue: 4800 },
-];
-
-export { users, customers, invoices, revenue };
+export { deals };
