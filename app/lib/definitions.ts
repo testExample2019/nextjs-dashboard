@@ -1,23 +1,23 @@
-export type Deal = {
+export type DealType = {
   id: number | string;
   name: string;
   totalCommitment: string;
   funded: string;
   unfunded: string;
-  lender: DealDetails;
-  borrower: DealDetails;
+  lender: DealDetailsType;
+  borrower: DealDetailsType;
 };
 
-export type DealNav = Omit<Deal, "lender" | "borrower">;
+export type DealNavType = Omit<DealType, "lender" | "borrower">;
 
-type DealDetails = {
-  covenantsTracking: CovenantMetric[];
-  upcomingPayments: UpcomingPayments;
-  positions: Position[];
+type DealDetailsType = {
+  covenantsTracking: CovenantMetricType[];
+  upcomingPayments: UpcomingPaymentsType;
+  positions: PositionType[];
   asOfDate: string;
 };
 
-export type CovenantMetric = {
+export type CovenantMetricType = {
   title: string;
   value: number;
   change: string;
@@ -27,11 +27,12 @@ export type CovenantMetric = {
   maximum?: number;
 };
 
-type UpcomingPayments = {
-  credits: Payment[];
+export type UpcomingPaymentsType = {
+  credits: PaymentType[];
+  debits: PaymentType[];
 };
 
-type Payment = {
+type PaymentType = {
   dueDate: string;
   status: string;
   prepaymentFee?: string;
@@ -40,7 +41,7 @@ type Payment = {
   total: string;
 };
 
-type Position = {
+type PositionType = {
   deal: string;
   instrument: string;
   borrower: string;

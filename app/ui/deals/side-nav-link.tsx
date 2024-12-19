@@ -1,10 +1,15 @@
 "use client";
 import React from "react";
-import { DealNav, DealViews } from "@/app/lib/definitions";
+import { DealNavType, DealViews } from "@/app/lib/definitions";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-const SideNavLink = ({ name, totalCommitment, funded, unfunded }: DealNav) => {
+const SideNavLink = ({
+  name,
+  totalCommitment,
+  funded,
+  unfunded,
+}: DealNavType) => {
   const path = usePathname();
   const href = `/deals/${name.toLowerCase()}/${DealViews.Lender}`;
   return (

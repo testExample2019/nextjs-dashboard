@@ -1,6 +1,6 @@
-import { Deal } from "@/app/lib/definitions";
+import { DealType } from "@/app/lib/definitions";
 
-const deals: Deal[] = [
+const deals: DealType[] = [
   {
     id: 1,
     name: "Soultrain",
@@ -33,6 +33,21 @@ const deals: Deal[] = [
       ],
       upcomingPayments: {
         credits: [
+          {
+            dueDate: "2024-01-18",
+            status: "5 days overdue",
+            prepaymentFee: "$1,601.94",
+            total: "$1,601.94",
+          },
+          {
+            dueDate: "2024-01-24",
+            status: "in 10 days",
+            interest: "$6,997.51",
+            principalRepayment: "$50,000.00",
+            total: "$56,978.00",
+          },
+        ],
+        debits: [
           {
             dueDate: "2024-01-18",
             status: "5 days overdue",
@@ -97,6 +112,21 @@ const deals: Deal[] = [
             total: "$1,500.00",
           },
         ],
+        debits: [
+          {
+            dueDate: "2024-01-18",
+            status: "5 days overdue",
+            prepaymentFee: "$1,601.94",
+            total: "$1,601.94",
+          },
+          {
+            dueDate: "2024-01-24",
+            status: "in 10 days",
+            interest: "$6,997.51",
+            principalRepayment: "$50,000.00",
+            total: "$56,978.00",
+          },
+        ],
       },
       positions: [],
       asOfDate: "2024-02-04",
@@ -148,6 +178,21 @@ const deals: Deal[] = [
             total: "$67,200.00",
           },
         ],
+        debits: [
+          {
+            dueDate: "2024-01-18",
+            status: "5 days overdue",
+            prepaymentFee: "$1,601.94",
+            total: "$1,601.94",
+          },
+          {
+            dueDate: "2024-01-24",
+            status: "in 10 days",
+            interest: "$6,997.51",
+            principalRepayment: "$50,000.00",
+            total: "$56,978.00",
+          },
+        ],
       },
       positions: [
         {
@@ -196,6 +241,21 @@ const deals: Deal[] = [
             status: "in 7 days",
             interest: "$6,500.00",
             total: "$6,500.00",
+          },
+        ],
+        debits: [
+          {
+            dueDate: "2024-01-18",
+            status: "5 days overdue",
+            prepaymentFee: "$1,601.94",
+            total: "$1,601.94",
+          },
+          {
+            dueDate: "2024-01-24",
+            status: "in 10 days",
+            interest: "$6,997.51",
+            principalRepayment: "$50,000.00",
+            total: "$56,978.00",
           },
         ],
       },

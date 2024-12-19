@@ -1,30 +1,20 @@
 import { deals } from "@/app/lib/placeholder-data";
-import { DealsActions, DealViews } from "@/app/lib/definitions";
+import { DealNavType, DealsActions, DealViews } from "@/app/lib/definitions";
 
-export async function fetchDeals() {
-  try {
-    return deals;
-  } catch (error) {
-    console.error("Database Error:", error);
-    throw new Error("Failed to fetch deals data.");
-  }
-}
+const handleDealView = (dealName: string, dealView: string) => {
+  return dealView === DealViews.Lender
+    ? deals.filter((deal) => deal.name.toLowerCase() === dealName)[0]?.lender
+    : deals.filter((deal) => deal.name.toLowerCase() === dealName)[0]?.borrower;
+};
 
-export async function fetchDealsLinks() {
-  try {
-    return deals;
-  } catch (error) {
-    console.error("Database Error:", error);
-    throw new Error("Failed to fetch deals data.");
-  }
-}
-
-export async function fetchDealsNavData() {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+export async function fetchDealsNavData(): Promise<DealNavType[]> {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   try {
     return deals.map((deal) => ({
-      title: deal.name || "Untitled",
+      id: deal.id || "0",
+      name: deal.name || "N/A",
+      title: deal.name || "N/A",
       totalCommitment: deal.totalCommitment || "N/A",
       funded: deal.funded || "N/A",
       unfunded: deal.unfunded || "N/A",
@@ -35,13 +25,28 @@ export async function fetchDealsNavData() {
   }
 }
 
-export async function fetchCovenantsTrackingData(name: string, view: string) {
+export async function fetchCovenantsTrackingData(
+  dealName: string,
+  dealView: string,
+) {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
   try {
-    return view === DealViews.Lender
-      ? deals.filter((deal) => deal.name.toLowerCase() === name)[0]?.lender
-          .covenantsTracking
-      : deals.filter((deal) => deal.name.toLowerCase() === name)[0]?.borrower
-          .covenantsTracking;
+    return handleDealView(dealName, dealView)?.covenantsTracking;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch CovenantsTracking data.");
+  }
+}
+
+export async function fetchUpcomingPaymentsData(
+  dealName: string,
+  dealView: string,
+) {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  try {
+    return handleDealView(dealName, dealView)?.upcomingPayments;
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch CovenantsTracking data.");

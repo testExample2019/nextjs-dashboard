@@ -1,15 +1,15 @@
-"use client";
-import { usePathname } from "next/navigation";
+
 import { clsx } from "clsx";
 import { views } from "@/app/lib/constants";
 import Link from "next/link";
 
-export default function ViewsNav() {
-  const pathname = usePathname();
-  const segments = pathname.split("/").filter(Boolean);
-  const dealName = segments[1]; // Assuming `/deals/:dealName/:view`
-  const dealView = segments[2]; // Assuming `/deals/:dealName/:view`
-
+export default function ViewsNav({
+  dealName,
+  dealView,
+}: {
+  dealName: string;
+  dealView: string;
+}) {
   return (
     <div className="flex h-full flex-col">
       <div className="flex grow flex-row justify-between space-x-2">

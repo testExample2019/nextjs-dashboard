@@ -23,7 +23,7 @@ export default function RootLayout({
           <div className="w-full">
             <NavBar />
           </div>
-          <main>{children}</main>
+          <main className={'h-full'}>{children}</main>
         </div>
       </body>
     </html>

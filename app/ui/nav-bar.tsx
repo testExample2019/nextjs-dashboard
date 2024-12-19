@@ -5,7 +5,7 @@ export default function NavBar() {
     <header className={`flex flex-col`}>
       <nav
         className={
-          "h-16 bg-grey-lighter text-grey-primary flex items-center justify-center"
+          "h-16 bg-grey-lighter text-grey-primary flex items-center justify-between px-4"
         }
       >
         <Link

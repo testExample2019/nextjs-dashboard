@@ -1,28 +1,30 @@
+import { CovenantMetricType } from "@/app/lib/definitions";
 import { fetchCovenantsTrackingData } from "@/app/lib/data";
-import { CovenantMetric } from "@/app/lib/definitions";
 
 export default async function CovenantsCardWrapper({
-  name,
-  view,
+  dealName,
+  dealView,
 }: {
-  name: string;
-  view: string;
+  dealName: string;
+  dealView: string;
 }) {
-  const data = await fetchCovenantsTrackingData(name, view);
-
+  const covenantsTrackingData: CovenantMetricType[] =
+    await fetchCovenantsTrackingData(dealName, dealView);
   return (
-    <div className="flex flex-col lg:flex-row gap-4">
-      {data?.map(({ title, value, change, prevPeriodValue, status }, key) => (
-        <Card
-          key={key}
-          title={title}
-          value={value}
-          status={status}
-          change={change}
-          prevPeriodValue={prevPeriodValue}
-        />
-      ))}
-    </div>
+    <>
+      {covenantsTrackingData?.map(
+        ({ title, value, change, prevPeriodValue, status }, key) => (
+          <Card
+            key={key}
+            title={title}
+            value={value}
+            status={status}
+            change={change}
+            prevPeriodValue={prevPeriodValue}
+          />
+        ),
+      )}
+    </>
   );
 }
 
@@ -32,10 +34,10 @@ export function Card({
   change,
   prevPeriodValue,
   status,
-}: CovenantMetric) {
+}: CovenantMetricType) {
   return (
     <div className="flex-1 bg-white shadow-md rounded-lg p-4 border border-[#E3E3E3]">
-      <h3 className="text-[#909090] text-sm font-semibold uppercase">
+      <h3 className="text-grey text-sm font-semibold uppercase">
         {title}
       </h3>
       <div className={"flex justify-between items-end"}>
@@ -78,20 +80,22 @@ export function Card({
             </span>
           </div>
         </div>
-        <div className="flex flex-col items-center gap-2 mt-2">
+        <div className="flex flex-col items-end justify-center gap-2">
           <div>
             <span
               className={`${status === "Passed" ? "text-green" : "text-red"} text-base font-n`}
             >
               {change}
             </span>
-            <span className="text-grey-primary text-base font-bold">
-              {value} <span className={"text-[#909090]"}>|</span>
+            <span className="text-grey-primary text-base px-2">
+              {value} <span className={"text-grey"}>|</span>
             </span>
-            <span className="text-grey-primary text-28 font-bold">{value}</span>
+            <span className="inline-flex text-grey-primary text-28 font-bold">
+              {value}
+            </span>
           </div>
 
-          <span className="text-[#909090] text-sm">
+          <span className="text-grey text-sm">
             Previous Period | {prevPeriodValue}
           </span>
         </div>
