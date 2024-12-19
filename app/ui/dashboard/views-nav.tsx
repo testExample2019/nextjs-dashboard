@@ -1,4 +1,3 @@
-
 import { clsx } from "clsx";
 import { views } from "@/app/lib/constants";
 import Link from "next/link";
@@ -23,7 +22,7 @@ export default function ViewsNav({
                   "flex grow items-center min-w-28 text-center transition-all text-action-primary justify-center gap-2  p-2 text-sm font-medium  hover:text-blue-dark",
                   {
                     "bg-action-primary text-white hover:bg-blue-dark hover:text-white":
-                      dealView.includes(link.href[1]),
+                      dealView?.includes(link.href[1]),
                   },
                 )}
               >

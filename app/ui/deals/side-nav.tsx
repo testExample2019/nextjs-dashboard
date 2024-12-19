@@ -18,7 +18,7 @@ export default async function DealsSideNav({
             totalCommitment={totalCommitment}
             funded={funded}
             unfunded={unfunded}
-          ></SideNavLink>
+          />
         );
       })}
     </div>

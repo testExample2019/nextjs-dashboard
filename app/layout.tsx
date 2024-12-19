@@ -1,6 +1,6 @@
 import "@/app/ui/global.css";
 import { openSans } from "@/app/ui/fonts";
-import { Metadata } from "next";
+import { Metadata} from "next";
 import NavBar from "@/app/ui/nav-bar";
 
 export const metadata: Metadata = {
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   },
   description: "Dashboard",
 };
+
 
 export default function RootLayout({
   children,

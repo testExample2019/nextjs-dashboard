@@ -13,6 +13,8 @@ import {
 import DealsSideNav from "@/app/ui/deals/side-nav";
 import UpcomingPayments from "@/app/ui/dashboard/upcoming-payments";
 
+
+
 const Page = async ({ params }: { params: Promise<{ deal: string }> }) => {
   const { deal } = await params; // Resolve the params promise
   const dealName = deal?.[0];

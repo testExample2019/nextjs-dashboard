@@ -12,7 +12,7 @@ export default function UpcomingPayments({
 }) {
   const [activeTab, setActiveTab] = useState<"credits" | "debits">("credits");
 
-  const payments = upcomingPayments[activeTab]; // Dynamically get active payments
+  const payments = upcomingPayments?.[activeTab]; // Dynamically get active payments
 
   return (
     <div className="rounded-lg shadow-md flex justify-between">
@@ -43,7 +43,7 @@ export default function UpcomingPayments({
 
         {/* Payments List */}
         <div className="mt-4 space-y-4">
-          {payments.map((payment, index: number) => (
+          {payments?.map((payment, index: number) => (
             <div
               key={index}
               className="px-4 py-2 bg-white rounded-medium border shadow-md border-[#E3E3E3]"

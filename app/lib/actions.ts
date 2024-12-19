@@ -1,14 +1,16 @@
 "use server";
 
+import { DealsActions, PaymentActions } from "@/app/lib/definitions";
+
 export async function handlePaymentDropdownClick(actionType: string) {
   switch (actionType) {
-    case "view":
+    case PaymentActions.View:
       console.log("View Notice...");
       break;
-    case "confirm":
+    case PaymentActions.Confirm:
       console.log("Confirm Bank Account...");
       break;
-    case "contact":
+    case PaymentActions.Contact:
       console.log("Contact borrower...");
       break;
     default:
@@ -18,14 +20,14 @@ export async function handlePaymentDropdownClick(actionType: string) {
 
 export async function handleDealDropdownAction(actionType: string) {
   switch (actionType) {
-    case "import":
-      console.log("Importing Deal...");
+    case DealsActions.Import:
+      console.log("Import Deal...");
       break;
-    case "add":
-      console.log("Adding Deal...");
+    case DealsActions.Add:
+      console.log("Add Deal...");
       break;
-    case "use":
-      console.log("Using Deal...");
+    case DealsActions.Use:
+      console.log("Use Deal...");
       break;
     default:
       console.log("Unknown action");
