@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { deals } from "@/app/lib/placeholder-data";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
+  const router = useRouter();
 
   // Pre-populated values
   const initialData = {
@@ -275,7 +276,10 @@ const LoanSetupPage = () => {
 
         {/* Action Buttons */}
         <div className="flex justify-end mt-6 space-x-4">
-          <button className="px-4 py-2 text-gray-500 border border-gray-300 rounded-md hover:bg-gray-100">
+          <button
+            onClick={() => router.back()}
+            className="px-4 py-2 text-gray-500 border border-gray-300 rounded-md hover:bg-gray-100"
+          >
             Cancel
           </button>
           <button
