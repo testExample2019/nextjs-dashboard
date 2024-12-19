@@ -3,6 +3,7 @@ import React from "react";
 import { DealNavType, DealViews } from "@/app/lib/definitions";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useNextStep } from "nextstepjs";
 
 const SideNavLink = ({
   name,
@@ -12,8 +13,13 @@ const SideNavLink = ({
 }: DealNavType) => {
   const path = usePathname();
   const href = `/deals/${name.toLowerCase()}/${DealViews.Lender}`;
+  const { startNextStep } = useNextStep();
+  const handleStartTour = () => {
+    startNextStep("mainTour");
+  };
   return (
     <Link
+      onClick={handleStartTour}
       className={`${path.includes(name.toLowerCase()) ? "bg-[#EDF4FC]" : "bg-white"} max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
       href={href}
     >

@@ -88,14 +88,14 @@ export function Card({
               {change}
             </span>
             <span className="text-grey-primary text-base px-2">
-              {value} <span className={"text-grey"}>|</span>
+              {value} <span className={"text-[#909090]"}>|</span>
             </span>
             <span className="inline-flex text-grey-primary text-28 font-bold">
               {value}
             </span>
           </div>
 
-          <span className="text-grey text-sm">
+          <span className="text-[#909090] text-sm">
             Previous Period | {prevPeriodValue}
           </span>
         </div>

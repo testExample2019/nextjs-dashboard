@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/nextstepjs/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -15,8 +16,8 @@ const config: Config = {
         "grey-border": "#BDC6C7",
         "grey-light": "#ABB8C3",
         "grey-lighter": "#F1F1F1",
-        'grey': '#909090',
-        "grey-o": 'rgba(241, 241, 241, 0.40)',
+        grey: "#909090",
+        "grey-o": "rgba(241, 241, 241, 0.40)",
         "blue-dark": "#226EC8",
         "blue-light": "#4A90E21A",
         orange: "#D13A00",

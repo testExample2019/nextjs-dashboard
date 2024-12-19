@@ -13,8 +13,6 @@ import {
 import DealsSideNav from "@/app/ui/deals/side-nav";
 import UpcomingPayments from "@/app/ui/dashboard/upcoming-payments";
 
-
-
 const Page = async ({ params }: { params: Promise<{ deal: string }> }) => {
   const { deal } = await params; // Resolve the params promise
   const dealName = deal?.[0];
@@ -65,7 +63,7 @@ const Page = async ({ params }: { params: Promise<{ deal: string }> }) => {
               ></ButtonDropdown>
             </div>
 
-            <div className={"py-2 px-4 "}>
+            <div className={"py-2 px-4"} id={"tour1-step2"}>
               <h4 className={"text-sm text-grey-light mb-2"}>
                 Select a deal to filter the information on your dashboard:
               </h4>
@@ -82,7 +80,7 @@ const Page = async ({ params }: { params: Promise<{ deal: string }> }) => {
               }
             >
               <h1 className={`text-18 md:text-2xl`}>Dashboard</h1>
-              <div className={`inline-flex items-center`}>
+              <div id={"tour1-step3"} className={`inline-flex items-center`}>
                 <span className={" inline-flex text-sm text-grey mr-3"}>
                   View
                 </span>
@@ -93,7 +91,10 @@ const Page = async ({ params }: { params: Promise<{ deal: string }> }) => {
               <h3 className={"text-grey-primary text-base font-semibold"}>
                 Covenants Tracking
               </h3>
-              <div className="flex flex-col lg:flex-row gap-4">
+              <div
+                id={"tour1-step4"}
+                className="flex flex-col lg:flex-row gap-4"
+              >
                 <Suspense fallback={<CardsSkeleton />}>
                   <CovenantsCardWrapper
                     dealName={dealName}
@@ -101,10 +102,7 @@ const Page = async ({ params }: { params: Promise<{ deal: string }> }) => {
                   />
                 </Suspense>
               </div>
-              <h3 className={"text-grey-primary text-base font-semibold"}>
-                Upcoming Payments
-              </h3>
-              <div>
+              <div id={"tour1-step5"}>
                 <Suspense fallback={<CardsSkeleton />}>
                   <UpcomingPayments upcomingPayments={upcomingPayments} />
                 </Suspense>
