@@ -1,5 +1,10 @@
 import { deals } from "@/app/lib/placeholder-data";
-import { DealNavType, DealsActions, DealViews } from "@/app/lib/definitions";
+import {
+  DealNavType,
+  DealsActions,
+  DealViews,
+  PaymentActions,
+} from "@/app/lib/definitions";
 
 const handleDealView = (dealName: string, dealView: string) => {
   return dealView === DealViews.Lender
@@ -8,8 +13,6 @@ const handleDealView = (dealName: string, dealView: string) => {
 };
 
 export async function fetchDealsNavData(): Promise<DealNavType[]> {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
   try {
     return deals.map((deal) => ({
       id: deal.id || "0",
@@ -29,8 +32,6 @@ export async function fetchCovenantsTrackingData(
   dealName: string,
   dealView: string,
 ) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
   try {
     return handleDealView(dealName, dealView)?.covenantsTracking;
   } catch (error) {
@@ -43,8 +44,6 @@ export async function fetchUpcomingPaymentsData(
   dealName: string,
   dealView: string,
 ) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
   try {
     return handleDealView(dealName, dealView)?.upcomingPayments;
   } catch (error) {
@@ -57,4 +56,10 @@ export const dealsDropdownItems = [
   { id: 1, label: "Import Deal", actionType: DealsActions.Import },
   { id: 2, label: "Add New Deal", actionType: DealsActions.Add },
   { id: 3, label: "Use Template", actionType: DealsActions.Use },
+];
+
+export const PaymentDropdownItems = [
+  { id: 1, label: "View Notice", actionType: PaymentActions.View },
+  { id: 2, label: "Confirm Bank Account", actionType: PaymentActions.Confirm },
+  { id: 3, label: "Contact", actionType: PaymentActions.Contact },
 ];

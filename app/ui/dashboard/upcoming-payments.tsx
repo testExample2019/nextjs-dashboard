@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { UpcomingPaymentsType } from "@/app/lib/definitions";
 import { ButtonDropdown } from "@/app/ui/dropdown";
-import { dealsDropdownItems } from "@/app/lib/data";
-import { handleDealDropdownAction } from "@/app/lib/actions";
+import { PaymentDropdownItems } from "@/app/lib/data";
+import { handlePaymentDropdownClick } from "@/app/lib/actions";
 
 export default function UpcomingPayments({
   upcomingPayments,
@@ -65,8 +65,8 @@ export default function UpcomingPayments({
                 </div>
                 <div className={"flex items-center justify-between gap-4"}>
                   <p className="text-sm font-semibold text-grey-primary">
-                    <span className={"text-grey uppercase"}>Total</span>
-                    <p>{payment.total}</p>
+                    <span className={"text-grey uppercase block"}>Total</span>
+                    <span>{payment.total}</span>
                   </p>
                   <ButtonDropdown
                     children={
@@ -83,22 +83,35 @@ export default function UpcomingPayments({
                         </svg>
                       </button>
                     }
-                    dropdownItems={dealsDropdownItems}
-                    onAction={handleDealDropdownAction}
+                    dropdownItems={PaymentDropdownItems}
+                    onAction={handlePaymentDropdownClick}
                   />
                 </div>
               </div>
               {/* Additional details if available */}
-              <p className="text-sm text-gray-500 flex justify-start gap-4">
+              <p className="text-sm text-grey flex justify-start gap-4">
                 {payment.prepaymentFee && (
-                  <span>Prepayment Fee: {payment.prepaymentFee}</span>
+                  <span className={"uppercase"}>
+                    Prepayment Fee:{" "}
+                    <span className={"text-grey-primary"}>
+                      {payment.prepaymentFee}
+                    </span>
+                  </span>
                 )}
                 {payment.interest && (
-                  <span className="block">Interest: {payment.interest}</span>
+                  <span className="block uppercase">
+                    Interest:{" "}
+                    <span className={"text-grey-primary"}>
+                      {payment.interest}
+                    </span>
+                  </span>
                 )}
                 {payment.principalRepayment && (
-                  <span className="block">
-                    Principal Repayment: {payment.principalRepayment}
+                  <span className="block uppercase">
+                    Principal Repayment:{" "}
+                    <span className={"text-grey-primary"}>
+                      {payment.principalRepayment}
+                    </span>
                   </span>
                 )}
               </p>

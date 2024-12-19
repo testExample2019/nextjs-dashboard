@@ -60,6 +60,12 @@ export enum DealsActions {
   Use = "USE",
 }
 
+export enum PaymentActions {
+  View = "VIEW",
+  Confirm = "CONFIRM",
+  Contact = "CONTACT",
+}
+
 export enum DealViews {
   Lender = "lender",
   Borrower = "borrower",
