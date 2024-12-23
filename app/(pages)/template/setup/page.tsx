@@ -284,7 +284,7 @@ const LoanSetupPage = () => {
           </button>
           <button
             onClick={() =>
-              redirect(`/deals/${deals[0].name.toLowerCase()}/lender`)
+              redirect(`/deals/dashboard/${deals[0].name.toLowerCase()}/lender/`)
             }
             className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
           >

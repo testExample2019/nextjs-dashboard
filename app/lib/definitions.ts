@@ -14,6 +14,7 @@ type DealDetailsType = {
   covenantsTracking: CovenantMetricType[];
   upcomingPayments: UpcomingPaymentsType;
   positions: PositionType[];
+  transactions: PositionType[];
   asOfDate: string;
 };
 
@@ -32,7 +33,8 @@ export type UpcomingPaymentsType = {
   debits: PaymentType[];
 };
 
-type PaymentType = {
+export type PaymentType = {
+  id: string | number;
   dueDate: string;
   status: string;
   prepaymentFee?: string;
@@ -69,4 +71,9 @@ export enum PaymentActions {
 export enum DealViews {
   Lender = "lender",
   Borrower = "borrower",
+}
+
+export enum PaymentTypes {
+  Debits = "debits",
+  Credits = "credits",
 }

@@ -1,6 +1,10 @@
+"use client";
 import Link from "next/link";
+import { deals } from "@/app/lib/placeholder-data";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
+  const path = usePathname();
   return (
     <header className={`flex flex-col`}>
       <nav
@@ -9,7 +13,7 @@ export default function NavBar() {
         }
       >
         <Link
-          href="#"
+          href="/template"
           className="flex items-center justify-center divide-grey-light lg:divide-x logo"
         >
           <span className="w-24 hidden lg:inline-flex">
@@ -43,6 +47,85 @@ export default function NavBar() {
             Direct<span className="font-semibold">Lend</span>
           </span>
         </Link>
+        <div className="flex items-center justify-between gap-4">
+          {/* Left Section: Filter Dropdown */}
+          <div className="flex items-center space-x-4">
+            {/* Filter Dropdown */}
+            <div className="relative">
+              <select
+                defaultValue={"Filter By Counterparty/Group"}
+                className="block bg-transparent w-full px-4 py-2 min-w-[300px] text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
+              >
+                <option disabled={true}>Filter By Counterparty/Group</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+              </select>
+            </div>
+
+            {/* Search Input */}
+            <div className="relative">
+              <input
+                type="text"
+                defaultValue={"Search for data"}
+                className="block  bg-transparent min-w-[300px] w-full px-8 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
+              />
+              <div className="absolute top-1/2 left-3 transform -translate-y-1/2 text-grey">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-4.35-4.35M18.28 10.5a7.78 7.78 0 11-15.56 0 7.78 7.78 0 0115.56 0z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Section: Icons */}
+          <div className="flex items-center space-x-4">
+            {/* Icon Buttons */}
+            {[
+              {
+                icon: "🏠",
+                label: "Dashboard",
+                href: `/deals/dashboard/${deals[0].name.toLowerCase()}/lender`,
+              },
+              {
+                icon: "🔄",
+                label: "Transactions",
+                href: `/deals/transactions/${deals[0].name.toLowerCase()}/lender`,
+              },
+              {
+                icon: "📋",
+                label: "Positions",
+                href: `/deals/positions/${deals[0].name.toLowerCase()}/lender`,
+              },
+              { icon: "⚙️", label: "Settings", href: "" },
+              { icon: "🔒", label: "Lock", href: "" },
+            ].map((item, idx) => (
+              <Link
+                href={item.href}
+                key={idx}
+                className={`${path.includes(item.label.toLowerCase()) ? "border-action-primary text-action-primary" : ""} w-10 h-10 p-2 bg-transparent border rounded-full shadow hover:shadow-md`}
+                aria-label={item.label}
+              >
+                {item.icon}
+              </Link>
+            ))}
+
+            {/* Profile Circle */}
+            <div className="w-8 h-8 bg-action-primary text-white flex items-center justify-center rounded-full">
+              DR
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
   );

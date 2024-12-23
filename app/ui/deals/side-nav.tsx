@@ -1,8 +1,8 @@
 import React from "react";
-import SideNavLink from "@/app/ui/deals/side-nav-link";
 import { DealNavType } from "@/app/lib/definitions";
+import { SideNavLink } from "@/app/ui/deals/side-nav-link";
 
-export default async function DealsSideNav({
+export default function DealsSideNav({
   dealsNavData,
 }: {
   dealsNavData: DealNavType[];

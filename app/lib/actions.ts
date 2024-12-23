@@ -1,11 +1,15 @@
 "use server";
 
 import { DealsActions, PaymentActions } from "@/app/lib/definitions";
+import { redirect } from "next/navigation";
 
-export async function handlePaymentDropdownClick(actionType: string) {
+export async function handlePaymentDropdownClick(
+  actionType: string,
+  redirectTo?: string | undefined,
+) {
   switch (actionType) {
     case PaymentActions.View:
-      console.log("View Notice...");
+      redirectTo && redirect(redirectTo);
       break;
     case PaymentActions.Confirm:
       console.log("Confirm Bank Account...");

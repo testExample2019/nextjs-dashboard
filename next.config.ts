@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  content: ["./node_modules/nextstepjs/dist/**/*.{js,ts,jsx,tsx}"],
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

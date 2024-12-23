@@ -1,18 +1,19 @@
 "use client";
 import React from "react";
-import { DealNavType, DealViews } from "@/app/lib/definitions";
+import { DealNavType } from "@/app/lib/definitions";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 import { useNextStep } from "nextstepjs";
+import Link from "next/link";
+import { replaceDealItemInURL } from "@/app/lib/utils";
 
-const SideNavLink = ({
+export const SideNavLink = ({
   name,
   totalCommitment,
   funded,
   unfunded,
 }: DealNavType) => {
   const path = usePathname();
-  const href = `/deals/${name.toLowerCase()}/${DealViews.Lender}`;
+  const href = replaceDealItemInURL(path, name.toLowerCase());
   const { startNextStep } = useNextStep();
   const handleStartTour = () => {
     startNextStep("mainTour");
@@ -71,5 +72,3 @@ const SideNavLink = ({
     </Link>
   );
 };
-
-export default SideNavLink;

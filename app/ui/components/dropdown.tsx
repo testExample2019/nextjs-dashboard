@@ -56,7 +56,7 @@ export const ButtonDropdown = <T,>({
           {dropdownItems.map(({ id, label, actionType }) => (
             <button
               key={id}
-              className="block px-4 py-2 text-sm text-gray-700 capitalize text-nowrap"
+              className="block px-4 py-2 text-sm text-grey-primary capitalize text-nowrap"
               role="menuitem"
               id="menu-item-0"
               onClick={() => {

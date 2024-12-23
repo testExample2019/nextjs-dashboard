@@ -21,18 +21,38 @@ export async function fetchDeals() {
 }
 
 export async function fetchDealsNavData(): Promise<DealNavType[]> {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   try {
     return deals.map((deal) => ({
-      id: deal.id || "0",
-      name: deal.name || "N/A",
-      title: deal.name || "N/A",
-      totalCommitment: deal.totalCommitment || "N/A",
-      funded: deal.funded || "N/A",
-      unfunded: deal.unfunded || "N/A",
+      id: deal.id,
+      name: deal.name,
+      title: deal.name,
+      totalCommitment: deal.totalCommitment,
+      funded: deal.funded,
+      unfunded: deal.unfunded,
     }));
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch nav data.");
+  }
+}
+
+export async function fetchPositions(dealName: string, dealView: string) {
+  try {
+    return handleDealView(dealName, dealView)?.positions;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch Positions data.");
+  }
+}
+
+export async function fetchTransactions(dealName: string, dealView: string) {
+  try {
+    return handleDealView(dealName, dealView)?.transactions;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch Transactions data.");
   }
 }
 
