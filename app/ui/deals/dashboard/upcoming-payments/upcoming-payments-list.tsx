@@ -5,7 +5,7 @@ import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import { PaymentDropdownItems } from "@/app/lib/data";
 import { handlePaymentDropdownClick } from "@/app/lib/actions";
 import { PaymentTypes, UpcomingPaymentsType } from "@/app/lib/definitions";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function UpcomingPaymentsList({
   upcomingPayments,
@@ -19,6 +19,8 @@ export default function UpcomingPaymentsList({
   dealPaymentType: PaymentTypes;
 }) {
   const path = usePathname();
+  const router = useRouter();
+
   const [activeTab, setActiveTab] = useState<"credits" | "debits">("debits");
 
   const payments = upcomingPayments?.[activeTab]; // Dynamically get active payments
@@ -88,12 +90,7 @@ export default function UpcomingPaymentsList({
                     </button>
                   }
                   dropdownItems={PaymentDropdownItems}
-                  onAction={(actionType) =>
-                    handlePaymentDropdownClick(
-                      actionType,
-                      `/transaction/${payment.id}`,
-                    )
-                  }
+                  onAction={() => router.push(`/transaction/${payment.id}`)}
                 />
               </div>
             </div>

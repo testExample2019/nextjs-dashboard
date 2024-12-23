@@ -284,7 +284,9 @@ const LoanSetupPage = () => {
           </button>
           <button
             onClick={() =>
-              redirect(`/deals/dashboard/${deals[0].name.toLowerCase()}/lender/`)
+              redirect(
+                `/deals/dashboard/${deals[0].name.toLowerCase()}/lender/`,
+              )
             }
             className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
           >
@@ -313,11 +315,13 @@ const LoanSetupPage = () => {
           </thead>
           <tbody>
             {transactions.map((txn, idx) => (
-              <tr key={idx} className="hover:bg-gray-50">
+              <tr key={idx} className="hover:bg-gray-50 whitespace-nowrap">
                 <td className="py-2 px-3 text-sm text-gray-800">
                   {txn.transaction}
                 </td>
-                <td className="py-2 px-3 text-sm text-gray-800">{txn.date}</td>
+                <td className="py-2 px-3 text-sm text-gray-800">
+                  {txn.date}
+                </td>
                 <td className="py-2 px-3 text-sm text-gray-800">
                   {txn.amount}
                 </td>

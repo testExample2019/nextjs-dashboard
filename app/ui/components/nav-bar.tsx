@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function NavBar() {
   const path = usePathname();
   return (
-    <header className={`flex flex-col`}>
+    <header className={`flex flex-col border-b-1 border-[#E3E3E3]`}>
       <nav
         className={
           "h-16 bg-grey-lighter text-grey-primary flex items-center justify-between px-4"

@@ -80,6 +80,20 @@ export async function fetchUpcomingPaymentsData(
   }
 }
 
+export async function fetchTransactionById(transactionId: string) {
+  try {
+    return deals
+      .flatMap((deal) => [
+        ...(deal.lender?.transactions || []),
+        ...(deal.borrower?.transactions || []),
+      ])
+      .find((txn) => txn.id === transactionId)
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch CovenantsTracking data.");
+  }
+}
+
 export const dealsDropdownItems = [
   { id: 1, label: "Import Deal", actionType: DealsActions.Import },
   { id: 2, label: "Add New Deal", actionType: DealsActions.Add },

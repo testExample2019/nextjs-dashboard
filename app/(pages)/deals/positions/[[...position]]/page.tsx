@@ -4,7 +4,11 @@ import { Table } from "@/app/ui/components/table";
 import ViewsNav from "@/app/ui/deals/dashboard/views-nav";
 import { fetchPositions } from "@/app/lib/data";
 
-const Page = async ({ params }: { params: Promise<{ position: string }> }) => {
+interface PageProps {
+  params: Promise<{ position: string }>;
+}
+
+const Page: React.FC<PageProps> = async ({ params }) => {
   const { position } = await params; // Resolve the params promise
   const dealName = position?.[0];
   const dealView = position?.[1];
@@ -25,7 +29,7 @@ const Page = async ({ params }: { params: Promise<{ position: string }> }) => {
       </div>
       <div className={"p-4"}>
         <Suspense fallback={<TableSkeleton />}>
-          <Table rows={positions} />
+          <Table type={"position"} rows={positions} />
         </Suspense>
       </div>
     </div>

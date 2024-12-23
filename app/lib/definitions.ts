@@ -1,5 +1,5 @@
 export type DealType = {
-  id: number | string;
+  id: string;
   name: string;
   totalCommitment: string;
   funded: string;
@@ -13,8 +13,8 @@ export type DealNavType = Omit<DealType, "lender" | "borrower">;
 type DealDetailsType = {
   covenantsTracking: CovenantMetricType[];
   upcomingPayments: UpcomingPaymentsType;
-  positions: PositionType[];
-  transactions: PositionType[];
+  positions: TransactionType[];
+  transactions: TransactionType[];
   asOfDate: string;
 };
 
@@ -34,7 +34,7 @@ export type UpcomingPaymentsType = {
 };
 
 export type PaymentType = {
-  id: string | number;
+  id: string;
   dueDate: string;
   status: string;
   prepaymentFee?: string;
@@ -43,7 +43,8 @@ export type PaymentType = {
   total: string;
 };
 
-type PositionType = {
+export type TransactionType = {
+  id: string;
   deal: string;
   instrument: string;
   borrower: string;

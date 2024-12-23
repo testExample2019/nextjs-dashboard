@@ -2,7 +2,6 @@ import "@/app/ui/global.css";
 import { NextStepProvider, NextStep } from "nextstepjs";
 import { openSans } from "@/app/ui/fonts";
 import { Metadata } from "next";
-import NavBar from "@/app/ui/components/nav-bar";
 import { steps } from "./lib/steps";
 
 export const metadata: Metadata = {
@@ -21,15 +20,8 @@ export default function RootLayout({
   return (
     <NextStepProvider>
       <html lang="en">
-        <body className={`${openSans.className} antialiased`}>
-          <NextStep steps={steps}>
-            <div className="flex flex-col h-screen max-w-screen-2xl m-auto">
-              <div className=" ">
-                <NavBar />
-              </div>
-              <main className={"h-full"}>{children}</main>
-            </div>
-          </NextStep>
+        <body className={`${openSans.className} antialiased bg-grey-o`}>
+          <NextStep steps={steps}>{children}</NextStep>
         </body>
       </html>
     </NextStepProvider>

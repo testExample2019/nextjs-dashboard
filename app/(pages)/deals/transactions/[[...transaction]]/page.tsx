@@ -2,13 +2,13 @@ import React, { Suspense } from "react";
 import { TableSkeleton } from "@/app/ui/skeletons";
 import { Table } from "@/app/ui/components/table";
 import ViewsNav from "@/app/ui/deals/dashboard/views-nav";
-import { fetchPositions, fetchTransactions } from "@/app/lib/data";
+import { fetchTransactions } from "@/app/lib/data";
 
-const Page = async ({
-  params,
-}: {
+interface PageProps {
   params: Promise<{ transaction: string }>;
-}) => {
+}
+
+const Page: React.FC<PageProps> = async ({ params }) => {
   const { transaction } = await params; // Resolve the params promise
   const dealName = transaction?.[0];
   const dealView = transaction?.[1];
@@ -29,7 +29,7 @@ const Page = async ({
       </div>
       <div className={"p-4"}>
         <Suspense fallback={<TableSkeleton />}>
-          <Table rows={transactions} />
+          <Table type={"transaction"} rows={transactions} />
         </Suspense>
       </div>
     </div>

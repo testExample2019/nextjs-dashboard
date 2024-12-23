@@ -56,7 +56,7 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
         </h3>
         <div id={"tour1-step6"}>
           <Suspense fallback={<TableSkeleton />}>
-            <Table rows={positions} />
+            <Table type={"position"} rows={positions} />
           </Suspense>
         </div>
       </div>
