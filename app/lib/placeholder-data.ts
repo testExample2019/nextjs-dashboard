@@ -171,7 +171,7 @@ const deals: DealType[] = [
             status: "5 days overdue",
             prepaymentFee: "$1,601.94",
             total: "$1,601.94",
-            transactionId: "transaction-4",
+            transactionId: "transaction-3",
           },
           {
             id: "debit-4",
@@ -290,7 +290,7 @@ const deals: DealType[] = [
             interest: "$7,200.00",
             principalRepayment: "$60,000.00",
             total: "$67,200.00",
-            transactionId: "transaction-5",
+            transactionId: "transaction-6",
           },
         ],
         debits: [
@@ -300,7 +300,7 @@ const deals: DealType[] = [
             status: "5 days overdue",
             prepaymentFee: "$1,601.94",
             total: "$1,601.94",
-            transactionId: "transaction-6",
+            transactionId: "transaction-5",
           },
           {
             id: "debit-6",

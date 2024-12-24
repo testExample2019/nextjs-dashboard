@@ -1,21 +1,18 @@
 import React, { Suspense } from "react";
 import DashboardSkeleton, {
-  CardsSkeleton,
+  CovenantsTrackingSkeleton,
   TableSkeleton,
+  UpcomingPaymentsSkeleton,
 } from "@/app/ui/skeletons";
 import ViewsNav from "@/app/ui/deals/dashboard/views-nav";
 import CovenantsCardWrapper from "@/app/ui/deals/dashboard/covenants-tracking";
 import UpcomingPayments from "@/app/ui/deals/dashboard/upcoming-payments/upcoming-payments";
-import { PaymentTypes } from "@/app/lib/definitions";
-import { Table } from "@/app/ui/components/table";
-import { fetchPositions } from "@/app/lib/data";
+import PositionsTable from "@/app/ui/deals/dashboard/positions-table";
 
 const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
   const { dashboard } = await params; // Resolve the params promise
   const dealName = dashboard?.[0];
   const dealView = dashboard?.[1];
-  const dealPaymentType = dashboard?.[2] as PaymentTypes;
-  const positions = await fetchPositions(dealName, dealView);
 
   return (
     <Suspense key={dashboard} fallback={<DashboardSkeleton />}>
@@ -31,34 +28,31 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
         </div>
       </div>
       <div className={"p-4 flex flex-col gap-4"}>
-        <h3 className={"text-grey-primary text-base font-semibold"}>
-          Covenants Tracking
-        </h3>
-        <div id={"tour1-step4"} className="flex flex-col lg:flex-row gap-4">
-          <Suspense fallback={<CardsSkeleton />}>
+        <Suspense fallback={<CovenantsTrackingSkeleton />}>
+          <h3 className={"text-grey-primary text-base font-semibold"}>
+            Covenants Tracking
+          </h3>
+          <div id={"tour1-step4"} className="flex flex-col lg:flex-row gap-4">
             <CovenantsCardWrapper dealName={dealName} dealView={dealView} />
-          </Suspense>
-        </div>
-        <h3 className={"text-grey-primary text-base font-semibold"}>
-          Upcoming Payments
-        </h3>
-        <div id={"tour1-step5"}>
-          <Suspense fallback={<CardsSkeleton />}>
-            <UpcomingPayments
-              dealName={dealName}
-              dealView={dealView}
-              dealPaymentType={dealPaymentType}
-            />
-          </Suspense>
-        </div>
-        <h3 className={"text-grey-primary text-base font-semibold"}>
-          Positions
-        </h3>
-        <div id={"tour1-step6"}>
-          <Suspense fallback={<TableSkeleton />}>
-            <Table type={"position"} rows={positions} />
-          </Suspense>
-        </div>
+          </div>
+        </Suspense>
+
+        <Suspense fallback={<UpcomingPaymentsSkeleton />}>
+          <h3 className={"text-grey-primary text-base font-semibold"}>
+            Upcoming Payments
+          </h3>
+          <div id={"tour1-step5"}>
+            <UpcomingPayments dealName={dealName} dealView={dealView} />
+          </div>
+        </Suspense>
+        <Suspense fallback={<TableSkeleton />}>
+          <h3 className={"text-grey-primary text-base font-semibold"}>
+            Positions
+          </h3>
+          <div id={"tour1-step6"}>
+            <PositionsTable dealName={dealName} dealView={dealView} />
+          </div>
+        </Suspense>
       </div>
     </Suspense>
   );

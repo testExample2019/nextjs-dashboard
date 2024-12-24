@@ -1,25 +1,11 @@
 import React from "react";
 import TransactionView from "@/app/ui/components/transaction-view";
-import {fetchTransactionById} from "@/app/lib/data";
+import { fetchTransactionById } from "@/app/lib/data";
 
-const Page = () => {
-  return (
-    <TransactionView
-      transaction={{
-        id: "",
-        deal: "",
-        instrument: "",
-        borrower: "",
-        ccy: "",
-        counterparty: "",
-        role: "",
-        committed: "",
-        funded: "",
-        unfunded: "",
-        docs: "",
-      }}
-    />
-  );
+const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
+  const transaction = await fetchTransactionById(id);
+  return <TransactionView transaction={transaction} />;
 };
 
 export default Page;

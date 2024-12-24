@@ -28,135 +28,134 @@ export function CardsSkeleton() {
   );
 }
 
-export default function DashboardSkeleton() {
+export function DealCardSkeleton() {
   return (
-    <>
-      <div
-        className={`${shimmer} relative mb-4 h-8 w-36 overflow-hidden rounded-md bg-grey-light`}
-      />
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <CardSkeleton />
-          <CardSkeleton />
-          <CardSkeleton />
-      </div>
-      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <CardSkeleton />
-          <CardSkeleton />
-          <CardSkeleton />
-      </div>
-    </>
-  );
-}
-
-export function TableRowSkeleton() {
-  return (
-    <tr className="w-full border-b border-grey-light last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg">
-      {/* Customer Name and Image */}
-      <td className="relative overflow-hidden whitespace-nowrap py-3 pl-6 pr-3">
-        <div className="flex items-center gap-3">
-          <div className="h-8 w-8 rounded-full bg-grey-light"></div>
-          <div className="h-6 w-24 rounded bg-grey-light"></div>
-        </div>
-      </td>
-      {/* Email */}
-      <td className="whitespace-nowrap px-3 py-3">
-        <div className="h-6 w-32 rounded bg-grey-light"></div>
-      </td>
-      {/* Amount */}
-      <td className="whitespace-nowrap px-3 py-3">
-        <div className="h-6 w-16 rounded bg-grey-light"></div>
-      </td>
-      {/* Date */}
-      <td className="whitespace-nowrap px-3 py-3">
-        <div className="h-6 w-16 rounded bg-grey-light"></div>
-      </td>
-      {/* Status */}
-      <td className="whitespace-nowrap px-3 py-3">
-        <div className="h-6 w-16 rounded bg-grey-light"></div>
-      </td>
-      {/* Actions */}
-      <td className="whitespace-nowrap py-3 pl-6 pr-3">
-        <div className="flex justify-end gap-3">
-          <div className="h-[38px] w-[38px] rounded bg-grey-light"></div>
-          <div className="h-[38px] w-[38px] rounded bg-grey-light"></div>
-        </div>
-      </td>
-    </tr>
-  );
-}
-
-export function InvoicesMobileSkeleton() {
-  return (
-    <div className="mb-2 w-full rounded-md bg-white p-4">
-      <div className="flex items-center justify-between border-b border-grey-light pb-8">
-        <div className="flex items-center">
-          <div className="mr-2 h-8 w-8 rounded-full bg-grey-light"></div>
-          <div className="h-6 w-16 rounded bg-grey-light"></div>
-        </div>
-        <div className="h-6 w-16 rounded bg-grey-light"></div>
-      </div>
-      <div className="flex w-full items-center justify-between pt-4">
-        <div>
-          <div className="h-6 w-16 rounded bg-grey-light"></div>
-          <div className="mt-2 h-6 w-24 rounded bg-grey-light"></div>
-        </div>
-        <div className="flex justify-end gap-2">
-          <div className="h-10 w-10 rounded bg-grey-light"></div>
-          <div className="h-10 w-10 rounded bg-grey-light"></div>
-        </div>
-      </div>
+    <div className="space-y-4 shadow-md rounded-medium p-2">
+      <div className="h-4 bg-gray-300 rounded w-3/4 animate-pulse"></div>
+      <div className="h-4 bg-gray-300 rounded w-1/2 animate-pulse"></div>
+      <div className="h-2 bg-gray-200 rounded-full w-full animate-pulse"></div>
+      <div className="h-4 bg-gray-300 rounded w-1/2 animate-pulse"></div>
     </div>
+  );
+}
+
+export function DealCardsSkeleton() {
+  return (
+    <div className="space-y-4">
+      <DealCardSkeleton />
+      <DealCardSkeleton />
+    </div>
+  );
+}
+
+export function CovenantsTrackingSkeleton() {
+  return (
+    <section className={"w-full"}>
+      <div className="h-6 bg-gray-300 rounded-medium w-1/4 mb-4 animate-pulse"></div>
+      <div className="grid grid-cols-3 gap-4">
+        <div className="p-4 bg-white rounded shadow space-y-2">
+          <div className="h-4 bg-gray-300 rounded w-1/2 animate-pulse"></div>
+          <div className="h-6 bg-gray-300 rounded w-1/4 animate-pulse"></div>
+          <div className="h-4 bg-gray-300 rounded w-1/3 animate-pulse"></div>
+        </div>
+        <div className="p-4 bg-white rounded shadow space-y-2">
+          <div className="h-4 bg-gray-300 rounded w-1/2 animate-pulse"></div>
+          <div className="h-6 bg-gray-300 rounded w-1/4 animate-pulse"></div>
+          <div className="h-4 bg-gray-300 rounded w-1/3 animate-pulse"></div>
+        </div>
+        <div className="p-4 bg-white rounded shadow space-y-2">
+          <div className="h-4 bg-gray-300 rounded w-1/2 animate-pulse"></div>
+          <div className="h-6 bg-gray-300 rounded w-1/4 animate-pulse"></div>
+          <div className="h-4 bg-gray-300 rounded w-1/3 animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function UpcomingPaymentsSkeleton() {
+  return (
+    <section>
+      <div className="h-6 bg-gray-300 rounded-medium w-1/4 mb-4 animate-pulse"></div>
+      <div className="flex">
+        <div className="w-3/4 space-y-4">
+          <div className="space-y-2 shadow-md rounded-medium bg-white p-4">
+            <div className="h-4 bg-gray-300 rounded w-1/2 animate-pulse"></div>
+            <div className="h-4 bg-gray-300 rounded w-1/4 animate-pulse"></div>
+            <div className="h-4 bg-gray-300 rounded w-1/3 animate-pulse"></div>
+          </div>
+          <div className="space-y-2 shadow-md  rounded-medium bg-white p-4">
+            <div className="h-4 bg-gray-300 rounded w-1/2 animate-pulse"></div>
+            <div className="h-4 bg-gray-300 rounded w-1/4 animate-pulse"></div>
+            <div className="h-4 bg-gray-300 rounded w-1/3 animate-pulse"></div>
+          </div>
+        </div>
+        <div className="w-1/4 bg-white rounded-medium shadow p-4 ml-4">
+          <div className="h-4 bg-gray-300 rounded w-full mb-4 animate-pulse"></div>
+          <div className="grid grid-cols-7 gap-2">
+            <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+            {/* Calendar Skeleton */}
+            <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+            <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
 export function TableSkeleton() {
   return (
-    <div className="mt-6 flow-root overflow-auto">
-      <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
-          <div className="md:hidden">
-            <InvoicesMobileSkeleton />
-            <InvoicesMobileSkeleton />
-            <InvoicesMobileSkeleton />
-            <InvoicesMobileSkeleton />
-            <InvoicesMobileSkeleton />
-            <InvoicesMobileSkeleton />
+    <section>
+      <div className="h-6 bg-gray-300 rounded-medium w-1/4 mb-4 animate-pulse"></div>
+      <div className="bg-white rounded shadow">
+        <div className="p-4">
+          <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+        </div>
+        <div className="p-4 space-y-4">
+          <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+          <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+export const SideNavSkeleton = () => (
+  <aside className="w-64 bg-white shadow-md">
+    <div className="p-4 border-b">
+      <div className="h-10 bg-gray-300 rounded-medium w-full animate-pulse"></div>
+    </div>
+    <div className="p-4">
+      {/* Skeleton for Deals List */}
+      <DealCardsSkeleton />
+    </div>
+  </aside>
+);
+
+export default function DashboardSkeleton() {
+  return (
+    <div className="flex h-screen bg-gray-100">
+      {/* Sidebar Skeleton */}
+      <SideNavSkeleton />
+      {/* Main Content Skeleton */}
+      <div className="flex-1 flex flex-col">
+        {/* Header Skeleton */}
+        <header className="bg-white p-5 flex justify-between items-center">
+          <div className="h-6 bg-gray-300 rounded-medium w-1/4 animate-pulse"></div>
+          <div className="flex space-x-4">
+            <div className="h-8 bg-gray-300 rounded-medium w-16 animate-pulse"></div>
+            <div className="h-8 bg-gray-300 rounded-medium w-16 animate-pulse"></div>
           </div>
-          <table className="hidden min-w-full text-gray-900 md:table">
-            <thead className="rounded-lg text-left text-sm font-normal">
-              <tr>
-                <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                  Customer
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Email
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Amount
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Date
-                </th>
-                <th scope="col" className="px-3 py-5 font-medium">
-                  Status
-                </th>
-                <th
-                  scope="col"
-                  className="relative pb-4 pl-3 pr-6 pt-2 sm:pr-6"
-                >
-                  <span className="sr-only">Edit</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody className="bg-white">
-              <TableRowSkeleton />
-              <TableRowSkeleton />
-              <TableRowSkeleton />
-              <TableRowSkeleton />
-              <TableRowSkeleton />
-              <TableRowSkeleton />
-            </tbody>
-          </table>
+        </header>
+
+        {/* Content Skeleton */}
+        <div className="flex-1 overflow-auto p-6 space-y-10">
+          {/* Covenants Tracking Skeleton */}
+          <CovenantsTrackingSkeleton />
+          {/* Upcoming Payments Skeleton */}
+          <UpcomingPaymentsSkeleton />
+          {/* Positions Table Skeleton */}
+          <TableSkeleton />
         </div>
       </div>
     </div>

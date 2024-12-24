@@ -3,27 +3,23 @@ import { useState } from "react";
 import React from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import { PaymentDropdownItems } from "@/app/lib/data";
-import { handlePaymentDropdownClick } from "@/app/lib/actions";
-import { PaymentTypes, UpcomingPaymentsType } from "@/app/lib/definitions";
+import { UpcomingPaymentsType } from "@/app/lib/definitions";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function UpcomingPaymentsList({
   upcomingPayments,
-  dealName,
-  dealView,
-  dealPaymentType,
 }: {
   upcomingPayments: UpcomingPaymentsType;
-  dealName: string;
-  dealView: string;
-  dealPaymentType: PaymentTypes;
 }) {
   const path = usePathname();
   const router = useRouter();
-
   const [activeTab, setActiveTab] = useState<"credits" | "debits">("debits");
 
+  console.log(path);
+
   const payments = upcomingPayments?.[activeTab]; // Dynamically get active payments
+
+  console.log(path.includes(payments[0].transactionId));
   return (
     <>
       <div className="flex">
@@ -49,10 +45,10 @@ export default function UpcomingPaymentsList({
         </button>
       </div>
       <div className="mt-4 space-y-4">
-        {payments?.map((payment, index: number) => (
+        {payments?.map((payment) => (
           <div
-            key={index}
-            className="px-4 py-2 bg-white rounded-medium border shadow-md border-[#E3E3E3]"
+            key={payment.id}
+            className={`${path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-[#E3E3E3]`}
           >
             <div className="flex justify-between">
               <div>

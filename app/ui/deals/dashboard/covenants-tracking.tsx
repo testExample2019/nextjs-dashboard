@@ -1,20 +1,18 @@
-import { CovenantMetricType } from "@/app/lib/definitions";
+import { CovenantMetricType, DealParamsType } from "@/app/lib/definitions";
 import { fetchCovenantsTrackingData } from "@/app/lib/data";
+import React from "react";
 
-export default async function CovenantsCardWrapper({
+const CovenantsCardWrapper: React.FC<DealParamsType> = async ({
   dealName,
   dealView,
-}: {
-  dealName: string;
-  dealView: string;
-}) {
+}) => {
   const covenantsTrackingData: CovenantMetricType[] =
     await fetchCovenantsTrackingData(dealName, dealView);
   return (
     <>
       {covenantsTrackingData?.map(
         ({ title, value, change, prevPeriodValue, status }, key) => (
-          <Card
+          <CovenantsCard
             key={key}
             title={title}
             value={value}
@@ -26,9 +24,11 @@ export default async function CovenantsCardWrapper({
       )}
     </>
   );
-}
+};
 
-export function Card({
+export default CovenantsCardWrapper;
+
+function CovenantsCard({
   title,
   value,
   change,
@@ -37,9 +37,7 @@ export function Card({
 }: CovenantMetricType) {
   return (
     <div className="flex-1 bg-white shadow-md rounded-lg p-4 border border-[#E3E3E3]">
-      <h3 className="text-grey text-sm font-semibold uppercase">
-        {title}
-      </h3>
+      <h3 className="text-grey text-sm font-semibold uppercase">{title}</h3>
       <div className={"flex justify-between items-end"}>
         <div className="flex justify-between items-center">
           <div className="mt-2 flex items-center gap-2">

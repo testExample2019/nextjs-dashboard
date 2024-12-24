@@ -2,17 +2,16 @@ import React from "react";
 import { TransactionType } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
 
-const TransactionView = ({ transaction }: { transaction?: TransactionType }) => {
+const TransactionView = ({
+  transaction,
+}: {
+  transaction?: TransactionType;
+}) => {
   if (!transaction) {
     notFound();
   }
   return (
     <div className="bg-white rounded-lg p-6 h-full">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-semibold">View Transaction</h2>
-        <button className="text-gray-500 hover:text-gray-800">&times;</button>
-      </div>
-
       <div className="flex justify-between items-center border-b pb-4 mb-4">
         <div>
           <h3 className="text-base font-medium">Transaction</h3>

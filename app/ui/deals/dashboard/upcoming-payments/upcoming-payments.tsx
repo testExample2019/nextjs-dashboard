@@ -1,29 +1,19 @@
 import React from "react";
 import { fetchUpcomingPaymentsData } from "@/app/lib/data";
 import UpcomingPaymentsList from "@/app/ui/deals/dashboard/upcoming-payments/upcoming-payments-list";
-import { PaymentTypes } from "@/app/lib/definitions";
+import { DealParamsType } from "@/app/lib/definitions";
 
-export default async function UpcomingPayments({
+const UpcomingPayments: React.FC<DealParamsType> = async ({
   dealName,
   dealView,
-  dealPaymentType = PaymentTypes.Debits,
-}: {
-  dealName: string;
-  dealView: string;
-  dealPaymentType: PaymentTypes;
-}) {
+}) => {
   const upcomingPayments = await fetchUpcomingPaymentsData(dealName, dealView);
 
   return (
     <div className="rounded-lg shadow-md flex justify-between">
       <div className="p-4 w-full bg-grey-o">
         {/* Tabs */}
-        <UpcomingPaymentsList
-          upcomingPayments={upcomingPayments}
-          dealName={dealName}
-          dealView={dealView}
-          dealPaymentType={dealPaymentType}
-        />
+        <UpcomingPaymentsList upcomingPayments={upcomingPayments} />
       </div>
 
       {/* Calendar */}
@@ -87,4 +77,6 @@ export default async function UpcomingPayments({
       </div>
     </div>
   );
-}
+};
+
+export default UpcomingPayments;

@@ -11,18 +11,8 @@ const handleDealView = (dealName: string, dealView: string) => {
     ? deals.filter((deal) => deal.name.toLowerCase() === dealName)[0]?.lender
     : deals.filter((deal) => deal.name.toLowerCase() === dealName)[0]?.borrower;
 };
-export async function fetchDeals() {
-  try {
-    return deals;
-  } catch (error) {
-    console.error("Database Error:", error);
-    throw new Error("Failed to fetch deals data.");
-  }
-}
 
 export async function fetchDealsNavData(): Promise<DealNavType[]> {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
   try {
     return deals.map((deal) => ({
       id: deal.id,

@@ -38,10 +38,10 @@ export type PaymentType = {
   dueDate: string;
   status: string;
   total: string;
+  transactionId: string;
   prepaymentFee?: string;
   interest?: string;
   principalRepayment?: string;
-  transactionId?: string;
 };
 
 export type TransactionType = {
@@ -79,3 +79,8 @@ export enum PaymentTypes {
   Debits = "debits",
   Credits = "credits",
 }
+
+export type DealParamsType = {
+  dealName: string;
+  dealView: string;
+};
