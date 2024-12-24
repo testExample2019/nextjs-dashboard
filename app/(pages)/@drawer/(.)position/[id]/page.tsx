@@ -1,20 +1,20 @@
 import React from "react";
 import ModalBackdrop from "@/app/ui/components/modal-backdrop";
 import TransactionView from "@/app/ui/components/transaction-view";
-import { fetchTransactionById } from "@/app/lib/data";
+import { fetchPositionById } from "@/app/lib/data";
 
-export default async function TransactionDrawer({
+export default async function PositionDrawer({
   params,
 }: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const transaction = await fetchTransactionById(id);
+  const position = await fetchPositionById(id);
   return (
     <>
       <ModalBackdrop />
       <div className={"fixed top-0 mr-auto right-0 h-full w-[30vw] bg-white"}>
-        <TransactionView transaction={transaction} />
+        <TransactionView transaction={position} />
       </div>
     </>
   );

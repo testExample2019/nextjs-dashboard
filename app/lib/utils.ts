@@ -11,3 +11,7 @@ export const replaceViewItemInURL = (url: string, newName: string) => {
 export const replaceDealItemInURL = (url: string, newName: string) => {
   return replaceItemInURL(url, newName, 2);
 };
+
+export const replacePageItemInURL = (url: string, newName: string) => {
+  return replaceItemInURL(url, newName, 3);
+};

@@ -37,10 +37,11 @@ export type PaymentType = {
   id: string;
   dueDate: string;
   status: string;
+  total: string;
   prepaymentFee?: string;
   interest?: string;
   principalRepayment?: string;
-  total: string;
+  transactionId?: string;
 };
 
 export type TransactionType = {

@@ -23,7 +23,7 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
             {headers.map((header, index) => (
               <th
                 key={index}
-                className="px-6 py-3 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider"
+                className="p-4 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider"
               >
                 {header}
               </th>
@@ -41,7 +41,7 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
               {headers.map((header, cellIndex) => (
                 <td
                   key={cellIndex}
-                  className="px-6 py-4 text-sm text-grey-primary whitespace-nowrap"
+                  className="p-4 text-sm text-grey-primary whitespace-nowrap"
                 >
                   <Link href={`/${type}/${row.id}`}>{row[header]}</Link>
                 </td>

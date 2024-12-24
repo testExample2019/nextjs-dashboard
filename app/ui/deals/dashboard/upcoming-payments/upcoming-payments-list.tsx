@@ -90,7 +90,9 @@ export default function UpcomingPaymentsList({
                     </button>
                   }
                   dropdownItems={PaymentDropdownItems}
-                  onAction={() => router.push(`/transaction/${payment.id}`)}
+                  onAction={() =>
+                    router.push(`/transaction/${payment.transactionId}`)
+                  }
                 />
               </div>
             </div>

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { deals } from "@/app/lib/placeholder-data";
 import { usePathname } from "next/navigation";
+import { replacePageItemInURL } from "@/app/lib/utils";
 
 export default function NavBar() {
   const path = usePathname();
@@ -95,17 +96,17 @@ export default function NavBar() {
               {
                 icon: "🏠",
                 label: "Dashboard",
-                href: `/deals/dashboard/${deals[0].name.toLowerCase()}/lender`,
+                href: `${replacePageItemInURL(path, "dashboard")}`,
               },
               {
                 icon: "🔄",
                 label: "Transactions",
-                href: `/deals/transactions/${deals[0].name.toLowerCase()}/lender`,
+                href: `${replacePageItemInURL(path, "transactions")}`,
               },
               {
                 icon: "📋",
                 label: "Positions",
-                href: `/deals/positions/${deals[0].name.toLowerCase()}/lender`,
+                href: `${replacePageItemInURL(path, "positions")}`,
               },
               { icon: "⚙️", label: "Settings", href: "" },
               { icon: "🔒", label: "Lock", href: "" },

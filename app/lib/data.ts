@@ -87,10 +87,24 @@ export async function fetchTransactionById(transactionId: string) {
         ...(deal.lender?.transactions || []),
         ...(deal.borrower?.transactions || []),
       ])
-      .find((txn) => txn.id === transactionId)
+      .find((txn) => txn.id === transactionId);
   } catch (error) {
     console.error("Database Error:", error);
-    throw new Error("Failed to fetch CovenantsTracking data.");
+    throw new Error("Failed to fetch TransactionId data.");
+  }
+}
+
+export async function fetchPositionById(positionId: string) {
+  try {
+    return deals
+      .flatMap((deal) => [
+        ...(deal.lender?.positions || []),
+        ...(deal.borrower?.positions || []),
+      ])
+      .find((txn) => txn.id === positionId);
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch Positions data.");
   }
 }
 

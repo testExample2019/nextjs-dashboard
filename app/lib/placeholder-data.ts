@@ -2,7 +2,7 @@ import { DealType } from "@/app/lib/definitions";
 
 const deals: DealType[] = [
   {
-    id: '1',
+    id: "1",
     name: "Soultrain",
     totalCommitment: "$2,000,000",
     funded: "A$540,000",
@@ -39,6 +39,7 @@ const deals: DealType[] = [
             status: "10 days overdue",
             prepaymentFee: "$1,601.94",
             total: "$1,901.94",
+            transactionId: "transaction-1",
           },
           {
             id: "credit-2",
@@ -47,6 +48,7 @@ const deals: DealType[] = [
             interest: "$6,997.51",
             principalRepayment: "$50,000.00",
             total: "$56,978.00",
+            transactionId: "transaction-2",
           },
         ],
         debits: [
@@ -56,6 +58,7 @@ const deals: DealType[] = [
             status: "5 days overdue",
             prepaymentFee: "$1,601.94",
             total: "$1,601.94",
+            transactionId: "transaction-1",
           },
           {
             id: "debit-2",
@@ -64,6 +67,7 @@ const deals: DealType[] = [
             interest: "$16,997.51",
             principalRepayment: "$56,000.00",
             total: "$76,978.00",
+            transactionId: "transaction-2",
           },
         ],
       },
@@ -97,7 +101,7 @@ const deals: DealType[] = [
       ],
       transactions: [
         {
-          id: "transaction-12",
+          id: "transaction-1",
           deal: "Soultrain",
           instrument: "Soultrain Revolver",
           borrower: "Soultrain",
@@ -152,28 +156,31 @@ const deals: DealType[] = [
       upcomingPayments: {
         credits: [
           {
-            id: "transaction-33",
+            id: "credit-33",
             dueDate: "2024-01-22",
             status: "2 days overdue",
             prepaymentFee: "$1,500.00",
             total: "$1,500.00",
+            transactionId: "transaction-3",
           },
         ],
         debits: [
           {
-            id: "transaction-32",
+            id: "debit-32",
             dueDate: "2024-01-18",
             status: "5 days overdue",
             prepaymentFee: "$1,601.94",
             total: "$1,601.94",
+            transactionId: "transaction-4",
           },
           {
-            id: "transaction-4",
+            id: "debit-4",
             dueDate: "2024-01-24",
             status: "in 10 days",
             interest: "$6,997.51",
             principalRepayment: "$50,000.00",
             total: "$56,978.00",
+            transactionId: "transaction-4",
           },
         ],
       },
@@ -220,7 +227,7 @@ const deals: DealType[] = [
           docs: "$0.0",
         },
         {
-          id: "transaction-42",
+          id: "transaction-4",
           deal: "Soultrain",
           instrument: "Soultrain Revolver",
           borrower: "Soultrain",
@@ -237,7 +244,7 @@ const deals: DealType[] = [
     },
   },
   {
-    id: '2',
+    id: "2",
     name: "abcCapital",
     totalCommitment: "$2,500,000",
     funded: "A$680,000",
@@ -269,36 +276,40 @@ const deals: DealType[] = [
       upcomingPayments: {
         credits: [
           {
-            id: "transaction-43",
+            id: "credit-43",
             dueDate: "2024-01-20",
             status: "3 days overdue",
             prepaymentFee: "$2,000.00",
             total: "$2,000.00",
+            transactionId: "transaction-5",
           },
           {
-            id: "transaction-51",
+            id: "credit-51",
             dueDate: "2024-01-28",
             status: "in 14 days",
             interest: "$7,200.00",
             principalRepayment: "$60,000.00",
             total: "$67,200.00",
+            transactionId: "transaction-5",
           },
         ],
         debits: [
           {
-            id: "transaction-52",
+            id: "debit-52",
             dueDate: "2024-01-18",
             status: "5 days overdue",
             prepaymentFee: "$1,601.94",
             total: "$1,601.94",
+            transactionId: "transaction-6",
           },
           {
-            id: "transaction-6",
+            id: "debit-6",
             dueDate: "2024-01-24",
             status: "in 10 days",
             interest: "$6,997.51",
             principalRepayment: "$50,000.00",
             total: "$56,978.00",
+            transactionId: "transaction-6",
           },
         ],
       },
@@ -345,7 +356,7 @@ const deals: DealType[] = [
           docs: "$0.0",
         },
         {
-          id: "transaction-61",
+          id: "transaction-6",
           deal: "ABC Capital",
           instrument: "Capital Loan",
           borrower: "ABC Corp",
@@ -387,28 +398,31 @@ const deals: DealType[] = [
       upcomingPayments: {
         credits: [
           {
-            id: "transaction-6",
+            id: "credit-6",
             dueDate: "2024-01-25",
             status: "in 7 days",
             interest: "$6,500.00",
             total: "$6,500.00",
+            transactionId: "transaction-7",
           },
         ],
         debits: [
           {
-            id: "transaction-7",
+            id: "debit-7",
             dueDate: "2024-01-18",
             status: "5 days overdue",
             prepaymentFee: "$1,601.94",
             total: "$1,601.94",
+            transactionId: "transaction-7",
           },
           {
-            id: "transaction-8",
+            id: "debit-8",
             dueDate: "2024-01-24",
             status: "in 10 days",
             interest: "$6,997.51",
             principalRepayment: "$50,000.00",
             total: "$56,978.00",
+            transactionId: "transaction-8",
           },
         ],
       },
