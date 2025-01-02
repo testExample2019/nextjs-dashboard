@@ -114,7 +114,7 @@ export default function NavBar() {
               <Link
                 href={item.href}
                 key={idx}
-                className={`${path.includes(item.label.toLowerCase()) ? "border-action-primary text-action-primary" : ""} w-10 h-10 p-2 bg-transparent border rounded-full shadow hover:shadow-md`}
+                className={`${path.includes(item.label.toLowerCase()) ? "border-action-primary text-action-primary" : ""}  inline-flex items-center justify-center w-10 h-10 p-2 bg-transparent border rounded-full shadow hover:shadow-md`}
                 aria-label={item.label}
               >
                 {item.icon}
