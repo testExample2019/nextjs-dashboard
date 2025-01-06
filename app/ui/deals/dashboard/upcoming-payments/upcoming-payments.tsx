@@ -10,14 +10,14 @@ const UpcomingPayments: React.FC<DealParamsType> = async ({
   const upcomingPayments = await fetchUpcomingPaymentsData(dealName, dealView);
 
   return (
-    <div className="rounded-lg shadow-md flex justify-between">
+    <div className="rounded-lg shadow-md flex flex-col lg:flex-row justify-between">
       <div className="p-4 w-full bg-grey-o">
         {/* Tabs */}
         <UpcomingPaymentsList upcomingPayments={upcomingPayments} />
       </div>
 
       {/* Calendar */}
-      <div className="w-[40%]">
+      <div className="w-full lg:w-[40%]">
         <div className="bg-white rounded-lg border border-grey-border p-4 h-full">
           <div className="flex justify-between items-center mb-4">
             <p className="text-sm font-semibold text-action-primary">

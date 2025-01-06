@@ -49,9 +49,7 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
           <h3 className={"text-grey-primary text-base font-semibold"}>
             Positions
           </h3>
-          <div id={"tour1-step6"}>
-            <PositionsTable dealName={dealName} dealView={dealView} />
-          </div>
+          <PositionsTable dealName={dealName} dealView={dealView} />
         </Suspense>
       </div>
     </Suspense>

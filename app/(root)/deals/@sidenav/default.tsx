@@ -7,10 +7,10 @@ import DealsSideNav from "@/app/ui/deals/side-nav";
 const SideNavPage = async () => {
   const dealsNavData = await fetchDealsNavData();
   return (
-    <aside className={"border-r-1 border-grey-border"}>
+    <aside className={"border-r-1 border-grey-border h-full"}>
       <div
         className={
-          "flex justify-between items-center h-[50px] border-b-1 border-grey-border py-2 px-4 "
+          "flex justify-between items-center h-[50px] border-b-1 border-grey-border py-2 px-4"
         }
       >
         <h3 className={"text-18 font-semibold text-grey-primary"}>Deals</h3>
@@ -44,7 +44,7 @@ const SideNavPage = async () => {
         ></ButtonDropdown>
       </div>
 
-      <div className={"py-2 px-4"} id={"tour1-step2"}>
+      <div className={"py-2 px-4 sticky top-0"} id={"tour1-step2"}>
         <h4 className={"text-sm text-grey-light mb-2"}>
           Select a deal to filter the information on your dashboard:
         </h4>

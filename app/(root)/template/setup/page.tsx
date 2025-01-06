@@ -66,7 +66,7 @@ const LoanSetupPage = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-center md:justify-between min-h-screen bg-gray-50 p-8 gap-8">
+    <div className="flex flex-col lg:flex-row justify-center lg:justify-between min-h-screen bg-gray-50 p-8 gap-8">
       {/* Form Container */}
       <div className="w-full max-w-5xl p-8 bg-white rounded-lg shadow-lg border border-gray-200">
         {/* Header */}
@@ -295,7 +295,7 @@ const LoanSetupPage = () => {
         </div>
       </div>
       {/* Table */}
-      <div className="w-1/3 max-w-5xl p-8 bg-white rounded-lg shadow-lg border border-gray-200">
+      <div className="w-full lg:w-1/3 max-w-5xl p-8 bg-white rounded-lg shadow-lg border border-gray-200 overflow-auto">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">
           Preview transactions schedule
         </h2>

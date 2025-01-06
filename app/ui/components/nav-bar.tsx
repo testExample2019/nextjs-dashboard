@@ -48,7 +48,7 @@ export default function NavBar() {
             Direct<span className="font-semibold">Lend</span>
           </span>
         </Link>
-        <div className="flex items-center justify-between gap-4">
+        <div className="hidden items-center justify-between gap-4 lg:flex">
           {/* Left Section: Filter Dropdown */}
           <div className="flex items-center space-x-4">
             {/* Filter Dropdown */}
@@ -108,7 +108,7 @@ export default function NavBar() {
                 label: "Positions",
                 href: `${replacePageItemInURL(path, "positions")}`,
               },
-              { icon: "⚙️", label: "Settings", href: "" },
+              { icon: "⚙️", label: "Settings", href: "", id: "tour1-step7" },
               { icon: "🔒", label: "Lock", href: "" },
             ].map((item, idx) => (
               <Link
