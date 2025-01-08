@@ -70,6 +70,12 @@ export enum PaymentActions {
   Contact = "CONTACT",
 }
 
+export enum PaymentApproveActions {
+  Approve = "APPROVE",
+  ApproveAndPay = "APPROVE_AND_PAY",
+  Reject = "REJECT",
+}
+
 export enum DealViews {
   Lender = "lender",
   Borrower = "borrower",

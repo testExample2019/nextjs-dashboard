@@ -9,7 +9,7 @@ export default function PagesLayout(props: {
     <>
       <div className="flex flex-col h-screen max-w-screen-2xl m-auto">
         <NavBar />
-        <main>{props.children}</main>
+        <main className="h-full">{props.children}</main>
       </div>
       {props.drawer}
     </>

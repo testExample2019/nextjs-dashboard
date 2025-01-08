@@ -52,11 +52,13 @@ export const ButtonDropdown = <T,>({
         aria-orientation="vertical"
         aria-labelledby="menu-button"
       >
-        <div className="py-1" role="none">
+        <div>
           {dropdownItems.map(({ id, label, actionType }) => (
             <button
               key={id}
-              className="block px-4 py-2 text-sm text-grey-primary capitalize text-nowrap"
+              className={`flex w-full px-4 py-2 text-sm  capitalize text-nowrap hover:bg-grey-lighter ${
+                label.includes("Reject") ? "text-red" : "text-grey-primary"
+              }`}
               role="menuitem"
               id="menu-item-0"
               onClick={() => {

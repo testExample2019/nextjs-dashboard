@@ -4,6 +4,7 @@ import {
   DealsActions,
   DealViews,
   PaymentActions,
+  PaymentApproveActions,
 } from "@/app/lib/definitions";
 
 const handleDealView = (dealName: string, dealView: string) => {
@@ -104,8 +105,22 @@ export const dealsDropdownItems = [
   { id: 3, label: "Use Template", actionType: DealsActions.Use },
 ];
 
-export const PaymentDropdownItems = [
+export const PaymentOptionsDropdownItems = [
   { id: 1, label: "View Notice", actionType: PaymentActions.View },
   { id: 2, label: "Confirm Bank Account", actionType: PaymentActions.Confirm },
   { id: 3, label: "Contact", actionType: PaymentActions.Contact },
+];
+
+export const PaymentApproveDropdownItems = [
+  {
+    id: 1,
+    label: "Approve transaction",
+    actionType: PaymentApproveActions.Approve,
+  },
+  {
+    id: 2,
+    label: "Approve and Pay",
+    actionType: PaymentApproveActions.ApproveAndPay,
+  },
+  { id: 3, label: "Reject", actionType: PaymentApproveActions.Reject },
 ];

@@ -319,9 +319,7 @@ const LoanSetupPage = () => {
                 <td className="py-2 px-3 text-sm text-gray-800">
                   {txn.transaction}
                 </td>
-                <td className="py-2 px-3 text-sm text-gray-800">
-                  {txn.date}
-                </td>
+                <td className="py-2 px-3 text-sm text-gray-800">{txn.date}</td>
                 <td className="py-2 px-3 text-sm text-gray-800">
                   {txn.amount}
                 </td>

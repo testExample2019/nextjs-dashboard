@@ -13,7 +13,7 @@ const config: Config = {
         "action-primary": "#4A90E2",
         "grey-primary": "#3B414C",
         "grey-secondary": "#797275",
-        "grey-border": "#BDC6C7",
+        "grey-border": "#E3E3E3",
         "grey-light": "#ABB8C3",
         "grey-lighter": "#F1F1F1",
         grey: "#909090",

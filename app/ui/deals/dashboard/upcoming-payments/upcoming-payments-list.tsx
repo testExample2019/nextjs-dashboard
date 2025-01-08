@@ -2,10 +2,16 @@
 import { useState } from "react";
 import React from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
-import { dealsDropdownItems, PaymentDropdownItems } from "@/app/lib/data";
-import { UpcomingPaymentsType } from "@/app/lib/definitions";
+import {
+  PaymentApproveDropdownItems,
+  PaymentOptionsDropdownItems,
+} from "@/app/lib/data";
+import {
+  PaymentApproveActions,
+  UpcomingPaymentsType,
+} from "@/app/lib/definitions";
 import { usePathname, useRouter } from "next/navigation";
-import { handleDealDropdownAction } from "@/app/lib/actions";
+import { useToast } from "@/app/lib/contexts/toast-context";
 
 export default function UpcomingPaymentsList({
   upcomingPayments,
@@ -16,6 +22,13 @@ export default function UpcomingPaymentsList({
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<"credits" | "debits">("debits");
   const payments = upcomingPayments?.[activeTab];
+  const { showToast } = useToast();
+  const handleShowSuccessToast = () => {
+    showToast("Approved!", "success");
+  };
+  const handleShowErrorToast = () => {
+    showToast("Rejected!", "error");
+  };
 
   return (
     <>
@@ -82,7 +95,7 @@ export default function UpcomingPaymentsList({
                       </svg>
                     </button>
                   }
-                  dropdownItems={PaymentDropdownItems}
+                  dropdownItems={PaymentOptionsDropdownItems}
                   onAction={() =>
                     router.push(`/transaction/${payment.transactionId}`)
                   }
@@ -90,7 +103,7 @@ export default function UpcomingPaymentsList({
               </div>
             </div>
             {/* Additional details if available */}
-            <p className="text-sm text-grey flex justify-start gap-4 items-center">
+            <div className="text-sm text-grey flex justify-start gap-4 items-center">
               {payment.prepaymentFee && (
                 <span className={"uppercase"}>
                   Prepayment Fee:{" "}
@@ -141,11 +154,20 @@ export default function UpcomingPaymentsList({
                       </svg>
                     </button>
                   }
-                  dropdownItems={dealsDropdownItems}
-                  onAction={handleDealDropdownAction}
+                  dropdownItems={PaymentApproveDropdownItems}
+                  onAction={(actionType: string) => {
+                    if (
+                      actionType === PaymentApproveActions.Approve ||
+                      actionType === PaymentApproveActions.ApproveAndPay
+                    ) {
+                      handleShowSuccessToast();
+                    } else {
+                      handleShowErrorToast();
+                    }
+                  }}
                 />
               )}
-            </p>
+            </div>
           </div>
         ))}
       </div>
