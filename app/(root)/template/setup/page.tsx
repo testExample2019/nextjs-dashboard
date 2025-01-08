@@ -3,10 +3,16 @@
 import { useState } from "react";
 import { redirect, useRouter } from "next/navigation";
 import { deals } from "@/app/lib/placeholder-data";
+import { useEffect } from "react";
+import { useNextStep } from "nextstepjs";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
+  const { setCurrentStep } = useNextStep();
   const router = useRouter();
+  useEffect(() => {
+    setCurrentStep(2)
+  }, []);
 
   // Pre-populated values
   const initialData = {
@@ -70,7 +76,7 @@ const LoanSetupPage = () => {
       {/* Form Container */}
       <div className="w-full max-w-5xl p-8 bg-white rounded-lg shadow-lg border border-gray-200">
         {/* Header */}
-        <div className="flex justify-between items-center mb-6">
+        <div  className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-semibold text-gray-800">
             New Loan Instrument Setup
           </h1>
@@ -90,189 +96,192 @@ const LoanSetupPage = () => {
           </div>
         </div>
 
-        {/* Loan Details Form */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              placeholder="New Fixed Loan"
-              className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Loan Type
-            </label>
-            <select
-              name="loanType"
-              value={formData.loanType}
-              onChange={handleInputChange}
-              className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option>Term Loan</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Loan Amount
-            </label>
-            <input
-              type="text"
-              name="loanAmount"
-              value={formData.loanAmount}
-              onChange={handleInputChange}
-              className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Issue Date
-            </label>
-            <input
-              type="date"
-              name="issueDate"
-              value={formData.issueDate}
-              onChange={handleInputChange}
-              className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Maturity Date
-            </label>
-            <input
-              type="date"
-              name="maturityDate"
-              value={formData.maturityDate}
-              onChange={handleInputChange}
-              className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Deal
-            </label>
-            <select
-              name="deal"
-              value={formData.deal}
-              onChange={handleInputChange}
-              className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option>Soultrain Deal</option>
-            </select>
-          </div>
-        </div>
-
-        {/* Borrower and Lender Details */}
-        <div className="mt-6">
-          <h2 className="text-lg font-semibold text-gray-800">
-            Borrower & Lender
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div id={"tour1-step3"}>
+          {/* Loan Details Form */}
+          <div  className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Borrower
-              </label>
-              <select
-                name="borrower"
-                value={formData.borrower}
-                onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-              >
-                <option>Soultrain Music Awards</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Lender
+                Name
               </label>
               <input
                 type="text"
-                name="lender"
-                value={formData.lender}
+                name="name"
+                value={formData.name}
                 onChange={handleInputChange}
+                placeholder="New Fixed Loan"
                 className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
-          </div>
-        </div>
-
-        {/* Rate and Payment Details */}
-        <div className="mt-6">
-          <h2 className="text-lg font-semibold text-gray-800">
-            Rate and Payment Details
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Rate Type
+                Loan Type
               </label>
               <select
-                name="rateType"
-                value={formData.rateType}
+                name="loanType"
+                value={formData.loanType}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
               >
-                <option>Fixed</option>
+                <option>Term Loan</option>
               </select>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Annual Rate
+                Loan Amount
               </label>
               <input
                 type="text"
-                name="annualRate"
-                value={formData.annualRate}
+                name="loanAmount"
+                value={formData.loanAmount}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Paid
+                Issue Date
               </label>
-              <select
-                name="paid"
-                value={formData.paid}
+              <input
+                type="date"
+                name="issueDate"
+                value={formData.issueDate}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-              >
-                <option>Monthly</option>
-              </select>
+              />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Day Count
+                Maturity Date
+              </label>
+              <input
+                type="date"
+                name="maturityDate"
+                value={formData.maturityDate}
+                onChange={handleInputChange}
+                className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                Deal
               </label>
               <select
-                name="dayCount"
-                value={formData.dayCount}
+                name="deal"
+                value={formData.deal}
                 onChange={handleInputChange}
                 className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
               >
-                <option>ACT/365</option>
+                <option>Soultrain Deal</option>
               </select>
+            </div>
+          </div>
+
+          {/* Borrower and Lender Details */}
+          <div className="mt-6">
+            <h2 className="text-lg font-semibold text-gray-800">
+              Borrower & Lender
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Borrower
+                </label>
+                <select
+                  name="borrower"
+                  value={formData.borrower}
+                  onChange={handleInputChange}
+                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+                >
+                  <option>Soultrain Music Awards</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Lender
+                </label>
+                <input
+                  type="text"
+                  name="lender"
+                  value={formData.lender}
+                  onChange={handleInputChange}
+                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Rate and Payment Details */}
+          <div className="mt-6">
+            <h2 className="text-lg font-semibold text-gray-800">
+              Rate and Payment Details
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Rate Type
+                </label>
+                <select
+                  name="rateType"
+                  value={formData.rateType}
+                  onChange={handleInputChange}
+                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+                >
+                  <option>Fixed</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Annual Rate
+                </label>
+                <input
+                  type="text"
+                  name="annualRate"
+                  value={formData.annualRate}
+                  onChange={handleInputChange}
+                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Paid
+                </label>
+                <select
+                  name="paid"
+                  value={formData.paid}
+                  onChange={handleInputChange}
+                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+                >
+                  <option>Monthly</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700">
+                  Day Count
+                </label>
+                <select
+                  name="dayCount"
+                  value={formData.dayCount}
+                  onChange={handleInputChange}
+                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+                >
+                  <option>ACT/365</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {/* Documentation */}
+          <div className="mt-6">
+            <h2 className="text-lg font-semibold text-gray-800">Documentation</h2>
+            <div className="mt-2 border-dashed border-2 border-gray-300 rounded-lg p-4 flex flex-col items-center">
+              <p className="text-sm text-gray-500">Drag & Drop files here</p>
+              <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md">
+                Browse Files
+              </button>
             </div>
           </div>
         </div>
 
-        {/* Documentation */}
-        <div className="mt-6">
-          <h2 className="text-lg font-semibold text-gray-800">Documentation</h2>
-          <div className="mt-2 border-dashed border-2 border-gray-300 rounded-lg p-4 flex flex-col items-center">
-            <p className="text-sm text-gray-500">Drag & Drop files here</p>
-            <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md">
-              Browse Files
-            </button>
-          </div>
-        </div>
 
         {/* Action Buttons */}
         <div className="flex justify-end mt-6 space-x-4">
@@ -283,6 +292,7 @@ const LoanSetupPage = () => {
             Cancel
           </button>
           <button
+            id={"tour1-step4"}
             onClick={() =>
               redirect(
                 `/deals/dashboard/${deals[0].name.toLowerCase()}/lender/`,

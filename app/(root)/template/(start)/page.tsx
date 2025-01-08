@@ -1,8 +1,15 @@
 "use client";
 
 import { redirect } from "next/navigation";
+import { useNextStep } from "nextstepjs";
+import { useEffect } from "react";
 
 const LoanTemplatePage = () => {
+  const { startNextStep } = useNextStep();
+  useEffect(() => {
+    startNextStep("mainTour");
+  }, []);
+
   const templates = [
     {
       title: "Fixed",
@@ -92,8 +99,9 @@ const LoanTemplatePage = () => {
           {templates.map((template, index) => (
             <button
               key={index}
+              id={`${index === 0 ? "tour1-step2" : ""}`}
               onClick={() => redirect(`/template/setup`)}
-              className="flex items-center justify-center py-4 px-6 border border-[#E3E3E3] rounded-lg hover:shadow-md transition-shadow duration-200 cursor-pointer"
+              className="flex items-center justify-center py-4 px-6 border border-grey-border rounded-lg hover:shadow-md transition-shadow duration-200 cursor-pointer"
             >
               <div className="flex flex-col items-center">
                 <div className="w-16 h-16 flex items-center justify-center">

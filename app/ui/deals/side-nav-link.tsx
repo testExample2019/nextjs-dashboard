@@ -2,7 +2,6 @@
 import React from "react";
 import { DealNavType } from "@/app/lib/definitions";
 import { usePathname } from "next/navigation";
-import { useNextStep } from "nextstepjs";
 import Link from "next/link";
 import { replaceDealItemInURL } from "@/app/lib/utils";
 
@@ -14,13 +13,8 @@ export const SideNavLink = ({
 }: DealNavType) => {
   const path = usePathname();
   const href = replaceDealItemInURL(path, name.toLowerCase());
-  const { startNextStep } = useNextStep();
-  const handleStartTour = () => {
-    startNextStep("mainTour");
-  };
   return (
     <Link
-      onClick={handleStartTour}
       className={`${path.includes(name.toLowerCase()) ? "bg-[#EDF4FC]" : "bg-white"} max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
       href={href}
     >

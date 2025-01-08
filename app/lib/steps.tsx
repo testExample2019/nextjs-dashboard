@@ -18,7 +18,7 @@ export const steps: Tour[] = [
         ),
         side: "right",
         showControls: true,
-        showSkip: true,
+        showSkip: false,
       },
       {
         icon: <>🚀</>,
@@ -31,8 +31,8 @@ export const steps: Tour[] = [
         ),
         selector: "#tour1-step2",
         side: "top",
-        showControls: true,
-        showSkip: true,
+        showControls: false,
+        showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
       },
@@ -41,14 +41,13 @@ export const steps: Tour[] = [
         title: "Technologies used",
         content: (
           <p>
-            NextStep is built with Next.js, TailwindCSS, Framer Motion and Radix
-            UI.
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquid cupiditate dolore doloremque exercitationem ipsum labore mollitia non numquam odio perferendis quae quaerat quam quisquam quos reprehenderit, tempore totam.
           </p>
         ),
         selector: "#tour1-step3",
-        side: "top",
+        side: "right",
         showControls: true,
-        showSkip: true,
+        showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
       },
@@ -57,14 +56,13 @@ export const steps: Tour[] = [
         title: "Technologies used",
         content: (
           <p>
-            NextStep is built with Next.js, TailwindCSS, Framer Motion and Radix
-            UI.
+            Deals
           </p>
         ),
         selector: "#tour1-step4",
         side: "top",
-        showControls: true,
-        showSkip: true,
+        showControls: false,
+        showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
       },
@@ -80,7 +78,55 @@ export const steps: Tour[] = [
         selector: "#tour1-step5",
         side: "top",
         showControls: true,
-        showSkip: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <>🚀</>,
+        title: "Technologies used",
+        content: (
+          <p>
+            NextStep is built with Next.js, TailwindCSS, Framer Motion and Radix
+            UI.
+          </p>
+        ),
+        selector: "#tour1-step6",
+        side: "top",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <>🚀</>,
+        title: "Technologies used",
+        content: (
+          <p>
+            NextStep is built with Next.js, TailwindCSS, Framer Motion and Radix
+            UI.
+          </p>
+        ),
+        selector: "#tour1-step7",
+        side: "top",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <>🚀</>,
+        title: "Technologies used",
+        content: (
+          <p>
+            NextStep is built with Next.js, TailwindCSS, Framer Motion and Radix
+            UI.
+          </p>
+        ),
+        selector: "#tour1-step8",
+        side: "top",
+        showControls: true,
+        showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
       },

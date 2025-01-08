@@ -65,7 +65,8 @@ export enum DealsActions {
 }
 
 export enum PaymentActions {
-  View = "VIEW",
+  ViewNotice = "VIEW_NOTICE",
+  ViewTransaction = "VIEW_TRANSACTION",
   Confirm = "CONFIRM",
   Contact = "CONTACT",
 }

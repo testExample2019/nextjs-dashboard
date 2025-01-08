@@ -7,7 +7,7 @@ import { replacePageItemInURL } from "@/app/lib/utils";
 export default function NavBar() {
   const path = usePathname();
   return (
-    <header className={`flex flex-col border-b-1 border-[#E3E3E3]`}>
+    <header className={`flex flex-col border-b-1 border-grey-border`}>
       <nav
         className={
           "h-16 bg-grey-lighter text-grey-primary flex items-center justify-between px-4"
@@ -108,12 +108,13 @@ export default function NavBar() {
                 label: "Positions",
                 href: `${replacePageItemInURL(path, "positions")}`,
               },
-              { icon: "⚙️", label: "Settings", href: "", id: "tour1-step7" },
+              { icon: "⚙️", label: "Settings", href: "", id: "tour1-step8" },
               { icon: "🔒", label: "Lock", href: "" },
             ].map((item, idx) => (
               <Link
                 href={item.href}
                 key={idx}
+                id={item.id}
                 className={`${path.includes(item.label.toLowerCase()) ? "border-action-primary text-action-primary" : ""}  inline-flex items-center justify-center w-10 h-10 p-2 bg-transparent border rounded-full shadow hover:shadow-md`}
                 aria-label={item.label}
               >

@@ -3,15 +3,16 @@ import { useState } from "react";
 import React from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import {
-  PaymentApproveDropdownItems,
-  PaymentOptionsDropdownItems,
-} from "@/app/lib/data";
-import {
   PaymentApproveActions,
+  PaymentTypes,
   UpcomingPaymentsType,
 } from "@/app/lib/definitions";
 import { usePathname, useRouter } from "next/navigation";
 import { useToast } from "@/app/lib/contexts/toast-context";
+import {
+  PaymentApproveDropdownItems,
+  PaymentOptionsDropdownItems,
+} from "@/app/lib/constants";
 
 export default function UpcomingPaymentsList({
   upcomingPayments,
@@ -20,8 +21,10 @@ export default function UpcomingPaymentsList({
 }) {
   const path = usePathname();
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<"credits" | "debits">("debits");
-  const payments = upcomingPayments?.[activeTab];
+  const [activePaymentType, setActivePaymentType] = useState<PaymentTypes>(
+    PaymentTypes.Debits,
+  );
+  const payments = upcomingPayments?.[activePaymentType];
   const { showToast } = useToast();
   const handleShowSuccessToast = () => {
     showToast("Approved!", "success");
@@ -34,9 +37,9 @@ export default function UpcomingPaymentsList({
     <>
       <div className="flex">
         <button
-          onClick={() => setActiveTab("debits")}
+          onClick={() => setActivePaymentType(PaymentTypes.Debits)}
           className={`px-4 py-2 text-sm font-semibold ${
-            activeTab === "debits"
+            activePaymentType === PaymentTypes.Debits
               ? "border-b-2 border-action-primary text-action-primary"
               : "text-grey-secondary"
           }`}
@@ -44,9 +47,9 @@ export default function UpcomingPaymentsList({
           Debits
         </button>
         <button
-          onClick={() => setActiveTab("credits")}
+          onClick={() => setActivePaymentType(PaymentTypes.Credits)}
           className={`px-4 py-2 text-sm font-semibold ${
-            activeTab === "credits"
+            activePaymentType === PaymentTypes.Credits
               ? "border-b-2 border-action-primary text-action-primary"
               : "text-grey-secondary"
           }`}
@@ -55,13 +58,13 @@ export default function UpcomingPaymentsList({
         </button>
       </div>
       <div className="mt-4 space-y-4">
-        {payments?.map((payment) => (
+        {payments?.map((payment, index) => (
           <div
-            key={payment.id}
-            className={`${path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-[#E3E3E3]`}
+            key={payment.id + index}
+            className={`${path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-grey-border`}
           >
             <div className="flex justify-between">
-              <div>
+              <div className="flex gap-2">
                 <p className="text-sm font-medium text-gray-900">
                   {payment.dueDate}
                 </p>
@@ -128,7 +131,7 @@ export default function UpcomingPaymentsList({
                   </span>
                 </span>
               )}
-              {activeTab === "debits" && (
+              {activePaymentType === PaymentTypes.Debits && (
                 <ButtonDropdown
                   children={
                     <button

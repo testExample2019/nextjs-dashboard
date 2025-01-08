@@ -1,8 +1,9 @@
 import React from "react";
-import { dealsDropdownItems, fetchDealsNavData } from "@/app/lib/data";
+import { fetchDealsNavData } from "@/app/lib/data";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import { handleDealDropdownAction } from "@/app/lib/actions";
 import DealsSideNav from "@/app/ui/deals/side-nav";
+import { dealsDropdownItems } from "@/app/lib/constants";
 
 const SideNavPage = async () => {
   const dealsNavData = await fetchDealsNavData();
@@ -44,7 +45,7 @@ const SideNavPage = async () => {
         ></ButtonDropdown>
       </div>
 
-      <div className={"py-2 px-4 sticky top-0"} id={"tour1-step2"}>
+      <div className={"py-2 px-4 sticky top-0"}>
         <h4 className={"text-sm text-grey-light mb-2"}>
           Select a deal to filter the information on your dashboard:
         </h4>

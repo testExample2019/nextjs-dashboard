@@ -22,7 +22,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
         }
       >
         <h1 className={`text-18 md:text-2xl`}>Transactions</h1>
-        <div id={"tour1-step3"} className={`inline-flex items-center`}>
+        <div className={`inline-flex items-center`}>
           <span className={" inline-flex text-sm text-grey mr-3"}>View</span>
           <ViewsNav />
         </div>

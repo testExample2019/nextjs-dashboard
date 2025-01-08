@@ -1,6 +1,6 @@
 "use server";
 
-import { DealsActions, PaymentApproveActions } from "@/app/lib/definitions";
+import { DealsActions } from "@/app/lib/definitions";
 
 
 export async function handleDealDropdownAction(actionType: string) {

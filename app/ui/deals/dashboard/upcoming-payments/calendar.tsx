@@ -67,16 +67,16 @@ const Calendar = () => {
           </div>
         </div>
         <div className="grid grid-cols-7 gap-5 text-center text-grey-primary">
-          {["SU", "MO", "TU", "WE", "TH", "FR", "SA"].map((day) => (
-            <span key={day} className="text-xs font-semibold text-grey">
+          {["SU", "MO", "TU", "WE", "TH", "FR", "SA"].map((day, index) => (
+            <span key={day + index} className="text-xs font-semibold text-grey">
               {day}
             </span>
           ))}
-          {generateDays().map((date) => {
+          {generateDays().map((date, index) => {
             const isToday = isSameDay(date, today);
             return (
               <span
-                key={+date}
+                key={index}
                 className={`text-sm w-8 h-8 flex items-center justify-center ${
                   isToday ? "bg-action-primary text-white rounded-full" : ""
                 }`}
