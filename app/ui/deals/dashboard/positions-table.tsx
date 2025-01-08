@@ -9,11 +9,7 @@ const PositionsTable: React.FC<DealParamsType> = async ({
 }) => {
   const positions = await fetchPositions(dealName, dealView);
 
-  return (
-    <>
-      <Table type={"position"} rows={positions} />
-    </>
-  );
+  return <Table type={"position"} rows={positions} />;
 };
 
 export default PositionsTable;

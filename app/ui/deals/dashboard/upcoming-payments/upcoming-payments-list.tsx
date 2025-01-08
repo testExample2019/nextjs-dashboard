@@ -2,9 +2,10 @@
 import { useState } from "react";
 import React from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
-import { PaymentDropdownItems } from "@/app/lib/data";
+import { dealsDropdownItems, PaymentDropdownItems } from "@/app/lib/data";
 import { UpcomingPaymentsType } from "@/app/lib/definitions";
 import { usePathname, useRouter } from "next/navigation";
+import { handleDealDropdownAction } from "@/app/lib/actions";
 
 export default function UpcomingPaymentsList({
   upcomingPayments,
@@ -14,12 +15,8 @@ export default function UpcomingPaymentsList({
   const path = usePathname();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<"credits" | "debits">("debits");
+  const payments = upcomingPayments?.[activeTab];
 
-  console.log(path);
-
-  const payments = upcomingPayments?.[activeTab]; // Dynamically get active payments
-
-  console.log(path.includes(payments[0].transactionId));
   return (
     <>
       <div className="flex">
@@ -93,7 +90,7 @@ export default function UpcomingPaymentsList({
               </div>
             </div>
             {/* Additional details if available */}
-            <p className="text-sm text-grey flex justify-start gap-4">
+            <p className="text-sm text-grey flex justify-start gap-4 items-center">
               {payment.prepaymentFee && (
                 <span className={"uppercase"}>
                   Prepayment Fee:{" "}
@@ -117,6 +114,36 @@ export default function UpcomingPaymentsList({
                     {payment.principalRepayment}
                   </span>
                 </span>
+              )}
+              {activeTab === "debits" && (
+                <ButtonDropdown
+                  children={
+                    <button
+                      type="button"
+                      className={`inline-flex justify-center gap-x-1.5 px-3 py-2 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
+                      id="menu-button"
+                      aria-expanded="true"
+                      aria-haspopup="true"
+                    >
+                      {"APPROVE"}
+                      <svg
+                        className="-mr-1 size-5"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                        data-slot="icon"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  }
+                  dropdownItems={dealsDropdownItems}
+                  onAction={handleDealDropdownAction}
+                />
               )}
             </p>
           </div>
