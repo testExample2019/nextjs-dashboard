@@ -9,7 +9,7 @@ import {
 } from "date-fns";
 
 const Calendar = () => {
-  const today = new Date();
+  const today = new Date(2024, 11, 26); // Month is 0-indexed: 11 = December
   const monthStart = startOfMonth(today);
   const monthEnd = endOfMonth(monthStart);
   const weekStart = startOfWeek(monthStart, { weekStartsOn: 0 });
@@ -74,16 +74,23 @@ const Calendar = () => {
           ))}
           {generateDays().map((date, index) => {
             const isToday = isSameDay(date, today);
+            const isMarked1 = new Date(2024, 11, 28);
+            const isMarked2 = new Date(2024, 11, 30);
+            const isMarked =
+              isSameDay(date, isMarked1) || isSameDay(date, isMarked2);
             return (
               <span
                 key={index}
-                className={`text-sm w-8 h-8 flex items-center justify-center ${
-                  isToday ? "bg-action-primary text-white rounded-full" : ""
+                className={`text-sm w-8 h-8 flex items-center justify-center relative ${
+                  isToday ? "bg-blue-dark text-white rounded-full" : ""
                 }`}
               >
                 {date.getMonth() === monthStart.getMonth()
                   ? date.getDate()
                   : ""}
+                {isMarked && (
+                  <span className="bg-red h-1.5 w-1.5 rounded-full absolute right-1 top-1" />
+                )}
               </span>
             );
           })}

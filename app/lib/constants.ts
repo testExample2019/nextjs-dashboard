@@ -1,4 +1,8 @@
-import { DealsActions, PaymentActions, PaymentApproveActions } from "@/app/lib/definitions";
+import {
+  DealsActions,
+  PaymentActions,
+  PaymentApproveActions,
+} from "@/app/lib/definitions";
 
 export const dealsDropdownItems = [
   { id: 1, label: "Import Deal", actionType: DealsActions.Import },
@@ -7,12 +11,12 @@ export const dealsDropdownItems = [
 ];
 
 export const PaymentOptionsDropdownItems = [
-  { id: 1, label: "View Notice", actionType: PaymentActions.ViewNotice },
   {
-    id: 2,
+    id: 1,
     label: "View Transaction",
     actionType: PaymentActions.ViewTransaction,
   },
+  { id: 2, label: "View Notice", actionType: PaymentActions.ViewNotice },
   { id: 3, label: "Confirm Bank Account", actionType: PaymentActions.Confirm },
   { id: 4, label: "Contact", actionType: PaymentActions.Contact },
 ];

@@ -38,54 +38,136 @@ export default function UpcomingPaymentsList({
       <div className="flex">
         <button
           onClick={() => setActivePaymentType(PaymentTypes.Debits)}
-          className={`px-4 py-2 text-sm font-semibold ${
+          className={`flex gap-2 px-4 py-2 text-sm font-semibold relative ${
             activePaymentType === PaymentTypes.Debits
               ? "border-b-2 border-action-primary text-action-primary"
               : "text-grey-secondary"
           }`}
         >
           Debits
+          <span className="bg-red text-white rounded-full w-5 h-5 font-bold">
+            {upcomingPayments?.[PaymentTypes.Debits]?.length}
+          </span>
         </button>
         <button
           onClick={() => setActivePaymentType(PaymentTypes.Credits)}
-          className={`px-4 py-2 text-sm font-semibold ${
+          className={`flex gap-2 px-4 py-2 text-sm font-semibold relative ${
             activePaymentType === PaymentTypes.Credits
               ? "border-b-2 border-action-primary text-action-primary"
               : "text-grey-secondary"
           }`}
         >
           Credits
+          <span className="bg-red text-white rounded-full w-5 h-5 font-bold">
+            {upcomingPayments?.[PaymentTypes.Credits]?.length}
+          </span>
         </button>
       </div>
       <div className="mt-4 space-y-4">
-        {payments?.map((payment, index) => (
+        {payments?.map((payment) => (
           <div
-            key={payment.id + index}
+            key={payment.id}
             className={`${path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-grey-border`}
           >
             <div className="flex justify-between">
-              <div className="flex gap-2">
-                <p className="text-sm font-medium text-gray-900">
-                  {payment.dueDate}
-                </p>
-                <p
-                  className={`text-sm ${
-                    payment.status.includes("overdue")
-                      ? "text-red"
-                      : "text-grey"
-                  }`}
-                >
-                  {payment.status}
-                </p>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <p className="text-sm font-medium text-grey-primary">
+                    {payment.dueDate}
+                  </p>
+                  <p
+                    className={`text-sm ${
+                      payment.status.includes("overdue")
+                        ? "text-red"
+                        : "text-grey"
+                    }`}
+                  >
+                    {payment.status}
+                  </p>
+                </div>
+
+                <div className="text-sm text-grey flex justify-start gap-4 items-center">
+                  {payment.prepaymentFee && (
+                    <span className={"uppercase"}>
+                      Prepayment Fee:{" "}
+                      <span className={"text-grey-primary"}>
+                        {payment.prepaymentFee}
+                      </span>
+                    </span>
+                  )}
+                  {payment.interest && (
+                    <span className="block uppercase">
+                      Interest:{" "}
+                      <span className={"text-grey-primary"}>
+                        {payment.interest}
+                      </span>
+                    </span>
+                  )}
+                  {payment.principalRepayment && (
+                    <span className="block uppercase">
+                      Principal Repayment:{" "}
+                      <span className={"text-grey-primary"}>
+                        {payment.principalRepayment}
+                      </span>
+                    </span>
+                  )}
+                  {activePaymentType === PaymentTypes.Debits && (
+                    <ButtonDropdown
+                      children={
+                        <button
+                          type="button"
+                          className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
+                          id="menu-button"
+                          aria-expanded="true"
+                          aria-haspopup="true"
+                        >
+                          {"APPROVE"}
+                          <svg
+                            className="-mr-1 size-5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true"
+                            data-slot="icon"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                      }
+                      dropdownItems={PaymentApproveDropdownItems}
+                      onAction={(actionType: string) => {
+                        if (
+                          actionType === PaymentApproveActions.Approve ||
+                          actionType === PaymentApproveActions.ApproveAndPay
+                        ) {
+                          handleShowSuccessToast();
+                        } else {
+                          handleShowErrorToast();
+                        }
+                      }}
+                    />
+                  )}
+                </div>
               </div>
               <div className={"flex items-center justify-between gap-4"}>
-                <p className="text-sm font-semibold text-grey-primary">
-                  <span className={"text-grey uppercase block"}>Total</span>
-                  <span>{payment.total}</span>
+                <p className="font-semibold">
+                  <span className={"text-grey text-sm uppercase block"}>
+                    Total
+                  </span>
+                  <span className={"text-grey-primary text-base"}>
+                    {payment.total}
+                  </span>
                 </p>
                 <ButtonDropdown
                   children={
-                    <button className={"w-10 h-10"}>
+                    <button
+                      className={
+                        "w-10 h-10 transition-all hover:bg-grey-lighter rounded-md"
+                      }
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -106,71 +188,6 @@ export default function UpcomingPaymentsList({
               </div>
             </div>
             {/* Additional details if available */}
-            <div className="text-sm text-grey flex justify-start gap-4 items-center">
-              {payment.prepaymentFee && (
-                <span className={"uppercase"}>
-                  Prepayment Fee:{" "}
-                  <span className={"text-grey-primary"}>
-                    {payment.prepaymentFee}
-                  </span>
-                </span>
-              )}
-              {payment.interest && (
-                <span className="block uppercase">
-                  Interest:{" "}
-                  <span className={"text-grey-primary"}>
-                    {payment.interest}
-                  </span>
-                </span>
-              )}
-              {payment.principalRepayment && (
-                <span className="block uppercase">
-                  Principal Repayment:{" "}
-                  <span className={"text-grey-primary"}>
-                    {payment.principalRepayment}
-                  </span>
-                </span>
-              )}
-              {activePaymentType === PaymentTypes.Debits && (
-                <ButtonDropdown
-                  children={
-                    <button
-                      type="button"
-                      className={`inline-flex justify-center gap-x-1.5 px-3 py-2 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
-                      id="menu-button"
-                      aria-expanded="true"
-                      aria-haspopup="true"
-                    >
-                      {"APPROVE"}
-                      <svg
-                        className="-mr-1 size-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        aria-hidden="true"
-                        data-slot="icon"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                  }
-                  dropdownItems={PaymentApproveDropdownItems}
-                  onAction={(actionType: string) => {
-                    if (
-                      actionType === PaymentApproveActions.Approve ||
-                      actionType === PaymentApproveActions.ApproveAndPay
-                    ) {
-                      handleShowSuccessToast();
-                    } else {
-                      handleShowErrorToast();
-                    }
-                  }}
-                />
-              )}
-            </div>
           </div>
         ))}
       </div>

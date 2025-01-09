@@ -22,17 +22,13 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
         }
       >
         <h1 className={`text-18 md:text-2xl`}>Dashboard</h1>
-        <div className={`inline-flex items-center`}>
-          <span className={" inline-flex text-sm text-grey mr-3"}>View</span>
-          <ViewsNav />
-        </div>
       </div>
       <div className={"p-4 flex flex-col gap-4"}>
         <Suspense fallback={<UpcomingPaymentsSkeleton />}>
           <h3 className={"text-grey-primary text-base font-semibold"}>
             Upcoming Payments
           </h3>
-          <div id={"tour1-step7"}>
+          <div id={"tour1-step6"}>
             <UpcomingPayments dealName={dealName} dealView={dealView} />
           </div>
         </Suspense>
@@ -40,7 +36,7 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
           <h3 className={"text-grey-primary text-base font-semibold"}>
             Covenants Tracking
           </h3>
-          <div id={"tour1-step6"} className="flex flex-col lg:flex-row gap-4">
+          <div className="flex flex-col lg:flex-row gap-4">
             <CovenantsCardWrapper dealName={dealName} dealView={dealView} />
           </div>
         </Suspense>
