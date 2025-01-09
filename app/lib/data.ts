@@ -1,11 +1,5 @@
 import { deals } from "@/app/lib/placeholder-data";
-import {
-  DealNavType,
-  DealsActions,
-  DealViews,
-  PaymentActions,
-  PaymentApproveActions,
-} from "@/app/lib/definitions";
+import { DealNavType, DealViews } from "@/app/lib/definitions";
 
 const handleDealView = (dealName: string, dealView: string) => {
   return dealView === DealViews.Lender
