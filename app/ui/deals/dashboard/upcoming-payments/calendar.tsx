@@ -7,12 +7,14 @@ import {
   addDays,
   isSameDay,
 } from "date-fns";
+import { PaymentType, UpcomingPaymentsType } from "@/app/lib/definitions";
 
-const Calendar = () => {
-  const today = new Date(2024, 11, 26); // Month is 0-indexed: 11 = December
+const Calendar = ({ payments }: { payments: PaymentType[] }) => {
+  const today = new Date(2025, 0, 24); // Month is 0-indexed: 11 = December
   const monthStart = startOfMonth(today);
   const monthEnd = endOfMonth(monthStart);
   const weekStart = startOfWeek(monthStart, { weekStartsOn: 0 });
+  const paymentDates = payments.map((payment) => payment.dueDate);
 
   const generateDays = () => {
     const days = [];
@@ -74,10 +76,10 @@ const Calendar = () => {
           ))}
           {generateDays().map((date, index) => {
             const isToday = isSameDay(date, today);
-            const isMarked1 = new Date(2024, 11, 28);
-            const isMarked2 = new Date(2024, 11, 30);
-            const isMarked =
-              isSameDay(date, isMarked1) || isSameDay(date, isMarked2);
+            const isMarked = paymentDates.find((day) =>
+              isSameDay(date, new Date(day)),
+            );
+
             return (
               <span
                 key={index}

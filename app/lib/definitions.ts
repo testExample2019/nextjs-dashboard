@@ -13,7 +13,7 @@ export type DealNavType = Omit<DealType, "lender" | "borrower">;
 type DealDetailsType = {
   covenantsTracking: CovenantMetricType[];
   upcomingPayments: UpcomingPaymentsType;
-  positions: TransactionType[];
+  positions: PositionsType[];
   transactions: TransactionType[];
   asOfDate: string;
 };
@@ -42,9 +42,26 @@ export type PaymentType = {
   prepaymentFee?: string;
   interest?: string;
   principalRepayment?: string;
+  drawDownFee?: string;
+  drawDown?: string;
 };
 
 export type TransactionType = {
+  id: string;
+  type: "Drawdown";
+  deal: string;
+  instrument: string;
+  borrower: string;
+  ccy: string;
+  counterparty: string;
+  role: string;
+  committed: string;
+  funded: string;
+  unfunded: string;
+  status: "Open" | "Reviewed" | "Pending" | "Not Paid";
+};
+
+export type PositionsType = {
   id: string;
   deal: string;
   instrument: string;

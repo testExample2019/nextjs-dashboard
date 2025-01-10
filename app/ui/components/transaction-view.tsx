@@ -12,22 +12,26 @@ const TransactionView = ({
   }
   return (
     <div className="bg-white rounded-lg p-6 h-full">
-      <div className="flex justify-between items-center border-b pb-4 mb-4">
+      <div className="flex justify-between items-end border-b pb-4 mb-4">
         <div>
-          <h3 className="text-base font-medium">Transaction</h3>
-          <p className="text-gray-600">Interest Payment</p>
+          <h3 className="text-sm text-grey font-medium uppercase">
+            Transaction
+          </h3>
+          <p className="text-base text-grey-primary">Interest Payment</p>
         </div>
-        <div>
-          <p className="text-sm font-medium">Status</p>
-          <p className="text-red-600 font-semibold">Not Paid</p>
+        <div className="flex items-center justify-between text-base gap-2">
+          <p className="text-grey">Status</p>
+          <p className="font-semibold text-grey-primary">
+            {transaction.status}
+          </p>
         </div>
       </div>
 
-      <div className="flex space-x-4 mb-4">
-        <button className="text-blue-600 border-b-2 border-blue-600 pb-2">
+      <div className="flex justify-between space-x-4 mb-4">
+        <button className="text-sm text-action-primary border-b-2 border-action-primary pb-2 w-full">
           Transaction Info
         </button>
-        <button className="text-gray-500 hover:text-blue-600 hover:border-blue-600 pb-2">
+        <button className="text-sm text-grey-secondary hover:text-action-primary hover:border-action-primary pb-2 w-full">
           Allocations
         </button>
       </div>
@@ -35,12 +39,12 @@ const TransactionView = ({
       <div className="space-y-6">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <p className="text-sm text-gray-500">Deal</p>
-            <p className="font-medium text-gray-800">{transaction.deal}</p>
+            <p className="text-sm text-grey font-semibold">Deal</p>
+            <p className="font-medium text-grey-primary">{transaction.deal}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Counterparty</p>
-            <p className="font-medium text-gray-800">
+            <p className="text-sm text-grey font-semibold">Counterparty</p>
+            <p className="font-medium text-grey-primary">
               {transaction.counterparty}
             </p>
           </div>
@@ -48,72 +52,74 @@ const TransactionView = ({
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <p className="text-sm text-gray-500">Instrument</p>
-            <p className="font-medium text-gray-800">
+            <p className="text-sm text-grey font-semibold">Instrument</p>
+            <p className="font-medium text-grey-primary">
               {transaction.instrument}
             </p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Payment Date</p>
-            <p className="font-medium text-gray-800">2024-01-24</p>
+            <p className="text-sm text-grey font-semibold">Payment Date</p>
+            <p className="font-medium text-grey-primary">2024-01-24</p>
           </div>
         </div>
 
         <div>
-          <p className="text-sm text-gray-500">Amount</p>
-          <p className="font-medium text-gray-800">$6,997.51</p>
+          <p className="text-sm text-grey font-semibold">Amount</p>
+          <p className="font-medium text-grey-primary">$6,997.51</p>
         </div>
       </div>
 
       <div className="mt-6 border-t pt-4">
-        <h3 className="text-sm font-medium text-gray-800 mb-4">Rate Info</h3>
+        <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
+          Rate Info
+        </h2>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <p className="text-sm text-gray-500">Type</p>
-            <p className="font-medium text-gray-800">Fixed</p>
+            <p className="text-sm text-grey font-semibold">Type</p>
+            <p className="font-medium text-grey-primary">Fixed</p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Day Count</p>
-            <p className="font-medium text-gray-800">ACT/360</p>
+            <p className="text-sm text-grey font-semibold">Day Count</p>
+            <p className="font-medium text-grey-primary">ACT/360</p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Accrual Start</p>
-            <p className="font-medium text-gray-800">2025-01-01</p>
+            <p className="text-sm text-grey font-semibold">Accrual Start</p>
+            <p className="font-medium text-grey-primary">2025-01-01</p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Accrual End</p>
-            <p className="font-medium text-gray-800">2025-01-31</p>
+            <p className="text-sm text-grey font-semibold">Accrual End</p>
+            <p className="font-medium text-grey-primary">2025-01-31</p>
           </div>
         </div>
       </div>
 
       <div className="mt-6">
-        <h3 className="text-sm font-medium text-gray-800 mb-4">
+        <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
           Interest Amount
-        </h3>
+        </h2>
         <table className="w-full text-left border-collapse">
           <thead>
             <tr>
-              <th className="border-b py-2 text-sm font-medium text-gray-500">
+              <th className="border-b py-2 text-sm text-grey font-semibold">
                 Date
               </th>
-              <th className="border-b py-2 text-sm font-medium text-gray-500">
+              <th className="border-b py-2 text-sm text-grey font-semibold">
                 Rate
               </th>
-              <th className="border-b py-2 text-sm font-medium text-gray-500">
+              <th className="border-b py-2 text-sm text-grey font-semibold">
                 Principal
               </th>
-              <th className="border-b py-2 text-sm font-medium text-gray-500">
+              <th className="border-b py-2 text-sm text-grey font-semibold">
                 Amount
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="py-2 text-gray-800 text-sm">2025-01-01</td>
-              <td className="py-2 text-gray-800 text-sm">8.5600%</td>
-              <td className="py-2 text-gray-800 text-sm">$50,000.00</td>
-              <td className="py-2 text-gray-800 text-sm">$56,978.00</td>
+              <td className="py-2 text-grey-primary text-sm">2025-01-01</td>
+              <td className="py-2 text-grey-primary text-sm">8.5600%</td>
+              <td className="py-2 text-grey-primary text-sm">$50,000.00</td>
+              <td className="py-2 text-grey-primary text-sm">$56,978.00</td>
             </tr>
           </tbody>
         </table>
