@@ -11,7 +11,7 @@ const LoanSetupPage = () => {
   const { setCurrentStep } = useNextStep();
   const router = useRouter();
   useEffect(() => {
-    setCurrentStep(2)
+    setCurrentStep(2);
   }, []);
 
   // Pre-populated values
@@ -76,7 +76,7 @@ const LoanSetupPage = () => {
       {/* Form Container */}
       <div className="w-full max-w-5xl p-8 bg-white rounded-lg shadow-lg border border-gray-200">
         {/* Header */}
-        <div  className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-semibold text-gray-800">
             New Loan Instrument Setup
           </h1>
@@ -98,7 +98,7 @@ const LoanSetupPage = () => {
 
         <div id={"tour1-step3"}>
           {/* Loan Details Form */}
-          <div  className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700">
                 Name
@@ -272,7 +272,9 @@ const LoanSetupPage = () => {
 
           {/* Documentation */}
           <div className="mt-6">
-            <h2 className="text-lg font-semibold text-gray-800">Documentation</h2>
+            <h2 className="text-lg font-semibold text-gray-800">
+              Documentation
+            </h2>
             <div className="mt-2 border-dashed border-2 border-gray-300 rounded-lg p-4 flex flex-col items-center">
               <p className="text-sm text-gray-500">Drag & Drop files here</p>
               <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md">
@@ -281,7 +283,6 @@ const LoanSetupPage = () => {
             </div>
           </div>
         </div>
-
 
         {/* Action Buttons */}
         <div className="flex justify-end mt-6 space-x-4">

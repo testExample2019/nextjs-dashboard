@@ -33,6 +33,7 @@ const config: Config = {
         sm: ["14px", "normal"],
         base: "1rem",
         xl: "1.25rem",
+        13: ["13px", "normal"],
         18: ["18px", "normal"],
         22: ["22px", "normal"],
         24: ["24px", "normal"],
