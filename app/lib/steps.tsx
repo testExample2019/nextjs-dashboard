@@ -6,7 +6,7 @@ export const steps: Tour[] = [
     steps: [
       {
         icon: "👋",
-        title: "Welcome to PCM!",
+        title: "Welcome to DirectLend!",
         content: (
           <p>
             We’ll handle the heavy lifting by prepopulating most fields,
@@ -22,12 +22,13 @@ export const steps: Tour[] = [
       },
       {
         icon: <></>,
-        title: "Get Started with PCM",
+        title: "Get Started with DirectLend",
         content: (
           <p>
-            Pick your first template and start using PCM for a new loan. We will
-            prepopulate most of the fields to simplify the loan onboarding
-            process, making it faster and easier for you to get started.
+            Pick your first template and start using DirectLend for a new loan.
+            We will prepopulate most of the fields to simplify the loan
+            onboarding process, making it faster and easier for you to get
+            started.
           </p>
         ),
         selector: "#tour1-step2",
@@ -46,8 +47,8 @@ export const steps: Tour[] = [
             Fill out the details to set up your loan instrument. Ensure all
             required fields are filled out accurately before saving. <br />
             Click the
-            <b> Save</b> button to confirm your loan setup details and proceed to
-            the next step in the onboarding process.
+            <b> Save</b> button to confirm your loan setup details and proceed
+            to the next step in the onboarding process.
           </p>
         ),
         selector: "#tour1-step3",
