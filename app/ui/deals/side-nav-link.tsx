@@ -21,13 +21,13 @@ export const SideNavLink = ({
       <div className="flex justify-between items-center">
         <h3 className="text-grey-primary text-base uppercase">{name}</h3>
         <div className="flex gap- items-center">
-          <span className="text-xs font-medium bg-[#6B98A2] text-white px-1 rounded">
+          <span className="text-xs font-medium bg-grey-blue text-white px-1 rounded">
             USD
           </span>
         </div>
       </div>
 
-      <div className="text-[#797275]">
+      <div className="text-grey-secondary">
         <p className=" text-xs mt-2">Total Commitment</p>
         <p className="text-base font-bold ">{totalCommitment}</p>
       </div>
@@ -39,12 +39,12 @@ export const SideNavLink = ({
       </div>
 
       <div className="flex justify-between items-center mt-2">
-        <div className="text-xs text-[#797275]">
+        <div className="text-xs text-grey-secondary">
           Funded
           <p className="text-sm font-bold text-green">{funded}</p>
         </div>
 
-        <div className="text-xs text-[#797275]">
+        <div className="text-xs text-grey-secondary">
           Unfunded
           <p>{unfunded}</p>
         </div>

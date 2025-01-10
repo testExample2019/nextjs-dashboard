@@ -165,7 +165,7 @@ export default function NavBar() {
           {/* Separator */}
           <div className="w-px h-5 bg-grey-light"></div>
           {/* Profile Circle */}
-          <div className="w-9 h-9 bg-[#6B98A2] text-white flex items-center justify-center rounded-full">
+          <div className="w-9 h-9 bg-grey-blue text-white flex items-center justify-center rounded-full">
             DR
           </div>
         </div>

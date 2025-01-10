@@ -12,7 +12,7 @@ export default function DealsSideNav({
 }) {
   const { setCurrentStep } = useNextStep();
   useEffect(() => {
-    setCurrentStep(4);
+    setCurrentStep(3);
   }, []);
   return (
     <div id={`tour1-step5`} className={"flex flex-col gap-4"}>

@@ -95,7 +95,7 @@ const LoanTemplatePage = () => {
                     <div className="w-8 h-8 flex items-center justify-center">
                       {template.icon}
                     </div>
-                    <hr className="h-px mt-4 bg-[#6B98A2] border-0 w-[30px]" />
+                    <hr className="h-px mt-4 bg-grey-blue border-0 w-[30px]" />
                   </div>
                 </div>
 

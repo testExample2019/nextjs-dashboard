@@ -499,4 +499,22 @@ const deals: DealType[] = [
     },
   },
 ];
-export { deals };
+
+const formTableData = {
+  name: "New Fixed Loan",
+  loanType: "Term Loan",
+  loanAmount: "100,000,000.00",
+  ccy: "USD",
+  issueDate: "2025-01-01",
+  maturityDate: "2030-01-01",
+  deal: "Soultrain Deal",
+  borrower: "Soultrain Music Awards",
+  lender: "Funky Fund East",
+  lenderShare: '100,000,000.00',
+  rateType: "Fixed",
+  annualRate: "10.00%",
+  paid: "Monthly",
+  dayCount: "ACT/365",
+};
+
+export { deals, formTableData };

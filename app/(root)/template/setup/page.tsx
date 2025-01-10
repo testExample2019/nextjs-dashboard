@@ -1,34 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { redirect, useRouter } from "next/navigation";
-import { deals } from "@/app/lib/placeholder-data";
-import { useEffect } from "react";
-import { useNextStep } from "nextstepjs";
+import FormTable from "@/app/(root)/template/setup/form-table";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
-  const { setCurrentStep } = useNextStep();
-  const router = useRouter();
-  useEffect(() => {
-    setCurrentStep(2);
-  }, []);
-
-  // Pre-populated values
-  const initialData = {
-    name: "New Fixed Loan",
-    loanType: "Term Loan",
-    loanAmount: "100,000,000.00",
-    issueDate: "2025-01-01",
-    maturityDate: "2030-01-01",
-    deal: "Soultrain Deal",
-    borrower: "Soultrain Music Awards",
-    lender: "Funky Fund East",
-    rateType: "Fixed",
-    annualRate: "10.00%",
-    paid: "Monthly",
-    dayCount: "ACT/365",
-  };
 
   const transactions = [
     {
@@ -59,29 +35,31 @@ const LoanSetupPage = () => {
     },
   ];
 
-  const [formData, setFormData] = useState(initialData);
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
   return (
-    <div className="flex flex-col lg:flex-row justify-center lg:justify-between min-h-screen bg-gray-50 p-8 gap-8">
+    <div className="flex flex-col lg:flex-row justify-center lg:justify-between min-h-screen">
       {/* Form Container */}
-      <div className="w-full max-w-5xl p-8 bg-white rounded-lg shadow-lg border border-gray-200">
+      <div className="w-full max-w-5xl bg-white border-r-1 border-grey-border">
         {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-semibold text-gray-800">
-            New Loan Instrument Setup
+        <div className="flex justify-between items-center p-4 border-b-1 border-grey-border">
+          <h1 className="text-18 font-semibold text-grey-primary">
+            New Loan Setup
           </h1>
-          <div className="flex items-center space-x-2">
-            <span className="text-sm text-gray-600">Simple</span>
+          <div className="flex items-center space-x-3">
+            <span className="text-sm text-grey-primary flex items-center gap-1">
+              Advanced mode
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M12 4.25C7.71875 4.25 4.25 7.75 4.25 12C4.25 16.2812 7.71875 19.75 12 19.75C16.25 19.75 19.75 16.2812 19.75 12C19.75 7.75 16.25 4.25 12 4.25ZM12 18.25C8.53125 18.25 5.75 15.4688 5.75 12C5.75 8.5625 8.53125 5.75 12 5.75C15.4375 5.75 18.25 8.5625 18.25 12C18.25 15.4688 15.4375 18.25 12 18.25ZM12 7.6875C11.25 7.6875 10.6875 8.28125 10.6875 9C10.6875 9.75 11.25 10.3125 12 10.3125C12.7188 10.3125 13.3125 9.75 13.3125 9C13.3125 8.28125 12.7188 7.6875 12 7.6875ZM13.75 15.625V14.875C13.75 14.6875 13.5625 14.5 13.375 14.5H13V11.375C13 11.1875 12.8125 11 12.625 11H10.625C10.4062 11 10.25 11.1875 10.25 11.375V12.125C10.25 12.3438 10.4062 12.5 10.625 12.5H11V14.5H10.625C10.4062 14.5 10.25 14.6875 10.25 14.875V15.625C10.25 15.8438 10.4062 16 10.625 16H13.375C13.5625 16 13.75 15.8438 13.75 15.625Z"
+                  fill="#4A90E2"
+                />
+              </svg>
+            </span>
             <label className="relative inline-flex items-center cursor-pointer">
               <input
                 type="checkbox"
@@ -89,237 +67,50 @@ const LoanSetupPage = () => {
                 checked={isAdvanced}
                 onChange={() => setIsAdvanced((prev) => !prev)}
               />
-              <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-blue-600"></div>
-              <div className="absolute w-4 h-4 bg-white rounded-full shadow-md transform transition peer-checked:translate-x-5"></div>
+              <div className="w-10 h-4 bg-[#21212170] rounded-full peer peer-checked:bg-purple-o"></div>
+              <div className="absolute w-6 h-6 bg-white rounded-full shadow-md transform transition peer-checked:translate-x-4 peer-checked:bg-purple"></div>
             </label>
-            <span className="text-sm text-gray-600">Advanced</span>
           </div>
         </div>
 
-        <div id={"tour1-step3"}>
-          {/* Loan Details Form */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="New Fixed Loan"
-                className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Loan Type
-              </label>
-              <select
-                name="loanType"
-                value={formData.loanType}
-                onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-              >
-                <option>Term Loan</option>
-              </select>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Loan Amount
-              </label>
-              <input
-                type="text"
-                name="loanAmount"
-                value={formData.loanAmount}
-                onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Issue Date
-              </label>
-              <input
-                type="date"
-                name="issueDate"
-                value={formData.issueDate}
-                onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Maturity Date
-              </label>
-              <input
-                type="date"
-                name="maturityDate"
-                value={formData.maturityDate}
-                onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700">
-                Deal
-              </label>
-              <select
-                name="deal"
-                value={formData.deal}
-                onChange={handleInputChange}
-                className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-              >
-                <option>Soultrain Deal</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Borrower and Lender Details */}
-          <div className="mt-6">
-            <h2 className="text-lg font-semibold text-gray-800">
-              Borrower & Lender
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Borrower
-                </label>
-                <select
-                  name="borrower"
-                  value={formData.borrower}
-                  onChange={handleInputChange}
-                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option>Soultrain Music Awards</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Lender
-                </label>
-                <input
-                  type="text"
-                  name="lender"
-                  value={formData.lender}
-                  onChange={handleInputChange}
-                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Rate and Payment Details */}
-          <div className="mt-6">
-            <h2 className="text-lg font-semibold text-gray-800">
-              Rate and Payment Details
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Rate Type
-                </label>
-                <select
-                  name="rateType"
-                  value={formData.rateType}
-                  onChange={handleInputChange}
-                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option>Fixed</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Annual Rate
-                </label>
-                <input
-                  type="text"
-                  name="annualRate"
-                  value={formData.annualRate}
-                  onChange={handleInputChange}
-                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Paid
-                </label>
-                <select
-                  name="paid"
-                  value={formData.paid}
-                  onChange={handleInputChange}
-                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option>Monthly</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Day Count
-                </label>
-                <select
-                  name="dayCount"
-                  value={formData.dayCount}
-                  onChange={handleInputChange}
-                  className="w-full mt-1 p-2 border rounded-md focus:ring-blue-500 focus:border-blue-500"
-                >
-                  <option>ACT/365</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          {/* Documentation */}
-          <div className="mt-6">
-            <h2 className="text-lg font-semibold text-gray-800">
-              Documentation
-            </h2>
-            <div className="mt-2 border-dashed border-2 border-gray-300 rounded-lg p-4 flex flex-col items-center">
-              <p className="text-sm text-gray-500">Drag & Drop files here</p>
-              <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-md">
-                Browse Files
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex justify-end mt-6 space-x-4">
-          <button
-            onClick={() => router.back()}
-            className="px-4 py-2 text-gray-500 border border-gray-300 rounded-md hover:bg-gray-100"
-          >
-            Cancel
-          </button>
-          <button
-            id={"tour1-step4"}
-            onClick={() =>
-              redirect(
-                `/deals/dashboard/${deals[0].name.toLowerCase()}/lender/`,
-              )
-            }
-            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
-          >
-            Save
-          </button>
-        </div>
+        <FormTable />
       </div>
       {/* Table */}
-      <div className="w-full lg:w-1/3 max-w-5xl p-8 bg-white rounded-lg shadow-lg border border-gray-200 overflow-auto">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">
+      <div className="w-full lg:w-1/3 max-w-5xl bg-white overflow-auto">
+        <h2 className="text-18 font-semibold capitalize text-grey-primary p-4 border-b-1 border-grey-border">
           Preview transactions schedule
         </h2>
+        <div></div>
+        <div className="bg-blue-50 border border-blue-100 p-4 mx-4 my-6 rounded-lg flex items-start gap-2 text-grey-primary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            className="w-20 h-10"
+          >
+            <path
+              d="M12 4.25C7.71875 4.25 4.25 7.75 4.25 12C4.25 16.2812 7.71875 19.75 12 19.75C16.25 19.75 19.75 16.2812 19.75 12C19.75 7.75 16.25 4.25 12 4.25ZM12 18.25C8.53125 18.25 5.75 15.4688 5.75 12C5.75 8.5625 8.53125 5.75 12 5.75C15.4375 5.75 18.25 8.5625 18.25 12C18.25 15.4688 15.4375 18.25 12 18.25ZM12 7.6875C11.25 7.6875 10.6875 8.28125 10.6875 9C10.6875 9.75 11.25 10.3125 12 10.3125C12.7188 10.3125 13.3125 9.75 13.3125 9C13.3125 8.28125 12.7188 7.6875 12 7.6875ZM13.75 15.625V14.875C13.75 14.6875 13.5625 14.5 13.375 14.5H13V11.375C13 11.1875 12.8125 11 12.625 11H10.625C10.4062 11 10.25 11.1875 10.25 11.375V12.125C10.25 12.3438 10.4062 12.5 10.625 12.5H11V14.5H10.625C10.4062 14.5 10.25 14.6875 10.25 14.875V15.625C10.25 15.8438 10.4062 16 10.625 16H13.375C13.5625 16 13.75 15.8438 13.75 15.625Z"
+              fill="currentColor"
+            />
+          </svg>
+
+          <p className="text-13 text-grey-primary">
+            This is a preliminary preview of transactions based on provided
+            inputs. You will be able to adjust and create new transactions
+            during the loan lifecycle. Check for the Advanced mode to customize
+            more details.
+          </p>
+        </div>
         <table className="w-full text-left border-collapse">
           <thead>
             <tr>
-              <th className="border-b py-2 px-3 text-gray-600 text-sm font-medium">
+              <th className="border-b p-3 text-grey-secondary text-xs font-semibold">
                 TRANSACTION
               </th>
-              <th className="border-b py-2 px-3 text-gray-600 text-sm font-medium">
+              <th className="border-b p-3 text-grey-secondary text-xs font-semibold">
                 DATE
               </th>
-              <th className="border-b py-2 px-3 text-gray-600 text-sm font-medium">
+              <th className="border-b p-3 text-grey-secondary text-xs font-semibold">
                 AMOUNT
               </th>
             </tr>
@@ -327,13 +118,11 @@ const LoanSetupPage = () => {
           <tbody>
             {transactions.map((txn, idx) => (
               <tr key={idx} className="hover:bg-gray-50 whitespace-nowrap">
-                <td className="py-2 px-3 text-sm text-gray-800">
+                <td className="p-3 text-sm text-grey-primary">
                   {txn.transaction}
                 </td>
-                <td className="py-2 px-3 text-sm text-gray-800">{txn.date}</td>
-                <td className="py-2 px-3 text-sm text-gray-800">
-                  {txn.amount}
-                </td>
+                <td className="p-3 text-sm text-grey-primary">{txn.date}</td>
+                <td className="p-3 text-sm text-grey-primary">{txn.amount}</td>
               </tr>
             ))}
           </tbody>

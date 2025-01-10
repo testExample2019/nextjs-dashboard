@@ -13,9 +13,12 @@ export const steps: Tour[] = [
             ensuring a seamless and efficient loan onboarding experience.
           </p>
         ),
-        side: "right",
+        side: "top",
         showControls: true,
         showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -33,42 +36,27 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
+        blockKeyboardControl: true,
       },
       {
         icon: <></>,
         title: "Configure Your Loan Instrument",
         content: (
           <p>
-            Fill out the details to set up your loan instrument. Define key
-            information such as loan type, amount, issue and maturity dates, and
-            borrower and lender details. You can also specify rate and payment
-            details to ensure accurate loan terms. Drag and drop documentation
-            files to complete the setup effortlessly.
+            Fill out the details to set up your loan instrument. Ensure all
+            required fields are filled out accurately before saving. <br />
+            Click the
+            <b> Save</b> button to confirm your loan setup details and proceed to
+            the next step in the onboarding process.
           </p>
         ),
         selector: "#tour1-step3",
-        side: "right",
-        showControls: true,
-        showSkip: false,
-        pointerPadding: 10,
-        pointerRadius: 10,
-      },
-      {
-        icon: <></>,
-        title: "Save and Proceed",
-        content: (
-          <p>
-            Ensure all required fields are filled out accurately before saving.
-            Click the save button to confirm your loan setup details and proceed
-            to the next step in the onboarding process.
-          </p>
-        ),
-        selector: "#tour1-step4",
-        side: "top",
+        side: "right-top",
         showControls: false,
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
+        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -100,6 +88,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
+        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -122,6 +111,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
+        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -132,7 +122,7 @@ export const steps: Tour[] = [
             relevant data:
             <br />
             <b>• Lender View: </b>Focus on loan commitments, funded amounts, and
-            borrower details. <br/>
+            borrower details. <br />
             <b>• Borrower View: </b>
             Analyze loan terms, repayment schedules, and payment history.
             <br />
@@ -146,6 +136,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
+        blockKeyboardControl: true,
       },
     ],
   },
