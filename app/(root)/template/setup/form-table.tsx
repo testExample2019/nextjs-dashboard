@@ -244,7 +244,7 @@ const FormTable = () => {
       </div>
 
       {/* Rate and Payment Details */}
-      <div className="mt-6">
+      <div className="mt-2">
         <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
           Rate and Payment
         </h2>
@@ -304,7 +304,7 @@ const FormTable = () => {
       </div>
 
       {/* Bullet Repayment */}
-      <div className="mt-6">
+      <div className="mt-2">
         <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
           Bullet Repayment
         </h2>
@@ -335,7 +335,7 @@ const FormTable = () => {
       </div>
 
       {/* Documentation */}
-      <div className="mt-6">
+      <div className="mt-2">
         <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
           Documentation
         </h2>

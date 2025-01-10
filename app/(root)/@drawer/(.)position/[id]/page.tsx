@@ -28,7 +28,7 @@ export default async function PositionDrawer({
             }
           />
         </div>
-        <TransactionView transaction={position} />
+        <></>
       </div>
     </>
   );
