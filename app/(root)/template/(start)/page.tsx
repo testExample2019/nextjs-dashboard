@@ -73,7 +73,7 @@ const LoanTemplatePage = () => {
     <div className="flex flex-col items-center justify-start">
       <div className="max-w-5xl w-full px-8 py-32 rounded-lg">
         <h1 className="text-28 font-semibold text-grey-primary text-center">
-          Pick your first template and start using PCM for a new loan:
+          Pick your first template and start using DirectLend for a new loan:
         </h1>
         <p className="mt-4 text-grey text-center">
           We will prepopulate most of the fields to simplify the loan
@@ -90,7 +90,7 @@ const LoanTemplatePage = () => {
               className="flex text-left p-6 border border-grey-border rounded-lg hover:shadow-md transition-shadow duration-200 cursor-pointer"
             >
               <div className="flex flex-col">
-                <div className={'text-right'}>
+                <div className={"text-right"}>
                   <div className="inline-flex flex-col mb-4">
                     <div className="w-8 h-8 flex items-center justify-center">
                       {template.icon}
