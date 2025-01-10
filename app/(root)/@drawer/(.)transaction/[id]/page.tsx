@@ -39,7 +39,22 @@ export default async function TransactionDrawer({
             }
           />
         </div>
-        <TransactionView transaction={transaction} />
+        <div className="flex flex-col justify-between ">
+          <TransactionView transaction={transaction} />
+
+          <DrawerClose
+            children={
+              <div className="flex justify-end space-x-4 px-4">
+                <button className="px-4 py-2 uppercase border border-red text-red rounded-md hover:bg-grey-lighter">
+                  Reject
+                </button>
+                <button className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark">
+                  Approve
+                </button>
+              </div>
+            }
+          ></DrawerClose>
+        </div>
       </div>
     </>
   );

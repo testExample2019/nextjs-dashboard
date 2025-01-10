@@ -91,7 +91,7 @@ const Calendar = ({ payments }: { payments: PaymentType[] }) => {
                   ? date.getDate()
                   : ""}
                 {isMarked && (
-                  <span className="bg-red h-1.5 w-1.5 rounded-full absolute right-1 top-1" />
+                  <span className="bg-red h-2.5 w-2.5 border-2 border-white rounded-full absolute right-0 top-0" />
                 )}
               </span>
             );

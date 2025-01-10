@@ -11,7 +11,10 @@ export default function ViewsNav() {
   return (
     <div className="flex h-full flex-col">
       <div className="flex grow flex-row justify-between space-x-2">
-        <div id={"tour1-step7"} className="inline-flex items-center overflow-hidden">
+        <div
+          id={"tour1-step7"}
+          className="inline-flex items-center overflow-hidden"
+        >
           {[DealViews.Lender, DealViews.Borrower].map((link) => {
             return (
               <Link

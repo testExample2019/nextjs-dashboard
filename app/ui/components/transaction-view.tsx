@@ -11,7 +11,7 @@ const TransactionView = ({
     notFound();
   }
   return (
-    <div className="bg-white rounded-lg p-6 h-full">
+    <div className="bg-white rounded-lg p-6">
       <div className="flex justify-between items-end border-b pb-4 mb-4">
         <div>
           <h3 className="text-sm text-grey font-medium uppercase">

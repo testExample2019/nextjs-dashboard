@@ -1,7 +1,7 @@
 "use server";
 
 import { DealsActions } from "@/app/lib/definitions";
-
+import { redirect } from "next/navigation";
 
 export async function handleDealDropdownAction(actionType: string) {
   switch (actionType) {
@@ -12,7 +12,7 @@ export async function handleDealDropdownAction(actionType: string) {
       console.log("Add Deal...");
       break;
     case DealsActions.Use:
-      console.log("Use Deal...");
+      redirect("/template");
       break;
     default:
       console.log("Unknown action");
