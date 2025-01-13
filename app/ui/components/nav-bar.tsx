@@ -145,8 +145,8 @@ export default function NavBar() {
                   />
                 </svg>
               ),
-              label: "Positions",
-              href: `${replacePageItemInURL(path, "positions")}`,
+              label: "Documents",
+              href: `${replacePageItemInURL(path, "documents")}`,
             },
           ].map((item, idx) => (
             <Link

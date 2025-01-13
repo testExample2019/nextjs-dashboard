@@ -20,7 +20,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
           "flex w-full items-center justify-between py-2 px-4  h-[50px] border-b-1 border-grey-border"
         }
       >
-        <h1 className={`text-18 md:text-2xl`}>Transactions</h1>
+        <h1 className={`text-18 md:text-2xl text-grey-primary`}>Transactions</h1>
       </div>
       <div className={"p-4"}>
         <Suspense fallback={<TableSkeleton />}>

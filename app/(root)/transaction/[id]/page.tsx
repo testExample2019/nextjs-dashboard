@@ -1,5 +1,5 @@
 import React from "react";
-import TransactionView from "@/app/ui/components/transaction-view";
+import TransactionView from "@/app/ui/components/views/transaction-view";
 import { fetchTransactionById } from "@/app/lib/data";
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {

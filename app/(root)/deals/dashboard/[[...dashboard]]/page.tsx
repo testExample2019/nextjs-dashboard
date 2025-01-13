@@ -21,7 +21,7 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
           "flex w-full items-center justify-between py-2 px-4  h-[50px] border-b-1 border-grey-border"
         }
       >
-        <h1 className={`text-18 md:text-2xl`}>Dashboard</h1>
+        <h1 className={`text-18 md:text-2xl text-grey-primary`}>Dashboard</h1>
       </div>
       <div className={"p-4 flex flex-col gap-4"}>
         <Suspense fallback={<UpcomingPaymentsSkeleton />}>

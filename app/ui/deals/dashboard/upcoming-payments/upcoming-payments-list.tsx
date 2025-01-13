@@ -14,6 +14,7 @@ import {
   PaymentOptionsDropdownItems,
 } from "@/app/lib/constants";
 import Calendar from "@/app/ui/deals/dashboard/upcoming-payments/calendar";
+import Status from "@/app/ui/components/status";
 
 export default function UpcomingPaymentsList({
   upcomingPayments,
@@ -78,20 +79,7 @@ export default function UpcomingPaymentsList({
                     <p className="text-sm font-medium text-grey-primary">
                       {payment.dueDate}
                     </p>
-                    <div className="flex items-center gap-1">
-                      {payment.status.includes("Pending") && (
-                        <span className={`w-2 h-2 bg-red rounded-full`} />
-                      )}
-                      <p
-                        className={`text-sm ${
-                          payment.status.includes("overdue")
-                            ? "text-red"
-                            : "text-grey"
-                        }`}
-                      >
-                        {payment.status}
-                      </p>
-                    </div>
+                    <Status status={payment.status} />
                   </div>
 
                   <div className="text-sm text-grey flex justify-start gap-4 items-center">

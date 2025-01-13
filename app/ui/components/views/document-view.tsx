@@ -1,29 +1,28 @@
 import React from "react";
-import { TransactionType } from "@/app/lib/definitions";
+import { DocumentType } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
+import Status from "@/app/ui/components/status";
 
-const TransactionView = ({
-  transaction,
-}: {
-  transaction?: TransactionType;
-}) => {
-  if (!transaction) {
+const DocumentView = ({ document }: { document?: DocumentType }) => {
+  if (!document) {
     notFound();
   }
+
   return (
     <div className="bg-white rounded-lg p-6">
       <div className="flex justify-between items-end border-b pb-4 mb-4">
         <div>
-          <h3 className="text-sm text-grey font-medium uppercase">
-            Transaction
+          <h3 className="text-sm text-grey font-semibold uppercase">
+            {document.documentType}
           </h3>
-          <p className="text-base text-grey-primary">Interest Payment</p>
+          <p className="text-base text-grey-primary font-semibold">
+            {document.deal}
+          </p>
         </div>
         <div className="flex items-center justify-between text-base gap-2">
           <p className="text-grey">Status</p>
-          <p className="font-semibold text-grey-primary">
-            {transaction.status}
-          </p>
+
+          <Status status={document.status} />
         </div>
       </div>
 
@@ -34,39 +33,6 @@ const TransactionView = ({
         <button className="text-sm text-grey-secondary hover:text-action-primary hover:border-action-primary pb-2 w-full">
           Allocations
         </button>
-      </div>
-
-      <div className="space-y-6">
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <p className="text-sm text-grey font-semibold">Deal</p>
-            <p className="font-medium text-grey-primary">{transaction.deal}</p>
-          </div>
-          <div>
-            <p className="text-sm text-grey font-semibold">Counterparty</p>
-            <p className="font-medium text-grey-primary">
-              {transaction.counterparty}
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <p className="text-sm text-grey font-semibold">Instrument</p>
-            <p className="font-medium text-grey-primary">
-              {transaction.instrument}
-            </p>
-          </div>
-          <div>
-            <p className="text-sm text-grey font-semibold">Payment Date</p>
-            <p className="font-medium text-grey-primary">2024-01-24</p>
-          </div>
-        </div>
-
-        <div>
-          <p className="text-sm text-grey font-semibold">Amount</p>
-          <p className="font-medium text-grey-primary">$6,997.51</p>
-        </div>
       </div>
 
       <div className="mt-6 border-t pt-4">
@@ -116,10 +82,10 @@ const TransactionView = ({
           </thead>
           <tbody>
             <tr>
-              <td className="py-2 text-grey-primary text-sm">2025-01-01</td>
-              <td className="py-2 text-grey-primary text-sm">8.5600%</td>
-              <td className="py-2 text-grey-primary text-sm">$50,000.00</td>
-              <td className="py-2 text-grey-primary text-sm">$56,978.00</td>
+              <td className="py-2 text-grey-primary text-base">2025-01-01</td>
+              <td className="py-2 text-grey-primary text-base">8.5600%</td>
+              <td className="py-2 text-grey-primary text-base">$50,000.00</td>
+              <td className="py-2 text-grey-primary text-base">$56,978.00</td>
             </tr>
           </tbody>
         </table>
@@ -128,4 +94,4 @@ const TransactionView = ({
   );
 };
 
-export default TransactionView;
+export default DocumentView;

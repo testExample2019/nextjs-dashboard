@@ -4,43 +4,18 @@ import { useState } from "react";
 import FormTable from "@/app/(root)/template/setup/form-table";
 import Tooltip from "@/app/ui/components/tooltip";
 import React from "react";
+import { transactionsTableData } from "@/app/lib/placeholder-data";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
 
-  const transactions = [
-    {
-      transaction: "Commitment",
-      date: "2025-01-01",
-      amount: "$100,000,000.00",
-    },
-    { transaction: "Drawdown", date: "2025-01-01", amount: "$100,000,000.00" },
-    {
-      transaction: "Interest Payment",
-      date: "2025-02-01",
-      amount: "$849,315.06",
-    },
-    {
-      transaction: "Interest Payment",
-      date: "2025-03-01",
-      amount: "$761,123.28",
-    },
-    {
-      transaction: "Interest Payment",
-      date: "2025-04-01",
-      amount: "$849,315.06",
-    },
-    {
-      transaction: "Principal Repayment",
-      date: "2030-01-01",
-      amount: "$100,000,000.00",
-    },
-  ];
-
   return (
     <div className="flex flex-col lg:flex-row justify-center lg:justify-between min-h-screen">
       {/* Form Container */}
-      <div className="w-full max-w-5xl bg-white border-r-1 border-grey-border">
+      <div
+        id={"tour1-step3"}
+        className="w-full max-w-5xl bg-white border-r-1 border-grey-border"
+      >
         {/* Header */}
         <div className="flex justify-between items-center py-2 px-4 border-b-1 border-grey-border">
           <h1 className="text-18 font-semibold text-grey-primary">
@@ -49,7 +24,11 @@ const LoanSetupPage = () => {
           <div className="flex items-center space-x-3">
             <span className="text-sm text-grey-primary flex items-center gap-1">
               Advanced mode
-              <Tooltip content={"Advanced mode gives you more tools to customize the Loan terms."} />
+              <Tooltip
+                content={
+                  "Advanced mode gives you more tools to customize the Loan terms."
+                }
+              />
             </span>
             <label className="relative inline-flex items-center cursor-pointer">
               <input
@@ -106,7 +85,7 @@ const LoanSetupPage = () => {
             </tr>
           </thead>
           <tbody>
-            {transactions.map((txn, idx) => (
+            {transactionsTableData.map((txn, idx) => (
               <tr key={idx} className="hover:bg-gray-50 whitespace-nowrap">
                 <td className="p-3 text-sm text-grey-primary">
                   {txn.transaction}

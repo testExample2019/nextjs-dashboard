@@ -25,7 +25,7 @@ const FormTable = () => {
   };
 
   return (
-    <div id={"tour1-step3"} className="py-1 px-8">
+    <div className="py-1 px-8">
       {/* Loan Details Form */}
       <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
         General Info

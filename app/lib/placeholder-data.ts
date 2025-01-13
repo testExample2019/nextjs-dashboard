@@ -39,7 +39,7 @@ const deals: DealType[] = [
             status: "5 days overdue",
             prepaymentFee: "$1,601.94",
             total: "$1,901.94",
-            transactionId: "transaction-1",
+            transactionId: "transaction-2",
           },
           {
             id: "credit-2",
@@ -48,7 +48,7 @@ const deals: DealType[] = [
             interest: "$6,997.51",
             principalRepayment: "$50,000.00",
             total: "$56,978.00",
-            transactionId: "transaction-2",
+            transactionId: "transaction-3",
           },
         ],
         debits: [
@@ -70,24 +70,11 @@ const deals: DealType[] = [
           instrument: "Soultrain Revolver",
           borrower: "Soultrain",
           ccy: "USD",
-          counterparty: "Bruno 1",
-          role: "LENDER 1 ",
+          counterparty: "Bruno",
+          role: "LENDER",
           committed: "$100,000,000.00",
           funded: "$0.0",
           unfunded: "$100,000,000.00",
-          docs: "$0.0",
-        },
-        {
-          id: "position-2",
-          deal: "Soultrain",
-          instrument: "Soultrain Revolver",
-          borrower: "Soultrain",
-          ccy: "USD",
-          counterparty: "Bruno 2",
-          role: "LENDER 2",
-          committed: "$200,000,000.00",
-          funded: "$0.0",
-          unfunded: "$200,000,000.00",
           docs: "$0.0",
         },
       ],
@@ -99,16 +86,16 @@ const deals: DealType[] = [
           instrument: "Soultrain Revolver",
           borrower: "Soultrain",
           ccy: "USD",
-          counterparty: "Bruno 1",
+          counterparty: "Bruno",
           role: "LENDER 1 ",
           committed: "$100,000,000.00",
           funded: "$0.0",
           unfunded: "$100,000,000.00",
-          status: "Not Paid",
+          status: "Pending",
         },
         {
           id: "transaction-2",
-          type: "Drawdown",
+          type: "Interest Payment",
           deal: "Soultrain",
           instrument: "Soultrain Revolver",
           borrower: "Soultrain",
@@ -118,12 +105,11 @@ const deals: DealType[] = [
           committed: "$200,000,000.00",
           funded: "$0.0",
           unfunded: "$200,000,000.00",
-
-          status: "Open",
+          status: "NotPaid",
         },
         {
           id: "transaction-3",
-          type: "Drawdown",
+          type: "Interest Payment",
           deal: "Soultrain",
           instrument: "Soultrain Revolver",
           borrower: "Soultrain",
@@ -137,6 +123,20 @@ const deals: DealType[] = [
         },
       ],
       asOfDate: "2024-02-04",
+      documents: [
+        {
+          id: "document-1",
+          documentName: "Soultrain Drawdown",
+          documentType: "Transaction",
+          documentSubType: "Other",
+          deal: "Soultrain",
+          transaction: "Drawdown",
+          transactionDate: "2024-01-01",
+          amount: "$1,000,000.00",
+          documentDate: "2024-10-30",
+          status: "Open",
+        },
+      ],
     },
     borrower: {
       covenantsTracking: [
@@ -247,12 +247,12 @@ const deals: DealType[] = [
           instrument: "Soultrain Revolver",
           borrower: "Soultrain",
           ccy: "USD",
-          counterparty: "Bruno 1",
+          counterparty: "Bruno",
           role: "LENDER 1 ",
           committed: "$100,000,000.00",
           funded: "$0.0",
           unfunded: "$100,000,000.00",
-          status: "Open",
+          status: "Pending",
         },
         {
           id: "transaction-2",
@@ -266,7 +266,7 @@ const deals: DealType[] = [
           committed: "$200,000,000.00",
           funded: "$0.0",
           unfunded: "$200,000,000.00",
-          status: "Open",
+          status: "NotPaid",
         },
         {
           id: "transaction-3",
@@ -561,4 +561,33 @@ const formTableData = {
   dayCount: "ACT/365",
 };
 
-export { deals, formTableData };
+const transactionsTableData = [
+  {
+    transaction: "Commitment",
+    date: "2025-01-01",
+    amount: "$100,000,000.00",
+  },
+  { transaction: "Drawdown", date: "2025-01-01", amount: "$100,000,000.00" },
+  {
+    transaction: "Interest Payment",
+    date: "2025-02-01",
+    amount: "$849,315.06",
+  },
+  {
+    transaction: "Interest Payment",
+    date: "2025-03-01",
+    amount: "$761,123.28",
+  },
+  {
+    transaction: "Interest Payment",
+    date: "2025-04-01",
+    amount: "$849,315.06",
+  },
+  {
+    transaction: "Principal Repayment",
+    date: "2030-01-01",
+    amount: "$100,000,000.00",
+  },
+];
+
+export { deals, formTableData, transactionsTableData };

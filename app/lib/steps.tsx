@@ -52,7 +52,7 @@ export const steps: Tour[] = [
           </p>
         ),
         selector: "#tour1-step3",
-        side: "right-top",
+        side: "right",
         showControls: false,
         showSkip: false,
         pointerPadding: 10,

@@ -13,9 +13,10 @@ export type DealNavType = Omit<DealType, "lender" | "borrower">;
 type DealDetailsType = {
   covenantsTracking: CovenantMetricType[];
   upcomingPayments: UpcomingPaymentsType;
-  positions: PositionsType[];
+  positions: PositionType[];
   transactions: TransactionType[];
   asOfDate: string;
+  documents?: DocumentType[];
 };
 
 export type CovenantMetricType = {
@@ -48,7 +49,7 @@ export type PaymentType = {
 
 export type TransactionType = {
   id: string;
-  type: "Drawdown";
+  type: "Drawdown" | "Interest Payment";
   deal: string;
   instrument: string;
   borrower: string;
@@ -58,21 +59,53 @@ export type TransactionType = {
   committed: string;
   funded: string;
   unfunded: string;
-  status: "Open" | "Reviewed" | "Pending" | "Not Paid";
+  status: "Open" | "Reviewed" | "Pending" | "NotPaid";
 };
 
-export type PositionsType = {
-  id: string;
-  deal: string;
-  instrument: string;
-  borrower: string;
-  ccy: string;
-  counterparty: string;
-  role: string;
-  committed: string;
-  funded: string;
-  unfunded: string;
+export type PositionType = Omit<TransactionType, "status" | "type"> & {
   docs: string;
+};
+
+export type DocumentType = {
+  id: string;
+  documentName: string;
+  documentType: "Transaction" | "Customer" | "Invoice" | "Contract" | string; // Possible document types or a fallback
+  documentSubType: "Other" | "Account Info" | "Financial" | string; // Sub-type options or a fallback
+  deal: string;
+  amount: string;
+  transaction: "Drawdown";
+  transactionDate: string;
+  documentDate: string;
+  status: "Open" | "Reviewed" | "Pending" | "Published";
+};
+
+type TransactionDetails = {
+  type: string;
+  amount: {
+    value: number;
+    currency: string;
+  };
+  txnUpdated: string;
+  info: {
+    effectiveDate: string;
+    paymentDate: string;
+    commitment: {
+      amount: number;
+      currency: string;
+    };
+    unfundedCommitment: {
+      amount: number;
+      currency: string;
+    };
+    amount: {
+      value: number;
+      currency: string;
+    };
+  };
+  feeInfo: {
+    lastUpdated: string | null;
+    notes: string;
+  };
 };
 
 export enum DealsActions {

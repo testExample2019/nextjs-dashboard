@@ -2,9 +2,11 @@
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import Status from "@/app/ui/components/status";
+import { separateWords } from "@/app/lib/utils";
 
 interface TableProps {
-  type: string;
+  type: "document" | "transaction" | "position";
   rows: { [key: string]: string | number }[];
 }
 
@@ -15,17 +17,17 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
     rows?.length > 0 ? Object.keys(rows[0]).filter((key) => key !== "id") : [];
 
   return (
-    <div className="overflow-x-auto shadow-md border border-gray-200 rounded-lg">
-      <table className="divide-y divide-gray-200 w-full">
+    <div className="overflow-x-auto shadow-md border border-grey-border rounded-lg">
+      <table className="divide-y border-grey-border w-full">
         {/* Table Header */}
         <thead className="bg-gray-50">
           <tr>
             {headers.map((header, index) => (
               <th
                 key={index}
-                className="p-4 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider"
+                className="p-4 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[120px] truncate"
               >
-                {header}
+                {separateWords(header)}
               </th>
             ))}
           </tr>
@@ -38,14 +40,11 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
               className={`${path.includes(`${row.id}`) ? " bg-[#EDF4FC]" : ""} transition-all hover:bg-grey-o`}
               key={rowIndex}
             >
-              {headers.map((header, cellIndex) => (
-                <td
-                  key={cellIndex}
-                  className="p-4 text-sm text-grey-primary whitespace-nowrap"
-                >
-                  {header !== "docs" ? (
-                    <Link href={`/${type}/${row.id}`}>{row[header]}</Link>
-                  ) : (
+              {headers.map((header, cellIndex) => {
+                let cellVal: React.JSX.Element;
+
+                if (header === "docs") {
+                  cellVal = (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="25"
@@ -58,9 +57,23 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
                         fill="#D20000"
                       />
                     </svg>
-                  )}
-                </td>
-              ))}
+                  );
+                } else if (header.includes("status")) {
+                  cellVal = <Status status={`${row[header]}`} />;
+                } else {
+                  cellVal = (
+                    <Link href={`/${type}/${row.id}`}>{row[header]}</Link>
+                  );
+                }
+                return (
+                  <td
+                    key={cellIndex}
+                    className="p-4 text-sm text-grey-primary whitespace-nowrap max-w-[120px] truncate"
+                  >
+                    {cellVal}
+                  </td>
+                );
+              })}
             </tr>
           ))}
         </tbody>

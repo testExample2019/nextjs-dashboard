@@ -1,9 +1,8 @@
 import React from "react";
-import TransactionView from "@/app/ui/components/views/transaction-view";
-import { fetchPositionById } from "@/app/lib/data";
+import { fetchDocumentById } from "@/app/lib/data";
 import DrawerClose from "@/app/ui/components/drawer-close";
-import PositionView from "@/app/ui/components/views/position-view";
 import { Cross } from "@/app/ui/icons";
+import DocumentView from "@/app/ui/components/views/document-view";
 
 export default async function PositionDrawer({
   params,
@@ -11,7 +10,7 @@ export default async function PositionDrawer({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const position = await fetchPositionById(id);
+  const document = await fetchDocumentById(id);
   return (
     <>
       <DrawerClose
@@ -21,7 +20,7 @@ export default async function PositionDrawer({
       />
       <div className={"fixed top-0 mr-auto right-0 h-full w-[35vw] bg-white"}>
         <div className="flex justify-between items-center px-6 py-3">
-          <h2 className="text-lg font-semibold">View Transaction</h2>
+          <h2 className="text-lg font-semibold">View Document</h2>
           <DrawerClose
             children={
               <button className="text-grey-blue ">
@@ -30,7 +29,7 @@ export default async function PositionDrawer({
             }
           />
         </div>
-        <PositionView position={position} />
+        <DocumentView document={document} />
       </div>
     </>
   );
