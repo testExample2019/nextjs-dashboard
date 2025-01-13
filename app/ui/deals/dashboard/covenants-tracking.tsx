@@ -88,12 +88,12 @@ function CovenantsCard({
             <span className="text-grey-primary text-base px-2">
               {value} <span className={"text-grey"}>|</span>
             </span>
-            <span className="inline-flex text-grey-primary text-28 font-bold">
+            <span className="inline-flex text-grey-primary text-28 font-bold min-w-[55px]">
               {value}
             </span>
           </div>
 
-          <span className="text-grey text-sm">
+          <span className="text-[#909090] text-sm">
             Previous Period | {prevPeriodValue}
           </span>
         </div>

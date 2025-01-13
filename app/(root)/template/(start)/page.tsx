@@ -57,7 +57,7 @@ const LoanTemplatePage = () => {
       title: "Blank Template",
       subtitle: "Create from scratch",
       description:
-        "Pre-configured for loans with a fixed interest rate. Ideal for predictable cash flow scenarios.",
+        "Start from scratch with a completely customizable template. Ideal for unique or complex loan structures not covered by the pre-defined options.",
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
           <path

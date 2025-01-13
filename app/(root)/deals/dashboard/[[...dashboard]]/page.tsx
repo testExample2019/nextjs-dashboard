@@ -32,6 +32,12 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
             <UpcomingPayments dealName={dealName} dealView={dealView} />
           </div>
         </Suspense>
+        <Suspense fallback={<TableSkeleton />}>
+          <h3 className={"text-grey-primary text-base font-semibold"}>
+            Positions
+          </h3>
+          <PositionsTable dealName={dealName} dealView={dealView} />
+        </Suspense>
         <Suspense fallback={<CovenantsTrackingSkeleton />}>
           <h3 className={"text-grey-primary text-base font-semibold"}>
             Covenants Tracking
@@ -39,12 +45,6 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
           <div className="flex flex-col lg:flex-row gap-4">
             <CovenantsCardWrapper dealName={dealName} dealView={dealView} />
           </div>
-        </Suspense>
-        <Suspense fallback={<TableSkeleton />}>
-          <h3 className={"text-grey-primary text-base font-semibold"}>
-            Positions
-          </h3>
-          <PositionsTable dealName={dealName} dealView={dealView} />
         </Suspense>
       </div>
     </Suspense>
