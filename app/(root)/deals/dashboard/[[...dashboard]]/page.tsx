@@ -39,9 +39,9 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
         </h1>
       </div>
       <div className={"p-4 flex flex-col gap-4"}>
-        <h3 className={"text-grey-primary text-base font-semibold"}>
+        <h2 className={"text-grey-primary text-base font-semibold"}>
           Upcoming Payments
-        </h3>
+        </h2>
         <Suspense fallback={<UpcomingPaymentsSkeleton />}>
           <div id={"tour1-step6"}>
             <UpcomingPayments dealName={dealName} dealView={dealView} />
