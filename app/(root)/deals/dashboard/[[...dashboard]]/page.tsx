@@ -16,12 +16,10 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
 
   return (
     <Suspense key={dashboard} fallback={<DashboardSkeleton />}>
-      <div
-        className={
-          "py-2 px-4  h-[50px] border-b-1 border-grey-border"
-        }
-      >
-        <h1 className={`text-18 w-full md:text-2xl text-grey-primary flex items-center gap-2`}>
+      <div className={"py-2 px-4  h-[50px] border-b-1 border-grey-border"}>
+        <h1
+          className={`text-18 w-full md:text-2xl text-grey-primary flex items-center gap-2`}
+        >
           Dashboard
           {
             <svg
@@ -37,28 +35,28 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
               />
             </svg>
           }
-          <span className={'capitalize'}>{dealName}</span>
+          <span className={"capitalize"}>{dealName}</span>
         </h1>
       </div>
       <div className={"p-4 flex flex-col gap-4"}>
+        <h3 className={"text-grey-primary text-base font-semibold"}>
+          Upcoming Payments
+        </h3>
         <Suspense fallback={<UpcomingPaymentsSkeleton />}>
-          <h3 className={"text-grey-primary text-base font-semibold"}>
-            Upcoming Payments
-          </h3>
           <div id={"tour1-step6"}>
             <UpcomingPayments dealName={dealName} dealView={dealView} />
           </div>
         </Suspense>
+        <h3 className={"text-grey-primary text-base font-semibold"}>
+          Positions
+        </h3>
         <Suspense fallback={<TableSkeleton />}>
-          <h3 className={"text-grey-primary text-base font-semibold"}>
-            Positions
-          </h3>
           <PositionsTable dealName={dealName} dealView={dealView} />
         </Suspense>
+        <h3 className={"text-grey-primary text-base font-semibold"}>
+          Covenants Tracking
+        </h3>
         <Suspense fallback={<CovenantsTrackingSkeleton />}>
-          <h3 className={"text-grey-primary text-base font-semibold"}>
-            Covenants Tracking
-          </h3>
           <div className="flex flex-col lg:flex-row gap-4">
             <CovenantsCardWrapper dealName={dealName} dealView={dealView} />
           </div>

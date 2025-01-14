@@ -5,6 +5,7 @@ import FormTable from "@/app/(root)/template/setup/form-table";
 import Tooltip from "@/app/ui/components/tooltip";
 import React from "react";
 import { transactionsTableData } from "@/app/lib/placeholder-data";
+import AdvancedFormTable from "@/app/(root)/template/setup/advanced-form-table";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
@@ -42,7 +43,7 @@ const LoanSetupPage = () => {
             </label>
           </div>
         </div>
-        <FormTable />
+        {isAdvanced ? <AdvancedFormTable /> : <FormTable />}
       </div>
       {/* Table */}
       <div className="w-full lg:w-[40%] bg-white overflow-auto">

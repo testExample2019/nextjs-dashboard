@@ -30,6 +30,7 @@ const FormTable = () => {
       <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
         General Info
       </h2>
+      {/* General info */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
         <div className={"flex gap-4 justify-between"}>
           <div className={"w-full"}>
@@ -261,10 +262,10 @@ const FormTable = () => {
         </div>
       </div>
 
-      {/* Bullet Repayment */}
+      {/* Amortization */}
       <div className="mt-2">
         <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
-          Bullet Repayment
+          Amortization
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
           <div className="flex items-center space-x-3">
