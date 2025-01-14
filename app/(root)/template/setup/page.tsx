@@ -14,7 +14,7 @@ const LoanSetupPage = () => {
       {/* Form Container */}
       <div
         id={"tour1-step3"}
-        className="w-full max-w-5xl bg-white border-r-1 border-grey-border"
+        className="w-full lg:w-[60%] bg-white border-r-1 border-grey-border"
       >
         {/* Header */}
         <div className="flex justify-between items-center py-2 px-4 border-b-1 border-grey-border">
@@ -45,7 +45,7 @@ const LoanSetupPage = () => {
         <FormTable />
       </div>
       {/* Table */}
-      <div className="w-full lg:w-1/3 max-w-5xl bg-white overflow-auto">
+      <div className="w-full lg:w-[40%] bg-white overflow-auto">
         <h2 className="text-18 font-semibold capitalize text-grey-primary py-2 px-4 border-b-1 border-grey-border">
           Preview transactions schedule
         </h2>

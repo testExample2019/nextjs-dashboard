@@ -1,6 +1,7 @@
 import { CovenantMetricType, DealParamsType } from "@/app/lib/definitions";
 import { fetchCovenantsTrackingData } from "@/app/lib/data";
 import React from "react";
+import ValueIndicator from "@/app/ui/deals/dashboard/value-indicator";
 
 const CovenantsCardWrapper: React.FC<DealParamsType> = async ({
   dealName,
@@ -11,13 +12,17 @@ const CovenantsCardWrapper: React.FC<DealParamsType> = async ({
   return (
     <>
       {covenantsTrackingData?.map(
-        ({ title, value, change, prevPeriodValue, status }, key) => (
+        (
+          { title, value, change, changeValue, prevPeriodValue, status },
+          key,
+        ) => (
           <CovenantsCard
             key={key}
             title={title}
             value={value}
             status={status}
             change={change}
+            changeValue={changeValue}
             prevPeriodValue={prevPeriodValue}
           />
         ),
@@ -32,6 +37,7 @@ function CovenantsCard({
   title,
   value,
   change,
+  changeValue,
   prevPeriodValue,
   status,
 }: CovenantMetricType) {
@@ -79,22 +85,20 @@ function CovenantsCard({
           </div>
         </div>
         <div className="flex flex-col items-end justify-center gap-2">
-          <div>
-            <span
-              className={`${status === "Passed" ? "text-green" : "text-red"} text-base font-n`}
-            >
-              {change}
-            </span>
+          <div className={"flex items-center justify-center"}>
+            <ValueIndicator value={change} />
+
             <span className="text-grey-primary text-base px-2">
-              {value} <span className={"text-grey"}>|</span>
+              {changeValue}
             </span>
-            <span className="inline-flex text-grey-primary text-28 font-bold min-w-[55px]">
-              {value}
+            <span className="text-grey-primary text-28 font-bold flex items-center justify-center gap-4">
+              <span className={"text-grey text-base"}>|</span> {value}
             </span>
           </div>
 
-          <span className="text-[#909090] text-sm">
-            Previous Period | {prevPeriodValue}
+          <span className="text-[#909090] text-sm flex items-center justify-center gap-2">
+            Previous Period <span>|</span>
+            <span className="min-w-[65px] font-semibold">({prevPeriodValue})</span>
           </span>
         </div>
       </div>

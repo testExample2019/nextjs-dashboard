@@ -73,7 +73,7 @@ const FormTable = () => {
           >
             <option>{formData.deal}</option>
           </select>
-          <span className="text-sm text-grey">
+          <span className="text-xs text-grey">
             Place your new loan to an existing deal or create a new one
           </span>
         </div>
@@ -83,21 +83,21 @@ const FormTable = () => {
               Loan Amount
               <Tooltip content={"lorem"} />
             </label>
-            <select
+            <input
+              type="text"
               name="loanAmount"
-              defaultValue={formData.loanAmount}
+              value={formData.loanAmount}
               onChange={handleInputChange}
+              placeholder="Loan Amount"
               className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
-            >
-              <option>{formData.loanAmount}</option>
-            </select>
+            />
           </div>
           <div className={"w-full"}>
             <label className="block text-sm font-semibold text-grey-primary">
               CCY
             </label>
             <select
-              name="loanAmount"
+              name="ccy"
               defaultValue={formData.ccy}
               onChange={handleInputChange}
               className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"

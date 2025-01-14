@@ -23,10 +23,9 @@ export type CovenantMetricType = {
   title: string;
   value: number;
   change: string;
+  changeValue: string;
   status: "Passed" | "Failed";
   prevPeriodValue: number | string;
-  minimum?: number;
-  maximum?: number;
 };
 
 export type UpcomingPaymentsType = {

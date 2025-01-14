@@ -34,11 +34,11 @@ export const SideNavLink = ({
 
       <div className="mt-2">
         <div className="w-full rounded-full h-2.5 bg-grey-light bg-opacity-40">
-          <div className="bg-green h-2.5 rounded-full w-1/2"></div>
+          <div className="bg-green h-2.5 rounded-full w-1/3"></div>
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-2">
+      <div className="flex justify-between items-center mt-2 gap-2">
         <div className="text-xs text-grey-secondary">
           Funded
           <p className="text-sm font-bold text-green">{funded}</p>
