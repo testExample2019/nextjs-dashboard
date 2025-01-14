@@ -55,6 +55,8 @@ export default function NavBar() {
             {/* Filter Dropdown */}
             <div className="relative">
               <select
+                name={'filter'}
+                aria-label={'Filter By Counterparty/Group'}
                 defaultValue={"Filter By Counterparty/Group"}
                 className="block bg-transparent w-full px-4 py-2 min-w-[300px] text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
               >
@@ -68,6 +70,8 @@ export default function NavBar() {
             <div className="relative">
               <input
                 type="text"
+                name={'search'}
+                aria-label={'Search Input'}
                 defaultValue={"Search for data"}
                 className="block  bg-transparent min-w-[300px] w-full px-8 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
               />

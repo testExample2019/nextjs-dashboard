@@ -59,8 +59,9 @@ export const ButtonDropdown = <T,>({
               className={`flex w-full px-4 py-2 text-sm  capitalize text-nowrap hover:bg-grey-lighter ${
                 label.includes("Reject") ? "text-red" : "text-grey-primary"
               }`}
+              aria-label={label}
               role="menuitem"
-              id="menu-item-0"
+              id={`menu-item-${id}`}
               onClick={() => {
                 onAction(actionType);
                 setIsDropdownOpen(false);
