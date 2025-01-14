@@ -44,7 +44,11 @@ export default function ViewsNav() {
                     ? DealViews.Borrower
                     : DealViews.Lender,
                 )}
-                className={`${path.includes(link.toLowerCase()) ? "flex" : "hidden"} gap-2 items-center px-4 py-1 bg-blue-100 text-blue-dark text-sm font-medium rounded-full hover:bg-blue-200 transition`}
+                className={`${path.includes(link.toLowerCase()) ? "flex" : "hidden"} ${
+                  link === DealViews.Lender
+                    ? "bg-[#EDF4FC] text-blue-dark"
+                    : "bg-[#f2994a33] text-orange"
+                } gap-2 items-center px-4 py-1  text-sm font-medium rounded-full transition`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
