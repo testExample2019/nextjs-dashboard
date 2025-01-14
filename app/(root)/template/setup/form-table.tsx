@@ -273,7 +273,7 @@ const FormTable = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
             <div className="flex items-center space-x-3">
-              <span className="text-sm text-grey-primary flex items-center gap-1">
+              <span className="text-base text-grey-primary flex items-center gap-1">
                 Amortized Loan
                 <Tooltip content={"lorem"} />
               </span>

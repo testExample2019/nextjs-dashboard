@@ -544,21 +544,80 @@ const formTableDataAdvanced = {
   rateScale: 4,
   includeAccrualEnd: true,
   accrualEndAdj: true,
-  spreads:  [
-    { date: "2025-01-01", spreadType: "Standard", spread: "10.0000%", spreadAdj: "+0.1000%" },
-    { date: "2026-01-01", spreadType: "Standard", spread: "12.0000%", spreadAdj: "+0.1000%" },
-    { date: "2025-01-01", spreadType: "PIK", spread: "20.0000%", spreadAdj: "+0.5000%" },
-    { date: "2026-01-01", spreadType: "PIK", spread: "22.0000%", spreadAdj: "+0.5000%" },
-    { date: "2025-01-01", spreadType: "Standard Participation", spread: "8.0000%", spreadAdj: "-" },
+  spreads: [
+    {
+      date: "2025-01-01",
+      spreadType: "Standard",
+      spread: "10.0000%",
+      spreadAdj: "+0.1000%",
+    },
+    {
+      date: "2026-01-01",
+      spreadType: "Standard",
+      spread: "12.0000%",
+      spreadAdj: "+0.1000%",
+    },
+    {
+      date: "2025-01-01",
+      spreadType: "PIK",
+      spread: "20.0000%",
+      spreadAdj: "+0.5000%",
+    },
+    {
+      date: "2026-01-01",
+      spreadType: "PIK",
+      spread: "22.0000%",
+      spreadAdj: "+0.5000%",
+    },
+    {
+      date: "2025-01-01",
+      spreadType: "Standard Participation",
+      spread: "8.0000%",
+      spreadAdj: "-",
+    },
   ],
-  facilityFees:  [
-    { type: "Upfront Fee", appliesTo: "N/A", rate: "-", flatAmount: "$1,500.00" },
-    { type: "Unfunded Fee", appliesTo: "Current Unfunded", rate: "1.5000%", flatAmount: "-" },
-    { type: "Prepayment Fee", appliesTo: "Prepayment Amount", rate: "0.5000%", flatAmount: "-" },
-    { type: "Drawdown Fee", appliesTo: "Drawdown Amount", rate: "0.1000%", flatAmount: "-" },
-    { type: "Commitment Fee", appliesTo: "Commitment Amount", rate: "0.1000%", flatAmount: "-" },
-    { type: "Administrative Fee", appliesTo: "N/A", rate: "-", flatAmount: "$1,500.00" },
+  facilityFees: [
+    {
+      type: "Upfront Fee",
+      appliesTo: "N/A",
+      rate: "-",
+      flatAmount: "$1,500.00",
+    },
+    {
+      type: "Unfunded Fee",
+      appliesTo: "Current Unfunded",
+      rate: "1.5000%",
+      flatAmount: "-",
+    },
+    {
+      type: "Prepayment Fee",
+      appliesTo: "Prepayment Amount",
+      rate: "0.5000%",
+      flatAmount: "-",
+    },
+    {
+      type: "Drawdown Fee",
+      appliesTo: "Drawdown Amount",
+      rate: "0.1000%",
+      flatAmount: "-",
+    },
+    {
+      type: "Commitment Fee",
+      appliesTo: "Commitment Amount",
+      rate: "0.1000%",
+      flatAmount: "-",
+    },
+    {
+      type: "Administrative Fee",
+      appliesTo: "N/A",
+      rate: "-",
+      flatAmount: "$1,500.00",
+    },
   ],
+  accrualFrequency: 1,
+  accrualFrequencyUnit: "Month End",
+  adjustmentValue: 1,
+  adjustmentType: "Business Day of the Month",
 };
 
 const transactionsTableData = [

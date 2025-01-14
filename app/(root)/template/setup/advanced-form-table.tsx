@@ -293,7 +293,7 @@ const AdvancedTable = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             <div className="flex items-center space-x-3">
-              <span className="text-sm text-grey-primary flex items-center gap-1">
+              <span className="text-base text-grey-primary flex items-center gap-1">
                 Include Accrual End
                 <Tooltip content={"Lorem"} />
               </span>
@@ -308,7 +308,7 @@ const AdvancedTable = () => {
               </label>
             </div>
             <div className="flex items-center space-x-3">
-              <span className="text-sm text-grey-primary flex items-center gap-1">
+              <span className="text-base text-grey-primary flex items-center gap-1">
                 Adjust Accrual End to Business Days
                 <Tooltip content={"Lorem"} />
               </span>
@@ -316,7 +316,7 @@ const AdvancedTable = () => {
                 <input
                   type="checkbox"
                   className="sr-only peer"
-                  defaultChecked={true}
+                  defaultChecked={false}
                 />
                 <div className="w-10 h-4 bg-[#21212170] rounded-full peer peer-checked:bg-purple-o"></div>
                 <div className="absolute w-6 h-6 bg-white rounded-full shadow-md transform transition peer-checked:translate-x-4 peer-checked:bg-purple"></div>
@@ -349,6 +349,55 @@ const AdvancedTable = () => {
               <Cross />
             </button>
           </h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+            <div>
+              <label className="block text-sm font-semibold text-grey-primary h-6">
+                Accrual Frequency
+              </label>
+              <input
+                type="text"
+                name="accrualFrequency"
+                value={formData.accrualFrequency}
+                onChange={handleInputChange}
+                className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-grey-primary h-6"></label>
+              <select
+                aria-label="Accrual Frequency Unit"
+                name="accrualFrequencyUnit"
+                defaultValue={formData.accrualFrequencyUnit}
+                onChange={handleInputChange}
+                className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+              >
+                <option>{formData.accrualFrequencyUnit}</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-grey-primary h-6 whitespace-nowrap">
+                Adjust Interest Payment Date To
+              </label>
+              <input
+                type="text"
+                name="adjustmentValue"
+                value={formData.adjustmentValue}
+                onChange={handleInputChange}
+                className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-grey-primary h-6"></label>
+              <input
+                aria-label="Interest Payment Adjustment DateType"
+                type="text"
+                name="adjustmentType"
+                value={formData.adjustmentType}
+                onChange={handleInputChange}
+                className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+              />
+            </div>
+          </div>
         </div>
 
         {/*  Spreads */}
@@ -464,7 +513,7 @@ const AdvancedTable = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
             <div className="flex items-center space-x-3">
-              <span className="text-sm text-grey-primary flex items-center gap-1">
+              <span className="text-base text-grey-primary flex items-center gap-1">
                 Amortized Loan
                 <Tooltip content={"lorem"} />
               </span>
