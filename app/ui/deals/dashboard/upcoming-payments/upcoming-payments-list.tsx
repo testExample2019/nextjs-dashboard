@@ -3,6 +3,7 @@ import { useState } from "react";
 import React from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import {
+  PaymentActions,
   PaymentApproveActions,
   PaymentTypes,
   UpcomingPaymentsType,
@@ -40,32 +41,21 @@ export default function UpcomingPaymentsList({
       {/* Content */}
       <div className={"p-4 w-full bg-grey-o"}>
         <div className="flex">
-          <button
-            onClick={() => setActivePaymentType(PaymentTypes.Debits)}
-            className={`flex gap-2 px-4 py-2 text-sm font-semibold relative ${
-              activePaymentType === PaymentTypes.Debits
-                ? "border-b-2 border-action-primary text-action-primary"
-                : "text-grey-secondary"
-            }`}
-          >
-            Debits
-            <span className="bg-red text-white rounded-full w-5 h-5 font-bold">
-              {upcomingPayments?.[PaymentTypes.Debits]?.length}
-            </span>
-          </button>
-          <button
-            onClick={() => setActivePaymentType(PaymentTypes.Credits)}
-            className={`flex gap-2 px-4 py-2 text-sm font-semibold relative ${
-              activePaymentType === PaymentTypes.Credits
-                ? "border-b-2 border-action-primary text-action-primary"
-                : "text-grey-secondary"
-            }`}
-          >
-            Credits
-            <span className="bg-red text-white rounded-full w-5 h-5 font-bold">
-              {upcomingPayments?.[PaymentTypes.Credits]?.length}
-            </span>
-          </button>
+          {[PaymentTypes.Debits, PaymentTypes.Credits].map((payment) => (
+            <button
+              onClick={() => setActivePaymentType(payment)}
+              className={`flex gap-2 px-4 py-2 text-sm font-semibold relative capitalize ${
+                activePaymentType === payment
+                  ? "border-b-2 border-action-primary text-action-primary"
+                  : "text-grey-secondary"
+              }`}
+            >
+              {payment}
+              <span className="bg-red text-white rounded-full w-5 h-5 font-bold">
+                {upcomingPayments?.[payment]?.length}
+              </span>
+            </button>
+          ))}
         </div>
         <div className="mt-4 space-y-4">
           {payments?.map((payment) => (
@@ -130,7 +120,6 @@ export default function UpcomingPaymentsList({
                             type="button"
                             className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
                             id="menu-button"
-                            aria-expanded="true"
                             aria-haspopup="true"
                           >
                             {"APPROVE"}
@@ -193,9 +182,18 @@ export default function UpcomingPaymentsList({
                       </button>
                     }
                     dropdownItems={PaymentOptionsDropdownItems}
-                    onAction={() =>
-                      router.push(`/transaction/${payment.transactionId}`)
-                    }
+                    onAction={(actionType) => {
+                      console.log(payment);
+                      if (actionType === PaymentActions.ViewTransaction) {
+                        router.push(`/transaction/${payment.transactionId}`);
+                      }
+                      if (
+                        actionType === PaymentActions.ViewNotice &&
+                        payment.documentId
+                      ) {
+                        router.push(`/document/${payment.documentId}`);
+                      } else return;
+                    }}
                   />
                 </div>
               </div>

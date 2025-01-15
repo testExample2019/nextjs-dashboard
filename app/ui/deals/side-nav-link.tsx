@@ -38,7 +38,7 @@ export const SideNavLink = ({
         </div>
       </div>
 
-      <div className="flex justify-between items-center mt-2 gap-2">
+      <div className="flex justify-between items-center mt-2 gap-4">
         <div className="text-xs text-grey-secondary">
           Funded
           <p className="text-sm font-bold text-green">{funded}</p>

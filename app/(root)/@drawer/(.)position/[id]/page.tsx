@@ -19,7 +19,7 @@ export default async function PositionDrawer({
           <div className={"fixed inset-0 bg-[#4E4B4B] bg-opacity-40"} />
         }
       />
-      <div className={"fixed top-0 mr-auto right-0 h-full w-[35vw] bg-white"}>
+      <div className={"fixed top-0 mr-auto right-0 h-full w-[35vw] bg-white overflow-auto"}>
         <div className="flex justify-between items-center px-6 py-3">
           <h2 className="text-lg font-semibold">View Transaction</h2>
           <DrawerClose

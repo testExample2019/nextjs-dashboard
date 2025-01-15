@@ -25,7 +25,7 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
             {headers.map((header, index) => (
               <th
                 key={index}
-                className="p-4 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[120px] truncate"
+                className="p-3 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[120px] truncate"
               >
                 {separateWords(header)}
               </th>
@@ -68,7 +68,7 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
                 return (
                   <td
                     key={cellIndex}
-                    className="p-4 text-sm text-grey-primary whitespace-nowrap max-w-[120px] truncate"
+                    className="p-3 text-base text-grey-primary whitespace-nowrap max-w-[120px] truncate"
                   >
                     {cellVal}
                   </td>

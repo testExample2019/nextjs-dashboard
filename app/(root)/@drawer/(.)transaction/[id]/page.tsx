@@ -18,7 +18,11 @@ export default async function TransactionDrawer({
           <div className={"fixed inset-0 bg-[#4E4B4B] bg-opacity-40"} />
         }
       />
-      <div className={"fixed top-0 mr-auto right-0 h-full w-[35vw] bg-white"}>
+      <div
+        className={
+          "fixed top-0 mr-auto right-0 h-full w-[35vw] bg-white overflow-auto"
+        }
+      >
         <div className="flex flex-col justify-between h-full pb-2">
           <div>
             <div className="flex justify-between items-center px-6 py-3">

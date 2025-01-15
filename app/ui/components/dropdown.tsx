@@ -47,30 +47,28 @@ export const ButtonDropdown = <T,>({
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <div onClick={toggleDropdown}>{children}</div>
       <div
-        className={`${isDropdownOpen ? "flex" : "hidden"} absolute right-0 z-10 mt-0 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none`}
+        className={`${isDropdownOpen ? "flex" : "hidden"} flex-col overflow-hidden absolute right-0 z-10 mt-0 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none`}
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="menu-button"
       >
-        <div>
-          {dropdownItems.map(({ id, label, actionType }) => (
-            <button
-              key={id}
-              className={`flex w-full px-4 py-2 text-sm  capitalize text-nowrap hover:bg-grey-lighter ${
-                label.includes("Reject") ? "text-red" : "text-grey-primary"
-              }`}
-              aria-label={label}
-              role="menuitem"
-              id={`menu-item-${id}`}
-              onClick={() => {
-                onAction(actionType);
-                setIsDropdownOpen(false);
-              }}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+        {dropdownItems.map(({ id, label, actionType }) => (
+          <button
+            key={id}
+            className={`flex w-full px-4 py-2 text-sm capitalize text-nowrap hover:bg-grey-lighter ${
+              label.includes("Reject") ? "text-red" : "text-grey-primary"
+            }`}
+            aria-label={label}
+            role="menuitem"
+            id={`menu-item-${id}`}
+            onClick={() => {
+              onAction(actionType);
+              setIsDropdownOpen(false);
+            }}
+          >
+            {label}
+          </button>
+        ))}
       </div>
     </div>
   );

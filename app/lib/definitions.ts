@@ -39,6 +39,7 @@ export type PaymentType = {
   status: string;
   total: string;
   transactionId: string;
+  documentId?: string;
   prepaymentFee?: string;
   interest?: string;
   principalRepayment?: string;
@@ -48,6 +49,7 @@ export type PaymentType = {
 
 export type TransactionType = {
   id: string;
+  paymentType: "Credit" | "Debit";
   type: "Drawdown" | "Interest Payment";
   deal: string;
   instrument: string;
@@ -59,17 +61,53 @@ export type TransactionType = {
   funded: string;
   unfunded: string;
   status: "Open" | "Reviewed" | "Pending" | "NotPaid";
+  amount: string;
+  paymentDate: string;
+  rateInfo: RateInfoType;
+  interestAmount: InterestAmountType;
+  allocations: AllocationType[];
 };
 
-export type PositionType = Omit<TransactionType, "status" | "type"> & {
+type RateInfoType = {
+  type: "Fixed" | "Floating"; // Type of rate
+  dayCount: "ACT/360" | "ACT/365" | "30/360"; // Day count convention
+  accrualStartDate: string; // Start date in ISO format (e.g., "2025-01-24")
+  accrualEndDate: string; // End date in ISO format (e.g., "2025-02-24")
+};
+
+type InterestAmountType = {
+  date: string; // Date in ISO format (e.g., "2025-01-24")
+  rate: string; // Rate as a string (e.g., "8.5600")
+  principal: string; // Principal amount as a string with currency (e.g., "$5,000,000.00")
+  amount: string; // Interest amount as a string with currency (e.g., "$36,855.56")
+};
+
+type AllocationType = {
+  role: "Borrower" | "Lender";
+  counterparty: string;
+  amount: string; // Formatted string (e.g., "(849,315.07)")
+  share: string; // Formatted percentage (e.g., "100.00%")
+};
+
+export type PositionType = {
+  id: string;
+  deal: string;
+  instrument: string;
+  borrower: string;
+  ccy: string;
+  counterparty: string;
+  role: string;
+  committed: string;
+  funded: string;
+  unfunded: string;
   docs: string;
 };
 
 export type DocumentType = {
   id: string;
   documentName: string;
-  documentType: "Transaction" | "Customer" | "Invoice" | "Contract" | string; // Possible document types or a fallback
-  documentSubType: "Other" | "Account Info" | "Financial" | string; // Sub-type options or a fallback
+  documentType: "Transaction" | "Customer" | "Invoice" | "Contract" | string;
+  documentSubType: "Other" | "Final notice" | string;
   deal: string;
   amount: string;
   transaction: "Drawdown";

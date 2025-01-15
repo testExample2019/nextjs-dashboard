@@ -1,8 +1,14 @@
 import {
   DealsActions,
+  DealViews,
   PaymentActions,
   PaymentApproveActions,
 } from "@/app/lib/definitions";
+
+export const ViewDropdownItems = [
+  { id: 1, label: `${DealViews.Lender} View`, actionType: DealViews.Lender },
+  { id: 2, label: `${DealViews.Borrower} View`, actionType: DealViews.Borrower },
+];
 
 export const dealsDropdownItems = [
   { id: 1, label: "Import Deal", actionType: DealsActions.Import },
