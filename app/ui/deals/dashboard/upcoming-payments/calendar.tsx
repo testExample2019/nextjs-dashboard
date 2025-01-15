@@ -29,7 +29,7 @@ const Calendar = ({ payments }: { payments: PaymentType[] }) => {
 
   return (
     <div className="w-full lg:w-[40%]">
-      <div className="bg-white p-4 h-full">
+      <div className="bg-white p-4 h-full rounded-md">
         <div className="flex justify-between items-center mb-4">
           <p className="text-sm font-semibold text-action-primary">
             {format(monthStart, "MMMM yyyy").toUpperCase()}

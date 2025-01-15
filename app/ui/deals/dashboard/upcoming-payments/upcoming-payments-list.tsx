@@ -5,16 +5,11 @@ import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import {
   DealViews,
   PaymentActions,
-  PaymentApproveActions,
   PaymentTypes,
   UpcomingPaymentsType,
 } from "@/app/lib/definitions";
 import { usePathname, useRouter } from "next/navigation";
-import { useToast } from "@/app/lib/contexts/toast-context";
-import {
-  PaymentApproveDropdownItems,
-  PaymentOptionsDropdownItems,
-} from "@/app/lib/constants";
+import { PaymentOptionsDropdownItems } from "@/app/lib/constants";
 import Calendar from "@/app/ui/deals/dashboard/upcoming-payments/calendar";
 import Status from "@/app/ui/components/status";
 
@@ -29,13 +24,6 @@ export default function UpcomingPaymentsList({
     PaymentTypes.Credits,
   );
   const payments = upcomingPayments?.[activePaymentType];
-  const { showToast } = useToast();
-  const handleShowSuccessToast = () => {
-    showToast("Approved!", "success");
-  };
-  const handleShowErrorToast = () => {
-    showToast("Rejected!", "success");
-  };
 
   return (
     <div className={"flex justify-between w-full"}>
@@ -74,11 +62,15 @@ export default function UpcomingPaymentsList({
                     <Status status={payment.status} />
                   </div>
 
-                  <div className="text-base text-grey flex justify-start gap-4 items-center">
+                  <div className="text-xs text-grey flex justify-start gap-4 items-center">
                     {payment.drawDown && (
                       <span className={"uppercase font-semibold"}>
                         DrawDown
-                        <span className={"text-grey-primary ms-2 font-normal"}>
+                        <span
+                          className={
+                            "text-grey-primary text-base ms-2 font-normal"
+                          }
+                        >
                           {payment.drawDown}
                         </span>
                       </span>
@@ -86,7 +78,11 @@ export default function UpcomingPaymentsList({
                     {payment.drawDownFee && (
                       <span className={"uppercase font-semibold"}>
                         DrawDown Fee
-                        <span className={"text-grey-primary ms-2 font-normal"}>
+                        <span
+                          className={
+                            "text-grey-primary text-base ms-2 font-normal"
+                          }
+                        >
                           {payment.drawDownFee}
                         </span>
                       </span>
@@ -94,7 +90,11 @@ export default function UpcomingPaymentsList({
                     {payment.prepaymentFee && (
                       <span className={"uppercase font-semibold"}>
                         Prepayment Fee:
-                        <span className={"text-grey-primary ms-2 font-normal"}>
+                        <span
+                          className={
+                            "text-grey-primary text-base ms-2 font-normal"
+                          }
+                        >
                           {payment.prepaymentFee}
                         </span>
                       </span>
@@ -102,7 +102,11 @@ export default function UpcomingPaymentsList({
                     {payment.interest && (
                       <span className="uppercase font-semibold">
                         Interest:
-                        <span className={"text-grey-primary ms-2 font-normal"}>
+                        <span
+                          className={
+                            "text-grey-primary text-base ms-2 font-normal"
+                          }
+                        >
                           {payment.interest}
                         </span>
                       </span>
@@ -110,37 +114,29 @@ export default function UpcomingPaymentsList({
                     {payment.principalRepayment && (
                       <span className="uppercase font-semibold">
                         Principal Repayment:
-                        <span className={"text-grey-primary ms-2 font-normal"}>
+                        <span
+                          className={
+                            "text-grey-primary text-base ms-2 font-normal"
+                          }
+                        >
                           {payment.principalRepayment}
                         </span>
                       </span>
                     )}
-                    {activePaymentType === PaymentTypes.Debits &&
-                      path.includes(DealViews.Lender) && (
-                        <ButtonDropdown
-                          children={
-                            <button
-                              type="button"
-                              className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
-                              id="menu-button"
-                              aria-haspopup="true"
-                            >
-                              {"Preview"}
-                            </button>
-                          }
-                          dropdownItems={PaymentApproveDropdownItems}
-                          onAction={(actionType: string) => {
-                            if (
-                              actionType === PaymentApproveActions.Approve ||
-                              actionType === PaymentApproveActions.ApproveAndPay
-                            ) {
-                              handleShowSuccessToast();
-                            } else {
-                              handleShowErrorToast();
-                            }
-                          }}
-                        />
-                      )}
+                    {activePaymentType === PaymentTypes.Debits && (
+                      <button
+                        type="button"
+                        onClick={() =>
+                          payment.transactionId &&
+                          router.push(`/transaction/${payment.transactionId}`)
+                        }
+                        className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
+                        id="menu-button"
+                        aria-haspopup="true"
+                      >
+                        Preview
+                      </button>
+                    )}
                   </div>
                 </div>
                 <div className={"flex items-center justify-between gap-4"}>
@@ -195,7 +191,6 @@ export default function UpcomingPaymentsList({
         </div>
       </div>
 
-      {/* Calendar */}
       <Calendar payments={payments} />
     </div>
   );
