@@ -107,7 +107,6 @@ export function UpcomingPaymentsSkeleton() {
 export function TableSkeleton() {
   return (
     <section className={"w-full"}>
-      <div className="h-6 bg-gray-300 rounded-medium w-1/4 mb-4 animate-pulse"></div>
       <div className="bg-white rounded shadow">
         <div className="p-4">
           <div className="h-4 bg-gray-200 rounded animate-pulse"></div>

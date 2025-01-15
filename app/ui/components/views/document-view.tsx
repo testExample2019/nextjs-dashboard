@@ -36,7 +36,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
         </div>
       </div>
 
-      <div className={'h-[380px] overflow-auto'}>
+      <div className={"h-[380px] overflow-auto"}>
         <Image
           src="/images/invoice.png"
           width={550}
@@ -59,28 +59,31 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
           Details
         </h2>
         <div className="grid grid-cols-2 gap-4">
-          <p className="text-sm text-gray-500 font-semibold">
+          <p className="text-sm text-grey font-semibold">
             Last Updated / Uploaded
           </p>
-          <p className="text-gray-800 font-medium">{document.amount}</p>
+          <p className="text-grey-primary font-medium">{document.amount}</p>
 
-          <p className="text-sm text-gray-500 font-semibold">Type</p>
-          <p className="text-gray-800 font-medium">{document.documentType}</p>
+          <p className="text-sm text-grey font-semibold">Type</p>
+          <p className="text-grey-primary font-medium">
+            {document.documentType}
+          </p>
 
-          <p className="text-sm text-gray-500 font-semibold">Sub-Type</p>
-          <p className="text-gray-800 font-medium">Other</p>
+          <p className="text-sm text-grey font-semibold">Sub-Type</p>
+          <p className="text-grey-primary font-medium">
+            {document.documentSubType}
+          </p>
 
-          <p className="text-sm text-gray-500 font-semibold">Document Date</p>
-          <p className="text-gray-800 font-medium">2024-10-30</p>
+          <p className="text-sm text-grey font-semibold">Document Date</p>
+          <p className="text-grey-primary font-medium">
+            {document.documentDate}
+          </p>
 
-          <p className="text-sm text-gray-500 font-semibold">File Type</p>
-          <p className="text-blue-600 font-medium">PDF</p>
+          <p className="text-sm text-grey font-semibold">File Type</p>
+          <p className="text-grey-primary font-medium">{document.fileType}</p>
 
-          <p className="text-sm text-gray-500 font-semibold">Status</p>
-          <div className="flex items-center">
-            <span className="w-2 h-2 rounded-full bg-blue-500 mr-2"></span>
-            <p className="text-gray-800 font-medium">Open</p>
-          </div>
+          <p className="text-sm text-grey font-semibold">Status</p>
+          <Status status={document.status} />
         </div>
       </div>
     </div>

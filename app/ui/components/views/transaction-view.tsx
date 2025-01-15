@@ -47,6 +47,7 @@ const TransactionView = ({
       <div className="flex justify-between space-x-4 mb-4">
         {TabItems.map(({ id, label }) => (
           <button
+            key={id}
             onClick={() => setActiveTab(id)}
             className={`text-sm font-semibold  border-b-2  capitalize pb-2 w-full ${
               activeTab === id
@@ -190,8 +191,8 @@ const TransactionView = ({
               </tr>
             </thead>
             <tbody>
-              {transaction.allocations.map((allocation) => (
-                <tr>
+              {transaction.allocations.map((allocation,index) => (
+                <tr key={index}>
                   <td className="py-2 text-grey-primary text-base">
                     {allocation.role}
                   </td>

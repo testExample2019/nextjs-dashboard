@@ -3,6 +3,7 @@ import { useState } from "react";
 import React from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import {
+  DealViews,
   PaymentActions,
   PaymentApproveActions,
   PaymentTypes,
@@ -25,7 +26,7 @@ export default function UpcomingPaymentsList({
   const path = usePathname();
   const router = useRouter();
   const [activePaymentType, setActivePaymentType] = useState<PaymentTypes>(
-    PaymentTypes.Debits,
+    PaymentTypes.Credits,
   );
   const payments = upcomingPayments?.[activePaymentType];
   const { showToast } = useToast();
@@ -41,8 +42,9 @@ export default function UpcomingPaymentsList({
       {/* Content */}
       <div className={"p-4 w-full bg-grey-o"}>
         <div className="flex">
-          {[PaymentTypes.Debits, PaymentTypes.Credits].map((payment) => (
+          {[PaymentTypes.Debits, PaymentTypes.Credits].map((payment, index) => (
             <button
+              key={index}
               onClick={() => setActivePaymentType(payment)}
               className={`flex gap-2 px-4 py-2 text-sm font-semibold relative capitalize ${
                 activePaymentType === payment
@@ -61,7 +63,7 @@ export default function UpcomingPaymentsList({
           {payments?.map((payment) => (
             <div
               key={payment.id}
-              className={`${path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-grey-border`}
+              className={`${payment.transactionId && path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-grey-border`}
             >
               <div className="flex justify-between">
                 <div className="flex flex-col gap-2">
@@ -74,83 +76,71 @@ export default function UpcomingPaymentsList({
 
                   <div className="text-sm text-grey flex justify-start gap-4 items-center">
                     {payment.drawDown && (
-                      <span className={"uppercase"}>
+                      <span className={"uppercase font-semibold"}>
                         DrawDown
-                        <span className={"text-grey-primary ms-2"}>
+                        <span className={"text-grey-primary ms-2 font-normal"}>
                           {payment.drawDown}
                         </span>
                       </span>
                     )}
                     {payment.drawDownFee && (
-                      <span className={"uppercase"}>
+                      <span className={"uppercase font-semibold"}>
                         DrawDown Fee
-                        <span className={"text-grey-primary ms-2"}>
+                        <span className={"text-grey-primary ms-2 font-normal"}>
                           {payment.drawDownFee}
                         </span>
                       </span>
                     )}
                     {payment.prepaymentFee && (
-                      <span className={"uppercase"}>
+                      <span className={"uppercase font-semibold"}>
                         Prepayment Fee:
-                        <span className={"text-grey-primary ms-2"}>
+                        <span className={"text-grey-primary ms-2 font-normal"}>
                           {payment.prepaymentFee}
                         </span>
                       </span>
                     )}
                     {payment.interest && (
-                      <span className="block uppercase">
+                      <span className="uppercase font-semibold">
                         Interest:
-                        <span className={"text-grey-primary ms-2"}>
+                        <span className={"text-grey-primary ms-2 font-normal"}>
                           {payment.interest}
                         </span>
                       </span>
                     )}
                     {payment.principalRepayment && (
-                      <span className="block uppercase">
+                      <span className="uppercase font-semibold">
                         Principal Repayment:
-                        <span className={"text-grey-primary ms-2"}>
+                        <span className={"text-grey-primary ms-2 font-normal"}>
                           {payment.principalRepayment}
                         </span>
                       </span>
                     )}
-                    {activePaymentType === PaymentTypes.Debits && (
-                      <ButtonDropdown
-                        children={
-                          <button
-                            type="button"
-                            className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
-                            id="menu-button"
-                            aria-haspopup="true"
-                          >
-                            {"APPROVE"}
-                            <svg
-                              className="-mr-1 size-5"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                              aria-hidden="true"
-                              data-slot="icon"
+                    {activePaymentType === PaymentTypes.Debits &&
+                      path.includes(DealViews.Lender) && (
+                        <ButtonDropdown
+                          children={
+                            <button
+                              type="button"
+                              className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
+                              id="menu-button"
+                              aria-haspopup="true"
                             >
-                              <path
-                                fillRule="evenodd"
-                                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          </button>
-                        }
-                        dropdownItems={PaymentApproveDropdownItems}
-                        onAction={(actionType: string) => {
-                          if (
-                            actionType === PaymentApproveActions.Approve ||
-                            actionType === PaymentApproveActions.ApproveAndPay
-                          ) {
-                            handleShowSuccessToast();
-                          } else {
-                            handleShowErrorToast();
+                              {"Preview"}
+                            </button>
                           }
-                        }}
-                      />
-                    )}
+                          dropdownItems={PaymentApproveDropdownItems}
+                          onAction={(actionType: string) => {
+                            if (
+                              actionType === PaymentApproveActions.Approve ||
+                              actionType === PaymentApproveActions.ApproveAndPay
+                            ) {
+                              handleShowSuccessToast();
+                            } else {
+                              handleShowErrorToast();
+                            }
+                          }}
+                        />
+                      )}
                   </div>
                 </div>
                 <div className={"flex items-center justify-between gap-4"}>
@@ -183,15 +173,17 @@ export default function UpcomingPaymentsList({
                     }
                     dropdownItems={PaymentOptionsDropdownItems}
                     onAction={(actionType) => {
-                      console.log(payment);
-                      if (actionType === PaymentActions.ViewTransaction) {
+                      if (
+                        actionType === PaymentActions.ViewTransaction &&
+                        payment.transactionId
+                      ) {
                         router.push(`/transaction/${payment.transactionId}`);
                       }
                       if (
                         actionType === PaymentActions.ViewNotice &&
-                        payment.documentId
+                        payment.noticeId
                       ) {
-                        router.push(`/document/${payment.documentId}`);
+                        router.push(`/notice/${payment.noticeId}`);
                       } else return;
                     }}
                   />

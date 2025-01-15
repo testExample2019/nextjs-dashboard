@@ -17,6 +17,7 @@ type DealDetailsType = {
   transactions: TransactionType[];
   asOfDate: string;
   documents?: DocumentType[];
+  notices?: NoticeType[];
 };
 
 export type CovenantMetricType = {
@@ -38,8 +39,9 @@ export type PaymentType = {
   dueDate: string;
   status: string;
   total: string;
-  transactionId: string;
+  transactionId?: string;
   documentId?: string;
+  noticeId?: string;
   prepaymentFee?: string;
   interest?: string;
   principalRepayment?: string;
@@ -113,7 +115,18 @@ export type DocumentType = {
   transaction: "Drawdown";
   transactionDate: string;
   documentDate: string;
+  fileType: string;
   status: "Open" | "Reviewed" | "Pending" | "Published";
+};
+
+export type NoticeType = {
+  id: string;
+  name: string;
+  type: "Transaction" | "Customer" | "Invoice" | "Contract" | string;
+  subType: "Other" | "Final notice" | string;
+  date: string;
+  lastUpdate: string;
+  status: "Sent" | "Published";
 };
 
 type TransactionDetails = {
