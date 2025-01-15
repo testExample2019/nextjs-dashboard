@@ -68,13 +68,13 @@ export default function UpcomingPaymentsList({
               <div className="flex justify-between">
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-2">
-                    <p className="text-sm font-medium text-grey-primary">
+                    <p className="text-base font-medium text-grey-primary">
                       {payment.dueDate}
                     </p>
                     <Status status={payment.status} />
                   </div>
 
-                  <div className="text-sm text-grey flex justify-start gap-4 items-center">
+                  <div className="text-base text-grey flex justify-start gap-4 items-center">
                     {payment.drawDown && (
                       <span className={"uppercase font-semibold"}>
                         DrawDown
@@ -145,7 +145,7 @@ export default function UpcomingPaymentsList({
                 </div>
                 <div className={"flex items-center justify-between gap-4"}>
                   <p className="font-semibold">
-                    <span className={"text-grey text-sm uppercase block"}>
+                    <span className={"text-grey text-xs uppercase block"}>
                       Total
                     </span>
                     <span className={"text-grey-primary text-base"}>
