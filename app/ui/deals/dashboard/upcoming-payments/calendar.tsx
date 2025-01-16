@@ -7,10 +7,10 @@ import {
   addDays,
   isSameDay,
 } from "date-fns";
-import { PaymentType, UpcomingPaymentsType } from "@/app/lib/definitions";
+import { PaymentType } from "@/app/lib/definitions";
+import { today } from "@/app/lib/constants";
 
 const Calendar = ({ payments }: { payments: PaymentType[] }) => {
-  const today = new Date(2025, 0, 24); // Month is 0-indexed: 11 = December
   const monthStart = startOfMonth(today);
   const monthEnd = endOfMonth(monthStart);
   const weekStart = startOfWeek(monthStart, { weekStartsOn: 0 });

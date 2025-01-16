@@ -96,7 +96,7 @@ function CovenantsCard({
             </span>
           </div>
 
-          <span className="text-[#909090] text-sm flex items-center justify-center gap-2">
+          <span className="text-grey text-sm flex items-center justify-center gap-2">
             Previous Period <span>|</span>
             <span className="min-w-[65px] font-semibold">
               ({prevPeriodValue})

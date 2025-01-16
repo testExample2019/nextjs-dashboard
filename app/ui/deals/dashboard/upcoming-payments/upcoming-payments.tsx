@@ -11,7 +11,10 @@ const UpcomingPayments: React.FC<DealParamsType> = async ({
 
   return (
     <div className="rounded-lg flex flex-col lg:flex-row justify-between shadow-md border border-grey-border">
-      <UpcomingPaymentsList upcomingPayments={upcomingPayments} />
+      <UpcomingPaymentsList
+        dealView={dealView}
+        upcomingPayments={upcomingPayments}
+      />
     </div>
   );
 };

@@ -124,7 +124,7 @@ const deals: DealType[] = [
           ],
         },
       ],
-      asOfDate: "2024-02-04",
+      asOfDate: "2025-01-24",
       documents: [
         {
           id: "document-1",

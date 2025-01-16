@@ -189,5 +189,5 @@ export enum PaymentTypes {
 
 export type DealParamsType = {
   dealName: string;
-  dealView: string;
+  dealView: DealViews;
 };

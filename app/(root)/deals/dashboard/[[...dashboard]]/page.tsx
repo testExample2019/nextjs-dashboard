@@ -4,15 +4,15 @@ import DashboardSkeleton, {
   TableSkeleton,
   UpcomingPaymentsSkeleton,
 } from "@/app/ui/skeletons";
-import ViewsNav from "@/app/ui/deals/dashboard/views-nav";
 import CovenantsCardWrapper from "@/app/ui/deals/dashboard/covenants-tracking";
 import UpcomingPayments from "@/app/ui/deals/dashboard/upcoming-payments/upcoming-payments";
 import PositionsTable from "@/app/ui/deals/dashboard/positions-table";
+import { DealViews } from "@/app/lib/definitions";
 
 const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
   const { dashboard } = await params; // Resolve the params promise
   const dealName = dashboard?.[0];
-  const dealView = dashboard?.[1];
+  const dealView = dashboard?.[1] as DealViews;
 
   return (
     <Suspense key={dashboard} fallback={<DashboardSkeleton />}>

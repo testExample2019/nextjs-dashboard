@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 import { replaceViewItemInURL } from "@/app/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { DealViews } from "@/app/lib/definitions";
@@ -11,7 +10,9 @@ import { ViewDropdownItems } from "@/app/lib/constants";
 export default function ViewsNav() {
   const path = usePathname();
   const router = useRouter();
-  const [activeView, setActiveView] = useState(DealViews.Lender);
+  const [activeView, setActiveView] = useState(
+    path.includes(DealViews.Lender) ? DealViews.Lender : DealViews.Borrower,
+  );
 
   return (
     <div className="flex h-full flex-col">
@@ -42,7 +43,9 @@ export default function ViewsNav() {
                     fill="currentColor"
                   />
                 </svg>
-                <span className={"capitalize whitespace-nowrap"}>{activeView} View</span>
+                <span className={"capitalize whitespace-nowrap"}>
+                  {activeView} View
+                </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

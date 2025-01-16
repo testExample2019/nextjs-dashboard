@@ -40,3 +40,5 @@ export const PaymentApproveDropdownItems = [
   },
   { id: 3, label: "Reject", actionType: PaymentApproveActions.Reject },
 ];
+
+export const today = new Date(2025, 0, 24); // Month is 0-indexed: 11 = December

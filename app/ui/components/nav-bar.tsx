@@ -3,7 +3,7 @@ import Link from "next/link";
 import { deals } from "@/app/lib/placeholder-data";
 import { usePathname } from "next/navigation";
 import { replacePageItemInURL } from "@/app/lib/utils";
-import ViewsNav from "@/app/ui/deals/dashboard/views-nav";
+import ViewsNav from "@/app/ui/components/views-nav";
 
 export default function NavBar() {
   const path = usePathname();

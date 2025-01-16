@@ -1,6 +1,5 @@
 "use client";
-import { useState } from "react";
-import React from "react";
+import React, { useState } from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import {
   DealViews,
@@ -9,14 +8,17 @@ import {
   UpcomingPaymentsType,
 } from "@/app/lib/definitions";
 import { usePathname, useRouter } from "next/navigation";
-import { PaymentOptionsDropdownItems } from "@/app/lib/constants";
+import { PaymentOptionsDropdownItems, today } from "@/app/lib/constants";
 import Calendar from "@/app/ui/deals/dashboard/upcoming-payments/calendar";
 import Status from "@/app/ui/components/status";
+import { isSameDay } from "date-fns";
 
 export default function UpcomingPaymentsList({
   upcomingPayments,
+  dealView,
 }: {
   upcomingPayments: UpcomingPaymentsType;
+  dealView: DealViews;
 }) {
   const path = usePathname();
   const router = useRouter();
@@ -59,6 +61,12 @@ export default function UpcomingPaymentsList({
                     <p className="text-base font-medium text-grey-primary">
                       {payment.dueDate}
                     </p>
+                    {isSameDay(payment.dueDate, today) && (
+                      <span className="text-sm font-medium text-grey">
+                        Today
+                      </span>
+                    )}
+
                     <Status status={payment.status} />
                   </div>
 
@@ -123,20 +131,21 @@ export default function UpcomingPaymentsList({
                         </span>
                       </span>
                     )}
-                    {activePaymentType === PaymentTypes.Debits && (
-                      <button
-                        type="button"
-                        onClick={() =>
-                          payment.transactionId &&
-                          router.push(`/transaction/${payment.transactionId}`)
-                        }
-                        className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
-                        id="menu-button"
-                        aria-haspopup="true"
-                      >
-                        Preview
-                      </button>
-                    )}
+                    {activePaymentType === PaymentTypes.Debits &&
+                      dealView === DealViews.Lender && (
+                        <button
+                          type="button"
+                          onClick={() =>
+                            payment.transactionId &&
+                            router.push(`/transaction/${payment.transactionId}`)
+                          }
+                          className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
+                          id="menu-button"
+                          aria-haspopup="true"
+                        >
+                          Preview
+                        </button>
+                      )}
                   </div>
                 </div>
                 <div className={"flex items-center justify-between gap-4"}>
@@ -179,7 +188,7 @@ export default function UpcomingPaymentsList({
                         actionType === PaymentActions.ViewNotice &&
                         payment.noticeId
                       ) {
-                        router.push(`/notice/${payment.noticeId}`);
+                        router.push(`/document/${payment.documentId}`);
                       } else return;
                     }}
                   />
