@@ -87,8 +87,8 @@ type InterestAmountType = {
 type AllocationType = {
   role: "Borrower" | "Lender";
   counterparty: string;
-  amount: string; // Formatted string (e.g., "(849,315.07)")
-  share: string; // Formatted percentage (e.g., "100.00%")
+  amount: string;
+  share: string;
 };
 
 export type PositionType = {

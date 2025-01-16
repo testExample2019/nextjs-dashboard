@@ -95,10 +95,12 @@ const TransactionView = ({
 
             <div>
               <p className="text-sm text-grey font-semibold">Amount</p>
-              <p className="font-medium text-grey-primary">$6,997.51</p>
+              <p className="font-medium text-grey-primary">
+                {transaction.amount}
+              </p>
             </div>
           </div>
-          <div className="mt-6 border-t pt-4">
+          <div className="mt-6 pt-4">
             <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
               Rate Info
             </h2>
@@ -106,14 +108,12 @@ const TransactionView = ({
               <div>
                 <p className="text-sm text-grey font-semibold">Type</p>
                 <p className="font-medium text-grey-primary">
-                  {" "}
                   {transaction.rateInfo.type}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-grey font-semibold">Day Count</p>
                 <p className="font-medium text-grey-primary">
-                  {" "}
                   {transaction.rateInfo.dayCount}
                 </p>
               </div>
@@ -191,7 +191,7 @@ const TransactionView = ({
               </tr>
             </thead>
             <tbody>
-              {transaction.allocations.map((allocation,index) => (
+              {transaction.allocations.map((allocation, index) => (
                 <tr key={index}>
                   <td className="py-2 text-grey-primary text-base">
                     {allocation.role}
@@ -199,10 +199,12 @@ const TransactionView = ({
                   <td className="py-2 text-grey-primary text-base">
                     {allocation.counterparty}
                   </td>
-                  <td className="py-2 text-grey-primary text-base">
+                  <td
+                    className={`py-2 ${allocation.role === "Lender" ? "text-green" : "text-red"} text-base`}
+                  >
                     {allocation.amount}
                   </td>
-                  <td className="py-2 text-grey-primary text-base">
+                  <td className="py-2 text-red text-base">
                     {allocation.share}
                   </td>
                 </tr>

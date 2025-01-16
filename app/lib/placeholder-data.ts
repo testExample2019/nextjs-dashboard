@@ -104,7 +104,7 @@ const deals: DealType[] = [
           },
           interestAmount: {
             date: "2025-01-24",
-            rate: "8.5600",
+            rate: "8.5600%",
             principal: "$5,000,000.00",
             amount: "$36,855.56",
           },
@@ -112,14 +112,14 @@ const deals: DealType[] = [
             {
               role: "Borrower",
               counterparty: "Soul Train Music Awards",
-              amount: "(849,315.07)", // Negative values are shown in parentheses
+              amount: "(849,315.07)",
               share: "(100.00%)",
             },
             {
               role: "Lender",
               counterparty: "Funky Fund East",
-              amount: "849,315.07", // Positive value
-              share: "100.00%",
+              amount: "849,315.07",
+              share: "(100.00%)",
             },
           ],
         },

@@ -38,20 +38,25 @@ export default async function TransactionDrawer({
             <TransactionView transaction={transaction} />
           </div>
 
-          {transaction?.type === "Drawdown" && (
-            <DrawerClose
-              children={
-                <div className="flex justify-end space-x-4 px-4 py-2 border-t-1 border-grey-border">
+          <DrawerClose
+            children={
+              <div className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all">
+                <div>
+                  <button className="px-4 py-2 uppercase border border-action-primary text-action-primary rounded-md hover:border-blue-dark hover:text-blue-dark">
+                    Contact borrower
+                  </button>
+                </div>
+                <div className={"flex gap-4"}>
                   <button className="px-4 py-2 uppercase border border-red text-red rounded-md hover:border-action-primary hover:text-action-primary">
                     Reject
                   </button>
                   <button className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark">
-                    Approve
+                    Approve & Pay
                   </button>
                 </div>
-              }
-            />
-          )}
+              </div>
+            }
+          />
         </div>
       </div>
     </>

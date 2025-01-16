@@ -11,7 +11,11 @@ export default function ViewsNav() {
   const path = usePathname();
   const router = useRouter();
   const [activeView, setActiveView] = useState(
-    path.includes(DealViews.Lender) ? DealViews.Lender : DealViews.Borrower,
+    path.includes("template")
+      ? DealViews.Lender
+      : path.includes(DealViews.Lender)
+        ? DealViews.Lender
+        : DealViews.Borrower,
   );
 
   return (
@@ -24,8 +28,8 @@ export default function ViewsNav() {
                 type="button"
                 className={`${
                   activeView === DealViews.Lender
-                    ? "bg-[#EDF4FC] text-blue-dark"
-                    : "bg-[#f2994a33] text-orange"
+                    ? "bg-blue-o text-blue-dark"
+                    : "bg-orange-o text-orange"
                 } flex justify-between gap-2 items-center px-2 py-1 shadow text-sm font-medium rounded-full transition min-w-[160px] hover:shadow-md`}
                 id="view-button"
                 aria-haspopup="true"
