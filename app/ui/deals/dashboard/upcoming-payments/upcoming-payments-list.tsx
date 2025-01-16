@@ -186,7 +186,7 @@ export default function UpcomingPaymentsList({
                       }
                       if (
                         actionType === PaymentActions.ViewNotice &&
-                        payment.noticeId
+                        payment.documentId
                       ) {
                         router.push(`/document/${payment.documentId}`);
                       } else return;

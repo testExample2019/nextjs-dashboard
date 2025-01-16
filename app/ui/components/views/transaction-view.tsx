@@ -44,7 +44,7 @@ const TransactionView = ({
         </div>
       </div>
 
-      <div className="flex justify-between space-x-4 mb-4">
+      <div className="flex justify-between mb-4">
         {TabItems.map(({ id, label }) => (
           <button
             key={id}
@@ -60,7 +60,7 @@ const TransactionView = ({
         ))}
       </div>
 
-      {activeTab === TransactionTabsType.TransactionInfo ? (
+      {activeTab === TransactionTabsType.TransactionInfo && (
         <>
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
@@ -108,25 +108,25 @@ const TransactionView = ({
               <div>
                 <p className="text-sm text-grey font-semibold">Type</p>
                 <p className="font-medium text-grey-primary">
-                  {transaction.rateInfo.type}
+                  {transaction.transactionDetails.rateInfo.type}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-grey font-semibold">Day Count</p>
                 <p className="font-medium text-grey-primary">
-                  {transaction.rateInfo.dayCount}
+                  {transaction.transactionDetails.rateInfo.dayCount}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-grey font-semibold">Accrual Start</p>
                 <p className="font-medium text-grey-primary">
-                  {transaction.rateInfo.accrualStartDate}
+                  {transaction.transactionDetails.rateInfo.accrualStartDate}
                 </p>
               </div>
               <div>
                 <p className="text-sm text-grey font-semibold">Accrual End</p>
                 <p className="font-medium text-grey-primary">
-                  {transaction.rateInfo.accrualEndDate}
+                  {transaction.transactionDetails.rateInfo.accrualEndDate}
                 </p>
               </div>
             </div>
@@ -153,25 +153,30 @@ const TransactionView = ({
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="py-2 text-grey-primary text-base">
-                    {transaction.interestAmount.date}
-                  </td>
-                  <td className="py-2 text-grey-primary text-base">
-                    {transaction.interestAmount.rate}
-                  </td>
-                  <td className="py-2 text-grey-primary text-base">
-                    {transaction.interestAmount.principal}
-                  </td>
-                  <td className="py-2 text-grey-primary text-base">
-                    {transaction.interestAmount.amount}
-                  </td>
-                </tr>
+                {transaction.transactionDetails.interestAmount.map(
+                  (interest, index) => (
+                    <tr key={index}>
+                      <td className="py-2 text-grey-primary text-base">
+                        {interest.date}
+                      </td>
+                      <td className="py-2 text-grey-primary text-base">
+                        {interest.rate}
+                      </td>
+                      <td className="py-2 text-grey-primary text-base">
+                        {interest.principal}
+                      </td>
+                      <td className="py-2 text-grey-primary text-base">
+                        {interest.amount}
+                      </td>
+                    </tr>
+                  ),
+                )}
               </tbody>
             </table>
           </div>
         </>
-      ) : (
+      )}
+      {activeTab === TransactionTabsType.Allocations && (
         <>
           <table className="w-full text-left border-collapse">
             <thead>
@@ -191,24 +196,26 @@ const TransactionView = ({
               </tr>
             </thead>
             <tbody>
-              {transaction.allocations.map((allocation, index) => (
-                <tr key={index}>
-                  <td className="py-2 text-grey-primary text-base">
-                    {allocation.role}
-                  </td>
-                  <td className="py-2 text-grey-primary text-base">
-                    {allocation.counterparty}
-                  </td>
-                  <td
-                    className={`py-2 ${allocation.role === "Lender" ? "text-green" : "text-red"} text-base`}
-                  >
-                    {allocation.amount}
-                  </td>
-                  <td className="py-2 text-red text-base">
-                    {allocation.share}
-                  </td>
-                </tr>
-              ))}
+              {transaction.transactionDetails.allocations.map(
+                (allocation, index) => (
+                  <tr key={index}>
+                    <td className="py-2 text-grey-primary text-base">
+                      {allocation.role}
+                    </td>
+                    <td className="py-2 text-grey-primary text-base">
+                      {allocation.counterparty}
+                    </td>
+                    <td
+                      className={`py-2 ${allocation.role === "Lender" ? "text-green" : "text-red"} text-base`}
+                    >
+                      {allocation.amount}
+                    </td>
+                    <td className="py-2 text-red text-base">
+                      {allocation.share}
+                    </td>
+                  </tr>
+                ),
+              )}
             </tbody>
           </table>
         </>

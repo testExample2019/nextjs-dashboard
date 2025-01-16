@@ -49,7 +49,7 @@ const deals: DealType[] = [
             status: "in 10 days",
             interest: "$849,315.07",
             total: "$849,315.07",
-            noticeId: "notice-1",
+            documentId: "document-1",
           },
         ],
         debits: [
@@ -96,39 +96,53 @@ const deals: DealType[] = [
           funded: "$0.0",
           unfunded: "$200,000,000.00",
           status: "Pending",
-          rateInfo: {
-            type: "Fixed",
-            dayCount: "ACT/360",
-            accrualStartDate: "2025-01-24",
-            accrualEndDate: "2025-02-24",
-          },
-          interestAmount: {
-            date: "2025-01-24",
-            rate: "8.5600%",
-            principal: "$5,000,000.00",
-            amount: "$36,855.56",
-          },
-          allocations: [
-            {
-              role: "Borrower",
-              counterparty: "Soul Train Music Awards",
-              amount: "(849,315.07)",
-              share: "(100.00%)",
+          transactionDetails: {
+            type: "Interest Payment",
+            amount: "$849,315.07",
+            txnUpdated: "2025-01-14 9:51 AM",
+            transactionInfo: {
+              effectiveDate: "2025-02-01",
+              paymentDate: "2025-02-03",
+              amount: "849,315.07 USD",
             },
-            {
-              role: "Lender",
-              counterparty: "Funky Fund East",
-              amount: "849,315.07",
-              share: "(100.00%)",
+            rateInfo: {
+              type: "Fixed",
+              dayCount: "ACT/360",
+              pikOption: "Cash or PIK",
+              includeAccrualEnd: "Yes",
+              accrualStartDate: "2025-01-24",
+              accrualEndDate: "2025-02-24",
             },
-          ],
+            interestAmount: [
+              {
+                date: "2025-01-24",
+                rate: "8.5600%",
+                principal: "$5,000,000.00",
+                amount: "$36,855.56",
+              },
+            ],
+            allocations: [
+              {
+                role: "Borrower",
+                counterparty: "Soul Train Music Awards",
+                amount: "(849,315.07)",
+                share: "(100.00%)",
+              },
+              {
+                role: "Lender",
+                counterparty: "Funky Fund East",
+                amount: "849,315.07",
+                share: "(100.00%)",
+              },
+            ],
+          },
         },
       ],
       asOfDate: "2025-01-24",
       documents: [
         {
           id: "document-1",
-          documentName: "Soultrain Drawdown",
+          documentName: "Soultrain 02-03-2025",
           documentType: "Transaction",
           documentSubType: "Other",
           deal: "Soultrain",
@@ -137,7 +151,47 @@ const deals: DealType[] = [
           amount: "$1,000,000.00",
           documentDate: "2024-10-30",
           fileType: "PDF",
-          status: "Open",
+          status: "Published",
+          transactionDetails: {
+            type: "Interest Payment",
+            amount: "$849,315.07",
+            txnUpdated: "2025-01-14 9:51 AM",
+            transactionInfo: {
+              effectiveDate: "2025-02-01",
+              paymentDate: "2025-02-03",
+              amount: "849,315.07 USD",
+            },
+            rateInfo: {
+              type: "Fixed",
+              dayCount: "ACT/360",
+              pikOption: "Cash or PIK",
+              includeAccrualEnd: "Yes",
+              accrualStartDate: "2025-01-01",
+              accrualEndDate: "2025-01-31",
+            },
+            interestAmount: [
+              {
+                date: "2025-01-01",
+                rate: "10.0000%",
+                principal: "$100,000.00",
+                amount: "$849,315.07",
+              },
+            ],
+            allocations: [
+              {
+                role: "Borrower",
+                counterparty: "Soul Train Music Awards",
+                amount: "(849,315.07)",
+                share: "(100.00%)",
+              },
+              {
+                role: "Lender",
+                counterparty: "Funky Fund East",
+                amount: "849,315.07",
+                share: "(100.00%)",
+              },
+            ],
+          },
         },
       ],
     },

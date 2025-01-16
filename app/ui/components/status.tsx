@@ -2,11 +2,12 @@ import React from "react";
 import { separateWords } from "@/app/lib/utils";
 
 type StatusProps = {
-  status: "Open" | "Reviewed" | "Pending" | "NotPaid" | string; // Define allowed statuses
+  status: "Open" | "Published" | "Reviewed" | "Pending" | "NotPaid" | string; // Define allowed statuses
 };
 
 const statusColors: Record<StatusProps["status"], string> = {
   Open: "text-blue-dark bg-blue-dark",
+  Published: "text-blue-dark bg-blue-dark",
   Reviewed: "text-green bg-green",
   Pending: "text-orange bg-orange",
   NotPaid: "text-red bg-red",

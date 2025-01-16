@@ -65,30 +65,7 @@ export type TransactionType = {
   status: "Open" | "Reviewed" | "Pending" | "NotPaid";
   amount: string;
   paymentDate: string;
-  rateInfo: RateInfoType;
-  interestAmount: InterestAmountType;
-  allocations: AllocationType[];
-};
-
-type RateInfoType = {
-  type: "Fixed" | "Floating"; // Type of rate
-  dayCount: "ACT/360" | "ACT/365" | "30/360"; // Day count convention
-  accrualStartDate: string; // Start date in ISO format (e.g., "2025-01-24")
-  accrualEndDate: string; // End date in ISO format (e.g., "2025-02-24")
-};
-
-type InterestAmountType = {
-  date: string; // Date in ISO format (e.g., "2025-01-24")
-  rate: string; // Rate as a string (e.g., "8.5600")
-  principal: string; // Principal amount as a string with currency (e.g., "$5,000,000.00")
-  amount: string; // Interest amount as a string with currency (e.g., "$36,855.56")
-};
-
-type AllocationType = {
-  role: "Borrower" | "Lender";
-  counterparty: string;
-  amount: string;
-  share: string;
+  transactionDetails: TransactionDetailsType;
 };
 
 export type PositionType = {
@@ -117,6 +94,7 @@ export type DocumentType = {
   documentDate: string;
   fileType: string;
   status: "Open" | "Reviewed" | "Pending" | "Published";
+  transactionDetails: TransactionDetailsType;
 };
 
 export type NoticeType = {
@@ -129,33 +107,35 @@ export type NoticeType = {
   status: "Sent" | "Published";
 };
 
-type TransactionDetails = {
-  type: string;
-  amount: {
-    value: number;
-    currency: string;
+type TransactionDetailsType = {
+  type: "Interest Payment" | "Drawdown" | string; // Transaction type
+  amount: string; // Transaction amount with currency formatting
+  txnUpdated: string; // Date and time the transaction was last updated
+  transactionInfo: {
+    effectiveDate: string; // Effective date (ISO format)
+    paymentDate: string; // Payment date (ISO format)
+    amount: string; // Transaction amount with currency formatting
   };
-  txnUpdated: string;
-  info: {
-    effectiveDate: string;
-    paymentDate: string;
-    commitment: {
-      amount: number;
-      currency: string;
-    };
-    unfundedCommitment: {
-      amount: number;
-      currency: string;
-    };
-    amount: {
-      value: number;
-      currency: string;
-    };
+  rateInfo: {
+    type: "Fixed" | "Floating"; // Type of rate
+    dayCount: "ACT/360" | "ACT/365" | "30/360"; // Day count convention
+    pikOption: "Cash or PIK" | "Cash" | "PIK"; // PIK (Payment-in-Kind) option
+    includeAccrualEnd: "Yes" | "No"; // Whether to include accrual end
+    accrualStartDate: string; // Accrual start date (ISO format)
+    accrualEndDate: string; // Accrual end date (ISO format)
   };
-  feeInfo: {
-    lastUpdated: string | null;
-    notes: string;
-  };
+  interestAmount: {
+    date: string; // Date of the interest payment (ISO format)
+    rate: string; // Rate percentage as a formatted string (e.g., "10.0000%")
+    principal: string; // Principal amount with currency formatting
+    amount: string; // Calculated interest amount with currency formatting
+  }[];
+  allocations: {
+    role: "Borrower" | "Lender";
+    counterparty: string;
+    amount: string;
+    share: string;
+  }[];
 };
 
 export enum DealsActions {
