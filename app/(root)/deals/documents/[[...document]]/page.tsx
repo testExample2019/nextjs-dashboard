@@ -3,6 +3,7 @@ import { TableSkeleton } from "@/app/ui/skeletons";
 import { Table } from "@/app/ui/components/table";
 import { fetchDocuments } from "@/app/lib/data";
 import { notFound } from "next/navigation";
+import { DealViews } from "@/app/lib/definitions";
 
 interface PageProps {
   params: Promise<{ document: string }>;
@@ -11,10 +12,34 @@ interface PageProps {
 const Page: React.FC<PageProps> = async ({ params }) => {
   const { document } = await params; // Resolve the params promise
   const dealName = document?.[0];
-  const dealView = document?.[1];
+  const dealView = document?.[1] as DealViews;
   const documents = await fetchDocuments(dealName, dealView);
 
-  if (!documents || !documents.length) {
+  const selectedFields = documents?.map(
+    ({
+      documentName,
+      documentType,
+      documentSubType,
+      deal,
+      transaction,
+      transactionDate,
+      amount,
+      documentDate,
+      status,
+    }) => ({
+      documentName,
+      documentType,
+      documentSubType,
+      deal,
+      transaction,
+      transactionDate,
+      amount,
+      documentDate,
+      status,
+    }),
+  );
+
+  if (!documents || !selectedFields || !documents.length) {
     notFound();
   }
   return (
@@ -28,7 +53,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
       </div>
       <div className={"p-4"}>
         <Suspense fallback={<TableSkeleton />}>
-          <Table type={"document"} rows={documents} />
+          <Table type={"document"} rows={selectedFields} />
         </Suspense>
       </div>
     </div>

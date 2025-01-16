@@ -1,7 +1,7 @@
 import { deals } from "@/app/lib/placeholder-data";
 import { DealNavType, DealViews } from "@/app/lib/definitions";
 
-const handleDealView = (dealName: string, dealView: string) => {
+const handleDealView = (dealName: string, dealView: DealViews) => {
   return dealView === DealViews.Lender
     ? deals.filter((deal) => deal.name.toLowerCase() === dealName)[0]?.lender
     : deals.filter((deal) => deal.name.toLowerCase() === dealName)[0]?.borrower;
@@ -23,7 +23,7 @@ export async function fetchDealsNavData(): Promise<DealNavType[]> {
   }
 }
 
-export async function fetchPositions(dealName: string, dealView: string) {
+export async function fetchPositions(dealName: string, dealView: DealViews) {
   try {
     return handleDealView(dealName, dealView)?.positions;
   } catch (error) {
@@ -31,7 +31,7 @@ export async function fetchPositions(dealName: string, dealView: string) {
     throw new Error("Failed to fetch Positions data.");
   }
 }
-export async function fetchDocuments(dealName: string, dealView: string) {
+export async function fetchDocuments(dealName: string, dealView: DealViews) {
   try {
     return handleDealView(dealName, dealView)?.documents;
   } catch (error) {
@@ -40,7 +40,7 @@ export async function fetchDocuments(dealName: string, dealView: string) {
   }
 }
 
-export async function fetchTransactions(dealName: string, dealView: string) {
+export async function fetchTransactions(dealName: string, dealView: DealViews) {
   try {
     return handleDealView(dealName, dealView)?.transactions;
   } catch (error) {
@@ -51,7 +51,7 @@ export async function fetchTransactions(dealName: string, dealView: string) {
 
 export async function fetchCovenantsTrackingData(
   dealName: string,
-  dealView: string,
+  dealView: DealViews,
 ) {
   try {
     return handleDealView(dealName, dealView)?.covenantsTracking;
@@ -63,7 +63,7 @@ export async function fetchCovenantsTrackingData(
 
 export async function fetchUpcomingPaymentsData(
   dealName: string,
-  dealView: string,
+  dealView: DealViews,
 ) {
   try {
     return handleDealView(dealName, dealView)?.upcomingPayments;
