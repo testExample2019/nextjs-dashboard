@@ -47,7 +47,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
             {document.fileType}
           </h3>
           <p className="text-base text-grey-primary font-semibold">
-            {document.documentName}
+            {document.document}
           </p>
         </div>
         <div>
@@ -196,7 +196,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
 
               <p className="text-sm text-grey font-semibold">Sub-Type</p>
               <p className="text-grey-primary font-medium">
-                {document.documentSubType}
+                {document.subType}
               </p>
 
               <p className="text-sm text-grey font-semibold">Document Date</p>
