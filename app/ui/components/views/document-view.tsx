@@ -86,7 +86,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
         <>
           <div className={"h-[380px] overflow-auto"}>
             <Image
-              src="/images/invoice.png"
+              src="/images/invoice.jpg"
               width={550}
               height={380}
               alt="Picture of document"

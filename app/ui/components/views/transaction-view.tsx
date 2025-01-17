@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { DealViews, TransactionType } from "@/app/lib/definitions";
+import { TransactionType } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
 import Status from "@/app/ui/components/status";
 
@@ -35,7 +35,7 @@ const TransactionView = ({
             Transaction
           </h3>
           <p className="text-base text-grey-primary font-semibold">
-            {transaction.type}
+            {transaction.transaction}
           </p>
         </div>
         <div className="flex items-center justify-between text-base gap-2">

@@ -4,6 +4,7 @@ import { Table } from "@/app/ui/components/table";
 import { fetchDocuments } from "@/app/lib/data";
 import { notFound } from "next/navigation";
 import { DealViews } from "@/app/lib/definitions";
+import { ChevronLeft } from "@/app/ui/icons";
 
 interface PageProps {
   params: Promise<{ document: string }>;
@@ -17,25 +18,21 @@ const Page: React.FC<PageProps> = async ({ params }) => {
 
   const selectedFields = documents?.map(
     ({
-      documentName,
-      documentType,
-      documentSubType,
-      deal,
+      document,
       transaction,
-      transactionDate,
-      amount,
+      subType,
+      customer,
       documentDate,
       status,
+      nestedRows,
     }) => ({
-      documentName,
-      documentType,
-      documentSubType,
-      deal,
+      document,
       transaction,
-      transactionDate,
-      amount,
+      subType,
+      customer,
       documentDate,
       status,
+      nestedRows,
     }),
   );
 
@@ -49,7 +46,13 @@ const Page: React.FC<PageProps> = async ({ params }) => {
           "flex w-full items-center justify-between py-2 px-4  h-[50px] border-b-1 border-grey-border"
         }
       >
-        <h1 className={`text-18 md:text-2xl text-grey-primary`}>Documents</h1>
+        <h1
+          className={`text-18 w-full text-grey-primary flex items-center gap-2`}
+        >
+          Documents
+          <ChevronLeft />
+          <span className={"capitalize"}>{dealName}</span>
+        </h1>
       </div>
       <div className={"p-4"}>
         <Suspense fallback={<TableSkeleton />}>

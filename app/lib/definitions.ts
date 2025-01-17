@@ -51,10 +51,13 @@ export type PaymentType = {
 
 export type TransactionType = {
   id: string;
-  paymentType: "Credit" | "Debit";
-  type: "Drawdown" | "Interest Payment";
+  transaction: "Drawdown" | "Interest Payment" | "Fee Payment";
   deal: string;
   instrument: string;
+  customer: string;
+  paymentDate: string;
+  amount: string;
+  paymentType: "Credit" | "Debit";
   borrower: string;
   ccy: string;
   counterparty: string;
@@ -62,10 +65,10 @@ export type TransactionType = {
   committed: string;
   funded: string;
   unfunded: string;
-  status: "Open" | "Reviewed" | "Pending" | "NotPaid";
-  amount: string;
-  paymentDate: string;
+  status: "Open" | "Reviewed" | "Pending" | "NotPaid" | "Paid" | "Scheduled";
   transactionDetails: TransactionDetailsType;
+  nestedRows: any;
+  scheduled: boolean;
 };
 
 export type PositionType = {
@@ -84,17 +87,23 @@ export type PositionType = {
 
 export type DocumentType = {
   id: string;
-  documentName: string;
+  document: string;
   documentType: "Transaction" | "Customer" | "Invoice" | "Contract" | string;
-  documentSubType: "Other" | "Final notice" | string;
+  subType: "Other" | "Final notice" | string;
   deal: string;
   amount: string;
-  transaction: "Drawdown";
+  customer: string;
+  transaction:
+    | "Drawdown"
+    | "Multiple Transactions"
+    | "Interest Payment [Borrower]"
+    | "Interest Payment [Lender]";
   transactionDate: string;
   documentDate: string;
   fileType: string;
   status: "Open" | "Reviewed" | "Pending" | "Published";
   transactionDetails: TransactionDetailsType;
+  nestedRows: any;
 };
 
 export type NoticeType = {

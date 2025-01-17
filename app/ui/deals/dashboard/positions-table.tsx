@@ -9,7 +9,33 @@ const PositionsTable: React.FC<DealParamsType> = async ({
 }) => {
   const positions = await fetchPositions(dealName, dealView);
 
-  return <Table type={"position"} rows={positions} />;
+  const selectedFields = positions?.map(
+    ({
+      deal,
+      instrument,
+      borrower,
+      ccy,
+      counterparty,
+      role,
+      committed,
+      funded,
+      unfunded,
+      docs,
+    }) => ({
+      deal,
+      instrument,
+      borrower,
+      ccy,
+      counterparty,
+      role,
+      committed,
+      funded,
+      unfunded,
+      docs,
+    }),
+  );
+
+  return <Table type={"position"} rows={selectedFields} />;
 };
 
 export default PositionsTable;
