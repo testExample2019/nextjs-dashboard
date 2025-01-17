@@ -27,7 +27,7 @@ const FormTable = () => {
   return (
     <div className="py-1 px-8">
       {/* Loan Details Form */}
-      <div className={"grid grid-cols-1 gap-4"}>
+      <div className={"grid grid-cols-1 gap-2"}>
         {/* General info */}
         <div>
           <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">

@@ -23,10 +23,9 @@ const TransactionView = ({
     { id: TransactionTabsType.Allocations, label: "Allocations" },
   ];
 
-  const TabItems =
-    isInterestPayment || transaction?.status === "Pending"
-      ? Tabs.filter((item) => item.id !== TransactionTabsType.RateInfo)
-      : Tabs;
+  const TabItems = isInterestPayment
+    ? Tabs.filter((item) => item.id !== TransactionTabsType.RateInfo)
+    : Tabs;
 
   const [activeTab, setActiveTab] = useState<TransactionTabsType>(
     TransactionTabsType.TransactionInfo,
