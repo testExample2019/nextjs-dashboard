@@ -2,7 +2,7 @@ import React from "react";
 import { fetchDocumentById } from "@/app/lib/data";
 import DrawerClose from "@/app/ui/components/drawer-close";
 import { Cross } from "@/app/ui/icons";
-import DocumentView from "@/app/ui/components/views/document-view";
+import DocumentView from "@/app/ui/deals/documents/document-view";
 
 export default async function PositionDrawer({
   params,

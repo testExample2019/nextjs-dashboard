@@ -61,14 +61,13 @@ export type TransactionType = {
   borrower: string;
   ccy: string;
   counterparty: string;
-  role: string;
+  role: "Lender" | "Borrower";
   committed: string;
   funded: string;
   unfunded: string;
   status: "Open" | "Reviewed" | "Pending" | "NotPaid" | "Paid" | "Scheduled";
   transactionDetails: TransactionDetailsType;
-  nestedRows: any;
-  scheduled: boolean;
+  nestedRows?: any;
 };
 
 export type PositionType = {
@@ -145,6 +144,21 @@ type TransactionDetailsType = {
     amount: string;
     share: string;
   }[];
+  bankAccount: {
+    accountName: string; // Name of the account (e.g., "Account USD")
+    bank: string; // Name of the bank (e.g., "FirstCaribbean International")
+    bic: string; // Bank Identifier Code (e.g., "09676")
+    aba: string; // ABA Routing Number (e.g., "987654321")
+    iban: string; // International Bank Account Number (e.g., "-")
+    accountNumber: string; // Account Number (e.g., "6665554433")
+    currency: string; // Currency code (e.g., "USD")
+  };
+  feeInfo?: {
+    feeType: string; // Type of the fee (e.g., "Drawdown Fee")
+    appliesTo: string; // What the fee applies to (e.g., "Drawdown Amount")
+    rate: string; // Fee rate as a percentage (e.g., "0.1000%")
+    feeAmount: string; // Fee amount with currency formatting (e.g., "100,000.00 USD")
+  };
 };
 
 export enum DealsActions {

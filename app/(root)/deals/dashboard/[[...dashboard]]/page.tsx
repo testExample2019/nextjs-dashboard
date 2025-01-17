@@ -6,7 +6,7 @@ import DashboardSkeleton, {
 } from "@/app/ui/skeletons";
 import CovenantsCardWrapper from "@/app/ui/deals/dashboard/covenants-tracking";
 import UpcomingPayments from "@/app/ui/deals/dashboard/upcoming-payments/upcoming-payments";
-import PositionsTable from "@/app/ui/deals/dashboard/positions-table";
+import PositionsTable from "@/app/ui/deals/positions/positions-table";
 import { DealViews } from "@/app/lib/definitions";
 import { ChevronLeft } from "@/app/ui/icons";
 

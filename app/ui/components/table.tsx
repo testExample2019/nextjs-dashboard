@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Status from "@/app/ui/components/status";
 import { separateWords } from "@/app/lib/utils";
-import { ChevronDown, ChevronUp, Document } from "@/app/ui/icons";
+import { ChevronDown, ChevronLeft, ChevronUp, Document } from "@/app/ui/icons";
 
 interface TableProps {
-  type: "document" | "transaction" | "position";
+  type: "document" | "transaction" | "position" | "instrument";
   rows: { [key: string]: string | number | [] }[];
 }
 
@@ -27,7 +27,9 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
   // Extract headers dynamically from the first row
   const headers =
     rows?.length > 0
-      ? Object.keys(rows[0]).filter((key) => key !== "nestedRows")
+      ? Object.keys(rows[0]).filter(
+          (key) => key !== "nestedRows" && key !== "id",
+        )
       : [];
 
   const renderRows = (
@@ -39,7 +41,7 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
       <React.Fragment key={index}>
         {/* Main or Nested Row */}
         <tr
-          className={`${path.includes(`${row.id}`) ? " bg-[#EDF4FC]" : ""} ${isNested ? "" : ""} transition-all hover:bg-grey-o`}
+          className={`${path.includes(`${row.id}`) ? " bg-[#EDF4FC]" : ""} transition-all hover:bg-grey-o`}
         >
           {headers.map((header, cellIndex) => {
             let cellVal: React.JSX.Element;
@@ -54,7 +56,7 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
             return (
               <td
                 key={cellIndex}
-                className={`relative px-3 py-3 text-sm text-grey-primary whitespace-nowrap max-w-[120px] truncate ${row.nestedRows && cellIndex === 0 ? "ps-8" : ""}`}
+                className={`relative px-3 py-3 text-sm text-grey-primary whitespace-nowrap max-w-[120px] truncate ${(row.nestedRows || isNested) && cellIndex === 0 ? "ps-8" : ""}`}
               >
                 {row.nestedRows && cellIndex === 0 && (
                   <button
@@ -62,14 +64,16 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
                     className="text-grey focus:outline-none absolute left-1"
                   >
                     {expandedRows.includes(index) ? (
-                      <ChevronUp />
-                    ) : (
                       <ChevronDown />
+                    ) : (
+                      <ChevronLeft />
                     )}
                   </button>
                 )}
                 <span className={"flex items-center"}>
-                  {type === "document" && cellIndex === 0 && <Document className={'flex-shrink-0'} />}
+                  {type === "document" && cellIndex === 0 && (
+                    <Document className={"flex-shrink-0"} />
+                  )}
                   {cellVal}
                 </span>
               </td>

@@ -1,8 +1,8 @@
 import React from "react";
-import TransactionView from "@/app/ui/components/views/transaction-view";
+import TransactionView from "@/app/ui/deals/transactions/transaction-view";
 import { fetchPositionById } from "@/app/lib/data";
 import DrawerClose from "@/app/ui/components/drawer-close";
-import PositionView from "@/app/ui/components/views/position-view";
+import PositionView from "@/app/ui/deals/positions/position-view";
 import { Cross } from "@/app/ui/icons";
 
 export default async function PositionDrawer({

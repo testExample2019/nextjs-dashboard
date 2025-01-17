@@ -55,8 +55,8 @@ export default function NavBar() {
             {/* Filter Dropdown */}
             <div className="relative">
               <select
-                name={'filter'}
-                aria-label={'Filter By Counterparty/Group'}
+                name={"filter"}
+                aria-label={"Filter By Counterparty/Group"}
                 defaultValue={"Filter By Counterparty/Group"}
                 className="block bg-transparent w-full px-4 py-2 min-w-[300px] text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
               >
@@ -70,8 +70,8 @@ export default function NavBar() {
             <div className="relative">
               <input
                 type="text"
-                name={'search'}
-                aria-label={'Search Input'}
+                name={"search"}
+                aria-label={"Search Input"}
                 defaultValue={"Search for data"}
                 className="block  bg-transparent min-w-[300px] w-full px-8 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
               />
@@ -134,6 +134,25 @@ export default function NavBar() {
               label: "Transactions",
               href: `${replacePageItemInURL(path, "transactions")}`,
             },
+            {
+              icon: (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M13.0833 11H3.66666V4.25C3.66666 4.125 3.54166 4 3.41666 4H2.91666C2.77083 4 2.66666 4.125 2.66666 4.25V11.75C2.66666 11.8958 2.77083 12 2.91666 12H13.0833C13.2083 12 13.3333 11.8958 13.3333 11.75V11.25C13.3333 11.125 13.2083 11 13.0833 11ZM10.4167 5.35417L8.66666 6.52083L6.875 4.75C6.77083 4.64583 6.58333 4.66667 6.5 4.79167L4.66666 8V10H12.6667L10.7708 5.45833C10.7083 5.3125 10.5417 5.27083 10.4167 5.35417ZM5.66666 8.29167L6.85416 6.14583L8.52083 7.8125C10.0208 6.8125 8.70833 7.70833 10.2083 6.6875L11.1458 9H5.66666V8.29167Z"
+                    fill="#909090"
+                  />
+                </svg>
+              ),
+              label: "Instruments",
+              href: `${replacePageItemInURL(path, "instruments")}`,
+            },
+
             {
               icon: (
                 <svg

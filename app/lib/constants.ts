@@ -7,7 +7,11 @@ import {
 
 export const ViewDropdownItems = [
   { id: 1, label: `${DealViews.Lender} View`, actionType: DealViews.Lender },
-  { id: 2, label: `${DealViews.Borrower} View`, actionType: DealViews.Borrower },
+  {
+    id: 2,
+    label: `${DealViews.Borrower} View`,
+    actionType: DealViews.Borrower,
+  },
 ];
 
 export const dealsDropdownItems = [
@@ -16,7 +20,7 @@ export const dealsDropdownItems = [
   { id: 3, label: "Use Template", actionType: DealsActions.Use },
 ];
 
-export const PaymentOptionsDropdownItems = [
+export const LenderPaymentOptionsDropdownItems = [
   {
     id: 1,
     label: "View Transaction",
@@ -25,6 +29,16 @@ export const PaymentOptionsDropdownItems = [
   { id: 2, label: "View Notice", actionType: PaymentActions.ViewNotice },
   { id: 3, label: "Confirm Bank Account", actionType: PaymentActions.Confirm },
   { id: 4, label: "Contact", actionType: PaymentActions.Contact },
+];
+export const BorrowerPaymentOptionsDropdownItems = [
+  {
+    id: 1,
+    label: "View Transaction",
+    actionType: PaymentActions.ViewTransaction,
+  },
+  { id: 2, label: "View Notice", actionType: PaymentActions.ViewNotice },
+  { id: 3, label: "Make Payment", actionType: PaymentActions.Confirm },
+  { id: 4, label: "Contact Lender", actionType: PaymentActions.Contact },
 ];
 
 export const PaymentApproveDropdownItems = [

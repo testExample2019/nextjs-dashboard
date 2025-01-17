@@ -18,6 +18,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
 
   const selectedFields = documents?.map(
     ({
+      id,
       document,
       transaction,
       subType,
@@ -26,6 +27,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
       status,
       nestedRows,
     }) => ({
+      id,
       document,
       transaction,
       subType,

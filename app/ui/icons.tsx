@@ -1,4 +1,3 @@
-
 export const Cross = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -49,22 +48,6 @@ export const Document = ({ className }: { className?: string }) => (
 
 export const ChevronUp = ({ className }: { className?: string }) => (
   <svg
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-  >
-    <path
-      d="M11.7188 14.875C11.875 15.0312 12.0938 15.0312 12.25 14.875L16.875 10.2812C17.0312 10.1562 17.0312 9.90625 16.875 9.75L16.25 9.15625C16.125 9 15.875 9 15.7188 9.15625L12 12.8438L8.25 9.15625C8.09375 9 7.875 9 7.71875 9.15625L7.09375 9.75C6.9375 9.90625 6.9375 10.1562 7.09375 10.2812L11.7188 14.875Z"
-      fill="#909090"
-    />
-  </svg>
-);
-
-export const ChevronDown = ({ className }: { className?: string }) => (
-  <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
     height="24"
@@ -74,6 +57,22 @@ export const ChevronDown = ({ className }: { className?: string }) => (
   >
     <path
       d="M14.8438 12.2812C15 12.125 15 11.9062 14.8438 11.75L10.2812 7.125C10.125 6.96875 9.875 6.96875 9.75 7.125L9.125 7.75C8.96875 7.875 8.96875 8.125 9.125 8.28125L12.8125 12L9.125 15.75C8.96875 15.9062 8.96875 16.125 9.125 16.2812L9.75 16.9062C9.875 17.0625 10.125 17.0625 10.2812 16.9062L14.8438 12.2812Z"
+      fill="#909090"
+    />
+  </svg>
+);
+
+export const ChevronDown = ({ className }: { className?: string }) => (
+  <svg
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      d="M11.7188 14.875C11.875 15.0312 12.0938 15.0312 12.25 14.875L16.875 10.2812C17.0312 10.1562 17.0312 9.90625 16.875 9.75L16.25 9.15625C16.125 9 15.875 9 15.7188 9.15625L12 12.8438L8.25 9.15625C8.09375 9 7.875 9 7.71875 9.15625L7.09375 9.75C6.9375 9.90625 6.9375 10.1562 7.09375 10.2812L11.7188 14.875Z"
       fill="#909090"
     />
   </svg>

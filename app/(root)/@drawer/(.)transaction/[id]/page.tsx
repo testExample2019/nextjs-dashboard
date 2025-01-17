@@ -1,5 +1,5 @@
 import React from "react";
-import TransactionView from "@/app/ui/components/views/transaction-view";
+import TransactionView from "@/app/ui/deals/transactions/transaction-view";
 import { fetchTransactionById } from "@/app/lib/data";
 import DrawerClose from "@/app/ui/components/drawer-close";
 import { Cross } from "@/app/ui/icons";
@@ -11,6 +11,8 @@ export default async function TransactionDrawer({
 }) {
   const { id } = await params;
   const transaction = await fetchTransactionById(id);
+  const isTransactionLender = transaction?.role === "Lender";
+
   return (
     <>
       <DrawerClose
@@ -37,26 +39,40 @@ export default async function TransactionDrawer({
             </div>
             <TransactionView transaction={transaction} />
           </div>
-
-          <DrawerClose
-            children={
-              <div className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all">
-                <div>
-                  <button className="px-4 py-2 uppercase border border-action-primary text-action-primary rounded-md hover:border-blue-dark hover:text-blue-dark">
-                    Contact borrower
-                  </button>
-                </div>
-                <div className={"flex gap-4"}>
-                  <button className="px-4 py-2 uppercase border border-red text-red rounded-md hover:border-action-primary hover:text-action-primary">
-                    Reject
-                  </button>
-                  <button className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark">
-                    Approve & Pay
-                  </button>
-                </div>
-              </div>
-            }
-          />
+          {transaction?.status === "Pending" && (
+            <DrawerClose
+              children={
+                isTransactionLender ? (
+                  <div className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all">
+                    <div>
+                      <button className="px-4 py-2 uppercase border border-action-primary text-action-primary rounded-md hover:border-blue-dark hover:text-blue-dark">
+                        Contact borrower
+                      </button>
+                    </div>
+                    <div className={"flex gap-4"}>
+                      <button className="px-4 py-2 uppercase border border-red text-red rounded-md hover:border-action-primary hover:text-action-primary">
+                        Reject
+                      </button>
+                      <button className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark">
+                        Approve & Pay
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all">
+                    <div>
+                      <button className="px-4 py-2 uppercase border border-action-primary text-action-primary rounded-md hover:border-blue-dark hover:text-blue-dark">
+                        Contact Lender
+                      </button>
+                    </div>
+                    <button className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark">
+                      Make Payment
+                    </button>
+                  </div>
+                )
+              }
+            />
+          )}
         </div>
       </div>
     </>

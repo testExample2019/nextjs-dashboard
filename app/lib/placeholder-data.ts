@@ -13,12 +13,11 @@ const transactionsData: TransactionType[] = [
     counterparty: "Soultrain Music Awards",
     paymentDate: "2024-01-24",
     amount: "$5,000,000.00",
-    role: "LENDER 2",
+    role: "Lender",
     committed: "$200,000,000.00",
     funded: "$0.0",
     unfunded: "$200,000,000.00",
     status: "Pending",
-    scheduled: false,
     transactionDetails: {
       type: "Interest Payment",
       amount: "$849,315.07",
@@ -58,6 +57,15 @@ const transactionsData: TransactionType[] = [
           share: "(100.00%)",
         },
       ],
+      bankAccount: {
+        accountName: "Account USD",
+        bank: "FirstCaribbean International",
+        bic: "09676",
+        aba: "987654321",
+        iban: "-", // Use "-" if no IBAN is provided
+        accountNumber: "6665554433",
+        currency: "USD",
+      },
     },
     nestedRows: [
       {
@@ -84,12 +92,11 @@ const transactionsData: TransactionType[] = [
     counterparty: "Soultrain Music Awards",
     paymentDate: "2025-01-18",
     amount: "100,000.00",
-    role: "LENDER 2",
+    role: "Lender",
     committed: "$200,000,000.00",
     funded: "$0.0",
     unfunded: "$200,000,000.00",
     status: "NotPaid",
-    scheduled: false,
     transactionDetails: {
       type: "Interest Payment",
       amount: "$849,315.07",
@@ -129,6 +136,15 @@ const transactionsData: TransactionType[] = [
           share: "(100.00%)",
         },
       ],
+      bankAccount: {
+        accountName: "Account USD",
+        bank: "FirstCaribbean International",
+        bic: "09676",
+        aba: "987654321",
+        iban: "-", // Use "-" if no IBAN is provided
+        accountNumber: "6665554433",
+        currency: "USD",
+      },
     },
     nestedRows: [
       {
@@ -155,12 +171,11 @@ const transactionsData: TransactionType[] = [
     counterparty: "Soultrain Music Awards",
     paymentDate: "2025-02-03",
     amount: "849,315.07",
-    role: "LENDER 2",
+    role: "Lender",
     committed: "$200,000,000.00",
     funded: "$0.0",
     unfunded: "$200,000,000.00",
     status: "Scheduled",
-    scheduled: false,
     transactionDetails: {
       type: "Interest Payment",
       amount: "$849,315.07",
@@ -200,6 +215,15 @@ const transactionsData: TransactionType[] = [
           share: "(100.00%)",
         },
       ],
+      bankAccount: {
+        accountName: "Account USD",
+        bank: "FirstCaribbean International",
+        bic: "09676",
+        aba: "987654321",
+        iban: "-", // Use "-" if no IBAN is provided
+        accountNumber: "6665554433",
+        currency: "USD",
+      },
     },
     nestedRows: [
       {
@@ -208,6 +232,164 @@ const transactionsData: TransactionType[] = [
         deal: "Soultrain",
         instrument: "New Fixed Loan",
         customer: "Funky Fund East",
+        amount: "849,315.07",
+        paymentDate: "2025-02-03",
+        status: "Scheduled",
+      },
+    ],
+  },
+  {
+    id: "transaction-4",
+    paymentType: "Credit",
+    transaction: "Interest Payment",
+    deal: "Soultrain",
+    instrument: "New Fixed Loan",
+    borrower: "Soultrain",
+    ccy: "USD",
+    customer: "Soultrain Music Awards",
+    counterparty: "Soultrain Music Awards",
+    paymentDate: "2025-03-03",
+    amount: "767,123.29",
+    role: "Lender",
+    committed: "$200,000,000.00",
+    funded: "$0.0",
+    unfunded: "$200,000,000.00",
+    status: "Scheduled",
+    transactionDetails: {
+      type: "Interest Payment",
+      amount: "$767,123.29",
+      txnUpdated: "2025-01-14 9:51 AM",
+      transactionInfo: {
+        effectiveDate: "2025-02-01",
+        paymentDate: "2025-02-03",
+        amount: "767,123.29 USD",
+      },
+      rateInfo: {
+        type: "Fixed",
+        dayCount: "ACT/360",
+        pikOption: "Cash or PIK",
+        includeAccrualEnd: "Yes",
+        accrualStartDate: "2025-01-24",
+        accrualEndDate: "2025-02-24",
+      },
+      interestAmount: [
+        {
+          date: "2025-01-24",
+          rate: "8.5600%",
+          principal: "$5,000,000.00",
+          amount: "$36,855.56",
+        },
+      ],
+      allocations: [
+        {
+          role: "Borrower",
+          counterparty: "Soul Train Music Awards",
+          amount: "(849,315.07)",
+          share: "(100.00%)",
+        },
+        {
+          role: "Lender",
+          counterparty: "Funky Fund East",
+          amount: "849,315.07",
+          share: "(100.00%)",
+        },
+      ],
+      bankAccount: {
+        accountName: "Account USD",
+        bank: "FirstCaribbean International",
+        bic: "09676",
+        aba: "987654321",
+        iban: "-", // Use "-" if no IBAN is provided
+        accountNumber: "6665554433",
+        currency: "USD",
+      },
+    },
+    nestedRows: [
+      {
+        id: "transaction-4-1",
+        transaction: "Interest Payment",
+        deal: "Soultrain",
+        instrument: "New Fixed Loan",
+        customer: "Funky Fund East",
+        amount: "767,123.29",
+        paymentDate: "2025-03-03",
+        status: "Scheduled",
+      },
+    ],
+  },
+  {
+    id: "transaction-5",
+    paymentType: "Credit",
+    transaction: "Drawdown",
+    deal: "Soultrain",
+    instrument: "Soultrain Revolver",
+    borrower: "Soultrain",
+    ccy: "USD",
+    customer: "Soultrain Music Awards",
+    counterparty: "Soultrain Music Awards",
+    paymentDate: "2024-01-24",
+    amount: "$5,000,000.00",
+    role: "Borrower",
+    committed: "$200,000,000.00",
+    funded: "$0.0",
+    unfunded: "$200,000,000.00",
+    status: "Pending",
+    transactionDetails: {
+      type: "Interest Payment",
+      amount: "$849,315.07",
+      txnUpdated: "2025-01-14 9:51 AM",
+      transactionInfo: {
+        effectiveDate: "2025-02-01",
+        paymentDate: "2025-02-03",
+        amount: "849,315.07 USD",
+      },
+      rateInfo: {
+        type: "Fixed",
+        dayCount: "ACT/360",
+        pikOption: "Cash or PIK",
+        includeAccrualEnd: "Yes",
+        accrualStartDate: "2025-01-24",
+        accrualEndDate: "2025-02-24",
+      },
+      interestAmount: [
+        {
+          date: "2025-01-24",
+          rate: "8.5600%",
+          principal: "$5,000,000.00",
+          amount: "$36,855.56",
+        },
+      ],
+      allocations: [
+        {
+          role: "Borrower",
+          counterparty: "Soul Train Music Awards",
+          amount: "(849,315.07)",
+          share: "(100.00%)",
+        },
+        {
+          role: "Lender",
+          counterparty: "Funky Fund East",
+          amount: "849,315.07",
+          share: "(100.00%)",
+        },
+      ],
+      bankAccount: {
+        accountName: "Account USD",
+        bank: "FirstCaribbean International",
+        bic: "09676",
+        aba: "987654321",
+        iban: "-", // Use "-" if no IBAN is provided
+        accountNumber: "6665554433",
+        currency: "USD",
+      },
+    },
+    nestedRows: [
+      {
+        id: "transaction-5-1",
+        transaction: "Drawdown",
+        deal: "Soultrain",
+        instrument: "Soultrain Revolver",
+        customer: "Soul Train Music Awards",
         amount: "849,315.07",
         paymentDate: "2025-02-03",
         status: "Scheduled",
@@ -269,6 +451,15 @@ const documentsData: DocumentType[] = [
           share: "(100.00%)",
         },
       ],
+      bankAccount: {
+        accountName: "Account USD",
+        bank: "FirstCaribbean International",
+        bic: "09676",
+        aba: "987654321",
+        iban: "-", // Use "-" if no IBAN is provided
+        accountNumber: "6665554433",
+        currency: "USD",
+      },
     },
     nestedRows: [
       {
@@ -305,6 +496,12 @@ const documentsData: DocumentType[] = [
         paymentDate: "2025-02-03",
         amount: "849,315.07 USD",
       },
+      feeInfo: {
+        feeType: "Drawdown Fee",
+        appliesTo: "Drawdown Amount",
+        rate: "0.1000%",
+        feeAmount: "100,000.00 USD",
+      },
       rateInfo: {
         type: "Fixed",
         dayCount: "ACT/360",
@@ -335,6 +532,15 @@ const documentsData: DocumentType[] = [
           share: "(100.00%)",
         },
       ],
+      bankAccount: {
+        accountName: "Account USD",
+        bank: "FirstCaribbean International",
+        bic: "09676",
+        aba: "987654321",
+        iban: "-", // Use "-" if no IBAN is provided
+        accountNumber: "6665554433",
+        currency: "USD",
+      },
     },
     nestedRows: [
       {
@@ -430,7 +636,7 @@ const deals: DealType[] = [
           docs: "",
         },
       ],
-      transactions: transactionsData,
+      transactions: transactionsData.filter(transaction => transaction.role === 'Lender'),
       documents: documentsData,
       asOfDate: "2025-01-24",
     },
@@ -465,11 +671,12 @@ const deals: DealType[] = [
         credits: [
           {
             id: "credit-1",
-            dueDate: "2025-01-18",
+            dueDate: "2025-01-24",
             status: "Pending",
             drawDown: "$5,000,000.00",
             drawDownFee: "$5,000.00",
             total: "$4,955,000.00",
+            transactionId: "transaction-5",
           },
         ],
         debits: [
@@ -486,6 +693,7 @@ const deals: DealType[] = [
             status: "in 10 days",
             interest: "$849,315.07",
             total: "$849,315.07",
+            documentId: "document-1",
           },
         ],
       },
@@ -504,7 +712,7 @@ const deals: DealType[] = [
           docs: "",
         },
       ],
-      transactions: transactionsData,
+      transactions: transactionsData.filter(transaction => transaction.role === 'Borrower'),
       documents: documentsData,
       asOfDate: "2025-01-24",
     },

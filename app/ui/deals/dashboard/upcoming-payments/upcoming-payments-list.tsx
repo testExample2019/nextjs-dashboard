@@ -8,7 +8,11 @@ import {
   UpcomingPaymentsType,
 } from "@/app/lib/definitions";
 import { usePathname, useRouter } from "next/navigation";
-import { PaymentOptionsDropdownItems, today } from "@/app/lib/constants";
+import {
+  BorrowerPaymentOptionsDropdownItems,
+  LenderPaymentOptionsDropdownItems,
+  today,
+} from "@/app/lib/constants";
 import Calendar from "@/app/ui/deals/dashboard/upcoming-payments/calendar";
 import Status from "@/app/ui/components/status";
 import { isSameDay } from "date-fns";
@@ -176,7 +180,11 @@ export default function UpcomingPaymentsList({
                         </svg>
                       </button>
                     }
-                    dropdownItems={PaymentOptionsDropdownItems}
+                    dropdownItems={
+                      path.includes(DealViews.Lender)
+                        ? LenderPaymentOptionsDropdownItems
+                        : BorrowerPaymentOptionsDropdownItems
+                    }
                     onAction={(actionType) => {
                       if (
                         actionType === PaymentActions.ViewTransaction &&
