@@ -9,7 +9,7 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
           <button onClick={onClose}>
             <ChevronLeft className={"rotate-180"} />
           </button>
-          New Facility Fee
+          {data?.type ? "Facility Fee" : "New Facility Fee"}
         </div>
         <button onClick={onClose}>
           <Cross />
@@ -23,10 +23,10 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
             </label>
             <select
               name="facilityFeeType"
-              defaultValue={data.type}
+              defaultValue={data?.type || ""}
               className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
             >
-              <option>{data.type}</option>
+              <option>{data?.type || ""}</option>
             </select>
           </div>
           <div>
@@ -35,10 +35,10 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
             </label>
             <select
               name="facilityFeeAppliesTo"
-              defaultValue={data.appliesTo}
+              defaultValue={data?.appliesTo || ""}
               className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
             >
-              <option>{data.appliesTo}</option>
+              <option>{data?.appliesTo || ""}</option>
             </select>
           </div>
         </div>
@@ -121,10 +121,10 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
                   2025-01-01
                 </td>
                 <td className="py-2 px-4 text-base text-grey-primary">
-                  {data.rate}
+                  {data?.rate || ""}
                 </td>
                 <td className="py-2 px-4 text-base text-grey-primary">
-                  {data.flatAmount}
+                  {data?.flatAmount || ""}
                 </td>
               </tr>
             </tbody>
