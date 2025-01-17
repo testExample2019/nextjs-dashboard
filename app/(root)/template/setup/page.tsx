@@ -1,17 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import FormTable from "@/app/(root)/template/setup/form-table";
+import FormTable from "@/app/ui/template/form-table";
 import Tooltip from "@/app/ui/components/tooltip";
 import React from "react";
 import { transactionsTableData } from "@/app/lib/placeholder-data";
-import AdvancedFormTable from "@/app/(root)/template/setup/advanced-form-table";
+import AdvancedFormTable from "@/app/ui/template/advanced-form-table";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center lg:justify-between min-h-screen">
+    <div className="flex flex-col lg:flex-row justify-center lg:justify-between min-h-screen relative">
       {/* Form Container */}
       <div
         id={"tour1-step3"}
@@ -50,7 +50,6 @@ const LoanSetupPage = () => {
         <h2 className="text-18 font-semibold capitalize text-grey-primary py-2 px-4 border-b-1 border-grey-border">
           Preview transactions schedule
         </h2>
-        <div></div>
         <div className="bg-blue-50 border border-blue-100 p-4 mx-4 my-6 rounded-lg flex items-start gap-2 text-grey-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
