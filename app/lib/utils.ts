@@ -1,7 +1,7 @@
 const replaceItemInURL = (url: string, newName: string, type: number) => {
   const parts = url.split("/");
   const position = parts.length - type;
-  if (parts[position]) parts[position] = newName;
+  if (parts[position]) parts[position] = newName.toLowerCase().replace(/[^a-z0-9]/g, "");
   return parts.join("/");
 };
 export const replaceViewItemInURL = (url: string, newName: string) => {

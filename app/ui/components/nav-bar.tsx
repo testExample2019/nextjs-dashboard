@@ -8,7 +8,7 @@ import ViewsNav from "@/app/ui/components/views-nav";
 export default function NavBar() {
   const path = usePathname();
   return (
-    <header className={`flex flex-col border-b-1 border-grey-border`}>
+    <header className={`flex flex-col border-b-1 border-grey-border sticky top-0 z-20`}>
       <nav
         className={
           "h-16 bg-grey-lighter text-grey-primary flex items-center justify-between px-4"
@@ -95,7 +95,7 @@ export default function NavBar() {
           </div>
         </div>
         {/* Right Section: Icons */}
-        <div className="hidden  items-center space-x-4 md:flex">
+        <div className="hidden  items-center space-x-4 sm:flex">
           {/* Icon Buttons */}
           {[
             {

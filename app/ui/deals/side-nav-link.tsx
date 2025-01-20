@@ -19,7 +19,9 @@ export const SideNavLink = ({
       href={href}
     >
       <div className="flex justify-between items-center">
-        <h3 className="text-grey-primary text-base uppercase">{name}</h3>
+        <h3 className="text-grey-primary text-base uppercase">
+          {name.split(/(?=[A-Z])/).join(" ")}
+        </h3>
         <div className="flex gap- items-center">
           <span className="text-xs font-medium bg-grey-blue text-white px-1 rounded">
             USD

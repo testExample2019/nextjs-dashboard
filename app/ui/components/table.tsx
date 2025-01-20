@@ -4,14 +4,14 @@ import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Status from "@/app/ui/components/status";
 import { separateWords } from "@/app/lib/utils";
-import { ChevronDown, ChevronLeft, ChevronUp, Document } from "@/app/ui/icons";
+import { ChevronDown, ChevronLeft, Document } from "@/app/ui/icons";
 
 interface TableProps {
   type: "document" | "transaction" | "position" | "instrument";
   rows: { [key: string]: string | number | [] }[];
 }
 
-export const Table: React.FC<TableProps> = ({ type, rows }) => {
+export const Table: React.FC<TableProps> = ({ type, rows= [] }) => {
   const path = usePathname();
   const [expandedRows, setExpandedRows] = useState<number[]>([]);
 
@@ -36,7 +36,6 @@ export const Table: React.FC<TableProps> = ({ type, rows }) => {
     rows: { [key: string]: string | number | [] }[],
     isNested = false,
   ) => {
-    //TODO: Change any
     return rows.map((row, index: number) => (
       <React.Fragment key={index}>
         {/* Main or Nested Row */}

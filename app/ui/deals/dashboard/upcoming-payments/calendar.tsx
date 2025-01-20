@@ -14,7 +14,7 @@ const Calendar = ({ payments }: { payments: PaymentType[] }) => {
   const monthStart = startOfMonth(today);
   const monthEnd = endOfMonth(monthStart);
   const weekStart = startOfWeek(monthStart, { weekStartsOn: 0 });
-  const paymentDates = payments.map((payment) => payment.dueDate);
+  const paymentDates = payments?.map((payment) => payment.dueDate);
 
   const generateDays = () => {
     const days = [];
@@ -26,6 +26,8 @@ const Calendar = ({ payments }: { payments: PaymentType[] }) => {
     }
     return days;
   };
+
+  if (!payments?.length) return null;
 
   return (
     <div className="bg-white p-4 h-full rounded-md">

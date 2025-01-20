@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Tooltip from "@/app/ui/components/tooltip";
 import { redirect } from "next/navigation";
-import { deals, formTableDataAdvanced } from "@/app/lib/placeholder-data";
+import { formTableDataAdvanced } from "@/app/lib/placeholder-data";
 import { Cross, Reload } from "@/app/ui/icons";
 import { FacilityFee } from "@/app/ui/template/faciliy-fee";
 import { defaultDashboardPath } from "@/app/lib/constants";
