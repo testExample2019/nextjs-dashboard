@@ -4,6 +4,7 @@ import {
   PaymentActions,
   PaymentApproveActions,
 } from "@/app/lib/definitions";
+import { deals } from "@/app/lib/placeholder-data";
 
 export const ViewDropdownItems = [
   { id: 1, label: `${DealViews.Lender} View`, actionType: DealViews.Lender },
@@ -56,3 +57,4 @@ export const PaymentApproveDropdownItems = [
 ];
 
 export const today = new Date(2025, 0, 24); // Month is 0-indexed: 11 = December
+export const defaultDashboardPath = `/deals/dashboard/${deals[0].name.toLowerCase()}/lender/`;

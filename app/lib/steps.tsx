@@ -1,4 +1,5 @@
 import { Tour } from "nextstepjs";
+import { defaultDashboardPath } from "@/app/lib/constants";
 
 export const steps: Tour[] = [
   {
@@ -33,10 +34,11 @@ export const steps: Tour[] = [
         ),
         selector: "#tour1-step2",
         side: "bottom",
-        showControls: false,
         showSkip: false,
+        showControls: true,
         pointerPadding: 10,
         pointerRadius: 10,
+        nextRoute: "/template/setup",
         blockKeyboardControl: true,
       },
       {
@@ -53,8 +55,10 @@ export const steps: Tour[] = [
         ),
         selector: "#tour1-step3",
         side: "right",
-        showControls: false,
         showSkip: false,
+        showControls: true,
+        prevRoute: "/template",
+        nextRoute: defaultDashboardPath,
         pointerPadding: 10,
         pointerRadius: 10,
         blockKeyboardControl: true,
@@ -88,6 +92,7 @@ export const steps: Tour[] = [
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
+        prevRoute: "/template/setup",
         pointerRadius: 10,
         blockKeyboardControl: true,
       },

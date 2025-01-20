@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { TransactionType } from "@/app/lib/definitions";
-import { notFound, usePathname } from "next/navigation";
+import { notFound } from "next/navigation";
 import Status from "@/app/ui/components/status";
-import { ChevronDown, ChevronUp } from "@/app/ui/icons";
+import { ChevronDown } from "@/app/ui/icons";
 
 enum TransactionTabsType {
   TransactionInfo = "transactionInfo",
@@ -295,9 +295,9 @@ const TransactionView = ({
       )}
       {activeTab === TransactionTabsType.RateInfo && (
         <>
-          <div className="mt-6 pt-4">
+          <div>
             <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
-              Rate Option Details: $
+              Rate Option Details:
               {transaction.transactionDetails.rateInfo.type}
             </h2>
             <div className="grid grid-cols-2 gap-4">
@@ -381,7 +381,7 @@ const TransactionView = ({
               <tr className="bg-blue-50 text-grey-primary font-medium">
                 <td colSpan={5} className="px-4 py-2">
                   <div className="w-full flex items-start">
-                    <ChevronUp />
+                    <ChevronDown />
                     <span>PIK (1)</span>
                   </div>
                 </td>

@@ -6,6 +6,7 @@ import { deals, formTableData } from "@/app/lib/placeholder-data";
 import { useState } from "react";
 import { useNextStep } from "nextstepjs";
 import Tooltip from "@/app/ui/components/tooltip";
+import { defaultDashboardPath } from "@/app/lib/constants";
 
 const FormTable = () => {
   const [formData, setFormData] = useState(formTableData);
@@ -310,9 +311,7 @@ const FormTable = () => {
           Cancel
         </button>
         <button
-          onClick={() =>
-            redirect(`/deals/dashboard/${deals[0].name.toLowerCase()}/lender/`)
-          }
+          onClick={() => redirect(defaultDashboardPath)}
           className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark"
         >
           Save

@@ -17,7 +17,7 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
 
   return (
     <Suspense key={dashboard} fallback={<DashboardSkeleton />}>
-      <div className={"py-2 px-4  h-[50px] border-b-1 border-grey-border"}>
+      <div className={"py-2 px-4  h-[50px] border-b-1 border-grey-border flex items-center"}>
         <h1
           className={`text-18 w-full text-grey-primary flex items-center gap-2`}
         >

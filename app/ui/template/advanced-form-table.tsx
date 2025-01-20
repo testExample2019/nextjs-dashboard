@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 import { deals, formTableDataAdvanced } from "@/app/lib/placeholder-data";
 import { Cross, Reload } from "@/app/ui/icons";
 import { FacilityFee } from "@/app/ui/template/faciliy-fee";
+import { defaultDashboardPath } from "@/app/lib/constants";
 
 const AdvancedTable = () => {
   const [formData, setFormData] = useState(formTableDataAdvanced);
@@ -571,9 +572,7 @@ const AdvancedTable = () => {
           Cancel
         </button>
         <button
-          onClick={() =>
-            redirect(`/deals/dashboard/${deals[0].name.toLowerCase()}/lender/`)
-          }
+          onClick={() => redirect(defaultDashboardPath)}
           className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark"
         >
           Save
