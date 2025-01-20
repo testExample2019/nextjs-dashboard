@@ -16,18 +16,21 @@ export default function DealsSideNav({
   }, []);
   return (
     <div id={`tour1-step5`} className={"flex  md:flex-col gap-4"}>
-      {dealsNavData.map(({ id, name, totalCommitment, funded, unfunded }) => {
-        return (
-          <SideNavLink
-            key={id}
-            id={id}
-            name={name}
-            totalCommitment={totalCommitment}
-            funded={funded}
-            unfunded={unfunded}
-          />
-        );
-      })}
+      {dealsNavData.map(
+        ({ id, name, totalCommitment, funded, unfunded, displayName }) => {
+          return (
+            <SideNavLink
+              key={id}
+              id={id}
+              name={name}
+              displayName={displayName}
+              totalCommitment={totalCommitment}
+              funded={funded}
+              unfunded={unfunded}
+            />
+          );
+        },
+      )}
     </div>
   );
 }

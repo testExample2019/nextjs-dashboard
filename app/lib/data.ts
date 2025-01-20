@@ -12,6 +12,7 @@ export async function fetchDealsNavData(): Promise<DealNavType[]> {
     return deals.map((deal) => ({
       id: deal.id,
       name: deal.name,
+      displayName: deal.displayName,
       title: deal.name,
       totalCommitment: deal.totalCommitment,
       funded: deal.funded,

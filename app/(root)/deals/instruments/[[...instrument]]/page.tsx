@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import { TableSkeleton } from "@/app/ui/skeletons";
 import { Table } from "@/app/ui/components/table";
 import { ChevronLeft } from "@/app/ui/icons";
+import { handleDisplayCorrectDialName } from "@/app/lib/utils";
 
 interface PageProps {
   params: Promise<{ instrument: string }>;
@@ -23,7 +24,9 @@ const Page: React.FC<PageProps> = async ({ params }) => {
         >
           Instruments
           <ChevronLeft />
-          <span className={"capitalize"}>{dealName}</span>
+          <span className={"capitalize"}>
+            {handleDisplayCorrectDialName(dealName)}
+          </span>
         </h1>
       </div>
       <div className={"p-4"}>

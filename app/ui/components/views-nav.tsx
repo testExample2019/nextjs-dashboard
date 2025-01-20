@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { replaceViewItemInURL } from "@/app/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { DealViews } from "@/app/lib/definitions";
@@ -10,17 +10,7 @@ import { ViewDropdownItems } from "@/app/lib/constants";
 export default function ViewsNav() {
   const path = usePathname();
   const router = useRouter();
-  const storedView = sessionStorage.getItem("activeView");
-  const [activeView, setActiveView] = useState("");
-
-  useEffect(() => {
-    setActiveView(storedView || DealViews.Lender); // Default value based on the path
-  }, []);
-
-  // Update sessionStorage whenever activeView changes
-  useEffect(() => {
-    sessionStorage.setItem("activeView", activeView);
-  }, [activeView, path]);
+  const [activeView, setActiveView] = useState(DealViews.Lender);
 
   return (
     <div className="flex h-full flex-col">

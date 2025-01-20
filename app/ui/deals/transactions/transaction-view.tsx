@@ -96,35 +96,33 @@ const TransactionView = ({
               <div>
                 <p className="text-sm text-grey font-semibold">Payment Date</p>
                 <p className="font-medium text-grey-primary">
-                  {transaction.instrument}
+                  {transaction.paymentDate}
                 </p>
               </div>
-            </div>
-
-            {!isInterestPayment && (
+              {!isInterestPayment && (
+                <div>
+                  <p className="text-sm text-grey font-semibold">Commitment</p>
+                  <p className="font-medium text-grey-primary">
+                    {transaction.committed}
+                  </p>
+                </div>
+              )}
+              {!isInterestPayment && (
+                <div>
+                  <p className="text-sm text-grey font-semibold">
+                    Unfunded Commitment
+                  </p>
+                  <p className="font-medium text-grey-primary">
+                    {transaction.unfunded}
+                  </p>
+                </div>
+              )}
               <div>
-                <p className="text-sm text-grey font-semibold">Commitment</p>
+                <p className="text-sm text-grey font-semibold">Amount</p>
                 <p className="font-medium text-grey-primary">
-                  {transaction.committed}
+                  {transaction.amount}
                 </p>
               </div>
-            )}
-            {!isInterestPayment && (
-              <div>
-                <p className="text-sm text-grey font-semibold">
-                  Unfunded Commitment
-                </p>
-                <p className="font-medium text-grey-primary">
-                  {transaction.unfunded}
-                </p>
-              </div>
-            )}
-
-            <div>
-              <p className="text-sm text-grey font-semibold">Amount</p>
-              <p className="font-medium text-grey-primary">
-                {transaction.amount}
-              </p>
             </div>
           </div>
           {!isInterestPayment && (
@@ -163,49 +161,6 @@ const TransactionView = ({
                     </p>
                   </div>
                 </div>
-              </div>
-              <div className="mt-6">
-                <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
-                  Interest Amount
-                </h2>
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
-                        Date
-                      </th>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
-                        Rate
-                      </th>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
-                        Principal
-                      </th>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
-                        Amount
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {transaction.transactionDetails.interestAmount.map(
-                      (interest, index) => (
-                        <tr key={index}>
-                          <td className="py-2 text-grey-primary text-base">
-                            {interest.date}
-                          </td>
-                          <td className="py-2 text-grey-primary text-base">
-                            {interest.rate}
-                          </td>
-                          <td className="py-2 text-grey-primary text-base">
-                            {interest.principal}
-                          </td>
-                          <td className="py-2 text-grey-primary text-base">
-                            {interest.amount}
-                          </td>
-                        </tr>
-                      ),
-                    )}
-                  </tbody>
-                </table>
               </div>
             </>
           )}
@@ -268,7 +223,7 @@ const TransactionView = ({
                     </tr>
                   </thead>
                   <tbody>
-                    {transaction.transactionDetails.interestAmount.map(
+                    {transaction.transactionDetails.interestAmount?.map(
                       (interest, index) => (
                         <tr key={index}>
                           <td className="py-2 text-grey-primary text-base">
@@ -300,7 +255,7 @@ const TransactionView = ({
               Rate Option Details:
               {transaction.transactionDetails.rateInfo.type}
             </h2>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
                 <p className="text-sm text-grey font-semibold">Type</p>
                 <p className="font-medium text-grey-primary">
@@ -420,7 +375,7 @@ const TransactionView = ({
               </tr>
             </thead>
             <tbody>
-              {transaction.transactionDetails.allocations.map(
+              {transaction.transactionDetails.allocations?.map(
                 (allocation, index) => (
                   <tr key={index}>
                     <td className="py-2 text-grey-primary text-base">
@@ -430,11 +385,13 @@ const TransactionView = ({
                       {allocation.counterparty}
                     </td>
                     <td
-                      className={`py-2 ${allocation.role === "Lender" ? "text-green" : "text-red"} text-base`}
+                      className={`py-2 ${allocation.amount.startsWith("(") ? "text-red" : "text-green"} text-base`}
                     >
                       {allocation.amount}
                     </td>
-                    <td className="py-2 text-red text-base">
+                    <td
+                      className={`py-2 ${allocation.amount.startsWith("(") ? "text-red" : "text-green"} text-base`}
+                    >
                       {allocation.share}
                     </td>
                   </tr>
@@ -466,18 +423,6 @@ const TransactionView = ({
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">Aba</p>
-                <p className="font-medium text-grey-primary">
-                  {transaction.transactionDetails.bankAccount.aba}
-                </p>
-              </div>
-              <div>
-                <p className="text-sm text-grey font-semibold">IBAN</p>
-                <p className="font-medium text-grey-primary">
-                  {transaction.transactionDetails.bankAccount.iban}
-                </p>
-              </div>
-              <div>
                 <p className="text-sm text-grey font-semibold">
                   Account Number
                 </p>
@@ -489,6 +434,28 @@ const TransactionView = ({
                 <p className="text-sm text-grey font-semibold">Currency</p>
                 <p className="font-medium text-grey-primary">
                   {transaction.transactionDetails.bankAccount.currency}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-6 pt-4">
+            <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
+              Correspondent Bank
+            </h2>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <p className="text-sm text-grey font-semibold">Bank</p>
+                <p className="font-medium text-grey-primary">
+                  {
+                    transaction.transactionDetails.correspondingBankAccount
+                      ?.bank
+                  }
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-grey font-semibold">Bic</p>
+                <p className="font-medium text-grey-primary">
+                  {transaction.transactionDetails.correspondingBankAccount?.bic}
                 </p>
               </div>
             </div>

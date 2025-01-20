@@ -1,6 +1,7 @@
 export type DealType = {
   id: string;
   name: string;
+  displayName: string;
   totalCommitment: string;
   funded: string;
   unfunded: string;
@@ -132,12 +133,6 @@ type TransactionDetailsType = {
     accrualStartDate: string; // Accrual start date (ISO format)
     accrualEndDate: string; // Accrual end date (ISO format)
   };
-  interestAmount: {
-    date: string; // Date of the interest payment (ISO format)
-    rate: string; // Rate percentage as a formatted string (e.g., "10.0000%")
-    principal: string; // Principal amount with currency formatting
-    amount: string; // Calculated interest amount with currency formatting
-  }[];
   allocations: {
     role: "Borrower" | "Lender";
     counterparty: string;
@@ -153,6 +148,16 @@ type TransactionDetailsType = {
     accountNumber: string; // Account Number (e.g., "6665554433")
     currency: string; // Currency code (e.g., "USD")
   };
+  correspondingBankAccount?: {
+    bank: string; // Name of the bank (e.g., "FirstCaribbean International")
+    bic: string; // Bank Identifier Code (e.g., "09676")
+  };
+  interestAmount?: {
+    date: string; // Date of the interest payment (ISO format)
+    rate: string; // Rate percentage as a formatted string (e.g., "10.0000%")
+    principal: string; // Principal amount with currency formatting
+    amount: string; // Calculated interest amount with currency formatting
+  }[];
   feeInfo?: {
     feeType: string; // Type of the fee (e.g., "Drawdown Fee")
     appliesTo: string; // What the fee applies to (e.g., "Drawdown Amount")

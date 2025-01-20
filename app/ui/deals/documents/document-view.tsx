@@ -371,7 +371,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                     </tr>
                   </thead>
                   <tbody>
-                    {document.transactionDetails.interestAmount.map(
+                    {document.transactionDetails.interestAmount?.map(
                       (interest, index) => (
                         <tr key={index}>
                           <td className="py-2 text-grey-primary text-base">

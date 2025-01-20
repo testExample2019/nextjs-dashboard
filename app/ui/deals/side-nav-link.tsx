@@ -3,10 +3,15 @@ import React from "react";
 import { DealNavType } from "@/app/lib/definitions";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { replaceDealItemInURL } from "@/app/lib/utils";
+import {
+  handleDisplayCorrectDialName,
+  replaceDealItemInURL,
+  separateWords,
+} from "@/app/lib/utils";
 
 export const SideNavLink = ({
   name,
+  displayName,
   totalCommitment,
   funded,
   unfunded,
@@ -15,13 +20,11 @@ export const SideNavLink = ({
   const href = replaceDealItemInURL(path, name.toLowerCase());
   return (
     <Link
-      className={`${path.includes(name.toLowerCase()) ? "bg-[#EDF4FC]" : "bg-white"} w-full max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
+      className={`${path.includes(name.toLowerCase()) ? "bg-blue-o" : "bg-white"} w-full max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
       href={href}
     >
       <div className="flex justify-between items-center">
-        <h3 className="text-grey-primary text-base uppercase">
-          {name.split(/(?=[A-Z])/).join(" ")}
-        </h3>
+        <h3 className="text-grey-primary text-base uppercase">{displayName}</h3>
         <div className="flex gap- items-center">
           <span className="text-xs font-medium bg-grey-blue text-white px-1 rounded">
             USD

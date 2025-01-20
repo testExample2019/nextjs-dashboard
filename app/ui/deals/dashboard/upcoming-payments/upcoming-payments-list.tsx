@@ -27,7 +27,7 @@ export default function UpcomingPaymentsList({
   const path = usePathname();
   const router = useRouter();
   const [activePaymentType, setActivePaymentType] = useState<PaymentTypes>(
-    PaymentTypes.Credits,
+    PaymentTypes.Debits,
   );
   const payments = upcomingPayments?.[activePaymentType];
 

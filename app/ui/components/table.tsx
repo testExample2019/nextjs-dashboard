@@ -11,7 +11,7 @@ interface TableProps {
   rows: { [key: string]: string | number | [] }[];
 }
 
-export const Table: React.FC<TableProps> = ({ type, rows= [] }) => {
+export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
   const path = usePathname();
   const [expandedRows, setExpandedRows] = useState<number[]>([]);
 

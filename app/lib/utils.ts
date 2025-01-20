@@ -1,7 +1,10 @@
+import { deals } from "@/app/lib/placeholder-data";
+
 const replaceItemInURL = (url: string, newName: string, type: number) => {
   const parts = url.split("/");
   const position = parts.length - type;
-  if (parts[position]) parts[position] = newName.toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (parts[position])
+    parts[position] = newName.toLowerCase().replace(/[^a-z0-9]/g, "");
   return parts.join("/");
 };
 export const replaceViewItemInURL = (url: string, newName: string) => {
@@ -17,6 +20,10 @@ export const replacePageItemInURL = (url: string, newName: string) => {
 };
 
 // Function to split camelCase or PascalCase into separate words
-export  const separateWords = (status: string): string => {
+export const separateWords = (status: string): string => {
   return status.replace(/([a-z])([A-Z])/g, "$1 $2");
+};
+
+export const handleDisplayCorrectDialName = (name: string) => {
+  return deals?.find((deal) => deal.name.toLowerCase() === name.toLowerCase())?.displayName;
 };
