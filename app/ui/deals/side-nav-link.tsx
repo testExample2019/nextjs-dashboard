@@ -15,7 +15,7 @@ export const SideNavLink = ({
   const href = replaceDealItemInURL(path, name.toLowerCase());
   return (
     <Link
-      className={`${path.includes(name.toLowerCase()) ? "bg-[#EDF4FC]" : "bg-white"} max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
+      className={`${path.includes(name.toLowerCase()) ? "bg-[#EDF4FC]" : "bg-white"} w-full max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
       href={href}
     >
       <div className="flex justify-between items-center">

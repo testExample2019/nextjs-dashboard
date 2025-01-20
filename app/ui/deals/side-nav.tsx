@@ -15,7 +15,7 @@ export default function DealsSideNav({
     setCurrentStep(3);
   }, []);
   return (
-    <div id={`tour1-step5`} className={"flex flex-col gap-4"}>
+    <div id={`tour1-step5`} className={"flex  md:flex-col gap-4"}>
       {dealsNavData.map(({ id, name, totalCommitment, funded, unfunded }) => {
         return (
           <SideNavLink

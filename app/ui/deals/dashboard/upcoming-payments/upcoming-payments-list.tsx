@@ -32,7 +32,7 @@ export default function UpcomingPaymentsList({
   const payments = upcomingPayments?.[activePaymentType];
 
   return (
-    <div className={"flex justify-between w-full"}>
+    <div className={"flex justify-between w-full flex-col lg:flex-row"}>
       {/* Content */}
       <div className={"p-4 w-full bg-grey-o"}>
         <div className="flex">
@@ -207,8 +207,9 @@ export default function UpcomingPaymentsList({
           ))}
         </div>
       </div>
-
-      <Calendar payments={payments} />
+      <div className="w-full lg:w-[40%] min-w-[300px]">
+        <Calendar payments={payments} />
+      </div>
     </div>
   );
 }

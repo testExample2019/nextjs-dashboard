@@ -17,7 +17,11 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
 
   return (
     <Suspense key={dashboard} fallback={<DashboardSkeleton />}>
-      <div className={"py-2 px-4  h-[50px] border-b-1 border-grey-border flex items-center"}>
+      <div
+        className={
+          "py-2 px-4  h-[50px] border-b-1 border-grey-border flex items-center"
+        }
+      >
         <h1
           className={`text-18 w-full text-grey-primary flex items-center gap-2`}
         >
@@ -45,9 +49,7 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
           Covenants Tracking
         </h3>
         <Suspense fallback={<CovenantsTrackingSkeleton />}>
-          <div className="flex flex-col lg:flex-row gap-4">
-            <CovenantsCardWrapper dealName={dealName} dealView={dealView} />
-          </div>
+          <CovenantsCardWrapper dealName={dealName} dealView={dealView} />
         </Suspense>
       </div>
     </Suspense>

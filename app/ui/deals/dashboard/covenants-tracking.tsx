@@ -10,7 +10,7 @@ const CovenantsCardWrapper: React.FC<DealParamsType> = async ({
   const covenantsTrackingData: CovenantMetricType[] =
     await fetchCovenantsTrackingData(dealName, dealView);
   return (
-    <>
+    <div className={'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'}>
       {covenantsTrackingData?.map(
         (
           { title, value, change, changeValue, prevPeriodValue, status },
@@ -27,7 +27,7 @@ const CovenantsCardWrapper: React.FC<DealParamsType> = async ({
           />
         ),
       )}
-    </>
+    </div>
   );
 };
 
@@ -42,9 +42,9 @@ function CovenantsCard({
   status,
 }: CovenantMetricType) {
   return (
-    <div className="flex-1 bg-white shadow-md rounded-lg p-4 border border-grey-border">
-      <h3 className="text-grey text-sm font-semibold uppercase">{title}</h3>
-      <div className={"flex justify-between items-end"}>
+    <div className="flex-1 bg-white shadow-md rounded-lg p-4 border border-grey-border w-full">
+      <h3 className="text-grey text-sm font-semibold uppercase truncate whitespace-nowrap">{title}</h3>
+      <div className={"flex justify-between items-end flex-col xl:flex-row"}>
         <div className="flex justify-between items-center">
           <div className="mt-2 flex items-center gap-2">
             <span className="text-grey-primary text-base font-medium">

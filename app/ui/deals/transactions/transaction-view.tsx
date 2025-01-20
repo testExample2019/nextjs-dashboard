@@ -341,6 +341,9 @@ const TransactionView = ({
               </div>
             </div>
           </div>
+          <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
+            Rate Info
+          </h2>
           <table className="w-full text-left border-collapse">
             <thead>
               <tr>

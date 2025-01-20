@@ -49,16 +49,16 @@ export default function NavBar() {
             Direct<span className="font-semibold">Lend</span>
           </span>
         </Link>
-        <div className="hidden items-center justify-between gap-4 lg:flex">
+        <div className="hidden items-center justify-between mx-4 lg:flex w-full">
           {/* Left Section: Filter Dropdown */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-center space-x-4 w-full">
             {/* Filter Dropdown */}
-            <div className="relative">
+            <div className="relative w-full max-w-[300px]">
               <select
                 name={"filter"}
                 aria-label={"Filter By Counterparty/Group"}
                 defaultValue={"Filter By Counterparty/Group"}
-                className="block bg-transparent w-full px-4 py-2 min-w-[300px] text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
+                className="block bg-transparent w-full px-4 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
               >
                 <option disabled={true}>Filter By Counterparty/Group</option>
                 <option>Option 1</option>
@@ -67,13 +67,13 @@ export default function NavBar() {
             </div>
 
             {/* Search Input */}
-            <div className="relative">
+            <div className="relative w-full max-w-[300px]">
               <input
                 type="text"
                 name={"search"}
                 aria-label={"Search Input"}
                 defaultValue={"Search for data"}
-                className="block  bg-transparent min-w-[300px] w-full px-8 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
+                className="block  bg-transparent w-full px-8 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
               />
               <div className="absolute top-1/2 left-3 transform -translate-y-1/2 text-grey">
                 <svg
@@ -95,7 +95,7 @@ export default function NavBar() {
           </div>
         </div>
         {/* Right Section: Icons */}
-        <div className="hidden  items-center space-x-4 lg:flex">
+        <div className="hidden  items-center space-x-4 md:flex">
           {/* Icon Buttons */}
           {[
             {

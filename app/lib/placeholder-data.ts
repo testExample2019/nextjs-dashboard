@@ -19,13 +19,19 @@ const transactionsData: TransactionType[] = [
     unfunded: "$200,000,000.00",
     status: "Pending",
     transactionDetails: {
-      type: "Interest Payment",
+      type: "Drawdown",
       amount: "$849,315.07",
       txnUpdated: "2025-01-14 9:51 AM",
       transactionInfo: {
         effectiveDate: "2025-02-01",
         paymentDate: "2025-02-03",
         amount: "849,315.07 USD",
+      },
+      feeInfo: {
+        feeType: "Drawdown Fee",
+        appliesTo: "Drawdown Amount",
+        rate: "1.0000%",
+        feeAmount: "50,000.00 USD",
       },
       rateInfo: {
         type: "Fixed",
@@ -636,7 +642,9 @@ const deals: DealType[] = [
           docs: "",
         },
       ],
-      transactions: transactionsData.filter(transaction => transaction.role === 'Lender'),
+      transactions: transactionsData.filter(
+        (transaction) => transaction.role === "Lender",
+      ),
       documents: documentsData,
       asOfDate: "2025-01-24",
     },
@@ -712,7 +720,9 @@ const deals: DealType[] = [
           docs: "",
         },
       ],
-      transactions: transactionsData.filter(transaction => transaction.role === 'Borrower'),
+      transactions: transactionsData.filter(
+        (transaction) => transaction.role === "Borrower",
+      ),
       documents: documentsData,
       asOfDate: "2025-01-24",
     },
