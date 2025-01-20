@@ -9,6 +9,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        highlight: {
+          '0%': { backgroundColor: '#ffffff' }, // White (initial color)
+          '50%': { backgroundColor: '#EDF4FC' }, // Light blue (highlight color)
+          '100%': { backgroundColor: '#ffffff' }, // White (final color)
+        },
+      },
+      animation: {
+        highlight: 'highlight 1.5s ease',
+      },
       colors: {
         "action-primary": "#4A90E2",
         "grey-primary": "#3B414C",

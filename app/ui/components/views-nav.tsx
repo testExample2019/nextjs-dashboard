@@ -10,7 +10,13 @@ import { ViewDropdownItems } from "@/app/lib/constants";
 export default function ViewsNav() {
   const path = usePathname();
   const router = useRouter();
-  const [activeView, setActiveView] = useState(DealViews.Lender);
+  const [activeView, setActiveView] = useState(
+    path.includes("template")
+      ? DealViews.Lender
+      : path.includes(DealViews.Lender)
+        ? DealViews.Lender
+        : DealViews.Borrower,
+  );
 
   return (
     <div className="flex h-full flex-col">

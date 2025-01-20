@@ -27,3 +27,11 @@ export const separateWords = (status: string): string => {
 export const handleDisplayCorrectDialName = (name: string) => {
   return deals?.find((deal) => deal.name.toLowerCase() === name.toLowerCase())?.displayName;
 };
+
+export const formatCurrency = (amount: number): string => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2,
+  }).format(amount);
+};
