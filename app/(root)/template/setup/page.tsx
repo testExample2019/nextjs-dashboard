@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import FormTable from "@/app/ui/template/form-table";
 import Tooltip from "@/app/ui/components/tooltip";
-import React from "react";
-import { transactionsTableData } from "@/app/lib/placeholder-data";
 import AdvancedFormTable from "@/app/ui/template/advanced-form-table";
 import { TableProvider } from "@/app/lib/contexts/template-context";
 
