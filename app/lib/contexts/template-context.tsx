@@ -106,12 +106,15 @@ export const TableProvider: React.FC<{ children: React.ReactNode }> = ({
     const newAnnualRate = parseFloat(annualRate.replace("%", "").trim());
     // Logic to update transactionsTableData based on the annualRate
     const updatedData = tableData.map((row) => {
-      const baseAmount = parseFloat(row.amount.replace(/[$,]/g, ""));
-      const newAmount = baseAmount * (newAnnualRate / 10); // Adjusted by annual rate
-      return {
-        ...row,
-        amount: formatCurrency(newAmount),
-      };
+      if (row.transaction === "Interest Payment") {
+        const baseAmount = parseFloat(row.amount.replace(/[$,]/g, ""));
+        const newAmount = baseAmount * (newAnnualRate / 10); // Adjusted by annual rate
+        return {
+          ...row,
+          amount: formatCurrency(newAmount),
+        };
+      }
+      return row;
     });
 
     setTransactionsTableData(updatedData);

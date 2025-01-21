@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { DealNavType } from "@/app/lib/definitions";
 import { SideNavLink } from "@/app/ui/deals/side-nav-link";
-import { useEffect } from "react";
 import { useNextStep } from "nextstepjs";
 
 export default function DealsSideNav({
@@ -12,7 +11,7 @@ export default function DealsSideNav({
 }) {
   const { setCurrentStep } = useNextStep();
   useEffect(() => {
-    setCurrentStep(3);
+    setCurrentStep(5);
   }, []);
   return (
     <div id={`tour1-step5`} className={"flex  md:flex-col gap-4"}>
