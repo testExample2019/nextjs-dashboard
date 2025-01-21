@@ -98,7 +98,7 @@ const FormTable = () => {
               </div>
               <div className={"flex gap-4 justify-between"}>
                 <div className={"w-full"}>
-                  <label className="text-sm font-semibold text-grey-primary flex items-center gap-1">
+                  <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 h-6">
                     Loan Amount
                     <Tooltip content={"lorem"} />
                   </label>
@@ -112,7 +112,7 @@ const FormTable = () => {
                   />
                 </div>
                 <div className={"w-full"}>
-                  <label className="block text-sm font-semibold text-grey-primary">
+                  <label className="block text-sm font-semibold text-grey-primary h-6">
                     CCY
                   </label>
                   <select
@@ -128,7 +128,7 @@ const FormTable = () => {
 
               <div className={"flex gap-4 justify-between"}>
                 <div className={"w-full"}>
-                  <label className="block text-sm font-semibold text-grey-primary">
+                  <label className="block text-sm font-semibold text-grey-primary h-6">
                     Issue Date
                   </label>
                   <input
@@ -140,7 +140,7 @@ const FormTable = () => {
                   />
                 </div>
                 <div className={"w-full"}>
-                  <label className="block text-sm font-semibold text-grey-primary">
+                  <label className="block text-sm font-semibold text-grey-primary h-6">
                     Maturity Date
                   </label>
                   <input
