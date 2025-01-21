@@ -109,13 +109,13 @@ const AdvancedTable = () => {
                 >
                   <option>{formData.deal}</option>
                 </select>
-                <span className="text-xs text-grey">
+                <span className="text-xs text-grey truncate whitespace-nowrap">
                   Place your new loan to an existing deal or create a new one
                 </span>
               </div>
               <div className={"flex gap-4 justify-between"}>
                 <div className={"w-full"}>
-                  <label className="text-sm font-semibold text-grey-primary flex items-center gap-1">
+                  <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 h-6">
                     Loan Amount
                     <Tooltip content={"lorem"} />
                   </label>
@@ -129,7 +129,7 @@ const AdvancedTable = () => {
                   />
                 </div>
                 <div className={"w-full"}>
-                  <label className="block text-sm font-semibold text-grey-primary">
+                  <label className="block text-sm font-semibold text-grey-primary h-6">
                     CCY
                   </label>
                   <select
@@ -145,7 +145,7 @@ const AdvancedTable = () => {
 
               <div className={"flex gap-4 justify-between"}>
                 <div className={"w-full"}>
-                  <label className="block text-sm font-semibold text-grey-primary">
+                  <label className="block text-sm font-semibold text-grey-primary h-6">
                     Issue Date
                   </label>
                   <input
@@ -157,7 +157,7 @@ const AdvancedTable = () => {
                   />
                 </div>
                 <div className={"w-full"}>
-                  <label className="block text-sm font-semibold text-grey-primary">
+                  <label className="block text-sm font-semibold text-grey-primary h-6">
                     Maturity Date
                   </label>
                   <input
@@ -236,7 +236,7 @@ const AdvancedTable = () => {
             </div>
           </div>
 
-          <div className="flex justify-start">
+          <div className="flex justify-start border-b border-grey-border">
             {Tabs.map(({ id, label }) => (
               <button
                 key={id}
