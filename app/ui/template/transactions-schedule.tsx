@@ -18,7 +18,7 @@ const TransactionsSchedule = () => {
   }, [transactionsTableData]);
 
   return (
-    <div className="w-full lg:w-[40%] bg-white h-full overflow-auto absolute top-0 right-0">
+    <div className="w-full lg:w-[40%] bg-white h-full overflow-y-auto absolute top-0 right-0">
       <h2 className="text-18 font-semibold capitalize text-grey-primary py-2 px-4 border-b-1 border-grey-border">
         Preview transactions schedule
       </h2>

@@ -70,7 +70,7 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div className="flex items-center space-x-3">
-            <span className="text-base text-grey-primary flex items-center gap-1">
+            <span className="text-base text-grey-primary flex items-center gap-1 whitespace-nowrap">
               Include Accrual End
               <Tooltip content={"Lorem"} />
             </span>

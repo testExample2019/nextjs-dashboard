@@ -30,7 +30,7 @@ export default function ViewsNav() {
                   activeView === DealViews.Lender
                     ? "bg-blue-o text-blue-dark"
                     : "bg-orange-o text-orange"
-                } flex justify-between gap-2 items-center px-2 py-1 shadow text-sm font-medium rounded-full transition min-w-[160px] hover:shadow-md`}
+                } flex justify-between gap-2 items-center px-2 py-1 z-20 shadow text-sm font-medium rounded-full transition min-w-[160px] hover:shadow-md`}
                 id="view-button"
                 aria-haspopup="true"
               >

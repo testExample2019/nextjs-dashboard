@@ -5,24 +5,26 @@ import FormTable from "@/app/ui/template/form-table";
 import Tooltip from "@/app/ui/components/tooltip";
 import AdvancedFormTable from "@/app/ui/template/advanced-form-table";
 import { TableProvider } from "@/app/lib/contexts/template-context";
+import { redirect } from "next/navigation";
+import { defaultDashboardPath } from "@/app/lib/constants";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
 
   return (
     <TableProvider>
-      <section className="relative overflow-hidden h-[calc(100vh-65px)]">
+      <section className="relative">
         {/* Form Container */}
         <div
           id={"tour1-step3"}
-          className="w-full h-full lg:w-[60%] bg-white border-r-1 border-grey-border overflow-auto"
+          className="w-full lg:w-[60%] bg-white border-r-1 border-grey-border flex flex-col h-[calc(100vh-65px)]"
         >
           {/* Header */}
           <div className="flex justify-between items-center py-2 px-4 border-b-1 border-grey-border">
             <h1 className="text-18 font-semibold text-grey-primary">
               New Loan Setup
             </h1>
-            <div className="flex items-center space-x-3">
+            <div id={"tour1-step3-2"} className="flex items-center space-x-3">
               <span className="text-sm text-grey-primary flex items-center gap-1">
                 Advanced mode
                 <Tooltip
@@ -43,8 +45,24 @@ const LoanSetupPage = () => {
               </label>
             </div>
           </div>
-          <div className={"h-full"}>
+          {/* Content */}
+          <div className={"flex-1 overflow-y-auto"}>
             {isAdvanced ? <AdvancedFormTable /> : <FormTable />}
+          </div>
+          {/* Action Buttons */}
+          <div className="flex justify-between py-2 px-6 gap-4 border-t-1 border-grey-border">
+            <button
+              onClick={() => redirect(`/template`)}
+              className="px-4 py-2 uppercase text-action-primary rounded-md hover:bg-gray-100"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={() => redirect(defaultDashboardPath)}
+              className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark"
+            >
+              Save
+            </button>
           </div>
         </div>
       </section>

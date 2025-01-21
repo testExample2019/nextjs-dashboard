@@ -58,11 +58,58 @@ export const steps: Tour[] = [
         showSkip: false,
         showControls: true,
         prevRoute: "/template",
+        pointerPadding: 10,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "Adjust Annual Rate in Your Loan Instrument",
+        content: (
+          <p>
+            Adjust the annual interest rate to evaluate its impact on the
+            transaction schedule.
+          </p>
+        ),
+        selector: "#tour1-step3-1",
+        side: "top",
+        showSkip: false,
+        showControls: true,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "Advanced mode",
+        content: <p>Switch to Advanced tools.</p>,
+        selector: "#tour1-step3-2",
+        side: "bottom",
+        showSkip: false,
+        showControls: true,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "Advanced mode",
+        content: (
+          <p>
+            Configure your loan with our Advanced tools. This setup is
+            foundational to achieving operational excellence in loan servicing.
+          </p>
+        ),
+        selector: "#tour1-step3-3",
+        side: "right",
+        showSkip: false,
+        showControls: true,
         nextRoute: defaultDashboardPath,
         pointerPadding: 10,
         pointerRadius: 10,
         blockKeyboardControl: true,
       },
+
       {
         icon: <></>,
         title: "Manage Deals for Active Lender",
@@ -88,7 +135,7 @@ export const steps: Tour[] = [
           </div>
         ),
         selector: "#tour1-step5",
-        side: "top",
+        side: "right",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,

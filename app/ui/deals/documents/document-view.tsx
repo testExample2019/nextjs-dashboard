@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { DocumentType } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
 import Status from "@/app/ui/components/status";
 import Image from "next/image";
-import { useState } from "react";
 
 const DocumentView = ({ document }: { document?: DocumentType }) => {
   if (!document) {
@@ -221,26 +220,26 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b p-2 text-sm text-grey font-semibold">
                   Type
                 </th>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b p-2 text-sm text-grey font-semibold">
                   Amount
                 </th>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b p-2 text-sm text-grey font-semibold">
                   Tnx Updated
                 </th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="py-2 text-grey-primary text-base">
+              <tr className={"bg-blue-o"}>
+                <td className="p-2 text-grey-primary text-base">
                   {document.transactionDetails.type}
                 </td>
-                <td className="py-2 text-grey-primary text-base">
+                <td className="p-2 text-grey-primary text-base">
                   {document.transactionDetails.amount}
                 </td>
-                <td className="py-2 text-grey-primary text-base">
+                <td className="p-2 text-grey-primary text-base">
                   {document.transactionDetails.txnUpdated}
                 </td>
               </tr>
@@ -356,16 +355,16 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
+                      <th className="border-b p-2 text-sm text-grey font-semibold">
                         Date
                       </th>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
+                      <th className="border-b p-2 text-sm text-grey font-semibold">
                         Rate
                       </th>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
+                      <th className="border-b p-2 text-sm text-grey font-semibold">
                         Principal
                       </th>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
+                      <th className="border-b p-2 text-sm text-grey font-semibold">
                         Amount
                       </th>
                     </tr>
@@ -374,16 +373,16 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                     {document.transactionDetails.interestAmount?.map(
                       (interest, index) => (
                         <tr key={index}>
-                          <td className="py-2 text-grey-primary text-base">
+                          <td className="p-2 text-grey-primary text-base">
                             {interest.date}
                           </td>
-                          <td className="py-2 text-grey-primary text-base">
+                          <td className="p-2 text-grey-primary text-base">
                             {interest.rate}
                           </td>
-                          <td className="py-2 text-grey-primary text-base">
+                          <td className="p-2 text-grey-primary text-base">
                             {interest.principal}
                           </td>
-                          <td className="py-2 text-grey-primary text-base">
+                          <td className="p-2 text-grey-primary text-base">
                             {interest.amount}
                           </td>
                         </tr>
@@ -399,16 +398,16 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr>
-                    <th className="border-b py-2 text-sm text-grey font-semibold">
+                    <th className="border-b p-2 text-sm text-grey font-semibold">
                       Role
                     </th>
-                    <th className="border-b py-2 text-sm text-grey font-semibold">
+                    <th className="border-b p-2 text-sm text-grey font-semibold">
                       Counterparty
                     </th>
-                    <th className="border-b py-2 text-sm text-grey font-semibold">
+                    <th className="border-b p-2 text-sm text-grey font-semibold">
                       Amount
                     </th>
-                    <th className="border-b py-2 text-sm text-grey font-semibold">
+                    <th className="border-b p-2 text-sm text-grey font-semibold">
                       Share
                     </th>
                   </tr>

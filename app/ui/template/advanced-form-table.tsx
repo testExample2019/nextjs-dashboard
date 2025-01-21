@@ -2,11 +2,9 @@
 
 import React, { useState } from "react";
 import Tooltip from "@/app/ui/components/tooltip";
-import { redirect } from "next/navigation";
 import { formTableDataAdvanced } from "@/app/lib/placeholder-data";
 import { Cross, Reload } from "@/app/ui/icons";
 import { FacilityFee } from "@/app/ui/template/faciliy-fee";
-import { defaultDashboardPath } from "@/app/lib/constants";
 import TransactionsSchedule from "@/app/ui/template/transactions-schedule";
 
 enum AdvancedTableTabsType {
@@ -58,7 +56,7 @@ const AdvancedTable = () => {
   };
 
   return (
-    <div>
+    <div id={"tour1-step3-3"}>
       <div className="py-1 px-8">
         {/* Loan Details Form */}
 
@@ -601,22 +599,6 @@ const AdvancedTable = () => {
               </button>
             </div>
           </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex justify-between pt-2 gap-4 border-t-1 border-grey-border">
-          <button
-            onClick={() => redirect(`/template`)}
-            className="px-4 py-2 uppercase text-action-primary rounded-md hover:bg-gray-100"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={() => redirect(defaultDashboardPath)}
-            className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark"
-          >
-            Save
-          </button>
         </div>
 
         <TransactionsSchedule />

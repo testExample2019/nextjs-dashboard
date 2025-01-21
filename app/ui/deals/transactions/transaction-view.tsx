@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { TransactionType } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
 import Status from "@/app/ui/components/status";
@@ -36,7 +36,7 @@ const TransactionView = ({
   }
 
   return (
-    <div className="bg-white rounded-lg p-6">
+    <div className="bg-white rounded-lg p-4">
       <div className="flex justify-between items-end border-b pb-4 mb-4">
         <div>
           <h3 className="text-sm text-grey font-semibold uppercase">
@@ -73,14 +73,16 @@ const TransactionView = ({
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-sm text-grey font-semibold">Deal</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">Deal</p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.deal}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">Counterparty</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">
+                  Counterparty
+                </p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.counterparty}
                 </p>
               </div>
@@ -88,21 +90,37 @@ const TransactionView = ({
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-sm text-grey font-semibold">Instrument</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">
+                  Instrument
+                </p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.instrument}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">Payment Date</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">
+                  Payment Date
+                </p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.paymentDate}
                 </p>
               </div>
+              {isInterestPayment && (
+                <div>
+                  <p className="text-sm text-grey font-semibold px-2">
+                    Effective Date
+                  </p>
+                  <p className="font-medium text-grey-primary p-2">
+                    {transaction.paymentDate}
+                  </p>
+                </div>
+              )}
               {!isInterestPayment && (
                 <div>
-                  <p className="text-sm text-grey font-semibold">Commitment</p>
-                  <p className="font-medium text-grey-primary">
+                  <p className="text-sm text-grey font-semibold px-2">
+                    Commitment
+                  </p>
+                  <p className="font-medium text-grey-primary p-2">
                     {transaction.committed}
                   </p>
                 </div>
@@ -112,14 +130,14 @@ const TransactionView = ({
                   <p className="text-sm text-grey font-semibold">
                     Unfunded Commitment
                   </p>
-                  <p className="font-medium text-grey-primary">
+                  <p className="font-medium text-grey-primary p-2">
                     {transaction.unfunded}
                   </p>
                 </div>
               )}
               <div>
-                <p className="text-sm text-grey font-semibold">Amount</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">Amount</p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.amount}
                 </p>
               </div>
@@ -133,30 +151,32 @@ const TransactionView = ({
                 </h2>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-sm text-grey font-semibold">Fee Type</p>
-                    <p className="font-medium text-grey-primary">
+                    <p className="text-sm text-grey font-semibold px-2">
+                      Fee Type
+                    </p>
+                    <p className="font-medium text-grey-primary p-2">
                       {transaction.transactionDetails.feeInfo?.feeType}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-grey font-semibold">
+                    <p className="text-sm text-grey font-semibold px-2">
                       Applies To
                     </p>
-                    <p className="font-medium text-grey-primary">
+                    <p className="font-medium text-grey-primary p-2">
                       {transaction.transactionDetails.feeInfo?.appliesTo}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-grey font-semibold">Rate</p>
-                    <p className="font-medium text-grey-primary">
+                    <p className="text-sm text-grey font-semibold px-2">Rate</p>
+                    <p className="font-medium text-grey-primary p-2">
                       {transaction.transactionDetails.feeInfo?.rate}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-grey font-semibold">
+                    <p className="text-sm text-grey font-semibold px-2">
                       Fee Amount
                     </p>
-                    <p className="font-medium text-grey-primary">
+                    <p className="font-medium text-grey-primary p-2">
                       {transaction.transactionDetails.feeInfo?.feeAmount}
                     </p>
                   </div>
@@ -172,30 +192,32 @@ const TransactionView = ({
                 </h2>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-sm text-grey font-semibold">Type</p>
-                    <p className="font-medium text-grey-primary">
+                    <p className="text-sm text-grey font-semibold px-2">Type</p>
+                    <p className="font-medium text-grey-primary p-2">
                       {transaction.transactionDetails.rateInfo.type}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-grey font-semibold">Day Count</p>
-                    <p className="font-medium text-grey-primary">
+                    <p className="text-sm text-grey font-semibold px-2">
+                      Day Count
+                    </p>
+                    <p className="font-medium text-grey-primary p-2">
                       {transaction.transactionDetails.rateInfo.dayCount}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-grey font-semibold">
+                    <p className="text-sm text-grey font-semibold px-2">
                       Accrual Start
                     </p>
-                    <p className="font-medium text-grey-primary">
+                    <p className="font-medium text-grey-primary p-2">
                       {transaction.transactionDetails.rateInfo.accrualStartDate}
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-grey font-semibold">
+                    <p className="text-sm text-grey font-semibold px-2">
                       Accrual End
                     </p>
-                    <p className="font-medium text-grey-primary">
+                    <p className="font-medium text-grey-primary p-2">
                       {transaction.transactionDetails.rateInfo.accrualEndDate}
                     </p>
                   </div>
@@ -257,40 +279,48 @@ const TransactionView = ({
             </h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
-                <p className="text-sm text-grey font-semibold">Type</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">Type</p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.rateInfo.type}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">Day Count</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">
+                  Day Count
+                </p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.rateInfo.dayCount}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">PIK Option</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">
+                  PIK Option
+                </p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.rateInfo.pikOption}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">
+                <p className="text-sm text-grey font-semibold px-2">
                   Incl. Accrual End
                 </p>
-                <p className="font-medium text-grey-primary">
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.rateInfo.includeAccrualEnd}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">Accrual Start</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">
+                  Accrual Start
+                </p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.rateInfo.accrualStartDate}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">Accrual End</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">
+                  Accrual End
+                </p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.rateInfo.accrualEndDate}
                 </p>
               </div>
@@ -332,24 +362,8 @@ const TransactionView = ({
                 <td className="px-4 py-2 border-t text-sm">2025-01-01</td>
                 <td className="px-4 py-2 border-t text-sm">Fixed</td>
                 <td className="px-4 py-2 border-t text-sm">-</td>
-                <td className="px-4 py-2 border-t text-sm">10.0000%</td>
-                <td className="px-4 py-2 border-t text-sm">10.0000%</td>
-              </tr>
-
-              <tr className="bg-blue-50 text-grey-primary font-medium">
-                <td colSpan={5} className="px-4 py-2">
-                  <div className="w-full flex items-start">
-                    <ChevronDown />
-                    <span>PIK (1)</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td className="px-4 py-2 border-t text-sm">2025-01-01</td>
-                <td className="px-4 py-2 border-t text-sm">Fixed</td>
-                <td className="px-4 py-2 border-t text-sm">-</td>
-                <td className="px-4 py-2 border-t text-sm">20.0000%</td>
-                <td className="px-4 py-2 border-t text-sm">20.0000%</td>
+                <td className="px-4 py-2 border-t text-sm">8.5600%</td>
+                <td className="px-4 py-2 border-t text-sm">8.5600%</td>
               </tr>
             </tbody>
           </table>
@@ -405,34 +419,49 @@ const TransactionView = ({
             </h2>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-sm text-grey font-semibold">Account Name</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">
+                  Account Name
+                </p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.bankAccount.accountName}
                 </p>
               </div>
+              <Fragment />
               <div>
-                <p className="text-sm text-grey font-semibold">Bank</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">Bank</p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.bankAccount.bank}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">Bic</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">Bic</p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.bankAccount.bic}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">
+                <p className="text-sm text-grey font-semibold px-2">ABA</p>
+                <p className="font-medium text-grey-primary p-2">
+                  {transaction.transactionDetails.bankAccount.aba}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-grey font-semibold px-2">IBAN</p>
+                <p className="font-medium text-grey-primary p-2">
+                  {transaction.transactionDetails.bankAccount.iban}
+                </p>
+              </div>
+              <div>
+                <p className="text-sm text-grey font-semibold px-2">
                   Account Number
                 </p>
-                <p className="font-medium text-grey-primary">
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.bankAccount.accountNumber}
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">Currency</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">Currency</p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.bankAccount.currency}
                 </p>
               </div>
@@ -444,8 +473,8 @@ const TransactionView = ({
             </h2>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-sm text-grey font-semibold">Bank</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">Bank</p>
+                <p className="font-medium text-grey-primary p-2">
                   {
                     transaction.transactionDetails.correspondingBankAccount
                       ?.bank
@@ -453,8 +482,8 @@ const TransactionView = ({
                 </p>
               </div>
               <div>
-                <p className="text-sm text-grey font-semibold">Bic</p>
-                <p className="font-medium text-grey-primary">
+                <p className="text-sm text-grey font-semibold px-2">Bic</p>
+                <p className="font-medium text-grey-primary p-2">
                   {transaction.transactionDetails.correspondingBankAccount?.bic}
                 </p>
               </div>
