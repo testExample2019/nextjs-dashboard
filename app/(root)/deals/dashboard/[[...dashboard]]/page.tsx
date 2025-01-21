@@ -9,7 +9,7 @@ import UpcomingPayments from "@/app/ui/deals/dashboard/upcoming-payments/upcomin
 import PositionsTable from "@/app/ui/deals/positions/positions-table";
 import { DealViews } from "@/app/lib/definitions";
 import { ChevronLeft } from "@/app/ui/icons";
-import { handleDisplayCorrectDialName, separateWords } from "@/app/lib/utils";
+import { handleDisplayCorrectDialName } from "@/app/lib/utils";
 
 const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
   const { dashboard } = await params; // Resolve the params promise
@@ -28,7 +28,9 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
         >
           Dashboard
           <ChevronLeft />
-          <span className={"capitalize"}>{handleDisplayCorrectDialName(dealName)}</span>
+          <span className={"capitalize"}>
+            {handleDisplayCorrectDialName(dealName)}
+          </span>
         </h1>
       </div>
       <div className={"p-4 flex flex-col gap-4"}>
