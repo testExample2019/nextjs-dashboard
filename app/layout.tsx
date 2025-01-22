@@ -1,5 +1,5 @@
 import "@/app/ui/global.css";
-import { NextStepProvider, NextStep } from "nextstepjs";
+import { NextStep, NextStepProvider } from "nextstepjs";
 import { openSans } from "@/app/ui/fonts";
 import { Metadata } from "next";
 import { steps } from "./lib/steps";
@@ -22,7 +22,7 @@ export default function RootLayout({
     <NextStepProvider>
       <html lang="en">
         <body className={`${openSans.className} antialiased bg-grey-o`}>
-          <NextStep shadowOpacity={"0.2"} steps={steps}>
+          <NextStep shadowOpacity={"0.1"} steps={steps}>
             <ToastProvider>{children}</ToastProvider>
           </NextStep>
         </body>

@@ -6,7 +6,10 @@ export default function PagesLayout(props: {
 }) {
   return (
     <>
-      <div className="flex flex-col md:flex-row min-h-full bg-white">
+      <div
+        id={"tour1-step4"}
+        className="flex flex-col md:flex-row min-h-full bg-white"
+      >
         <div className="w-full md:w-72">{props.sidenav}</div>
         <div className="w-full overflow-hidden">{props.children}</div>
       </div>

@@ -73,7 +73,8 @@ const LoanTemplatePage = () => {
     <div className="flex flex-col items-center justify-start">
       <div className="max-w-5xl w-full px-8 py-32 rounded-lg">
         <h1 className="text-28 font-semibold text-grey-primary text-center">
-          Pick your first template and start using DirectLend for a new loan:
+          Pick your first template and start using DirectLend <br /> for a new
+          loan:
         </h1>
         <p className="mt-4 text-grey text-center">
           We will prepopulate most of the fields to simplify the loan
@@ -81,7 +82,7 @@ const LoanTemplatePage = () => {
         </p>
         <div
           id="tour1-step2"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10"
         >
           {templates.map((template, index) => (
             <button
