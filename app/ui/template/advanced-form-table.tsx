@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Tooltip from "@/app/ui/components/tooltip";
 import { formTableDataAdvanced } from "@/app/lib/placeholder-data";
 import { Cross, Reload } from "@/app/ui/icons";
 import { FacilityFee } from "@/app/ui/template/faciliy-fee";
 import TransactionsSchedule from "@/app/ui/template/transactions-schedule";
-import { useNextStep } from "nextstepjs";
 
 enum AdvancedTableTabsType {
   RateAndPayment = "rateAndPayment",
@@ -18,11 +17,6 @@ const AdvancedTable = () => {
   const [formData, setFormData] = useState(formTableDataAdvanced);
   const [showNewFacility, setShowNewFacility] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null); // Tracks selected row data
-  const { currentStep } = useNextStep();
-
-  useEffect(() => {
-    console.log("currentStep", currentStep);
-  }, [currentStep]);
 
   const Tabs = [
     { id: AdvancedTableTabsType.RateAndPayment, label: "Rate and Payment" },

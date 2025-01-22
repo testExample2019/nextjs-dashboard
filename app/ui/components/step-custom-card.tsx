@@ -19,7 +19,6 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
         </h2>
         {step.icon}
       </div>
-
       <div className={"max-h-60 overflow-y-auto text-sm relative"}>
         {step.content}
         <div className="sticky -bottom-0.5 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
@@ -47,15 +46,13 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
           </button>
         </div>
       )}
+      <button
+        onClick={skipTour}
+        className="p-1 rounded-md bg-white text-grey-primary text-xs" // TODO: Add condition
+      >
+        Skip
+      </button>
 
-      {step.showSkip && (
-        <button
-          onClick={skipTour}
-          className="px-4 py-2 rounded-md bg-slate-300 text-gray-800"
-        >
-          Skip
-        </button>
-      )}
       {arrow}
     </div>
   );
