@@ -2,20 +2,22 @@
 
 import React, { useEffect, useState } from "react";
 import { formTableData } from "@/app/lib/placeholder-data";
-import { useNextStep } from "nextstepjs";
 import Tooltip from "@/app/ui/components/tooltip";
 import TransactionsSchedule from "@/app/ui/template/transactions-schedule";
 import { useTableContext } from "@/app/lib/contexts/template-context";
 import { useDebouncedCallback } from "use-debounce";
+import { useNextStep } from "nextstepjs";
 
 const FormTable = () => {
   const [formData, setFormData] = useState(formTableData);
   const { updateAnnualRate } = useTableContext();
+  const { currentStep } = useNextStep();
 
-  const { setCurrentStep } = useNextStep();
   useEffect(() => {
-    setCurrentStep(2);
-  }, []);
+    if (currentStep === 4) {
+      // handleInputChange('15');
+    }
+  }, [currentStep]);
 
   // Debounced callback for updating the annual rate
   const debouncedUpdateAnnualRate = useDebouncedCallback(

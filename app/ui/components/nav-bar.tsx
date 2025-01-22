@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { deals } from "@/app/lib/placeholder-data";
 import { usePathname } from "next/navigation";
 import { replacePageItemInURL } from "@/app/lib/utils";
 import ViewsNav from "@/app/ui/components/views-nav";
@@ -44,7 +43,7 @@ export default function NavBar() {
               </defs>
             </svg>
           </span>
-          <span className="lg:ms-3 lg:pl-3 text-24 translate-y-px">
+          <span className="lg:ms-3 lg:pl-3 text-22 translate-y-px">
             <span className="sr-only">Harmonic DirectLend</span>
             Direct<span className="font-semibold">Lend</span>
           </span>

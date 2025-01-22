@@ -7,10 +7,11 @@ import { ToastProvider } from "@/app/lib/contexts/toast-context";
 
 export const metadata: Metadata = {
   title: {
-    template: "Dashboard",
-    default: "Dashboard",
+    template: "DirectLend Platform",
+    default: "DirectLend Platform",
   },
-  description: "Dashboard",
+  description:
+    "We’re excited to have you on board. Our platform is designed to cater to both Borrowers and Lenders, ensuring a seamless experience for all users",
 };
 
 export default function RootLayout({

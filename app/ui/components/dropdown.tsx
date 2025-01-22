@@ -14,6 +14,7 @@ interface ButtonDropdownProps<T> {
   onAction: (actionType: T) => void; // Handler for actions
   placeholder?: string;
   id?: string;
+  disabled?: boolean;
 }
 
 export const ButtonDropdown = <T,>({
@@ -22,6 +23,7 @@ export const ButtonDropdown = <T,>({
   onAction,
   placeholder,
   id,
+  disabled,
 }: ButtonDropdownProps<T>) => {
   const { currentStep } = useNextStep();
 
@@ -34,14 +36,20 @@ export const ButtonDropdown = <T,>({
   };
 
   useEffect(() => {
-    if (currentStep === 12 && id === "tour1-step5-5") {
-      setIsDropdownOpen(true);
-    }
+    (currentStep === 12 && id === "tour1-step5-5") ||
+    (currentStep === 13 && id === "tour1-step5-5")
+      ? setIsDropdownOpen(true)
+      : setIsDropdownOpen(false);
   }, [currentStep]);
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
-      <div onClick={toggleDropdown}>{children}</div>
+      <div
+        className={`${disabled ? "opacity-40 pointer-events-none" : ""}`}
+        onClick={toggleDropdown}
+      >
+        {children}
+      </div>
       <div
         className={`${isDropdownOpen ? "flex" : "hidden"} flex-col overflow-hidden absolute right-0 z-10 mt-0 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none`}
         role="menu"

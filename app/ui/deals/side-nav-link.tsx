@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { DealNavType } from "@/app/lib/definitions";
+import { DealNavType, DealViews } from "@/app/lib/definitions";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { replaceDealItemInURL } from "@/app/lib/utils";
@@ -44,6 +44,7 @@ export const SideNavLink = ({
               </svg>
             }
             dropdownItems={dealBorrowerDropdownItems}
+            disabled={!path.includes(DealViews.Borrower)}
             onAction={handleDealDropdownAction}
             placeholder={"Request:"}
           />

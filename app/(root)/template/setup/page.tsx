@@ -1,15 +1,25 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FormTable from "@/app/ui/template/form-table";
 import Tooltip from "@/app/ui/components/tooltip";
 import AdvancedFormTable from "@/app/ui/template/advanced-form-table";
 import { TableProvider } from "@/app/lib/contexts/template-context";
 import { redirect } from "next/navigation";
 import { defaultDashboardPath } from "@/app/lib/constants";
+import { useNextStep } from "nextstepjs";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
+  const { setCurrentStep, currentStep } = useNextStep();
+  useEffect(() => {
+    setCurrentStep(2);
+  }, []);
+  useEffect(() => {
+    if (currentStep === 5) {
+      setIsAdvanced(true);
+    }
+  }, [currentStep]);
 
   return (
     <TableProvider>

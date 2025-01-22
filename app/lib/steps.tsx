@@ -464,7 +464,7 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary">
             Click <span className={"font-semibold"}>View notice</span> to access
-            all crucial information
+            information
           </div>
         ),
         selector: "#tour1-step5-5",

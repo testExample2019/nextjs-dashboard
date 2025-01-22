@@ -10,13 +10,6 @@ import { useNextStep } from "nextstepjs";
 const DocumentView = ({ document }: { document?: DocumentType }) => {
   const { setCurrentStep, startNextStep, currentStep } = useNextStep();
 
-  useEffect(() => {
-    if (currentStep === 13) {
-      startNextStep("mainTour");
-      setCurrentStep(14);
-    }
-  }, []);
-
   if (!document) {
     notFound();
   }
@@ -47,6 +40,19 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
   const [activeSubTab, setActiveSubTab] = useState<DocumentSubTabsType>(
     DocumentSubTabsType.TransactionInfo,
   );
+
+  useEffect(() => {
+    if (currentStep === 13) {
+      startNextStep("mainTour");
+      setCurrentStep(14);
+    }
+    if (currentStep === 14) {
+      setActiveTab(DocumentTabsType.Document);
+    }
+    if (currentStep === 15) {
+      setActiveTab(DocumentTabsType.TransactionDetails);
+    }
+  }, [currentStep]);
 
   return (
     <div className="bg-white rounded-lg p-6">
