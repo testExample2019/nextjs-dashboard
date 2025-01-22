@@ -87,6 +87,7 @@ export type PositionType = {
 
 export type DocumentType = {
   id: string;
+  stepId?: string;
   document: string;
   documentType: "Transaction" | "Customer" | "Invoice" | "Contract" | string;
   subType: "Other" | "Final notice" | string;

@@ -272,7 +272,6 @@ export const steps: Tour[] = [
           </div>
         ),
         selector: "#tour1-step4",
-        side: "bottom",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
@@ -285,7 +284,7 @@ export const steps: Tour[] = [
         title: "Deals Panel",
         content: (
           <div className="text-grey-primary">
-            <p className="font-semibold mb-3">
+            <p className="mb-3">
               The Deals Panel on your Dashboard provides an efficient way to
               view all your Loan deals and their current positions:
             </p>
@@ -316,7 +315,7 @@ export const steps: Tour[] = [
         title: "The Upcoming Payments Widget",
         content: (
           <div className="text-grey-primary">
-            <p className="font-semibold mb-3">
+            <p className="mb-3">
               <span className="font-semibold">
                 The Upcoming Payments Widget
               </span>{" "}
@@ -352,7 +351,7 @@ export const steps: Tour[] = [
         title: "The Positions Widget",
         content: (
           <div className="text-grey-primary">
-            <p className="font-semibold mb-3">
+            <p className="mb-3">
               <span className="font-semibold">The Positions Widget</span>{" "}
               provides a detailed breakdown of your current positions for every
               Loan Instrument in your portfolio.
@@ -372,7 +371,7 @@ export const steps: Tour[] = [
         title: "The Covenants Tracking Widget",
         content: (
           <div className="text-grey-primary">
-            <p className="font-semibold mb-3">
+            <p className="mb-3">
               <span className="font-semibold">Covenants Tracking Widget</span>{" "}
               Displays the results of Financial Covenants calculations based on
               the latest financial statements provided by the borrower.
@@ -411,6 +410,143 @@ export const steps: Tour[] = [
         side: "top",
         showControls: true,
         showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "Information About Scheduled Events",
+        content: (
+          <div className="text-grey-primary">
+            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+              <li>
+                <span className="font-semibold">Upcoming Payments Widget:</span>{" "}
+                Allows you to quickly access all crucial information about
+                scheduled events.
+              </li>
+              <li>
+                <span className="font-semibold">View Transaction Details:</span>{" "}
+                Get comprehensive information about each scheduled payment,
+                including amounts and due dates.
+              </li>
+              <li>
+                <span className="font-semibold">
+                  Access Notices or Invoices:
+                </span>{" "}
+                Easily view related notice or invoice documents for reference
+                and record-keeping.
+              </li>
+              <li>
+                <span className="font-semibold">Switch Bank Accounts:</span>{" "}
+                Change your bank account settings to ensure payments are
+                received correctly and without delay.
+              </li>
+              <li>
+                <span className="font-semibold">Contact Borrower:</span> Reach
+                out to the borrower directly through the platform to discuss any
+                details or necessary adjustments regarding the payment.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-4",
+        side: "left",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "View Notice",
+        content: (
+          <div className="text-grey-primary">
+            Click <span className={"font-semibold"}>View notice</span> to access
+            all crucial information
+          </div>
+        ),
+        selector: "#tour1-step5-5",
+        side: "top",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        nextRoute: "/document/document-1",
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "Document Preview",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              When you select to view the notice document, a drawer will open to
+              display the document preview.
+            </p>
+            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+              <li>
+                <span className="font-semibold">Document Preview:</span> Easily
+                review the contents of the notice document within the drawer for
+                quick reference.
+              </li>
+              <li>
+                <span className="font-semibold">Download Option:</span> If you
+                need a copy for your records, simply click the download button
+                to save the PDF file to your device.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-6",
+        side: "left",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        prevRoute: defaultDashboardPath,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "Transaction Details",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              The <span className="font-semibold">Transaction Details</span> tab
+              provides a comprehensive list of transactions related to the
+              Notice.
+            </p>
+            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+              <li>
+                <span className="font-semibold">
+                  Detailed Transaction List:
+                </span>{" "}
+                View all relevant transactions associated with the notice,
+                ensuring you have a complete understanding of the financial
+                activities.
+              </li>
+              <li>
+                <span className="font-semibold">Key Information:</span> Access
+                important details for each transaction, including due dates,
+                utilized rates, payment amounts, and any other pertinent
+                information.
+              </li>
+              <li>
+                <span className="font-semibold">Comprehensive Overview:</span>{" "}
+                This tab is designed to give you a clear overview of the
+                transactions linked to the notice, helping you stay organized
+                and informed about your financial commitments!
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-7",
+        side: "left",
+        showControls: true,
+        showSkip: false,
+        nextRoute: defaultDashboardPath,
         pointerPadding: 10,
         pointerRadius: 10,
         blockKeyboardControl: true,

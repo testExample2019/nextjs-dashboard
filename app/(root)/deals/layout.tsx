@@ -11,7 +11,9 @@ export default function PagesLayout(props: {
         className="flex flex-col md:flex-row min-h-full bg-white"
       >
         <div className="w-full md:w-72">{props.sidenav}</div>
-        <div className="w-full overflow-hidden">{props.children}</div>
+        <div id={"vp-4"} className="w-full overflow-hidden">
+          {props.children}
+        </div>
       </div>
     </>
   );

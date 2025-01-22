@@ -54,7 +54,7 @@ export default function UpcomingPaymentsList({
           ))}
         </div>
         <div className="mt-4 space-y-4">
-          {payments?.map((payment) => (
+          {payments?.map((payment, index) => (
             <div
               key={payment.id}
               className={`${payment.transactionId && path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-grey-border`}
@@ -162,8 +162,10 @@ export default function UpcomingPaymentsList({
                     </span>
                   </p>
                   <ButtonDropdown
+                    id={`${index === 1 ? "tour1-step5-5" : ""}`}
                     children={
                       <button
+                        id={`${index === 1 ? "tour1-step5-4" : ""}`}
                         className={
                           "w-10 h-10 transition-all hover:bg-grey-lighter rounded-md"
                         }

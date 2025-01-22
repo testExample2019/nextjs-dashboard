@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import { useNextStep } from "nextstepjs";
 
 interface DropdownItem<T> {
   id: number;
@@ -12,6 +13,7 @@ interface ButtonDropdownProps<T> {
   dropdownItems: DropdownItem<T>[]; // Array of generic dropdown items
   onAction: (actionType: T) => void; // Handler for actions
   placeholder?: string;
+  id?: string;
 }
 
 export const ButtonDropdown = <T,>({
@@ -19,7 +21,10 @@ export const ButtonDropdown = <T,>({
   dropdownItems,
   onAction,
   placeholder,
+  id,
 }: ButtonDropdownProps<T>) => {
+  const { currentStep } = useNextStep();
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -28,22 +33,11 @@ export const ButtonDropdown = <T,>({
     setIsDropdownOpen((prev) => !prev);
   };
 
-  // Close dropdown if clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+    if (currentStep === 12 && id === "tour1-step5-5") {
+      setIsDropdownOpen(true);
+    }
+  }, [currentStep]);
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
@@ -53,6 +47,7 @@ export const ButtonDropdown = <T,>({
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="menu-button"
+        id={id}
       >
         {placeholder && (
           <span className={"px-4 py-2 text-grey-secondary text-sm"}>
