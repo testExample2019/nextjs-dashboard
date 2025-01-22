@@ -1,6 +1,6 @@
 export type DealType = {
   id: string;
-  name: string;
+  slug: string;
   displayName: string;
   totalCommitment: string;
   funded: string;
@@ -170,6 +170,11 @@ export enum DealsActions {
   Import = "IMPORT",
   Add = "ADD",
   Use = "USE",
+}
+
+export enum DealBorrowerActions {
+  Drawdown = "DRAWDOWN",
+  Prepayment = "PREPAYMENT",
 }
 
 export enum PaymentActions {

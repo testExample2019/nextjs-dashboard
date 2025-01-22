@@ -41,7 +41,7 @@ const SideNavPage = async () => {
           }
           dropdownItems={dealsDropdownItems}
           onAction={handleDealDropdownAction}
-        ></ButtonDropdown>
+        />
       </div>
 
       <div className={"py-2 px-4 sticky top-0"}>

@@ -116,6 +116,7 @@ export const steps: Tour[] = [
             <p className="mb-3">
               On the right-hand side, you’ll find the
               <span className="font-semibold">
+                {" "}
                 Preview Transactions Schedule{" "}
               </span>
               panel. This feature provides a real-time overview of the
@@ -125,7 +126,7 @@ export const steps: Tour[] = [
             <p className="text-base font-semibold mb-3">
               Here’s what you can expect from this panel:
             </p>
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-scroll">
               <li>
                 <span className="font-semibold">Instant Updates: </span> As you
                 fill out the loan details, the preview will automatically update
@@ -145,7 +146,7 @@ export const steps: Tour[] = [
                 accordingly.
               </li>
             </ul>
-            <p>
+            <p className={"mt-3"}>
               Utilize this panel to ensure everything aligns with your
               expectations before finalizing your loan setup!
             </p>
@@ -284,7 +285,7 @@ export const steps: Tour[] = [
         title: "Deals Panel",
         content: (
           <div className="text-grey-primary">
-            <p className="text-base font-semibold mb-3">
+            <p className="font-semibold mb-3">
               The Deals Panel on your Dashboard provides an efficient way to
               view all your Loan deals and their current positions:
             </p>
@@ -312,10 +313,10 @@ export const steps: Tour[] = [
       },
       {
         icon: <></>,
-        title: "Upcoming Payments Widget",
+        title: "The Upcoming Payments Widget",
         content: (
           <div className="text-grey-primary">
-            <p className="text-base font-semibold mb-3">
+            <p className="font-semibold mb-3">
               <span className="font-semibold">
                 The Upcoming Payments Widget
               </span>{" "}
@@ -325,7 +326,7 @@ export const steps: Tour[] = [
             <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
               <li>
                 <span className="font-semibold">
-                  Overview of Scheduled Payments:
+                  Overview of Scheduled Payments:{" "}
                 </span>
                 Utilize the calendar view to quickly locate scheduled events,
                 allowing you to visualize payment timelines and plan
@@ -339,6 +340,74 @@ export const steps: Tour[] = [
           </div>
         ),
         selector: "#tour1-step5-1",
+        side: "top",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "The Positions Widget",
+        content: (
+          <div className="text-grey-primary">
+            <p className="font-semibold mb-3">
+              <span className="font-semibold">The Positions Widget</span>{" "}
+              provides a detailed breakdown of your current positions for every
+              Loan Instrument in your portfolio.
+            </p>
+          </div>
+        ),
+        selector: "#tour1-step5-2",
+        side: "top",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "The Covenants Tracking Widget",
+        content: (
+          <div className="text-grey-primary">
+            <p className="font-semibold mb-3">
+              <span className="font-semibold">Covenants Tracking Widget</span>{" "}
+              Displays the results of Financial Covenants calculations based on
+              the latest financial statements provided by the borrower.
+            </p>
+            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+              <li>
+                <span className="font-semibold">Regular Updates:</span> Stay
+                informed with up-to-date calculations as financial statements
+                are submitted, ensuring you have the latest insights into
+                compliance.
+              </li>
+              <li>
+                <span className="font-semibold">
+                  Custom Covenants Creation:
+                </span>{" "}
+                Utilize the Formula Builder to create custom covenants and
+                metrics that can combine both Financial Data and Loan Data,
+                tailored to your specific requirements.
+              </li>
+              <li>
+                <span className="font-semibold">Interactive Reports:</span>{" "}
+                Generate custom charts and reports to build and share various
+                interactive reports, enhancing your ability to analyze and
+                present covenant performance.
+              </li>
+              <li>
+                <span className="font-semibold">Comprehensive Monitoring:</span>{" "}
+                This widget is designed to help you effectively monitor
+                compliance and gain deeper insights into your borrowers'
+                financial health!
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-3",
         side: "top",
         showControls: true,
         showSkip: false,

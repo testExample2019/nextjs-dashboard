@@ -16,12 +16,12 @@ export default function DealsSideNav({
   return (
     <div id={`tour1-step5`} className={"flex  md:flex-col gap-4"}>
       {dealsNavData.map(
-        ({ id, name, totalCommitment, funded, unfunded, displayName }) => {
+        ({ id, slug, totalCommitment, funded, unfunded, displayName }) => {
           return (
             <SideNavLink
               key={id}
               id={id}
-              name={name}
+              slug={slug}
               displayName={displayName}
               totalCommitment={totalCommitment}
               funded={funded}

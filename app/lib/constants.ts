@@ -1,4 +1,5 @@
 import {
+  DealBorrowerActions,
   DealsActions,
   DealViews,
   PaymentActions,
@@ -19,6 +20,11 @@ export const dealsDropdownItems = [
   { id: 1, label: "Import Deal", actionType: DealsActions.Import },
   { id: 2, label: "Add New Deal", actionType: DealsActions.Add },
   { id: 3, label: "Use Template", actionType: DealsActions.Use },
+];
+
+export const dealBorrowerDropdownItems = [
+  { id: 1, label: "Drawdown", actionType: DealBorrowerActions.Drawdown },
+  { id: 2, label: "Prepayment", actionType: DealBorrowerActions.Prepayment },
 ];
 
 export const LenderPaymentOptionsDropdownItems = [
@@ -57,4 +63,4 @@ export const PaymentApproveDropdownItems = [
 ];
 
 export const today = new Date(2025, 0, 24); // Month is 0-indexed: 11 = December
-export const defaultDashboardPath = `/deals/dashboard/${deals[0].name.toLowerCase()}/lender/`;
+export const defaultDashboardPath = `/deals/dashboard/${deals[0].slug}/lender/`;

@@ -2,18 +2,19 @@ import { deals } from "@/app/lib/placeholder-data";
 import { DealNavType, DealViews } from "@/app/lib/definitions";
 
 const handleDealView = (dealName: string, dealView: DealViews) => {
+  console.log(dealName);
   return dealView === DealViews.Lender
-    ? deals.filter((deal) => deal.name.toLowerCase() === dealName)[0]?.lender
-    : deals.filter((deal) => deal.name.toLowerCase() === dealName)[0]?.borrower;
+    ? deals.filter((deal) => deal.slug === dealName)[0]?.lender
+    : deals.filter((deal) => deal.slug === dealName)[0]?.borrower;
 };
 
 export async function fetchDealsNavData(): Promise<DealNavType[]> {
   try {
     return deals.map((deal) => ({
       id: deal.id,
-      name: deal.name,
+      slug: deal.slug,
       displayName: deal.displayName,
-      title: deal.name,
+      title: deal.slug,
       totalCommitment: deal.totalCommitment,
       funded: deal.funded,
       unfunded: deal.unfunded,

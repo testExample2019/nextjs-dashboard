@@ -4,7 +4,7 @@ const replaceItemInURL = (url: string, newName: string, type: number) => {
   const parts = url.split("/");
   const position = parts.length - type;
   if (parts[position])
-    parts[position] = newName.toLowerCase().replace(/[^a-z0-9]/g, "");
+    parts[position] = newName?.toLowerCase().replace(/[^a-z0-9]/g, "");
   return parts.join("/");
 };
 export const replaceViewItemInURL = (url: string, newName: string) => {
@@ -25,7 +25,7 @@ export const separateWords = (status: string): string => {
 };
 
 export const handleDisplayCorrectDialName = (name: string) => {
-  return deals?.find((deal) => deal.name.toLowerCase() === name.toLowerCase())?.displayName;
+  return deals?.find((deal) => deal.slug === name.toLowerCase())?.displayName;
 };
 
 export const formatCurrency = (amount: number): string => {

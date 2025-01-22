@@ -1,4 +1,4 @@
-import { DealType, TransactionType, DocumentType } from "@/app/lib/definitions";
+import { DealType, DocumentType, TransactionType } from "@/app/lib/definitions";
 
 const transactionsData: TransactionType[] = [
   {
@@ -562,7 +562,7 @@ const documentsData: DocumentType[] = [
 const deals: DealType[] = [
   {
     id: "1",
-    name: "Soultrain",
+    slug: "soultrain",
     displayName: "Soultrain",
     totalCommitment: "$300,000,000.00",
     funded: "$100,000,000.00",
@@ -726,7 +726,7 @@ const deals: DealType[] = [
   },
   {
     id: "2",
-    name: "AbcCapital",
+    slug: "abccapital",
     displayName: "Abc Capital",
     totalCommitment: "$300,000,000.00",
     funded: "$100,000,000.00",
@@ -869,9 +869,9 @@ const deals: DealType[] = [
       positions: [
         {
           id: "position-1",
-          deal: "Soultrain",
+          deal: "Abc Capital",
           instrument: "New Fixed Loan",
-          borrower: "Soultrain",
+          borrower: "Abc Capital",
           ccy: "USD",
           counterparty: "Funky Fund East",
           role: "LENDER",

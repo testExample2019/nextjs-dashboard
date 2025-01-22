@@ -11,12 +11,14 @@ interface ButtonDropdownProps<T> {
   children: React.ReactNode;
   dropdownItems: DropdownItem<T>[]; // Array of generic dropdown items
   onAction: (actionType: T) => void; // Handler for actions
+  placeholder?: string;
 }
 
 export const ButtonDropdown = <T,>({
   children,
   dropdownItems,
   onAction,
+  placeholder,
 }: ButtonDropdownProps<T>) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -52,6 +54,11 @@ export const ButtonDropdown = <T,>({
         aria-orientation="vertical"
         aria-labelledby="menu-button"
       >
+        {placeholder && (
+          <span className={"px-4 py-2 text-grey-secondary text-sm"}>
+            {placeholder}
+          </span>
+        )}
         {dropdownItems.map(({ id, label, actionType }) => (
           <button
             key={id}
