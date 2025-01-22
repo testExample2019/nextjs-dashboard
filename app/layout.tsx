@@ -4,6 +4,7 @@ import { openSans } from "@/app/ui/fonts";
 import { Metadata } from "next";
 import { steps } from "./lib/steps";
 import { ToastProvider } from "@/app/lib/contexts/toast-context";
+import StepCustomCard from "@/app/ui/components/step-custom-card";
 
 export const metadata: Metadata = {
   title: {
@@ -23,7 +24,11 @@ export default function RootLayout({
     <NextStepProvider>
       <html lang="en">
         <body className={`${openSans.className} antialiased bg-grey-o`}>
-          <NextStep shadowOpacity={"0.1"} steps={steps}>
+          <NextStep
+            shadowOpacity={"0.1"}
+            steps={steps}
+            cardComponent={StepCustomCard}
+          >
             <ToastProvider>{children}</ToastProvider>
           </NextStep>
         </body>

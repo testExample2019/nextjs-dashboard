@@ -230,16 +230,16 @@ const TransactionView = ({
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
+                      <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                         Date
                       </th>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
+                      <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                         Rate
                       </th>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
+                      <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                         Principal
                       </th>
-                      <th className="border-b py-2 text-sm text-grey font-semibold">
+                      <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                         Amount
                       </th>
                     </tr>
@@ -332,19 +332,19 @@ const TransactionView = ({
           <table className="w-full text-left border-collapse">
             <thead>
               <tr>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                   DATE
                 </th>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                   MARKET INDEX
                 </th>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                   ADJ INDEX RATE
                 </th>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                   ADJ SPREAD
                 </th>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                   ALL IN RATE
                 </th>
               </tr>
@@ -374,16 +374,16 @@ const TransactionView = ({
           <table className="w-full text-left border-collapse">
             <thead>
               <tr>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                   Role
                 </th>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                   Counterparty
                 </th>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                   Amount
                 </th>
-                <th className="border-b py-2 text-sm text-grey font-semibold">
+                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
                   Share
                 </th>
               </tr>

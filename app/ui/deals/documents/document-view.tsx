@@ -242,13 +242,13 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr>
-                    <th className="border-b p-2 text-sm text-grey font-semibold">
+                    <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                       Type
                     </th>
-                    <th className="border-b p-2 text-sm text-grey font-semibold">
+                    <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                       Amount
                     </th>
-                    <th className="border-b p-2 text-sm text-grey font-semibold">
+                    <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                       Tnx Updated
                     </th>
                   </tr>
@@ -390,16 +390,16 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                     <table className="w-full text-left border-collapse">
                       <thead>
                         <tr>
-                          <th className="border-b p-2 text-sm text-grey font-semibold">
+                          <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                             Date
                           </th>
-                          <th className="border-b p-2 text-sm text-grey font-semibold">
+                          <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                             Rate
                           </th>
-                          <th className="border-b p-2 text-sm text-grey font-semibold">
+                          <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                             Principal
                           </th>
-                          <th className="border-b p-2 text-sm text-grey font-semibold">
+                          <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                             Amount
                           </th>
                         </tr>
@@ -433,16 +433,16 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr>
-                        <th className="border-b p-2 text-sm text-grey font-semibold">
+                        <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                           Role
                         </th>
-                        <th className="border-b p-2 text-sm text-grey font-semibold">
+                        <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                           Counterparty
                         </th>
-                        <th className="border-b p-2 text-sm text-grey font-semibold">
+                        <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                           Amount
                         </th>
-                        <th className="border-b p-2 text-sm text-grey font-semibold">
+                        <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
                           Share
                         </th>
                       </tr>

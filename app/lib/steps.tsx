@@ -36,7 +36,7 @@ export const steps: Tour[] = [
               can automatically repopulate many fields in the system, saving you
               time and effort in the process.
             </p>
-            <p>Let’s get started by selecting a simple Fixed loan template</p>
+            <p>Let’s get started by selecting a simple Fixed loan template.</p>
           </div>
         ),
         selector: "#tour1-step2",
@@ -60,7 +60,7 @@ export const steps: Tour[] = [
             <p className="text-base font-semibold mb-3">
               Here’s what you can do in this wizard:
             </p>
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc list-inside space-y-3">
               <li>
                 <span className="font-semibold">Specify Key Information:</span>{" "}
                 Enter the fundamental details about the loan, including the loan
@@ -126,7 +126,7 @@ export const steps: Tour[] = [
             <p className="text-base font-semibold mb-3">
               Here’s what you can expect from this panel:
             </p>
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-scroll">
+            <ul className="list-disc list-inside space-y-3">
               <li>
                 <span className="font-semibold">Instant Updates: </span> As you
                 fill out the loan details, the preview will automatically update
@@ -214,7 +214,7 @@ export const steps: Tour[] = [
             <p className="text-base font-semibold mb-3">
               Here’s what you can access in Advanced Mode:
             </p>
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc list-inside space-y-3">
               <li>
                 <span className="font-semibold">
                   Accrual Frequency Options:
@@ -253,7 +253,7 @@ export const steps: Tour[] = [
           </div>
         ),
         selector: "#tour1-step3-4",
-        side: "top",
+        side: "right",
         showSkip: false,
         showControls: true,
         nextRoute: defaultDashboardPath,
@@ -288,7 +288,7 @@ export const steps: Tour[] = [
               The Deals Panel on your Dashboard provides an efficient way to
               view all your Loan deals and their current positions:
             </p>
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc list-inside space-y-3">
               <li>
                 Access a comprehensive list of both active and closed loan
                 deals, showcasing key details such as deal name, Committed,
@@ -322,7 +322,7 @@ export const steps: Tour[] = [
               on your Dashboard highlights the closest scheduled payments,
               including both debits and credits.
             </p>
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc list-inside space-y-3">
               <li>
                 <span className="font-semibold">
                   Overview of Scheduled Payments:{" "}
@@ -376,7 +376,7 @@ export const steps: Tour[] = [
               Displays the results of Financial Covenants calculations based on
               the latest financial statements provided by the borrower.
             </p>
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc list-inside space-y-3">
               <li>
                 <span className="font-semibold">Regular Updates:</span> Stay
                 informed with up-to-date calculations as financial statements
@@ -419,7 +419,7 @@ export const steps: Tour[] = [
         title: "Information About Scheduled Events",
         content: (
           <div className="text-grey-primary">
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc list-inside space-y-3">
               <li>
                 <span className="font-semibold">Upcoming Payments Widget:</span>{" "}
                 Allows you to quickly access all crucial information about
@@ -485,7 +485,7 @@ export const steps: Tour[] = [
               When you select to view the notice document, a drawer will open to
               display the document preview.
             </p>
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc list-inside space-y-3">
               <li>
                 <span className="font-semibold">Document Preview:</span> Easily
                 review the contents of the notice document within the drawer for
@@ -518,7 +518,7 @@ export const steps: Tour[] = [
               provides a comprehensive list of transactions related to the
               Notice.
             </p>
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc list-inside space-y-3">
               <li>
                 <span className="font-semibold">
                   Detailed Transaction List:
@@ -547,6 +547,39 @@ export const steps: Tour[] = [
         showControls: true,
         showSkip: false,
         nextRoute: defaultDashboardPath,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "Transaction Details",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              <span className="font-semibold">
+                Borrower Requests for Unscheduled Drawdowns and Principal
+                Prepayments
+              </span>
+              Borrowers may occasionally request unscheduled drawdowns or
+              principal prepayments. The Dashboard provides lenders with the
+              ability to efficiently review these requests.
+            </p>
+
+            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+              <li>
+                <span className="font-semibold">Request Overview:</span> Easily
+                access a summary of all pending requests from borrowers for
+                unscheduled drawdowns or principal prepayments, ensuring you
+                stay informed about their needs.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-8",
+        side: "left",
+        showControls: true,
+        showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
         blockKeyboardControl: true,

@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tooltip from "@/app/ui/components/tooltip";
 import { formTableDataAdvanced } from "@/app/lib/placeholder-data";
 import { Cross, Reload } from "@/app/ui/icons";
 import { FacilityFee } from "@/app/ui/template/faciliy-fee";
 import TransactionsSchedule from "@/app/ui/template/transactions-schedule";
+import { useNextStep } from "nextstepjs";
 
 enum AdvancedTableTabsType {
   RateAndPayment = "rateAndPayment",
@@ -17,6 +18,11 @@ const AdvancedTable = () => {
   const [formData, setFormData] = useState(formTableDataAdvanced);
   const [showNewFacility, setShowNewFacility] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null); // Tracks selected row data
+  const { currentStep } = useNextStep();
+
+  useEffect(() => {
+    console.log("currentStep", currentStep);
+  }, [currentStep]);
 
   const Tabs = [
     { id: AdvancedTableTabsType.RateAndPayment, label: "Rate and Payment" },
@@ -56,14 +62,14 @@ const AdvancedTable = () => {
   };
 
   return (
-    <div id={"tour1-step3-3"}>
+    <div>
       <div className="py-1 px-8">
         {/* Loan Details Form */}
 
         <div className={"grid grid-cols-1 gap-2"}>
           {/* General info */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
               General Info
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -174,7 +180,7 @@ const AdvancedTable = () => {
 
           {/* Borrower and Lender Details */}
           <div className={"mb-6"}>
-            <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
               Borrower & Lender
               <div>
                 <button
@@ -236,7 +242,7 @@ const AdvancedTable = () => {
             </div>
           </div>
 
-          <div id={"tour1-step3-4"}>
+          <div>
             <div className="flex justify-start border-b border-grey-border">
               {Tabs.map(({ id, label }) => (
                 <button
@@ -376,7 +382,7 @@ const AdvancedTable = () => {
 
                 {/*   Interest Periods */}
                 <div>
-                  <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border flex items-center justify-between">
+                  <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
                     Interest Periods
                     <div className={"flex items-center gap-6"}>
                       <button
@@ -392,7 +398,7 @@ const AdvancedTable = () => {
 
                 {/*   1ME (Pay 1st BD) */}
                 <div>
-                  <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border flex items-center justify-between">
+                  <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
                     1ME (Pay 1st BD)
                     <button type="button">
                       <Cross />
@@ -454,7 +460,7 @@ const AdvancedTable = () => {
             {/*  Spreads */}
             {activeTab === AdvancedTableTabsType.Spreads && (
               <div>
-                <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border flex items-center justify-between">
+                <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
                   Spreads
                   <div className={"flex items-center gap-6"}>
                     <button
@@ -509,7 +515,7 @@ const AdvancedTable = () => {
             {/*  Facility Fees */}
             {activeTab === AdvancedTableTabsType.FacilityFees && (
               <div>
-                <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border flex items-center justify-between">
+                <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
                   Facility Fees
                   <div className={"flex items-center gap-6"}>
                     <button
@@ -569,7 +575,7 @@ const AdvancedTable = () => {
 
           {/* Amortization */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
               Amortization
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
@@ -589,7 +595,7 @@ const AdvancedTable = () => {
 
           {/* Documentation */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
               Documentation
             </h2>
             <div className="my-4 border-dashed border-1 bg-grey-o border-grey-light rounded-lg p-4 flex flex-col items-center">

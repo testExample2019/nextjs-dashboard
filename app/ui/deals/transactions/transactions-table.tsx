@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { Suspense } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { TableSkeleton } from "@/app/ui/skeletons";
 import { Table } from "@/app/ui/components/table";
 import { ChevronLeft } from "@/app/ui/icons";
@@ -51,7 +50,7 @@ const TransactionsTableView = ({
         }
       >
         <h1
-          className={`text-18 w-full text-grey-primary flex items-center gap-2`}
+          className={`text-18 w-full text-grey-primary font-semibold flex items-center gap-2`}
         >
           Transactions
           <ChevronLeft />

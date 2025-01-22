@@ -50,7 +50,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
         }
       >
         <h1
-          className={`text-18 w-full text-grey-primary flex items-center gap-2`}
+          className={`text-18 w-full text-grey-primary font-semibold flex items-center gap-2`}
         >
           Documents
           <ChevronLeft />

@@ -15,7 +15,13 @@ const FormTable = () => {
 
   useEffect(() => {
     if (currentStep === 4) {
-      // handleInputChange('15');
+      const syntheticEvent = {
+        target: {
+          name: "annualRate",
+          value: "15%",
+        },
+      } as React.ChangeEvent<HTMLInputElement>;
+      handleInputChange(syntheticEvent);
     }
   }, [currentStep]);
 
@@ -48,7 +54,7 @@ const FormTable = () => {
         <div className={"grid grid-cols-1 gap-2"}>
           {/* General info */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
               General Info
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -159,7 +165,7 @@ const FormTable = () => {
 
           {/* Borrower and Lender Details */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
               Borrower & Lender
               <div>
                 <button
@@ -223,7 +229,7 @@ const FormTable = () => {
 
           {/* Rate and Payment Details */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
               Rate and Payment
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
@@ -285,7 +291,7 @@ const FormTable = () => {
 
           {/* Amortization */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
               Amortization
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
@@ -305,7 +311,7 @@ const FormTable = () => {
 
           {/* Documentation */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
               Documentation
             </h2>
             <div className="my-4 border-dashed border-1 bg-grey-o border-grey-light rounded-lg p-4 flex flex-col items-center">

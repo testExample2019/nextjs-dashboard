@@ -11,13 +11,16 @@ import { useNextStep } from "nextstepjs";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
-  const { setCurrentStep, currentStep } = useNextStep();
+  const { setCurrentStep, startNextStep, currentStep } = useNextStep();
   useEffect(() => {
+    startNextStep("mainTour");
     setCurrentStep(2);
   }, []);
   useEffect(() => {
-    if (currentStep === 5) {
+    if (currentStep === 6 || currentStep === 7) {
       setIsAdvanced(true);
+    } else {
+      setIsAdvanced(false);
     }
   }, [currentStep]);
 
@@ -56,20 +59,22 @@ const LoanSetupPage = () => {
             </div>
           </div>
           {/* Content */}
-          <div className={"flex-1 overflow-y-auto"}>
+
+          <div id={"tour1-step3-4"} className={"flex-1 overflow-y-auto"}>
             {isAdvanced ? <AdvancedFormTable /> : <FormTable />}
           </div>
+
           {/* Action Buttons */}
           <div className="flex justify-between py-2 px-6 gap-4 border-t-1 border-grey-border">
             <button
               onClick={() => redirect(`/template`)}
-              className="px-4 py-2 uppercase text-action-primary rounded-md hover:bg-gray-100"
+              className="px-4 py-2 uppercase text-action-primary rounded-md hover:bg-gray-100 font-semibold"
             >
               Cancel
             </button>
             <button
               onClick={() => redirect(defaultDashboardPath)}
-              className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark"
+              className="px-4 py-2 uppercase bg-action-primary text-white rounded-md hover:bg-blue-dark font-semibold"
             >
               Save
             </button>
