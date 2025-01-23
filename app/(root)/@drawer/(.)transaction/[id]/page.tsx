@@ -14,14 +14,14 @@ export default async function TransactionDrawer({
   const isTransactionLender = transaction?.role === "Lender";
 
   return (
-    <>
+    <div>
       <DrawerClose
         children={
           <div className={"fixed inset-0 bg-[#4E4B4B] bg-opacity-40"} />
         }
       />
       <div
-        id={"transactionDrawer"}
+        id={"transactionInnerDrawer"}
         className={
           "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto"
         }
@@ -45,7 +45,7 @@ export default async function TransactionDrawer({
               children={
                 isTransactionLender ? (
                   <div
-                    id={"tour1-step5-13"}
+                    id={"tour1-step22"}
                     className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all"
                   >
                     <div>
@@ -79,6 +79,6 @@ export default async function TransactionDrawer({
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,4 +1,5 @@
 import { deals } from "@/app/lib/placeholder-data";
+import { DealViews } from "@/app/lib/definitions";
 
 const replaceItemInURL = (url: string, newName: string, type: number) => {
   const parts = url.split("/");
@@ -38,6 +39,7 @@ export const formatCurrency = (amount: number): string => {
 
 export const getDefaultPath = (
   page: "dashboard" | "transactions" | "documents" | "instruments",
+  view: DealViews = DealViews.Lender,
 ) => {
-  return `/deals/${page}/${deals[0].slug}/lender/`;
+  return `/deals/${page}/${deals[0].slug}/${view}/`;
 };

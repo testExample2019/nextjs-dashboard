@@ -38,15 +38,17 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
           Upcoming Payments
         </h2>
         <Suspense fallback={<UpcomingPaymentsSkeleton />}>
-          <div id={"tour1-step5-1"}>
-            <UpcomingPayments dealName={dealName} dealView={dealView} />
+          <div id={"tour1-step10"}>
+            <div id={"tour1-step29"}>
+              <UpcomingPayments dealName={dealName} dealView={dealView} />
+            </div>
           </div>
         </Suspense>
         <h3 className={"text-grey-primary text-base font-semibold"}>
           Positions
         </h3>
         <Suspense fallback={<TableSkeleton />}>
-          <div id={"tour1-step5-2"}>
+          <div id={"tour1-step11"}>
             <PositionsTable dealName={dealName} dealView={dealView} />
           </div>
         </Suspense>
@@ -54,7 +56,7 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
           Covenants Tracking
         </h3>
         <Suspense fallback={<CovenantsTrackingSkeleton />}>
-          <div id={"tour1-step5-3"}>
+          <div id={"tour1-step12"}>
             <CovenantsCardWrapper dealName={dealName} dealView={dealView} />
           </div>
         </Suspense>

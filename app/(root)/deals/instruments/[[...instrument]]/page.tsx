@@ -46,7 +46,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
   }
 
   return (
-    <div>
+    <section id="tour1-step25">
       <div
         className={
           "flex w-full items-center justify-between py-2 px-4 h-[50px] border-b-1 border-grey-border"
@@ -67,7 +67,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
           <Table type={"instrument"} rows={selectedFields} />
         </Suspense>
       </div>
-    </div>
+    </section>
   );
 };
 

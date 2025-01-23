@@ -66,7 +66,7 @@ export default function UpcomingPaymentsList({
         <div className="mt-4 space-y-4">
           {payments?.map((payment, index) => (
             <div
-              id={"tour1-step5-8"}
+              id={"tour1-step17"}
               key={payment.id}
               className={`${payment.transactionId && path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-grey-border`}
             >
@@ -155,7 +155,7 @@ export default function UpcomingPaymentsList({
                             router.push(`/transaction/${payment.transactionId}`)
                           }
                           className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
-                          id="tour1-step5-9"
+                          id="tour1-step18"
                           aria-haspopup="true"
                         >
                           Preview
@@ -173,10 +173,10 @@ export default function UpcomingPaymentsList({
                     </span>
                   </p>
                   <ButtonDropdown
-                    id={`${index === 1 ? "tour1-step5-5" : ""}`}
+                    id={`${index === 1 ? "tour1-step14" : ""}`}
                     children={
                       <button
-                        id={`${index === 1 ? "tour1-step5-4" : ""}`}
+                        id={`${index === 1 ? "tour1-step13" : ""}`}
                         className={
                           "w-10 h-10 transition-all hover:bg-grey-lighter rounded-md"
                         }

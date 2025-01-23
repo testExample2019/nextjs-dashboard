@@ -37,7 +37,7 @@ const LoanSetupPage = () => {
             <h1 className="text-18 font-semibold text-grey-primary">
               New Loan Setup
             </h1>
-            <div id={"tour1-step3-3"} className="flex items-center space-x-3">
+            <div id={"tour1-step6"} className="flex items-center space-x-3">
               <span className="text-sm text-grey-primary flex items-center gap-1">
                 Advanced mode
                 <Tooltip
@@ -60,7 +60,7 @@ const LoanSetupPage = () => {
           </div>
           {/* Content */}
 
-          <div id={"tour1-step3-4"} className={"flex-1 overflow-y-auto"}>
+          <div id={"tour1-step7"} className={"flex-1 overflow-y-auto"}>
             {isAdvanced ? <AdvancedFormTable /> : <FormTable />}
           </div>
 

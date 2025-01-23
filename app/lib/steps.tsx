@@ -1,5 +1,6 @@
 import { Tour } from "nextstepjs";
 import {
+  defaultDashboardBorrowerPath,
   defaultDashboardPath,
   defaultDocumentsPath,
   defaultInstrumentsPath,
@@ -154,7 +155,7 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step3-1",
+        selector: "#tour1-step4",
         side: "left",
         showSkip: false,
         showControls: true,
@@ -177,7 +178,7 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step3-2",
+        selector: "#tour1-step5",
         side: "top",
         showSkip: false,
         showControls: true,
@@ -194,7 +195,7 @@ export const steps: Tour[] = [
             <span className="font-semibold">Advanced Mode</span>.
           </div>
         ),
-        selector: "#tour1-step3-3",
+        selector: "#tour1-step6",
         side: "bottom",
         showSkip: false,
         showControls: true,
@@ -251,7 +252,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step3-4",
+        selector: "#tour1-step7",
         side: "right",
         showSkip: false,
         showControls: true,
@@ -269,7 +270,7 @@ export const steps: Tour[] = [
             track and manage your lending activities.
           </div>
         ),
-        selector: "#tour1-step4",
+        selector: "#tour1-step8",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
@@ -299,7 +300,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5",
+        selector: "#tour1-step9",
         side: "right",
         showControls: true,
         showSkip: false,
@@ -334,7 +335,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-1",
+        selector: "#tour1-step10",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -353,7 +354,7 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step5-2",
+        selector: "#tour1-step11",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -400,7 +401,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-3",
+        selector: "#tour1-step12",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -443,7 +444,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-4",
+        selector: "#tour1-step13",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -459,7 +460,7 @@ export const steps: Tour[] = [
             information
           </div>
         ),
-        selector: "#tour1-step5-5",
+        selector: "#tour1-step14",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -490,7 +491,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-6",
+        selector: "#tour1-step15",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -532,7 +533,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-7",
+        selector: "#tour1-step16",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -565,7 +566,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-8",
+        selector: "#tour1-step17",
         side: "bottom",
         showControls: true,
         showSkip: false,
@@ -582,7 +583,7 @@ export const steps: Tour[] = [
             information
           </div>
         ),
-        selector: "#tour1-step5-9",
+        selector: "#tour1-step18",
         side: "bottom",
         showControls: true,
         showSkip: false,
@@ -620,7 +621,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-10",
+        selector: "#tour1-step19",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -642,7 +643,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-11",
+        selector: "#tour1-step20",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -664,7 +665,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-12",
+        selector: "#tour1-step21",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -686,14 +687,14 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-13",
+        selector: "#tour1-step22",
         side: "top",
         showControls: true,
         showSkip: false,
         nextRoute: defaultTransactionsPath,
         pointerPadding: 10,
         pointerRadius: 10,
-        viewportID: "transactionDrawer",
+        viewportID: "transactionInnerDrawer",
       },
       {
         icon: <></>,
@@ -722,12 +723,12 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-14",
+        selector: "#tour1-step23",
         side: "top",
         showControls: true,
         showSkip: false,
         prevRoute: defaultDashboardPath,
-        nextRoute: "/transactions/transaction-3",
+        nextRoute: "/transaction/transaction-3",
         pointerPadding: 10,
         pointerRadius: 10,
       },
@@ -753,8 +754,8 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step5-15",
-        side: "top",
+        selector: "#tour1-step24",
+        side: "left",
         showControls: true,
         showSkip: false,
         prevRoute: defaultTransactionsPath,
@@ -774,18 +775,18 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step5-15",
+        selector: "#tour1-step25",
         side: "top",
         showControls: true,
         showSkip: false,
         prevRoute: defaultTransactionsPath,
-        nextRoute: "/instruments/instrument-1",
+        nextRoute: "/instrument/instrument-1",
         pointerPadding: 10,
         pointerRadius: 10,
       },
       {
         icon: <></>,
-        title: "Detailed Request Information",
+        title: "Instrument Details",
         content: (
           <div className="text-grey-primary">
             <p className="mb-3">
@@ -811,34 +812,116 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step5-16",
+        selector: "#tour1-step26",
         side: "left",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
-        prevRoute: defaultDashboardPath,
+        prevRoute: defaultInstrumentsPath,
         nextRoute: defaultDocumentsPath,
         pointerRadius: 10,
       },
       {
         icon: <></>,
-        title: "Switch Between Lender and Borrower Views",
+        title: "Documents Screen",
         content: (
-          <p>
-            Easily toggle between Lender and Borrower perspectives to manage
-            relevant data:
-            <br />
-            <b>• Lender View: </b>Focus on loan commitments, funded amounts, and
-            borrower details. <br />
-            <b>• Borrower View: </b>
-            Analyze loan terms, repayment schedules, and payment history.
-            <br />
-            Use the toggle to seamlessly transition and gain insights tailored
-            to your role.
-          </p>
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              <span className="font-semibold">The Documents Screen:</span>{" "}
+              serves as a comprehensive repository for all Loan documentation,
+              providing a centralized location for managing your documents.
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">
+                  Complete Document Repository:{" "}
+                </span>{" "}
+                Quickly find and access any document related to a specific loan,
+                transaction, or counterparty, streamlining your workflow and
+                enhancing collaboration.
+              </li>
+              <li>
+                <span className="font-semibold">Upload and Share: </span> Easily
+                upload new documents or share existing ones with relevant
+                parties, ensuring everyone has access to the necessary
+                information.
+              </li>
+            </ul>
+            <p className="mt-3">
+              This screen is designed to simplify document management, ensuring
+              you have all your loan-related documentation organized and readily
+              available!
+            </p>
+          </div>
         ),
-        selector: "#tour1-step7",
+        selector: "#tour1-step27",
         side: "top",
+        showControls: true,
+        showSkip: false,
+        prevRoute: defaultInstrumentsPath,
+        nextRoute: defaultDashboardBorrowerPath,
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "Borrower View",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              Switching to the{" "}
+              <span className="font-semibold">Borrower View</span>
+            </p>
+          </div>
+        ),
+        selector: "#tour1-step28",
+        side: "bottom",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        prevRoute: defaultDocumentsPath,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "Borrower View Upcoming Payments",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              the{" "}
+              <span className="font-semibold">Upcoming Payments Widget</span>{" "}
+              showcases scheduled payments from the borrower’s perspective.
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">
+                  Scheduled Debit Transactions:{" "}
+                </span>{" "}
+                The widget reflects the interest payment as a scheduled debit
+                transaction, clearly indicating the amount due and the payment
+                date.
+              </li>
+              <li>
+                <span className="font-semibold">Comprehensive Overview: </span>{" "}
+                Borrowers can easily see all upcoming payments, allowing them to
+                manage their cash flow effectively and ensure timely payments.
+              </li>
+              <li>
+                <span className="font-semibold">Payment Details: </span> If The
+                widget provides essential details about each transaction,
+                helping borrowers stay informed about their financial
+                obligations.
+              </li>
+            </ul>
+            <p className="mt-3">
+              This feature ensures that borrowers have a clear understanding of
+              their upcoming payments, facilitating better financial planning
+              and management!
+            </p>
+          </div>
+        ),
+        selector: "#tour1-step29",
+        side: "bottom",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,

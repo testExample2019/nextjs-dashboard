@@ -67,3 +67,7 @@ export const defaultDashboardPath = getDefaultPath("dashboard");
 export const defaultTransactionsPath = getDefaultPath("transactions");
 export const defaultInstrumentsPath = getDefaultPath("instruments");
 export const defaultDocumentsPath = getDefaultPath("documents");
+export const defaultDashboardBorrowerPath = getDefaultPath(
+  "dashboard",
+  DealViews.Borrower,
+);

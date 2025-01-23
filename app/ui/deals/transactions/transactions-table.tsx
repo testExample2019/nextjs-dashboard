@@ -5,6 +5,7 @@ import { Table } from "@/app/ui/components/table";
 import { ChevronLeft } from "@/app/ui/icons";
 import { TransactionType } from "@/app/lib/definitions";
 import { handleDisplayCorrectDealName } from "@/app/lib/utils";
+import { useNextStep } from "nextstepjs";
 
 type TransactionsTableViewProps = {
   dealName: string;
@@ -28,6 +29,7 @@ const TransactionsTableView = ({
   dealName,
   transactions,
 }: TransactionsTableViewProps) => {
+  const { setCurrentStep, startNextStep, currentStep } = useNextStep();
   const hideScheduledTransactions = transactions.filter(
     (transaction) => transaction.status !== "Scheduled",
   );
@@ -35,7 +37,12 @@ const TransactionsTableView = ({
     hideScheduledTransactions,
   );
   const [showScheduledTransactions, setShowScheduledTransactions] =
-    useState(false);
+    useState(true);
+
+  useEffect(() => {
+    startNextStep("mainTour");
+    setCurrentStep(22);
+  }, []);
 
   useEffect(() => {
     showScheduledTransactions
@@ -43,7 +50,7 @@ const TransactionsTableView = ({
       : setTransactionsRows(hideScheduledTransactions);
   }, [showScheduledTransactions]);
   return (
-    <section id="tour1-step5-14">
+    <section id="tour1-step23">
       <div
         className={
           "flex w-full items-center justify-between py-2 px-4  h-[50px] border-b-1 border-grey-border"

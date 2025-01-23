@@ -408,7 +408,7 @@ const transactionsData: TransactionType[] = [
 const documentsData: DocumentType[] = [
   {
     id: "document-1",
-    stepId: "tour1-step5-6",
+    stepId: "tour1-step15",
     document: "Soultrain 02-03-2025",
     documentType: "Transaction",
     subType: "Final Notice",

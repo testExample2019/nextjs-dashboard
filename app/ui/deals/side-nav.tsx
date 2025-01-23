@@ -3,13 +3,14 @@ import React, { useEffect } from "react";
 import { DealNavType } from "@/app/lib/definitions";
 import { SideNavLink } from "@/app/ui/deals/side-nav-link";
 import { useNextStep } from "nextstepjs";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function DealsSideNav({
   dealsNavData,
 }: {
   dealsNavData: DealNavType[];
 }) {
+  const path = usePathname();
   const { setCurrentStep, startNextStep, currentStep } = useNextStep();
   const router = useRouter();
 
@@ -18,13 +19,8 @@ export default function DealsSideNav({
     setCurrentStep(7);
   }, []);
 
-  useEffect(() => {
-    if (currentStep === 14) {
-      router.refresh();
-    }
-  }, [currentStep]);
   return (
-    <div id={`tour1-step5`} className={"flex  md:flex-col gap-4"}>
+    <div id={`tour1-step9`} className={"flex  md:flex-col gap-4"}>
       {dealsNavData.map(
         ({ id, slug, totalCommitment, funded, unfunded, displayName }) => {
           return (

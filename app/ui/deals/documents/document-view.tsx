@@ -56,8 +56,8 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
 
   return (
     <div className="bg-white rounded-lg p-6">
-      <div id={"tour1-step5-6"}>
-        <div id={"tour1-step5-7"}>
+      <div id={"tour1-step15"}>
+        <div id={"tour1-step16"}>
           <div className="flex justify-between items-end border-b pb-4 mb-4">
             <div>
               <h3 className="text-sm text-grey font-semibold uppercase">

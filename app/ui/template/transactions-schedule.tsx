@@ -22,7 +22,7 @@ const TransactionsSchedule = () => {
       <h2 className="text-18 font-semibold capitalize text-grey-primary py-2 px-4 border-b-1 border-grey-border">
         Preview transactions schedule
       </h2>
-      <div id={"tour1-step3-1"}>
+      <div id={"tour1-step4"}>
         <div className="bg-blue-50 border border-blue-100 p-4 mx-4 my-6 rounded-lg flex items-start gap-2 text-grey-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
