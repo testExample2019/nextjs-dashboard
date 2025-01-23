@@ -4,7 +4,7 @@ import { TableSkeleton } from "@/app/ui/skeletons";
 import { Table } from "@/app/ui/components/table";
 import { ChevronLeft } from "@/app/ui/icons";
 import { TransactionType } from "@/app/lib/definitions";
-import { handleDisplayCorrectDialName } from "@/app/lib/utils";
+import { handleDisplayCorrectDealName } from "@/app/lib/utils";
 
 type TransactionsTableViewProps = {
   dealName: string;
@@ -55,7 +55,7 @@ const TransactionsTableView = ({
           Transactions
           <ChevronLeft />
           <span className={"capitalize"}>
-            {handleDisplayCorrectDialName(dealName)}
+            {handleDisplayCorrectDealName(dealName)}
           </span>
         </h1>
         <div className="flex items-center space-x-3">

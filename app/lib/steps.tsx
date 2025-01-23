@@ -746,7 +746,7 @@ export const steps: Tour[] = [
                 documentation.
               </li>
             </ul>
-            <p>
+            <p className={"mt-3"}>
               This screen is designed to enhance your transaction management,
               providing you with the tools you need to monitor and review all
               financial activities seamlessly!

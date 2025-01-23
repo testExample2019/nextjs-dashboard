@@ -18,6 +18,7 @@ type DealDetailsType = {
   transactions: TransactionType[];
   asOfDate: string;
   documents?: DocumentType[];
+  instruments?: InstrumentType[];
   notices?: NoticeType[];
 };
 
@@ -105,6 +106,46 @@ export type DocumentType = {
   status: "Open" | "Reviewed" | "Pending" | "Published";
   transactionDetails: TransactionDetailsType;
   nestedRows: any;
+};
+
+export type InstrumentType = {
+  id: string;
+  deal: string; // e.g., "Soultrain"
+  instrument: string; // e.g., "New Fixed Loan"
+  type: string; // e.g., "Loan"
+  subType: string; // e.g., "Term Loan"
+  ccy: string; // e.g., "USD"
+  issueDate: string; // e.g., "2025-01-01"
+  maturityDate: string; // e.g., "2030-01-01"
+  createdDate: string; // e.g., "2024-10-30"
+  status: string; // e.g., "Open
+  issueInfo: InstrumentIssueInfo;
+  feeInfo: InstrumentFeeInfo;
+  rateInfo: InstrumentRateInfo;
+};
+
+// Type for Issue Info
+type InstrumentIssueInfo = {
+  issuer: string | null; // e.g., null for "-"
+  issueDate: string; // e.g., "2025-01-01"
+  expireDate: string | null; // e.g., null for "-"
+  maturityDate: string; // e.g., "2030-01-01"
+};
+
+// Type for Fee Info
+type InstrumentFeeInfo = {
+  feeType: string; // e.g., "Fixed"
+  appliesTo: string; // e.g., "Drawdown Amount"
+  rate: string; // e.g., "1.0000%"
+  amount: string | null; // e.g., null for "-"
+};
+
+// Type for Rate Info
+type InstrumentRateInfo = {
+  rateType: string; // e.g., "Fixed"
+  index: string; // e.g., "Fixed"
+  accrualFrequency: string; // e.g., "1 Month"
+  adjSpread: string; // e.g., "8.5600%"
 };
 
 export type NoticeType = {

@@ -5,7 +5,7 @@ import { fetchDocuments } from "@/app/lib/data";
 import { notFound } from "next/navigation";
 import { DealViews } from "@/app/lib/definitions";
 import { ChevronLeft } from "@/app/ui/icons";
-import { handleDisplayCorrectDialName } from "@/app/lib/utils";
+import { handleDisplayCorrectDealName } from "@/app/lib/utils";
 
 interface PageProps {
   params: Promise<{ document: string }>;
@@ -55,7 +55,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
           Documents
           <ChevronLeft />
           <span className={"capitalize"}>
-            {handleDisplayCorrectDialName(dealName)}
+            {handleDisplayCorrectDealName(dealName)}
           </span>
         </h1>
       </div>

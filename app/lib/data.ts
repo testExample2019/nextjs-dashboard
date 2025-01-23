@@ -40,6 +40,14 @@ export async function fetchDocuments(dealName: string, dealView: DealViews) {
     throw new Error("Failed to fetch Documents data.");
   }
 }
+export async function fetchInstruments(dealName: string, dealView: DealViews) {
+  try {
+    return handleDealView(dealName, dealView)?.instruments;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch Instruments data.");
+  }
+}
 
 export async function fetchTransactions(dealName: string, dealView: DealViews) {
   try {
@@ -113,5 +121,19 @@ export async function fetchDocumentById(documentId: string) {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch Documents data.");
+  }
+}
+
+export async function fetchInstrumentById(instrumentId: string) {
+  try {
+    return deals
+      .flatMap((deal) => [
+        ...(deal.lender?.instruments || []),
+        ...(deal.borrower?.instruments || []),
+      ])
+      .find((txn) => txn.id === instrumentId);
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch Instruments data.");
   }
 }

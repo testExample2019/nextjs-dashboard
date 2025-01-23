@@ -1,4 +1,9 @@
-import { DealType, DocumentType, TransactionType } from "@/app/lib/definitions";
+import {
+  DealType,
+  DocumentType,
+  InstrumentType,
+  TransactionType,
+} from "@/app/lib/definitions";
 
 const transactionsData: TransactionType[] = [
   {
@@ -560,6 +565,69 @@ const documentsData: DocumentType[] = [
   },
 ];
 
+const instrumentData: InstrumentType[] = [
+  {
+    id: "instrument-1",
+    deal: "Soultrain",
+    instrument: "New Fixed Loan",
+    type: "Loan",
+    subType: "Term Loan",
+    ccy: "USD",
+    issueDate: "2025-01-01",
+    maturityDate: "2030-01-01",
+    createdDate: "2024-10-30",
+    status: "Open",
+    issueInfo: {
+      issuer: "-",
+      issueDate: "2025-01-01",
+      expireDate: "-",
+      maturityDate: "2030-01-01",
+    },
+    feeInfo: {
+      feeType: "Fixed",
+      appliesTo: "Drawdown Amount",
+      rate: "1.0000%",
+      amount: "-",
+    },
+    rateInfo: {
+      rateType: "Fixed",
+      index: "Fixed",
+      accrualFrequency: "1 Month",
+      adjSpread: "8.5600%",
+    },
+  },
+  {
+    id: "instrument-2",
+    deal: "Soultrain",
+    instrument: "Soultrain Revolver",
+    type: "Loan",
+    subType: "Revolver",
+    ccy: "USD",
+    issueDate: "2025-01-01",
+    maturityDate: "2030-01-01",
+    createdDate: "2024-10-30",
+    status: "Open",
+    issueInfo: {
+      issuer: null,
+      issueDate: "2025-01-01",
+      expireDate: null,
+      maturityDate: "2030-01-01",
+    },
+    feeInfo: {
+      feeType: "Fixed",
+      appliesTo: "Drawdown Amount",
+      rate: "1.0000%",
+      amount: null,
+    },
+    rateInfo: {
+      rateType: "Fixed",
+      index: "Fixed",
+      accrualFrequency: "1 Month",
+      adjSpread: "8.5600%",
+    },
+  },
+];
+
 const deals: DealType[] = [
   {
     id: "1",
@@ -644,6 +712,7 @@ const deals: DealType[] = [
         (transaction) => transaction.role === "Lender",
       ),
       documents: documentsData,
+      instruments: instrumentData,
       asOfDate: "2025-01-24",
     },
     borrower: {
@@ -722,6 +791,7 @@ const deals: DealType[] = [
         (transaction) => transaction.role === "Borrower",
       ),
       documents: documentsData,
+      instruments: instrumentData,
       asOfDate: "2025-01-24",
     },
   },

@@ -24,7 +24,7 @@ export const separateWords = (status: string): string => {
   return status.replace(/([a-z])([A-Z])/g, "$1 $2");
 };
 
-export const handleDisplayCorrectDialName = (name: string) => {
+export const handleDisplayCorrectDealName = (name: string) => {
   return deals?.find((deal) => deal.slug === name.toLowerCase())?.displayName;
 };
 
