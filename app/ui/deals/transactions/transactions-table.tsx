@@ -43,7 +43,7 @@ const TransactionsTableView = ({
       : setTransactionsRows(hideScheduledTransactions);
   }, [showScheduledTransactions]);
   return (
-    <>
+    <section id="tour1-step5-14">
       <div
         className={
           "flex w-full items-center justify-between py-2 px-4  h-[50px] border-b-1 border-grey-border"
@@ -81,7 +81,7 @@ const TransactionsTableView = ({
           <Table type={"transaction"} rows={transactionsRows} />
         </Suspense>
       </div>
-    </>
+    </section>
   );
 };
 

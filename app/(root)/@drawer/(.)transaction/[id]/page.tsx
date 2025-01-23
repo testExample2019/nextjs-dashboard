@@ -21,6 +21,7 @@ export default async function TransactionDrawer({
         }
       />
       <div
+        id={"transactionDrawer"}
         className={
           "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto"
         }
@@ -43,7 +44,10 @@ export default async function TransactionDrawer({
             <DrawerClose
               children={
                 isTransactionLender ? (
-                  <div className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all">
+                  <div
+                    id={"tour1-step5-13"}
+                    className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all"
+                  >
                     <div>
                       <button className="px-4 py-2 uppercase border border-red text-red rounded-md hover:border-action-primary hover:text-action-primary">
                         Reject

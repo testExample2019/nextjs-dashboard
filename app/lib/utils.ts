@@ -35,3 +35,9 @@ export const formatCurrency = (amount: number): string => {
     minimumFractionDigits: 2,
   }).format(amount);
 };
+
+export const getDefaultPath = (
+  page: "dashboard" | "transactions" | "documents" | "instruments",
+) => {
+  return `/deals/${page}/${deals[0].slug}/lender/`;
+};

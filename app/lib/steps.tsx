@@ -1,5 +1,10 @@
 import { Tour } from "nextstepjs";
-import { defaultDashboardPath } from "@/app/lib/constants";
+import {
+  defaultDashboardPath,
+  defaultDocumentsPath,
+  defaultInstrumentsPath,
+  defaultTransactionsPath,
+} from "@/app/lib/constants";
 
 export const steps: Tour[] = [
   {
@@ -22,7 +27,6 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -46,7 +50,6 @@ export const steps: Tour[] = [
         pointerPadding: 10,
         pointerRadius: 10,
         nextRoute: "/template/setup",
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -106,7 +109,6 @@ export const steps: Tour[] = [
         prevRoute: "/template",
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -158,7 +160,6 @@ export const steps: Tour[] = [
         showControls: true,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -182,7 +183,6 @@ export const steps: Tour[] = [
         showControls: true,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -200,7 +200,6 @@ export const steps: Tour[] = [
         showControls: true,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -259,7 +258,6 @@ export const steps: Tour[] = [
         nextRoute: defaultDashboardPath,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -277,7 +275,6 @@ export const steps: Tour[] = [
         pointerPadding: 10,
         prevRoute: "/template/setup",
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -308,7 +305,6 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -344,7 +340,6 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -364,7 +359,6 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -412,7 +406,6 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -456,7 +449,6 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -474,7 +466,6 @@ export const steps: Tour[] = [
         pointerPadding: 10,
         pointerRadius: 10,
         nextRoute: "/document/document-1",
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -506,7 +497,6 @@ export const steps: Tour[] = [
         pointerPadding: 10,
         prevRoute: defaultDashboardPath,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
@@ -549,11 +539,10 @@ export const steps: Tour[] = [
         nextRoute: defaultDashboardPath,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
       {
         icon: <></>,
-        title: "Transaction Details",
+        title: "Borrower Requests",
         content: (
           <div className="text-grey-primary">
             <p className="mb-3">
@@ -577,12 +566,259 @@ export const steps: Tour[] = [
           </div>
         ),
         selector: "#tour1-step5-8",
+        side: "bottom",
+        showControls: true,
+        showSkip: false,
+        prevRoute: "/document/document-1",
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "View Transaction Request",
+        content: (
+          <div className="text-grey-primary">
+            Click <span className={"font-semibold"}>Preview</span> to access
+            information
+          </div>
+        ),
+        selector: "#tour1-step5-9",
+        side: "bottom",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        nextRoute: "/transaction/transaction-1",
+      },
+      {
+        icon: <></>,
+        title: "Detailed Request Information",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              When reviewing borrower requests for unscheduled drawdowns or
+              principal prepayments, you will find detailed information that
+              includes:
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Requested Payment Date: </span>{" "}
+                The date on which the borrower wishes the funds to be disbursed
+                or the prepayment to be applied.
+              </li>
+              <li>
+                <span className="font-semibold">Requested Amount: </span> The
+                specific amount that the borrower is requesting for the drawdown
+                or prepayment.
+              </li>
+              <li>
+                <span className="font-semibold">Associated Fees: </span> Fees
+                calculated automatically based on the Loan Terms, providing
+                transparency and clarity regarding any costs associated with the
+                request.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-10",
+        side: "left",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        prevRoute: defaultDashboardPath,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "Detailed Request Information",
+        content: (
+          <div className="text-grey-primary">
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Requested Rate Option: </span>{" "}
+                Information about the rate option the borrower is requesting,
+                ensuring you understand the implications for the loan structure.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-11",
+        side: "left",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        prevRoute: defaultDashboardPath,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "Preferred Bank Account",
+        content: (
+          <div className="text-grey-primary">
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Preferred Bank Account: </span>{" "}
+                Details about the borrower’s preferred bank account for fund
+                transfers, streamlining the process for disbursement.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-12",
         side: "left",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
+      },
+      {
+        icon: <></>,
+        title: "Decision Making",
+        content: (
+          <div className="text-grey-primary">
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Decision Making: </span> This
+                feature allows lenders to assess and respond to requests
+                promptly, facilitating effective communication and
+                decision-making regarding borrower needs.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-13",
+        side: "top",
+        showControls: true,
+        showSkip: false,
+        nextRoute: defaultTransactionsPath,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        viewportID: "transactionDrawer",
+      },
+      {
+        icon: <></>,
+        title: "Transactions Screen",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              <span className="font-semibold">Transactions Screen:</span>{" "}
+              Provides a complete overview of all historical and scheduled
+              transactions, enabling you to effectively track their status and
+              access detailed information.
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Comprehensive List:</span> View
+                an entire list of both historical and scheduled transactions,
+                ensuring you have a complete picture of your financial
+                activities.
+              </li>
+              <li>
+                <span className="font-semibold">Status Tracking:</span> Easily
+                monitor the status of each transaction, whether it is pending,
+                completed, or in progress, helping you stay organized and
+                informed.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-14",
+        side: "top",
+        showControls: true,
+        showSkip: false,
+        prevRoute: defaultDashboardPath,
+        nextRoute: "/transactions/transaction-3",
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "Transaction Details",
+        content: (
+          <div className="text-grey-primary">
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">
+                  Access Transaction Details:
+                </span>{" "}
+                Click on any transaction to access detailed information,
+                including amounts, dates, associated fees, and any relevant
+                documentation.
+              </li>
+            </ul>
+            <p>
+              This screen is designed to enhance your transaction management,
+              providing you with the tools you need to monitor and review all
+              financial activities seamlessly!
+            </p>
+          </div>
+        ),
+        selector: "#tour1-step5-15",
+        side: "top",
+        showControls: true,
+        showSkip: false,
+        prevRoute: defaultTransactionsPath,
+        nextRoute: defaultInstrumentsPath,
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "Instruments Screen",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              <span className="font-semibold"> The Instruments Screen:</span>{" "}
+              displays a comprehensive list of all Loan instruments in your
+              portfolio, making it easy to find and filter specific instruments.
+            </p>
+          </div>
+        ),
+        selector: "#tour1-step5-15",
+        side: "top",
+        showControls: true,
+        showSkip: false,
+        prevRoute: defaultTransactionsPath,
+        nextRoute: "/instruments/instrument-1",
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "Detailed Request Information",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              By selecting a specific Loan instrument from the Instruments
+              Screen, you can access the{" "}
+              <span className="font-semibold">Instrument Details Drawer</span>,
+              where you can view comprehensive information and make adjustments
+              as needed.
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">View Instrument Details: </span>{" "}
+                Access all relevant information about the selected loan
+                instrument, including terms, interest rates, repayment
+                schedules, and associated borrower.
+              </li>
+              <li>
+                <span className="font-semibold">Adjust Settings: </span> If
+                necessary, you can modify settings related to the loan
+                instrument, such as updating interest rates or changing payment
+                terms.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step5-16",
+        side: "left",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        prevRoute: defaultDashboardPath,
+        nextRoute: defaultDocumentsPath,
+        pointerRadius: 10,
       },
       {
         icon: <></>,
@@ -607,7 +843,6 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        blockKeyboardControl: true,
       },
     ],
   },

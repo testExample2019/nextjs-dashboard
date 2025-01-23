@@ -2,7 +2,6 @@ import { deals } from "@/app/lib/placeholder-data";
 import { DealNavType, DealViews } from "@/app/lib/definitions";
 
 const handleDealView = (dealName: string, dealView: DealViews) => {
-  console.log(dealName);
   return dealView === DealViews.Lender
     ? deals.filter((deal) => deal.slug === dealName)[0]?.lender
     : deals.filter((deal) => deal.slug === dealName)[0]?.borrower;

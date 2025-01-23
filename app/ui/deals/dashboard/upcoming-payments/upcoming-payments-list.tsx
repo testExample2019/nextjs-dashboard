@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import {
   DealViews,
@@ -16,6 +16,7 @@ import {
 import Calendar from "@/app/ui/deals/dashboard/upcoming-payments/calendar";
 import Status from "@/app/ui/components/status";
 import { isSameDay } from "date-fns";
+import { useNextStep } from "nextstepjs";
 
 export default function UpcomingPaymentsList({
   upcomingPayments,
@@ -30,6 +31,15 @@ export default function UpcomingPaymentsList({
     PaymentTypes.Credits,
   );
   const payments = upcomingPayments?.[activePaymentType];
+
+  const { currentStep } = useNextStep();
+
+  useEffect(() => {
+    console.log(currentStep);
+    if (currentStep === 16) {
+      setActivePaymentType(PaymentTypes.Debits);
+    }
+  }, [currentStep]);
 
   return (
     <div className={"flex justify-between w-full flex-col lg:flex-row"}>
@@ -56,6 +66,7 @@ export default function UpcomingPaymentsList({
         <div className="mt-4 space-y-4">
           {payments?.map((payment, index) => (
             <div
+              id={"tour1-step5-8"}
               key={payment.id}
               className={`${payment.transactionId && path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-grey-border`}
             >
@@ -144,7 +155,7 @@ export default function UpcomingPaymentsList({
                             router.push(`/transaction/${payment.transactionId}`)
                           }
                           className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
-                          id="menu-button"
+                          id="tour1-step5-9"
                           aria-haspopup="true"
                         >
                           Preview
