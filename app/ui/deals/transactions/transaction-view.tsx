@@ -35,14 +35,14 @@ const TransactionView = ({
   );
 
   useEffect(() => {
-    if (currentStep === 17) {
+    if (currentStep === 16) {
       startNextStep("mainTour");
-      setCurrentStep(17);
+      setCurrentStep(16);
     }
-    if (currentStep === 19) {
+    if (currentStep === 18) {
       setActiveTab(TransactionTabsType.RateInfo);
     }
-    if (currentStep === 20) {
+    if (currentStep === 19) {
       setActiveTab(TransactionTabsType.Allocations);
     }
   }, [currentStep]);
@@ -53,10 +53,10 @@ const TransactionView = ({
 
   return (
     <div className="bg-white rounded-lg p-4">
-      <div id={"tour1-step24"}>
-        <div id={"tour1-step19"}>
-          <div id={"tour1-step20"}>
-            <div id={"tour1-step21"}>
+      <div id={"tour1-step21"}>
+        <div id={"tour1-step16"}>
+          <div id={"tour1-step17"}>
+            <div id={"tour1-step18"}>
               <div className="flex justify-between items-end border-b pb-4 mb-4">
                 <div>
                   <h3 className="text-sm text-grey font-semibold uppercase">

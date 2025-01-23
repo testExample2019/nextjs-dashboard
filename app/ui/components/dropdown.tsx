@@ -34,13 +34,31 @@ export const ButtonDropdown = <T,>({
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
+  console.log(id);
 
   useEffect(() => {
-    (currentStep === 12 && id === "tour1-step14") ||
-    (currentStep === 13 && id === "tour1-step14")
+    (currentStep === 12 && id === "tour1-step11") ||
+    (currentStep === 28 && id === "tour1-step27")
       ? setIsDropdownOpen(true)
       : setIsDropdownOpen(false);
   }, [currentStep]);
+
+  // Close dropdown if clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>

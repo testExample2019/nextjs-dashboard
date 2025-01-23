@@ -44,7 +44,7 @@ export const steps: Tour[] = [
             <p>Let’s get started by selecting a simple Fixed loan template.</p>
           </div>
         ),
-        selector: "#tour1-step2",
+        selector: "#tour1-step0",
         side: "bottom",
         showSkip: false,
         showControls: true,
@@ -103,7 +103,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step3",
+        selector: "#tour1-step1",
         side: "right",
         showSkip: false,
         showControls: true,
@@ -155,7 +155,7 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step4",
+        selector: "#tour1-step2",
         side: "left",
         showSkip: false,
         showControls: true,
@@ -178,7 +178,7 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step5",
+        selector: "#tour1-step3",
         side: "top",
         showSkip: false,
         showControls: true,
@@ -195,7 +195,7 @@ export const steps: Tour[] = [
             <span className="font-semibold">Advanced Mode</span>.
           </div>
         ),
-        selector: "#tour1-step6",
+        selector: "#tour1-step4",
         side: "bottom",
         showSkip: false,
         showControls: true,
@@ -252,7 +252,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step7",
+        selector: "#tour1-step5",
         side: "right",
         showSkip: false,
         showControls: true,
@@ -270,7 +270,7 @@ export const steps: Tour[] = [
             track and manage your lending activities.
           </div>
         ),
-        selector: "#tour1-step8",
+        selector: "#tour1-step6",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
@@ -300,7 +300,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step9",
+        selector: "#tour1-step7",
         side: "right",
         showControls: true,
         showSkip: false,
@@ -335,7 +335,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step10",
+        selector: "#tour1-step8",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -354,7 +354,7 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step11",
+        selector: "#tour1-step9",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -401,7 +401,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step12",
+        selector: "#tour1-step10",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -444,24 +444,8 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step13",
+        selector: "#tour1-step11",
         side: "left",
-        showControls: true,
-        showSkip: false,
-        pointerPadding: 10,
-        pointerRadius: 10,
-      },
-      {
-        icon: <></>,
-        title: "View Notice",
-        content: (
-          <div className="text-grey-primary">
-            Click <span className={"font-semibold"}>View notice</span> to access
-            information
-          </div>
-        ),
-        selector: "#tour1-step14",
-        side: "top",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
@@ -491,7 +475,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step15",
+        selector: "#tour1-step12",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -533,7 +517,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step16",
+        selector: "#tour1-step13",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -550,7 +534,7 @@ export const steps: Tour[] = [
               <span className="font-semibold">
                 Borrower Requests for Unscheduled Drawdowns and Principal
                 Prepayments
-              </span>
+              </span>{" "}
               Borrowers may occasionally request unscheduled drawdowns or
               principal prepayments. The Dashboard provides lenders with the
               ability to efficiently review these requests.
@@ -566,7 +550,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step17",
+        selector: "#tour1-step14",
         side: "bottom",
         showControls: true,
         showSkip: false,
@@ -583,7 +567,7 @@ export const steps: Tour[] = [
             information
           </div>
         ),
-        selector: "#tour1-step18",
+        selector: "#tour1-step15",
         side: "bottom",
         showControls: true,
         showSkip: false,
@@ -621,7 +605,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step19",
+        selector: "#tour1-step16",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -643,7 +627,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step20",
+        selector: "#tour1-step17",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -665,7 +649,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step21",
+        selector: "#tour1-step18",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -687,7 +671,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step22",
+        selector: "#tour1-step19",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -723,7 +707,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step23",
+        selector: "#tour1-step20",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -754,7 +738,7 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step24",
+        selector: "#tour1-step21",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -775,7 +759,7 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step25",
+        selector: "#tour1-step22",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -812,7 +796,7 @@ export const steps: Tour[] = [
             </ul>
           </div>
         ),
-        selector: "#tour1-step26",
+        selector: "#tour1-step23",
         side: "left",
         showControls: true,
         showSkip: false,
@@ -854,7 +838,7 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step27",
+        selector: "#tour1-step24",
         side: "top",
         showControls: true,
         showSkip: false,
@@ -874,8 +858,8 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step28",
-        side: "bottom",
+        selector: "#tour1-step25",
+        side: "bottom-left",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
@@ -888,7 +872,7 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary">
             <p className="mb-3">
-              the{" "}
+              The{" "}
               <span className="font-semibold">Upcoming Payments Widget</span>{" "}
               showcases scheduled payments from the borrower’s perspective.
             </p>
@@ -920,12 +904,95 @@ export const steps: Tour[] = [
             </p>
           </div>
         ),
-        selector: "#tour1-step29",
+        selector: "#tour1-step26",
         side: "bottom",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "Information About Upcoming Payments",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              In the{" "}
+              <span className="font-semibold">Upcoming Payments Widget</span>{" "}
+              for borrowers, users can quickly access essential features related
+              to their scheduled payments:
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">
+                  Access Transaction Details:
+                </span>{" "}
+                Borrowers can easily view detailed information about each
+                scheduled payment, including amounts, due dates, and any
+                associated fees.
+              </li>
+              <li>
+                <span className="font-semibold">View Invoice Document: </span>{" "}
+                The widget allows borrowers to access the related invoice
+                document for reference, ensuring they have all necessary
+                information at hand.
+              </li>
+              <li>
+                <span className="font-semibold">Proceed to Payment: </span>{" "}
+                Borrowers can initiate the payment process directly from the
+                widget, streamlining the transaction and ensuring timely
+                payments.
+              </li>
+              <li>
+                <span className="font-semibold">Contact Lender: </span> If any
+                issues or adjustments are needed, borrowers can quickly reach
+                out to their lender through the widget to discuss their
+                concerns.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step27",
+        side: "left",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        nextRoute: "/document/document-2",
+      },
+      {
+        icon: <></>,
+        title: "Invoice Information",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              <span className="font-semibold">Upon clicking View Invoice</span>{" "}
+              in the Upcoming Payments Widget, the invoice document addressed to
+              the Borrower will be displayed in a drawer.
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Document Preview:</span> The
+                drawer provides a clear preview of the invoice document,
+                allowing the borrower to review all relevant information,
+                including amounts due, payment terms, and any additional notes.
+              </li>
+              <li>
+                <span className="font-semibold">Download Option: </span> If the
+                borrower needs a copy for their records, they can easily
+                download the PDF file by clicking the download button, ensuring
+                they have access to important documentation.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step28",
+        side: "left",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        prevRoute: defaultDashboardBorrowerPath,
       },
     ],
   },

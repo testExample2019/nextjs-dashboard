@@ -3,7 +3,6 @@ import {
   DealsActions,
   DealViews,
   PaymentActions,
-  PaymentApproveActions,
 } from "@/app/lib/definitions";
 import { getDefaultPath } from "@/app/lib/utils";
 
@@ -43,23 +42,9 @@ export const BorrowerPaymentOptionsDropdownItems = [
     label: "View Transaction",
     actionType: PaymentActions.ViewTransaction,
   },
-  { id: 2, label: "View Notice", actionType: PaymentActions.ViewNotice },
+  { id: 2, label: "View Invoice", actionType: PaymentActions.ViewInvoice },
   { id: 3, label: "Make Payment", actionType: PaymentActions.Confirm },
   { id: 4, label: "Contact Lender", actionType: PaymentActions.Contact },
-];
-
-export const PaymentApproveDropdownItems = [
-  {
-    id: 1,
-    label: "Approve transaction",
-    actionType: PaymentApproveActions.Approve,
-  },
-  {
-    id: 2,
-    label: "Approve and Pay",
-    actionType: PaymentApproveActions.ApproveAndPay,
-  },
-  { id: 3, label: "Reject", actionType: PaymentApproveActions.Reject },
 ];
 
 export const today = new Date(2025, 0, 24); // Month is 0-indexed: 11 = December

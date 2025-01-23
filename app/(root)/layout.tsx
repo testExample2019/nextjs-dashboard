@@ -8,7 +8,7 @@ export default function PagesLayout(props: {
   return (
     <>
       <div
-        id={"tour1-step8"}
+        id={"tour1-step6"}
         className="flex flex-col h-screen max-w-screen-2xl m-auto"
       >
         <NavBar />

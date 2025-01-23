@@ -81,7 +81,7 @@ const LoanTemplatePage = () => {
           onboarding.
         </p>
         <div
-          id="tour1-step2"
+          id="tour1-step0"
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10"
         >
           {templates.map((template, index) => (

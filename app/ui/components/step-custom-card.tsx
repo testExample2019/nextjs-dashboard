@@ -12,7 +12,7 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
   arrow,
 }) => {
   return (
-    <div className="step-custom-card bg-white p-6 rounded-lg shadow-lg flex flex-col gap-2 w-[35vw] border border-grey-border">
+    <div className="step-custom-card bg-white p-6 rounded-lg shadow-lg flex flex-col gap-2 min-w-[450px] w-fit border border-grey-border">
       <div className="flex items-center justify-between">
         <h2 className="text-22 text-grey-primary font-semibold">
           {step.title}
@@ -29,18 +29,21 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
           style={{ width: `${((currentStep + 1) / totalSteps) * 100}%` }}
         ></div>
       </div>
+      <span className={"text-grey-secondary text-xs"}>
+        {currentStep + 1} of {totalSteps} steps
+      </span>
       {step.showControls && (
         <div className="flex justify-between mt-3 gap-4">
           <button
             onClick={prevStep}
             disabled={currentStep === 0}
-            className="bg-white border border-grey-border text-grey-primary px-4 py-2 rounded-md font-semibold"
+            className="bg-white border border-grey-border text-grey-primary px-4 py-2 rounded-md font-semibold w-full"
           >
             Previous
           </button>
           <button
             onClick={nextStep}
-            className="bg-action-primary text-white px-4 py-2 rounded-md font-semibold"
+            className="bg-action-primary text-white px-4 py-2 rounded-md font-semibold w-full"
           >
             {currentStep === totalSteps - 1 ? "Finish" : "Next"}
           </button>

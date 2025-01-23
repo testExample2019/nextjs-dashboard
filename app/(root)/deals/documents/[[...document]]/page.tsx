@@ -43,7 +43,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
     notFound();
   }
   return (
-    <section id="tour1-step27">
+    <section id="tour1-step24">
       <div
         className={
           "flex w-full items-center justify-between py-2 px-4 h-[50px] border-b-1 border-grey-border"

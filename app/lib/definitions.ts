@@ -221,6 +221,7 @@ export enum DealBorrowerActions {
 
 export enum PaymentActions {
   ViewNotice = "VIEW_NOTICE",
+  ViewInvoice = "VIEW_INVOICE",
   ViewTransaction = "VIEW_TRANSACTION",
   Confirm = "CONFIRM",
   Contact = "CONTACT",
@@ -235,6 +236,12 @@ export enum PaymentApproveActions {
 export enum DealViews {
   Lender = "lender",
   Borrower = "borrower",
+}
+export enum DealPages {
+  Dashboard = "dashboard",
+  Transactions = "transactions",
+  Documents = "documents",
+  Instruments = "instruments",
 }
 
 export enum PaymentTypes {

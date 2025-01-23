@@ -408,7 +408,7 @@ const transactionsData: TransactionType[] = [
 const documentsData: DocumentType[] = [
   {
     id: "document-1",
-    stepId: "tour1-step15",
+    stepId: "tour1-step12",
     document: "Soultrain 02-03-2025",
     documentType: "Transaction",
     subType: "Final Notice",
@@ -673,7 +673,7 @@ const deals: DealType[] = [
             total: "$100,000.00",
           },
           {
-            id: "credit-2",
+            id: "tour1-step11",
             dueDate: "2025-02-03",
             status: "in 10 days",
             interest: "$849,315.07",
@@ -763,7 +763,7 @@ const deals: DealType[] = [
             total: "$100,000.00",
           },
           {
-            id: "debit-2",
+            id: "tour1-step27",
             dueDate: "2025-02-03",
             status: "in 10 days",
             interest: "$849,315.07",

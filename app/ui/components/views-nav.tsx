@@ -1,25 +1,31 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { replaceViewItemInURL } from "@/app/lib/utils";
 import { usePathname, useRouter } from "next/navigation";
 import { DealViews } from "@/app/lib/definitions";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import { ViewDropdownItems } from "@/app/lib/constants";
+import { useNextStep } from "nextstepjs";
 
 export default function ViewsNav() {
+  const { currentStep, setCurrentStep, startNextStep } = useNextStep();
+
   const path = usePathname();
   const router = useRouter();
-  const [activeView, setActiveView] = useState(
-    path.includes("template")
-      ? DealViews.Lender
-      : path.includes(DealViews.Lender)
-        ? DealViews.Lender
-        : DealViews.Borrower,
-  );
+  const [activeView, setActiveView] = useState(DealViews.Lender);
+  useEffect(() => {
+    if (currentStep >= 27 && activeView === DealViews.Lender) {
+      setActiveView(DealViews.Borrower);
+    }
+  }, [currentStep]);
+
+  useEffect(() => {
+    path.includes(DealViews.Borrower) && setActiveView(DealViews.Borrower);
+  }, [path]);
 
   return (
-    <div id={"tour1-step28"}>
+    <div id={"tour1-step25"}>
       <div className="flex h-full flex-col">
         <div className="flex grow flex-row justify-between space-x-2">
           <div className="inline-flex items-center ">

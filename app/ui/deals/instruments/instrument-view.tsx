@@ -25,15 +25,15 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
   const [activeTab, setActiveTab] = useState<TabsType>(TabsType.InstrumentInfo);
 
   useEffect(() => {
-    if (currentStep === 24) {
+    if (currentStep === 23) {
       startNextStep("mainTour");
-      setCurrentStep(24);
+      setCurrentStep(23);
     }
   }, [currentStep]);
 
   return (
     <div className="bg-white rounded-lg p-6">
-      <div id={"tour1-step26"}>
+      <div id={"tour1-step23"}>
         <div className="flex justify-between items-end border-b pb-4 mb-4">
           <div>
             <h3 className="text-sm text-grey font-semibold uppercase">

@@ -247,7 +247,7 @@ const FormTable = () => {
                   <option>{formData.rateType}</option>
                 </select>
               </div>
-              <div id={"tour1-step5"}>
+              <div id={"tour1-step3"}>
                 <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 relative h-6">
                   Annual Rate
                   <Tooltip content={"lorem"} />

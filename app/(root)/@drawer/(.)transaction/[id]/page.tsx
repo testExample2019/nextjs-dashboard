@@ -45,7 +45,7 @@ export default async function TransactionDrawer({
               children={
                 isTransactionLender ? (
                   <div
-                    id={"tour1-step22"}
+                    id={"tour1-step19"}
                     className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all"
                   >
                     <div>

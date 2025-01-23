@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
-import { DealNavType } from "@/app/lib/definitions";
+import { DealNavType, DealPages } from "@/app/lib/definitions";
 import { SideNavLink } from "@/app/ui/deals/side-nav-link";
 import { useNextStep } from "nextstepjs";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 export default function DealsSideNav({
   dealsNavData,
@@ -12,15 +12,20 @@ export default function DealsSideNav({
 }) {
   const path = usePathname();
   const { setCurrentStep, startNextStep, currentStep } = useNextStep();
-  const router = useRouter();
 
+  console.log(currentStep);
   useEffect(() => {
     startNextStep("mainTour");
-    setCurrentStep(7);
+    if (currentStep === 0) {
+      path.includes(DealPages.Dashboard) && setCurrentStep(7);
+      path.includes(DealPages.Transactions) && setCurrentStep(21);
+      path.includes(DealPages.Instruments) && setCurrentStep(23);
+      path.includes(DealPages.Documents) && setCurrentStep(25);
+    }
   }, []);
 
   return (
-    <div id={`tour1-step9`} className={"flex  md:flex-col gap-4"}>
+    <div id={`tour1-step7`} className={"flex  md:flex-col gap-4"}>
       {dealsNavData.map(
         ({ id, slug, totalCommitment, funded, unfunded, displayName }) => {
           return (
