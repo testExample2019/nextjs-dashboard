@@ -52,26 +52,25 @@ export type PaymentType = {
   drawDown?: string;
 };
 
+type TransactionNestedType = Omit<
+  TransactionType,
+  "type" | "paymentType" | "role" | "transactionDetails" | "nestedRows"
+>;
+
 export type TransactionType = {
   id: string;
-  type: "Transaction" | "Transaction Request" | "Drawdown Request";
   transaction: "Drawdown" | "Interest Payment" | "Fee Payment";
   deal: string;
   instrument: string;
   customer: string;
-  paymentDate: string;
   amount: string;
+  paymentDate: string;
+  status: "Pending" | "NotPaid" | "Paid" | "Scheduled";
+  type: "Transaction" | "Transaction Request" | "Drawdown Request";
   paymentType: "Credit" | "Debit";
-  borrower: string;
-  ccy: string;
-  counterparty: string;
   role: "Lender" | "Borrower";
-  committed: string;
-  funded: string;
-  unfunded: string;
-  status: "Open" | "Reviewed" | "Pending" | "NotPaid" | "Paid" | "Scheduled";
   transactionDetails: TransactionDetailsType;
-  nestedRows?: any;
+  nestedRows?: TransactionNestedType[];
 };
 
 export type PositionType = {
@@ -106,7 +105,7 @@ export type DocumentType = {
   documentDate: string;
   fileType: string;
   status: "Open" | "Reviewed" | "Pending" | "Published";
-  transactionDetails: TransactionDetailsType;
+  documentDetails: TransactionDetailsType;
   nestedRows: any;
 };
 
@@ -161,13 +160,15 @@ export type NoticeType = {
 };
 
 type TransactionDetailsType = {
-  type: "Interest Payment" | "Drawdown" | string; // Transaction type
-  amount: string; // Transaction amount with currency formatting
-  txnUpdated: string; // Date and time the transaction was last updated
   transactionInfo: {
-    effectiveDate: string; // Effective date (ISO format)
-    paymentDate: string; // Payment date (ISO format)
-    amount: string; // Transaction amount with currency formatting
+    deal: string;
+    counterparty: string;
+    instrument: string;
+    paymentDate: string;
+    amount: string;
+    effectiveDate?: string;
+    commitment?: string;
+    unfundedCommitment?: string;
   };
   rateInfo: {
     type: "Fixed" | "Floating"; // Type of rate
@@ -203,10 +204,10 @@ type TransactionDetailsType = {
     amount: string; // Calculated interest amount with currency formatting
   }[];
   feeInfo?: {
-    feeType: string; // Type of the fee (e.g., "Drawdown Fee")
-    appliesTo: string; // What the fee applies to (e.g., "Drawdown Amount")
-    rate: string; // Fee rate as a percentage (e.g., "0.1000%")
-    feeAmount: string; // Fee amount with currency formatting (e.g., "100,000.00 USD")
+    feeType: string;
+    appliesTo: string;
+    rate: string;
+    feeAmount: string;
   };
 };
 

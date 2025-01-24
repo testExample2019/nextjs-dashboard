@@ -5,6 +5,8 @@ import { notFound } from "next/navigation";
 import Status from "@/app/ui/components/status";
 import { ChevronDown } from "@/app/ui/icons";
 import { useNextStep } from "nextstepjs";
+import { DrawerTable } from "@/app/ui/components/drawer-table";
+import { DrawerContent } from "@/app/ui/components/drawer-content";
 
 enum TransactionTabsType {
   TransactionInfo = "transactionInfo",
@@ -87,227 +89,35 @@ const TransactionView = ({
 
                 {activeTab === TransactionTabsType.TransactionInfo && (
                   <>
-                    <div className="space-y-6">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Deal
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.deal}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Counterparty
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.counterparty}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Instrument
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.instrument}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Payment Date
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.paymentDate}
-                          </p>
-                        </div>
-                        {isInterestPayment && (
-                          <div>
-                            <p className="text-sm text-grey font-semibold px-2">
-                              Effective Date
-                            </p>
-                            <p className="font-medium text-grey-primary p-2">
-                              {transaction.paymentDate}
-                            </p>
-                          </div>
+                    <DrawerContent
+                      rows={transaction.transactionDetails.transactionInfo}
+                    />
+                    <div className="mt-6">
+                      {!isInterestPayment &&
+                        !!transaction.transactionDetails.feeInfo && (
+                          <DrawerContent
+                            title={"Fee info"}
+                            rows={transaction.transactionDetails.feeInfo}
+                          />
                         )}
-                        {!isInterestPayment && (
-                          <div>
-                            <p className="text-sm text-grey font-semibold px-2">
-                              Commitment
-                            </p>
-                            <p className="font-medium text-grey-primary p-2">
-                              {transaction.committed}
-                            </p>
-                          </div>
-                        )}
-                        {!isInterestPayment && (
-                          <div>
-                            <p className="text-sm text-grey font-semibold">
-                              Unfunded Commitment
-                            </p>
-                            <p className="font-medium text-grey-primary p-2">
-                              {transaction.unfunded}
-                            </p>
-                          </div>
-                        )}
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Amount
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.amount}
-                          </p>
-                        </div>
-                      </div>
                     </div>
-                    {!isInterestPayment && (
-                      <>
-                        <div className="mt-6 pt-4">
-                          <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
-                            Fee Info
-                          </h2>
-                          <div className="grid grid-cols-2 gap-4">
-                            <div>
-                              <p className="text-sm text-grey font-semibold px-2">
-                                Fee Type
-                              </p>
-                              <p className="font-medium text-grey-primary p-2">
-                                {
-                                  transaction.transactionDetails.feeInfo
-                                    ?.feeType
-                                }
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-sm text-grey font-semibold px-2">
-                                Applies To
-                              </p>
-                              <p className="font-medium text-grey-primary p-2">
-                                {
-                                  transaction.transactionDetails.feeInfo
-                                    ?.appliesTo
-                                }
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-sm text-grey font-semibold px-2">
-                                Rate
-                              </p>
-                              <p className="font-medium text-grey-primary p-2">
-                                {transaction.transactionDetails.feeInfo?.rate}
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-sm text-grey font-semibold px-2">
-                                Fee Amount
-                              </p>
-                              <p className="font-medium text-grey-primary p-2">
-                                {
-                                  transaction.transactionDetails.feeInfo
-                                    ?.feeAmount
-                                }
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </>
-                    )}
+
                     {isInterestPayment && (
                       <>
-                        <div className="mt-6 pt-4">
-                          <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
-                            Rate Info
-                          </h2>
-                          <div className="grid grid-cols-2 gap-4">
-                            <div>
-                              <p className="text-sm text-grey font-semibold px-2">
-                                Type
-                              </p>
-                              <p className="font-medium text-grey-primary p-2">
-                                {transaction.transactionDetails.rateInfo.type}
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-sm text-grey font-semibold px-2">
-                                Day Count
-                              </p>
-                              <p className="font-medium text-grey-primary p-2">
-                                {
-                                  transaction.transactionDetails.rateInfo
-                                    .dayCount
-                                }
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-sm text-grey font-semibold px-2">
-                                Accrual Start
-                              </p>
-                              <p className="font-medium text-grey-primary p-2">
-                                {
-                                  transaction.transactionDetails.rateInfo
-                                    .accrualStartDate
-                                }
-                              </p>
-                            </div>
-                            <div>
-                              <p className="text-sm text-grey font-semibold px-2">
-                                Accrual End
-                              </p>
-                              <p className="font-medium text-grey-primary p-2">
-                                {
-                                  transaction.transactionDetails.rateInfo
-                                    .accrualEndDate
-                                }
-                              </p>
-                            </div>
-                          </div>
-                        </div>
+                        <DrawerContent
+                          title={"Rate info"}
+                          rows={transaction.transactionDetails.rateInfo}
+                        />
                         <div className="mt-6">
                           <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
                             Interest Amount
                           </h2>
-                          <table className="w-full text-left border-collapse">
-                            <thead>
-                              <tr>
-                                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
-                                  Date
-                                </th>
-                                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
-                                  Rate
-                                </th>
-                                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
-                                  Principal
-                                </th>
-                                <th className="border-b py-2 text-sm text-grey font-semibold uppercase">
-                                  Amount
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {transaction.transactionDetails.interestAmount?.map(
-                                (interest, index) => (
-                                  <tr key={index}>
-                                    <td className="py-2 text-grey-primary text-base">
-                                      {interest.date}
-                                    </td>
-                                    <td className="py-2 text-grey-primary text-base">
-                                      {interest.rate}
-                                    </td>
-                                    <td className="py-2 text-grey-primary text-base">
-                                      {interest.principal}
-                                    </td>
-                                    <td className="py-2 text-grey-primary text-base">
-                                      {interest.amount}
-                                    </td>
-                                  </tr>
-                                ),
-                              )}
-                            </tbody>
-                          </table>
+                          <DrawerTable
+                            rows={
+                              transaction.transactionDetails.interestAmount ||
+                              []
+                            }
+                          />
                         </div>
                       </>
                     )}
@@ -316,69 +126,12 @@ const TransactionView = ({
                 {activeTab === TransactionTabsType.RateInfo && (
                   <>
                     <div>
-                      <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
-                        Rate Option Details:
-                        {transaction.transactionDetails.rateInfo.type}
-                      </h2>
-                      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Type
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.transactionDetails.rateInfo.type}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Day Count
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.transactionDetails.rateInfo.dayCount}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            PIK Option
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.transactionDetails.rateInfo.pikOption}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Incl. Accrual End
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {
-                              transaction.transactionDetails.rateInfo
-                                .includeAccrualEnd
-                            }
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Accrual Start
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {
-                              transaction.transactionDetails.rateInfo
-                                .accrualStartDate
-                            }
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Accrual End
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {
-                              transaction.transactionDetails.rateInfo
-                                .accrualEndDate
-                            }
-                          </p>
-                        </div>
-                      </div>
+                      <DrawerContent
+                        title={`Rate Option Details:
+                        ${transaction.transactionDetails.rateInfo.type}`}
+                        rows={transaction.transactionDetails.rateInfo}
+                        cols={4}
+                      />
                     </div>
                     <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
                       Rate Info
@@ -386,19 +139,19 @@ const TransactionView = ({
                     <table className="w-full text-left border-collapse">
                       <thead>
                         <tr>
-                          <th className="border-b py-2 text-xs text-grey font-semibold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             DATE
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-semibold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             MARKET INDEX
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-semibold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             ADJ INDEX RATE
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-semibold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             ADJ SPREAD
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-semibold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             ALL IN RATE
                           </th>
                         </tr>
@@ -413,15 +166,17 @@ const TransactionView = ({
                           </td>
                         </tr>
                         <tr>
-                          <td className="px-4 py-2 border-t text-sm">
+                          <td className="px-4 py-2 border-t text-base">
                             2025-01-01
                           </td>
-                          <td className="px-4 py-2 border-t text-sm">Fixed</td>
-                          <td className="px-4 py-2 border-t text-sm">-</td>
-                          <td className="px-4 py-2 border-t text-sm">
+                          <td className="px-4 py-2 border-t text-base">
+                            Fixed
+                          </td>
+                          <td className="px-4 py-2 border-t text-base">-</td>
+                          <td className="px-4 py-2 border-t text-base">
                             8.5600%
                           </td>
-                          <td className="px-4 py-2 border-t text-sm">
+                          <td className="px-4 py-2 border-t text-base">
                             8.5600%
                           </td>
                         </tr>
@@ -434,16 +189,16 @@ const TransactionView = ({
                     <table className="w-full text-left border-collapse">
                       <thead>
                         <tr>
-                          <th className="border-b py-2 text-xs text-grey font-semibold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             Role
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-semibold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             Counterparty
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-semibold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             Amount
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-semibold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             Share
                           </th>
                         </tr>
@@ -474,107 +229,23 @@ const TransactionView = ({
                       </tbody>
                     </table>
                     <div className="mt-6 pt-4">
-                      <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
-                        Bank Account
-                      </h2>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Account Name
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {
-                              transaction.transactionDetails.bankAccount
-                                .accountName
-                            }
-                          </p>
-                        </div>
-                        <Fragment />
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Bank
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.transactionDetails.bankAccount.bank}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Bic
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.transactionDetails.bankAccount.bic}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            ABA
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.transactionDetails.bankAccount.aba}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            IBAN
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {transaction.transactionDetails.bankAccount.iban}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Account Number
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {
-                              transaction.transactionDetails.bankAccount
-                                .accountNumber
-                            }
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Currency
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {
-                              transaction.transactionDetails.bankAccount
-                                .currency
-                            }
-                          </p>
-                        </div>
-                      </div>
+                      <DrawerContent
+                        title={`Bank Account`}
+                        rows={transaction.transactionDetails.bankAccount}
+                      />
                     </div>
-                    <div className="mt-6 pt-4">
-                      <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
-                        Correspondent Bank
-                      </h2>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Bank
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {
-                              transaction.transactionDetails
-                                .correspondingBankAccount?.bank
-                            }
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold px-2">
-                            Bic
-                          </p>
-                          <p className="font-medium text-grey-primary p-2">
-                            {
-                              transaction.transactionDetails
-                                .correspondingBankAccount?.bic
-                            }
-                          </p>
-                        </div>
+                    {transaction.transactionDetails
+                      .correspondingBankAccount && (
+                      <div className="mt-6 pt-4">
+                        <DrawerContent
+                          title={`Correspondent Bank`}
+                          rows={
+                            transaction.transactionDetails
+                              .correspondingBankAccount
+                          }
+                        />
                       </div>
-                    </div>
+                    )}
                   </>
                 )}
               </div>
