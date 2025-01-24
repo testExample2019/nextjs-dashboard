@@ -8,7 +8,7 @@ import { ChevronDown, ChevronLeft, Document } from "@/app/ui/icons";
 
 interface TableProps {
   type: "document" | "transaction" | "position" | "instrument";
-  rows: { [key: string]: string | number | [] }[];
+  rows: { [key: string]: string | number | any }[];
 }
 
 export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
