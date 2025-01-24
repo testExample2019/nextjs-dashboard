@@ -19,7 +19,7 @@ const SideNavPage = async () => {
           children={
             <button
               type="button"
-              className={`inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm uppercase font-semibold text-action-primary outline-1 shadow-sm border border-action-primary  hover:bg-gray-50`}
+              className={`inline-flex w-full justify-center gap-x-1.5 rounded bg-white px-3 py-2 text-sm uppercase font-semibold text-action-primary outline-1 shadow-sm border border-action-primary  hover:bg-gray-50`}
               id="menu-button"
               aria-haspopup="true"
             >
@@ -45,7 +45,7 @@ const SideNavPage = async () => {
       </div>
 
       <div className={"py-2 px-4 sticky top-0"}>
-        <h4 className={"text-sm text-grey-light mb-2"}>
+        <h4 className={"text-sm text-grey mb-2"}>
           Select a deal to filter the information on your dashboard:
         </h4>
 

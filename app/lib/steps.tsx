@@ -12,7 +12,7 @@ export const steps: Tour[] = [
     tour: "mainTour",
     steps: [
       {
-        icon: "👋",
+        icon: <></>,
         title: "Welcome to DirectLend Platform!",
         content: (
           <div className="text-grey-primary">
@@ -859,7 +859,7 @@ export const steps: Tour[] = [
           </div>
         ),
         selector: "#tour1-step25",
-        side: "bottom-left",
+        side: "bottom",
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
@@ -993,6 +993,200 @@ export const steps: Tour[] = [
         pointerPadding: 10,
         pointerRadius: 10,
         prevRoute: defaultDashboardBorrowerPath,
+        nextRoute: defaultDashboardBorrowerPath,
+      },
+      {
+        icon: <></>,
+        title: "Unscheduled Transactions Actions",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              In the Borrower View, users have the ability to initiate
+              unscheduled transactions, including:
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Drawdown Requests: </span>{" "}
+                Borrowers can submit requests for unscheduled drawdowns,
+                allowing them to access additional funds as needed. This feature
+                enables flexibility in managing their financial needs.
+              </li>
+              <li>
+                <span className="font-semibold">
+                  Principal Prepayment Requests:{" "}
+                </span>{" "}
+                Borrowers can also initiate requests for principal prepayments,
+                allowing them to pay down their loan balance earlier than
+                scheduled. This can help reduce interest costs and improve their
+                overall financial position.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step29",
+        side: "right",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        nextRoute: "/transaction/transaction-5",
+      },
+      {
+        icon: <></>,
+        title: "Requesting an Unscheduled Transaction",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              Initiating an unscheduled transaction is straightforward for
+              borrowers:
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Specify Payment Date:</span>
+                Borrowers need to enter the desired payment date for the
+                transaction.
+              </li>
+              <li>
+                <span className="font-semibold">Enter Amount:</span>
+                Specify the amount they wish to request for the drawdown or
+                principal prepayment.
+              </li>
+              <li>
+                <span className="font-semibold">
+                  Select Rate Option (If Applicable):
+                </span>
+                Borrowers can choose from the available rate options to tailor
+                the transaction according to their needs.
+              </li>
+              <li>
+                <span className="font-semibold">
+                  Automatic Population of Attributes:
+                </span>
+                Remaining attributes will be automatically populated based on
+                the associated Loan Terms, ensuring a hassle-free and accurate
+                submission process.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step30",
+        side: "left",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+        prevRoute: defaultDashboardBorrowerPath,
+        nextRoute: defaultDashboardBorrowerPath,
+      },
+      {
+        icon: <></>,
+        title: "Unscheduled Transaction Requests Tracking",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              Borrowers can easily track the current status of their unscheduled
+              transaction requests directly on their Dashboard:
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Status Overview:</span>
+                The Dashboard provides a clear overview of all submitted
+                requests, allowing borrowers to see whether their requests are
+                pending, approved, or declined.
+              </li>
+              <li>
+                <span className="font-semibold">
+                  Direct Communication with Lenders:
+                </span>
+                All requests are communicated directly to the lenders through
+                the portal, ensuring a streamlined process and timely updates.
+              </li>
+              <li>
+                <span className="font-semibold">Confirmation Requirement:</span>
+                Borrowers will be notified when their requests require lender
+                confirmation, allowing them to stay informed about the progress
+                and any actions needed.
+              </li>
+            </ul>
+            <p className="mt-3">
+              Once an unscheduled transaction is confirmed by the lender, the
+              system will automatically recalculate the affected payment
+              schedule:
+            </p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                <span className="font-semibold">Automatic Recalculation:</span>
+                The payment schedule will be adjusted to reflect the new
+                transaction details, ensuring that all parties have the most
+                up-to-date information.
+              </li>
+              <li>
+                <span className="font-semibold">Impact Analysis:</span>
+                The recalculated schedule will clearly show how the transaction
+                affects the loan, including changes to payment amounts, due
+                dates, and overall loan balance.
+              </li>
+              <li>
+                <span className="font-semibold">
+                  Visibility for Counterparties:
+                </span>
+                Both borrowers and lenders can view the updated payment
+                schedule, promoting transparency and understanding of the loan's
+                new terms.
+              </li>
+            </ul>
+          </div>
+        ),
+        selector: "#tour1-step31",
+        side: "bottom",
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
+        title: "Thank You for Exploring DirectLend!",
+        content: (
+          <div className="text-grey-primary">
+            <p className="mb-3">
+              Thank you for taking the time to explore the DirectLend Platform!
+              We hope this demo has provided you with valuable insights into the
+              features and functionalities available for both Borrowers and
+              Lenders.
+            </p>
+            <p className="mb-3">To summarize, you have learned how to:</p>
+            <ul className="list-disc list-inside space-y-3">
+              <li>
+                Navigate the Dashboard and access key features such as Upcoming
+                Payments, Transactions, and Instruments.
+              </li>
+              <li>
+                Manage loan documentation efficiently through the Documents
+                Screen.
+              </li>
+              <li>
+                Initiate and track unscheduled transactions, including drawdowns
+                and principal prepayments.
+              </li>
+              <li>
+                Understand how transaction confirmations affect the payment
+                schedule and loan terms.
+              </li>
+            </ul>
+            <p className="mt-3">
+              If you have any questions or would like to discuss how DirectLend
+              can meet your specific needs, please don’t hesitate to contact us.
+              Our team is here to help you every step of the way! Thank you
+              again for your interest in DirectLend, and we look forward to
+              connecting with you soon!
+            </p>
+          </div>
+        ),
+        showControls: true,
+        showSkip: false,
+        pointerPadding: 10,
+        pointerRadius: 10,
       },
     ],
   },

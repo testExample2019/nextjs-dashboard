@@ -11,13 +11,13 @@ const config: Config = {
     extend: {
       keyframes: {
         highlight: {
-          '0%': { backgroundColor: '#ffffff' }, // White (initial color)
-          '50%': { backgroundColor: '#EDF4FC' }, // Light blue (highlight color)
-          '100%': { backgroundColor: '#ffffff' }, // White (final color)
+          "0%": { backgroundColor: "#ffffff" }, // White (initial color)
+          "50%": { backgroundColor: "#EDF4FC" }, // Light blue (highlight color)
+          "100%": { backgroundColor: "#ffffff" }, // White (final color)
         },
       },
       animation: {
-        highlight: 'highlight 1.5s ease',
+        highlight: "highlight 2s ease-out",
       },
       colors: {
         "action-primary": "#4A90E2",
@@ -27,6 +27,7 @@ const config: Config = {
         "grey-light": "#ABB8C3",
         "grey-lighter": "#F1F1F1",
         "grey-blue": "#6B98A2",
+        "grey-dark": "#4E4B4B",
         grey: "#909090",
         "grey-o": "rgba(241, 241, 241, 0.40)",
         "blue-dark": "#226EC8",

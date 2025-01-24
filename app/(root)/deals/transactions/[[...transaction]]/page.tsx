@@ -13,29 +13,31 @@ const Page: React.FC<PageProps> = async ({ params }) => {
   const dealView = transaction?.[1] as DealViews;
   const transactions = await fetchTransactions(dealName, dealView);
   // Select only specific fields dynamically
-  const selectedFields = transactions.map(
-    ({
-      id,
-      transaction,
-      deal,
-      instrument,
-      customer,
-      amount,
-      paymentDate,
-      status,
-      nestedRows,
-    }) => ({
-      id,
-      transaction,
-      deal,
-      instrument,
-      customer,
-      amount,
-      paymentDate,
-      status,
-      nestedRows,
-    }),
-  );
+  const selectedFields = transactions
+    ?.filter((transaction) => transaction.type !== "Transaction Request")
+    .map(
+      ({
+        id,
+        transaction,
+        deal,
+        instrument,
+        customer,
+        amount,
+        paymentDate,
+        status,
+        nestedRows,
+      }) => ({
+        id,
+        transaction,
+        deal,
+        instrument,
+        customer,
+        amount,
+        paymentDate,
+        status,
+        nestedRows,
+      }),
+    );
   return (
     <TransactionsTableView dealName={dealName} transactions={selectedFields} />
   );

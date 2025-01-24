@@ -14,6 +14,7 @@ export const SideNavLink = ({
   totalCommitment,
   funded,
   unfunded,
+  stepId,
 }: DealNavType) => {
   const path = usePathname();
   const href = replaceDealItemInURL(path, slug);
@@ -47,6 +48,7 @@ export const SideNavLink = ({
             disabled={!path.includes(DealViews.Borrower)}
             onAction={handleDealDropdownAction}
             placeholder={"Request:"}
+            id={stepId}
           />
         </div>
       </div>
@@ -68,7 +70,7 @@ export const SideNavLink = ({
           <p className="text-sm font-bold text-green">{funded}</p>
         </div>
 
-        <div className="text-xs text-grey-secondary">
+        <div className="text-xs text-grey-secondary text-right">
           Unfunded
           <p>{unfunded}</p>
         </div>

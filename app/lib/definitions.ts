@@ -7,6 +7,7 @@ export type DealType = {
   unfunded: string;
   lender: DealDetailsType;
   borrower: DealDetailsType;
+  stepId?: string;
 };
 
 export type DealNavType = Omit<DealType, "lender" | "borrower">;
@@ -53,6 +54,7 @@ export type PaymentType = {
 
 export type TransactionType = {
   id: string;
+  type: "Transaction" | "Transaction Request" | "Drawdown Request";
   transaction: "Drawdown" | "Interest Payment" | "Fee Payment";
   deal: string;
   instrument: string;

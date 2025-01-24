@@ -1,13 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { InstrumentType } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
-import { useNextStep } from "nextstepjs";
 
 const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
-  const { setCurrentStep, startNextStep, currentStep } = useNextStep();
-
   if (!instrument) {
     notFound();
   }
@@ -24,13 +21,6 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
 
   const [activeTab, setActiveTab] = useState<TabsType>(TabsType.InstrumentInfo);
 
-  useEffect(() => {
-    if (currentStep === 23) {
-      startNextStep("mainTour");
-      setCurrentStep(23);
-    }
-  }, [currentStep]);
-
   return (
     <div className="bg-white rounded-lg p-6">
       <div id={"tour1-step23"}>
@@ -39,7 +29,7 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
             <h3 className="text-sm text-grey font-semibold uppercase">
               Instrument
             </h3>
-            <p className="text-base text-grey-primary font-semibold">
+            <p className="text-base text-grey-dark font-semibold">
               {instrument.instrument}
             </p>
           </div>
@@ -155,16 +145,16 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr>
-                  <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
+                  <th className="border-b p-2 text-xs text-grey font-semibold uppercase">
                     Rate Type
                   </th>
-                  <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
+                  <th className="border-b p-2 text-xs text-grey font-semibold uppercase">
                     Index
                   </th>
-                  <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
+                  <th className="border-b p-2 text-xs text-grey font-semibold uppercase">
                     ACCRUAL FREQUENCY
                   </th>
-                  <th className="border-b p-2 text-sm text-grey font-semibold uppercase">
+                  <th className="border-b p-2 text-xs text-grey font-semibold uppercase">
                     ADJ SPREAD
                   </th>
                 </tr>

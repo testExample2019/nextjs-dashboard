@@ -23,7 +23,10 @@ export default function RootLayout({
   return (
     <NextStepProvider>
       <html lang="en">
-        <body className={`${openSans.className} antialiased bg-grey-o`}>
+        <body
+          id={"app-body"}
+          className={`${openSans.className} antialiased bg-grey-o`}
+        >
           <NextStep
             shadowOpacity={"0.3"}
             steps={steps}

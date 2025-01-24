@@ -16,7 +16,7 @@ export default async function InstrumentDrawer({
     <>
       <DrawerClose
         children={
-          <div className={"fixed inset-0 bg-[#4E4B4B] bg-opacity-40"} />
+          <div className={"fixed inset-0 bg-grey-dark bg-opacity-40"} />
         }
       />
       <div
@@ -28,7 +28,9 @@ export default async function InstrumentDrawer({
         <div className="flex flex-col justify-between h-full pb-2">
           <div>
             <div className="flex justify-between items-center px-6 py-3">
-              <h2 className="text-lg font-semibold">View Instrument</h2>
+              <h2 className="text-lg font-semibold text-grey-dark">
+                View Instrument
+              </h2>
               <DrawerClose
                 children={
                   <button className="text-grey-blue ">

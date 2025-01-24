@@ -3,9 +3,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNextStep } from "nextstepjs";
 
 interface DropdownItem<T> {
-  id: number;
+  id: number | string;
   label: string;
   actionType: T; // Action identifier
+  active?: boolean;
 }
 
 interface ButtonDropdownProps<T> {
@@ -34,11 +35,12 @@ export const ButtonDropdown = <T,>({
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
-  console.log(id);
 
+  console.log(id);
   useEffect(() => {
     (currentStep === 12 && id === "tour1-step11") ||
-    (currentStep === 28 && id === "tour1-step27")
+    (currentStep === 28 && id === "tour1-step27") ||
+    (currentStep === 30 && id === "tour1-step29")
       ? setIsDropdownOpen(true)
       : setIsDropdownOpen(false);
   }, [currentStep]);
@@ -80,12 +82,12 @@ export const ButtonDropdown = <T,>({
             {placeholder}
           </span>
         )}
-        {dropdownItems.map(({ id, label, actionType }) => (
+        {dropdownItems.map(({ id, label, actionType, active }) => (
           <button
             key={id}
-            className={`flex w-full px-4 py-2 text-sm capitalize text-nowrap hover:bg-grey-lighter ${
+            className={`flex w-full px-4 py-2 text-sm capitalize text-nowrap  transition-all ${
               label.includes("Reject") ? "text-red" : "text-grey-primary"
-            }`}
+            }  ${active ? "bg-blue-o hover:bg-blue-o hover:text-action-primary" : "hover:bg-grey-lighter"} `}
             aria-label={label}
             role="menuitem"
             id={`menu-item-${id}`}

@@ -44,18 +44,28 @@ export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
         >
           {headers.map((header, cellIndex) => {
             let cellVal: React.JSX.Element;
+            const colTextLeft =
+              header === "amount" ? "text-left" : "text-right";
 
+            console.log(header);
             if (header === "docs") {
               cellVal = <Document />;
             } else if (header.includes("status")) {
               cellVal = <Status status={`${row[header]}`} />;
             } else {
-              cellVal = <Link href={`/${type}/${row.id}`}>{row[header]}</Link>;
+              cellVal = (
+                <Link
+                  className={`${header === "amount" ? "text-left" : "text-right"}`}
+                  href={`/${type}/${row.id}`}
+                >
+                  {row[header]}
+                </Link>
+              );
             }
             return (
               <td
                 key={cellIndex}
-                className={`relative px-3 py-3 text-sm text-grey-primary whitespace-nowrap max-w-[120px] truncate ${(row.nestedRows || isNested) && cellIndex === 0 ? "ps-8" : ""}`}
+                className={`relative px-3 py-3 text-sm text-grey-primary whitespace-nowrap max-w-[125px] truncate ${(row.nestedRows || isNested) && cellIndex === 0 ? "ps-8" : ""}`}
               >
                 {row.nestedRows && cellIndex === 0 && (
                   <button
@@ -69,7 +79,9 @@ export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
                     )}
                   </button>
                 )}
-                <span className={"flex items-center"}>
+                <span
+                  className={`flex items-center whitespace-nowrap truncate ${header === "amount" ? "justify-end" : "justify-start"}`}
+                >
                   {type === "document" && cellIndex === 0 && (
                     <Document className={"flex-shrink-0"} />
                   )}
@@ -97,7 +109,7 @@ export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
             {headers.map((header, index) => (
               <th
                 key={index}
-                className="p-3 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[120px] truncate"
+                className={`p-3 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[125px] truncate ${header === "amount" ? "text-right" : "text-left"}`}
               >
                 {separateWords(header)}
               </th>

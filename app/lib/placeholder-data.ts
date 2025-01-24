@@ -8,6 +8,7 @@ import {
 const transactionsData: TransactionType[] = [
   {
     id: "transaction-1",
+    type: "Transaction Request",
     paymentType: "Credit",
     transaction: "Drawdown",
     deal: "Soultrain",
@@ -88,8 +89,91 @@ const transactionsData: TransactionType[] = [
     ],
   },
   {
+    id: "transaction-11",
+    type: "Transaction",
+    paymentType: "Credit",
+    transaction: "Drawdown",
+    deal: "Soultrain",
+    instrument: "Soultrain Revolver",
+    borrower: "Soultrain",
+    ccy: "USD",
+    customer: "Soultrain Music Awards",
+    counterparty: "Soultrain Music Awards",
+    paymentDate: "2024-01-24",
+    amount: "$5,000,000.00",
+    role: "Lender",
+    committed: "$200,000,000.00",
+    funded: "$0.0",
+    unfunded: "$200,000,000.00",
+    status: "Pending",
+    transactionDetails: {
+      type: "Drawdown",
+      amount: "$849,315.07",
+      txnUpdated: "2025-01-14 9:51 AM",
+      transactionInfo: {
+        effectiveDate: "2025-02-01",
+        paymentDate: "2025-02-03",
+        amount: "849,315.07 USD",
+      },
+      feeInfo: {
+        feeType: "Drawdown Fee",
+        appliesTo: "Drawdown Amount",
+        rate: "1.0000%",
+        feeAmount: "50,000.00 USD",
+      },
+      rateInfo: {
+        type: "Fixed",
+        dayCount: "ACT/360",
+        pikOption: "Cash",
+        includeAccrualEnd: "No",
+        accrualStartDate: "2025-01-24",
+        accrualEndDate: "2025-02-24",
+      },
+      allocations: [
+        {
+          role: "Borrower",
+          counterparty: "Soul Train Music Awards",
+          amount: "5,000,000.00",
+          share: "100.00%",
+        },
+        {
+          role: "Lender",
+          counterparty: "Funky Fund East",
+          amount: "(5,000,000.00)",
+          share: "(100.00%)",
+        },
+      ],
+      bankAccount: {
+        accountName: "Account USD",
+        bank: "FirstCaribbean International",
+        bic: "09676",
+        aba: "987654321",
+        iban: "-", // Use "-" if no IBAN is provided
+        accountNumber: "6665554433",
+        currency: "USD",
+      },
+      correspondingBankAccount: {
+        bank: "CitiBank N.A. (CITI)",
+        bic: "09676",
+      },
+    },
+    nestedRows: [
+      {
+        id: "transaction-1-1-1",
+        transaction: "Drawdown",
+        deal: "Soultrain",
+        instrument: "Soultrain Revolver",
+        customer: "Soul Train Music Awards",
+        amount: "849,315.07",
+        paymentDate: "2025-02-03",
+        status: "Scheduled",
+      },
+    ],
+  },
+  {
     id: "transaction-2",
     paymentType: "Credit",
+    type: "Transaction",
     transaction: "Fee Payment",
     deal: "Soultrain",
     instrument: "New Fixed Loan",
@@ -169,6 +253,7 @@ const transactionsData: TransactionType[] = [
   {
     id: "transaction-3",
     paymentType: "Credit",
+    type: "Transaction",
     transaction: "Interest Payment",
     deal: "Soultrain",
     instrument: "New Fixed Loan",
@@ -248,6 +333,7 @@ const transactionsData: TransactionType[] = [
   {
     id: "transaction-4",
     paymentType: "Credit",
+    type: "Transaction",
     transaction: "Interest Payment",
     deal: "Soultrain",
     instrument: "New Fixed Loan",
@@ -327,6 +413,7 @@ const transactionsData: TransactionType[] = [
   {
     id: "transaction-5",
     paymentType: "Credit",
+    type: "Drawdown Request",
     transaction: "Drawdown",
     deal: "Soultrain",
     instrument: "Soultrain Revolver",
@@ -342,7 +429,7 @@ const transactionsData: TransactionType[] = [
     unfunded: "$200,000,000.00",
     status: "Pending",
     transactionDetails: {
-      type: "Interest Payment",
+      type: "Drawdown",
       amount: "$849,315.07",
       txnUpdated: "2025-01-14 9:51 AM",
       transactionInfo: {
@@ -794,6 +881,7 @@ const deals: DealType[] = [
       instruments: instrumentData,
       asOfDate: "2025-01-24",
     },
+    stepId: "tour1-step29",
   },
   {
     id: "2",

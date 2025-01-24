@@ -7,9 +7,7 @@ const ModalBackdrop = () => {
   return (
     <div
       onClick={router.back}
-      className={
-        "fixed inset-0 bg-[#4E4B4B] bg-opacity-40"
-      }
+      className={"fixed inset-0 bg-grey-dark bg-opacity-40"}
     />
   );
 };

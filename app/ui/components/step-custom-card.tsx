@@ -12,50 +12,57 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
   arrow,
 }) => {
   return (
-    <div className="step-custom-card bg-white p-6 rounded-lg shadow-lg flex flex-col gap-2 min-w-[450px] w-fit border border-grey-border">
-      <div className="flex items-center justify-between">
-        <h2 className="text-22 text-grey-primary font-semibold">
-          {step.title}
-        </h2>
-        {step.icon}
-      </div>
-      <div className={"max-h-60 overflow-y-auto text-sm relative"}>
-        {step.content}
-        <div className="sticky -bottom-0.5 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
-      </div>
-      <div className="bg-gray-200 rounded-full h-2">
-        <div
-          className="bg-action-primary h-2 rounded-full"
-          style={{ width: `${((currentStep + 1) / totalSteps) * 100}%` }}
-        ></div>
-      </div>
-      <span className={"text-grey-secondary text-xs"}>
-        {currentStep + 1} of {totalSteps} steps
-      </span>
-      {step.showControls && (
-        <div className="flex justify-between mt-3 gap-4">
-          <button
-            onClick={prevStep}
-            disabled={currentStep === 0}
-            className="bg-white border border-grey-border text-grey-primary px-4 py-2 rounded-md font-semibold w-full"
-          >
-            Previous
-          </button>
-          <button
-            onClick={nextStep}
-            className="bg-action-primary text-white px-4 py-2 rounded-md font-semibold w-full"
-          >
-            {currentStep === totalSteps - 1 ? "Finish" : "Next"}
-          </button>
+    <div
+      className={
+        "step-custom-card bg-white rounded-lg shadow-lg border border-grey-border relative"
+      }
+    >
+      <div className="p-4 flex flex-col w-[400px]">
+        <div className="flex items-center justify-between mb-2">
+          <h2 className="text-18 text-grey-primary font-semibold capitalize">
+            {step.title}
+          </h2>
+          {step.icon}
         </div>
-      )}
-      <button
-        onClick={skipTour}
-        className="p-1 rounded-md bg-white text-grey-primary text-xs" // TODO: Add condition
-      >
-        Skip
-      </button>
-
+        <div className={"max-h-[450px] overflow-y-auto text-sm relative"}>
+          {step.content}
+          <div className="sticky -bottom-0.5 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+        </div>
+        <div className="bg-grey-border rounded-full h-2 mb-2">
+          <div
+            className="bg-blue-dark h-2 rounded-full "
+            style={{ width: `${((currentStep + 1) / totalSteps) * 100}%` }}
+          />
+        </div>
+        <span className={"text-grey text-sm"}>
+          {currentStep + 1} of {totalSteps} steps
+        </span>
+      </div>
+      <div className={"flex flex-col p-2 gap-6 border-t border-grey-border"}>
+        {step.showControls && (
+          <div className="flex justify-between gap-2">
+            <button
+              onClick={prevStep}
+              disabled={currentStep === 0}
+              className="bg-white border text-sm border-grey-border uppercase text-grey-primary px-4 py-2 rounded-md font-semibold w-full"
+            >
+              Previous
+            </button>
+            <button
+              onClick={nextStep}
+              className="bg-action-primary text-sm text-white uppercase px-4 py-2 rounded-md font-semibold w-full"
+            >
+              {currentStep === totalSteps - 1 ? "Finish" : "Next"}
+            </button>
+          </div>
+        )}
+        <button
+          onClick={skipTour}
+          className="p-1 rounded-md bg-white text-grey-primary text-xs absolute top-0 right-0" // TODO: Add condition
+        >
+          Skip
+        </button>
+      </div>
       {arrow}
     </div>
   );

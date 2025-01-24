@@ -18,11 +18,16 @@ export const ViewDropdownItems = [
 export const dealsDropdownItems = [
   { id: 1, label: "Import Deal", actionType: DealsActions.Import },
   { id: 2, label: "Add New Deal", actionType: DealsActions.Add },
-  { id: 3, label: "Use Template", actionType: DealsActions.Use },
+  { id: 3, label: "Use Template", active: true, actionType: DealsActions.Use },
 ];
 
 export const dealBorrowerDropdownItems = [
-  { id: 1, label: "Drawdown", actionType: DealBorrowerActions.Drawdown },
+  {
+    id: 1,
+    label: "Drawdown",
+    active: true,
+    actionType: DealBorrowerActions.Drawdown,
+  },
   { id: 2, label: "Prepayment", actionType: DealBorrowerActions.Prepayment },
 ];
 
@@ -32,7 +37,12 @@ export const LenderPaymentOptionsDropdownItems = [
     label: "View Transaction",
     actionType: PaymentActions.ViewTransaction,
   },
-  { id: 2, label: "View Notice", actionType: PaymentActions.ViewNotice },
+  {
+    id: 2,
+    label: "View Notice",
+    active: true,
+    actionType: PaymentActions.ViewNotice,
+  },
   { id: 3, label: "Confirm Bank Account", actionType: PaymentActions.Confirm },
   { id: 4, label: "Contact", actionType: PaymentActions.Contact },
 ];
@@ -42,7 +52,12 @@ export const BorrowerPaymentOptionsDropdownItems = [
     label: "View Transaction",
     actionType: PaymentActions.ViewTransaction,
   },
-  { id: 2, label: "View Invoice", actionType: PaymentActions.ViewInvoice },
+  {
+    id: 2,
+    label: "View Invoice",
+    active: true,
+    actionType: PaymentActions.ViewInvoice,
+  },
   { id: 3, label: "Make Payment", actionType: PaymentActions.Confirm },
   { id: 4, label: "Contact Lender", actionType: PaymentActions.Contact },
 ];

@@ -17,6 +17,7 @@ export async function fetchDealsNavData(): Promise<DealNavType[]> {
       totalCommitment: deal.totalCommitment,
       funded: deal.funded,
       unfunded: deal.unfunded,
+      stepId: deal.stepId,
     }));
   } catch (error) {
     console.error("Database Error:", error);
