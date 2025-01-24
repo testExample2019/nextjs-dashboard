@@ -1,5 +1,5 @@
 "use client";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TransactionType } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
 import Status from "@/app/ui/components/status";
@@ -113,10 +113,7 @@ const TransactionView = ({
                             Interest Amount
                           </h2>
                           <DrawerTable
-                            rows={
-                              transaction.transactionDetails.interestAmount ||
-                              []
-                            }
+                            rows={transaction.transactionDetails.interestAmount}
                           />
                         </div>
                       </>
@@ -186,48 +183,10 @@ const TransactionView = ({
                 )}
                 {activeTab === TransactionTabsType.Allocations && (
                   <>
-                    <table className="w-full text-left border-collapse">
-                      <thead>
-                        <tr>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
-                            Role
-                          </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
-                            Counterparty
-                          </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
-                            Amount
-                          </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
-                            Share
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {transaction.transactionDetails.allocations?.map(
-                          (allocation, index) => (
-                            <tr key={index}>
-                              <td className="py-2 text-grey-primary text-base">
-                                {allocation.role}
-                              </td>
-                              <td className="py-2 text-grey-primary text-base">
-                                {allocation.counterparty}
-                              </td>
-                              <td
-                                className={`py-2 ${allocation.amount.startsWith("(") ? "text-red" : "text-green"} text-base`}
-                              >
-                                {allocation.amount}
-                              </td>
-                              <td
-                                className={`py-2 ${allocation.amount.startsWith("(") ? "text-red" : "text-green"} text-base`}
-                              >
-                                {allocation.share}
-                              </td>
-                            </tr>
-                          ),
-                        )}
-                      </tbody>
-                    </table>
+                    <DrawerTable
+                      highlight={true}
+                      rows={transaction.transactionDetails.allocations}
+                    />
                     <div className="mt-6 pt-4">
                       <DrawerContent
                         title={`Bank Account`}

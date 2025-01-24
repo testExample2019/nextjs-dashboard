@@ -23,8 +23,8 @@ export default async function PositionDrawer({
           "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto"
         }
       >
-        <div className="flex justify-between items-center px-6 py-3 ">
-          <h2 className="text-lg font-semibold text-grey-dark">
+        <div className="flex justify-between items-center px-6 py-3 border-b border-grey-border">
+          <h2 className="text-lg font-semibold text-grey-dark ">
             View Document
           </h2>
           <DrawerClose

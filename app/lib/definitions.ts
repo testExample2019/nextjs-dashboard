@@ -93,60 +93,78 @@ export type DocumentType = {
   document: string;
   documentType: "Transaction" | "Customer" | "Invoice" | "Contract" | string;
   subType: "Other" | "Final notice" | string;
-  deal: string;
-  amount: string;
   customer: string;
   transaction:
     | "Drawdown"
     | "Multiple Transactions"
     | "Interest Payment [Borrower]"
     | "Interest Payment [Lender]";
-  transactionDate: string;
   documentDate: string;
-  fileType: string;
   status: "Open" | "Reviewed" | "Pending" | "Published";
-  documentDetails: TransactionDetailsType;
+  documentDetails: {
+    lastUpdated: string;
+    type: string;
+    subType: "Other" | "Final notice" | string;
+    documentDate: string;
+    fileType: string;
+    status: string;
+  };
+  transactionDetails: {
+    transactionDetailsList: {
+      type: "Interest Payment";
+      amount: string;
+      tnxUpdated: string;
+    }[];
+    transactionInfo: {
+      effectiveDate: string;
+      paymentDate: string;
+      amount: string;
+    };
+    rateInfo: RateInfoType;
+    interestAmount?: InterestAmountType[];
+    allocations?: AllocationType[];
+  };
   nestedRows: any;
 };
 
 export type InstrumentType = {
   id: string;
-  deal: string; // e.g., "Soultrain"
-  instrument: string; // e.g., "New Fixed Loan"
-  type: string; // e.g., "Loan"
-  subType: string; // e.g., "Term Loan"
-  ccy: string; // e.g., "USD"
-  issueDate: string; // e.g., "2025-01-01"
-  maturityDate: string; // e.g., "2030-01-01"
-  createdDate: string; // e.g., "2024-10-30"
-  status: string; // e.g., "Open
+  deal: string;
+  instrument: string;
+  type: string;
+  subType: string;
+  ccy: string;
+  issueDate: string;
+  maturityDate: string;
+  createdDate: string;
+  status: string;
   issueInfo: InstrumentIssueInfo;
-  feeInfo: InstrumentFeeInfo;
+  feeInfo: FeeInfoType;
   rateInfo: InstrumentRateInfo;
 };
 
 // Type for Issue Info
 type InstrumentIssueInfo = {
-  issuer: string | null; // e.g., null for "-"
-  issueDate: string; // e.g., "2025-01-01"
-  expireDate: string | null; // e.g., null for "-"
-  maturityDate: string; // e.g., "2030-01-01"
+  issuer: string | null;
+  issueDate: string;
+  expireDate: string | null;
+  maturityDate: string;
 };
 
-// Type for Fee Info
-type InstrumentFeeInfo = {
-  feeType: string; // e.g., "Fixed"
-  appliesTo: string; // e.g., "Drawdown Amount"
-  rate: string; // e.g., "1.0000%"
-  amount: string | null; // e.g., null for "-"
+type FeeInfoType = {
+  feeType: string;
+  appliesTo: string;
+  rate: string;
+  amount?: string;
+  feeAmount?: string;
 };
 
 // Type for Rate Info
 type InstrumentRateInfo = {
-  rateType: string; // e.g., "Fixed"
-  index: string; // e.g., "Fixed"
-  accrualFrequency: string; // e.g., "1 Month"
-  adjSpread: string; // e.g., "8.5600%"
+  rateType: string;
+  index: string;
+  accrualFrequency: string;
+  adjSpread: string;
 };
 
 export type NoticeType = {
@@ -157,6 +175,29 @@ export type NoticeType = {
   date: string;
   lastUpdate: string;
   status: "Sent" | "Published";
+};
+
+type RateInfoType = {
+  type: "Fixed" | "Floating";
+  dayCount: "ACT/360" | "ACT/365" | "30/360";
+  pikOption: "Cash or PIK" | "Cash" | "PIK";
+  includeAccrualEnd: "Yes" | "No";
+  accrualStartDate: string;
+  accrualEndDate: string;
+};
+
+type InterestAmountType = {
+  date: string;
+  rate: string;
+  principal: string;
+  amount: string;
+};
+
+type AllocationType = {
+  role: "Borrower" | "Lender";
+  counterparty: string;
+  amount: string;
+  share: string;
 };
 
 type TransactionDetailsType = {
@@ -170,45 +211,23 @@ type TransactionDetailsType = {
     commitment?: string;
     unfundedCommitment?: string;
   };
-  rateInfo: {
-    type: "Fixed" | "Floating"; // Type of rate
-    dayCount: "ACT/360" | "ACT/365" | "30/360"; // Day count convention
-    pikOption: "Cash or PIK" | "Cash" | "PIK"; // PIK (Payment-in-Kind) option
-    includeAccrualEnd: "Yes" | "No"; // Whether to include accrual end
-    accrualStartDate: string; // Accrual start date (ISO format)
-    accrualEndDate: string; // Accrual end date (ISO format)
-  };
-  allocations: {
-    role: "Borrower" | "Lender";
-    counterparty: string;
-    amount: string;
-    share: string;
-  }[];
+  rateInfo: RateInfoType;
+  allocations: AllocationType[];
   bankAccount: {
-    accountName: string; // Name of the account (e.g., "Account USD")
-    bank: string; // Name of the bank (e.g., "FirstCaribbean International")
-    bic: string; // Bank Identifier Code (e.g., "09676")
-    aba: string; // ABA Routing Number (e.g., "987654321")
-    iban: string; // International Bank Account Number (e.g., "-")
-    accountNumber: string; // Account Number (e.g., "6665554433")
-    currency: string; // Currency code (e.g., "USD")
+    accountName: string;
+    bank: string;
+    bic: string;
+    aba: string;
+    iban: string;
+    accountNumber: string;
+    currency: string;
   };
   correspondingBankAccount?: {
-    bank: string; // Name of the bank (e.g., "FirstCaribbean International")
-    bic: string; // Bank Identifier Code (e.g., "09676")
+    bank: string;
+    bic: string;
   };
-  interestAmount?: {
-    date: string; // Date of the interest payment (ISO format)
-    rate: string; // Rate percentage as a formatted string (e.g., "10.0000%")
-    principal: string; // Principal amount with currency formatting
-    amount: string; // Calculated interest amount with currency formatting
-  }[];
-  feeInfo?: {
-    feeType: string;
-    appliesTo: string;
-    rate: string;
-    feeAmount: string;
-  };
+  interestAmount?: InterestAmountType[];
+  feeInfo?: FeeInfoType;
 };
 
 export enum DealsActions {

@@ -374,7 +374,304 @@ export const transactionsData: TransactionType[] = [
   },
 ];
 
-const documentsData: DocumentType[] = [];
+const documentsData: DocumentType[] = [
+  {
+    id: "document-0",
+    document: "Soultrain 01-01-2025",
+    documentType: "Transaction",
+    subType: "Final Notice",
+    customer: "Soul Train Music Awards",
+    transaction: "Multiple Transactions",
+    documentDate: "2025-01-20",
+    status: "Published",
+    documentDetails: {
+      lastUpdated: "2024-01-14",
+      type: "Transaction",
+      subType: "Final Notice",
+      documentDate: "2025-01-20",
+      fileType: "PDF",
+      status: "Published",
+    },
+    transactionDetails: {
+      transactionDetailsList: [
+        {
+          type: "Interest Payment",
+          amount: "$849,315.07",
+          tnxUpdated: "2025-01-14 9:51 AM",
+        },
+      ],
+      transactionInfo: {
+        effectiveDate: "2025-02-01",
+        paymentDate: "2025-02-03",
+        amount: "849,315.07 USD",
+      },
+      rateInfo: {
+        type: "Fixed",
+        dayCount: "ACT/360",
+        pikOption: "Cash or PIK",
+        includeAccrualEnd: "Yes",
+        accrualStartDate: "2025-01-01",
+        accrualEndDate: "2025-01-31",
+      },
+      interestAmount: [
+        {
+          date: "2025-01-01",
+          rate: "10.0000%",
+          principal: "$100,000.00",
+          amount: "$849,315.07",
+        },
+      ],
+      allocations: [
+        {
+          role: "Borrower",
+          counterparty: "Soul Train Music Awards",
+          amount: "(849,315.07)",
+          share: "(100.00%)",
+        },
+        {
+          role: "Lender",
+          counterparty: "Funky Fund East",
+          amount: "849,315.07",
+          share: "(100.00%)",
+        },
+      ],
+    },
+    nestedRows: [
+      {
+        id: "document-0",
+        document: "Soultrain - Drawdown 01-01-2025",
+        transaction: "Multiple Transactions",
+        subType: "Final Notice",
+        deal: "Soultrain",
+        customer: "Funky Fund East",
+        documentDate: "2025-01-01",
+        status: "Published",
+      },
+    ],
+  },
+  {
+    id: "document-1",
+    document: "Soultrain 02-03-2025",
+    documentType: "Transaction",
+    subType: "Final Notice",
+    customer: "Soul Train Music Awards",
+    transaction: "Multiple Transactions",
+    documentDate: "2025-01-20",
+    status: "Published",
+    documentDetails: {
+      lastUpdated: "2024-01-14",
+      type: "Transaction",
+      subType: "Final Notice",
+      documentDate: "2025-01-20",
+      fileType: "PDF",
+      status: "Published",
+    },
+    transactionDetails: {
+      transactionDetailsList: [
+        {
+          type: "Interest Payment",
+          amount: "$849,315.07",
+          tnxUpdated: "2025-01-14 9:51 AM",
+        },
+      ],
+      transactionInfo: {
+        effectiveDate: "2025-02-01",
+        paymentDate: "2025-02-03",
+        amount: "849,315.07 USD",
+      },
+      rateInfo: {
+        type: "Fixed",
+        dayCount: "ACT/360",
+        pikOption: "Cash or PIK",
+        includeAccrualEnd: "Yes",
+        accrualStartDate: "2025-01-01",
+        accrualEndDate: "2025-01-31",
+      },
+      interestAmount: [
+        {
+          date: "2025-01-01",
+          rate: "10.0000%",
+          principal: "$100,000.00",
+          amount: "$849,315.07",
+        },
+      ],
+      allocations: [
+        {
+          role: "Borrower",
+          counterparty: "Soul Train Music Awards",
+          amount: "(849,315.07)",
+          share: "(100.00%)",
+        },
+        {
+          role: "Lender",
+          counterparty: "Funky Fund East",
+          amount: "849,315.07",
+          share: "(100.00%)",
+        },
+      ],
+    },
+    nestedRows: [
+      {
+        id: "document-1",
+        document: "Soultrain - Drawdown 01-01-2025",
+        transaction: "Multiple Transactions",
+        subType: "Final Notice",
+        deal: "Soultrain",
+        customer: "Funky Fund East",
+        documentDate: "2025-01-01",
+        status: "Published",
+      },
+    ],
+  },
+  {
+    id: "document-2",
+    document: "Soultrain 01-01-2025",
+    documentType: "Transaction",
+    subType: "Final Notice",
+    customer: "Soul Train Music Awards",
+    transaction: "Interest Payment [Borrower]",
+    documentDate: "2025-01-20",
+    status: "Published",
+    documentDetails: {
+      lastUpdated: "2024-01-14",
+      type: "Transaction",
+      subType: "Final Notice",
+      documentDate: "2025-01-20",
+      fileType: "PDF",
+      status: "Published",
+    },
+    transactionDetails: {
+      transactionDetailsList: [
+        {
+          type: "Interest Payment",
+          amount: "$849,315.07",
+          tnxUpdated: "2025-01-14 9:51 AM",
+        },
+      ],
+      transactionInfo: {
+        effectiveDate: "2025-02-01",
+        paymentDate: "2025-02-03",
+        amount: "849,315.07 USD",
+      },
+      rateInfo: {
+        type: "Fixed",
+        dayCount: "ACT/360",
+        pikOption: "Cash or PIK",
+        includeAccrualEnd: "Yes",
+        accrualStartDate: "2025-01-01",
+        accrualEndDate: "2025-01-31",
+      },
+      interestAmount: [
+        {
+          date: "2025-01-01",
+          rate: "10.0000%",
+          principal: "$100,000.00",
+          amount: "$849,315.07",
+        },
+      ],
+      allocations: [
+        {
+          role: "Borrower",
+          counterparty: "Soul Train Music Awards",
+          amount: "(849,315.07)",
+          share: "(100.00%)",
+        },
+        {
+          role: "Lender",
+          counterparty: "Funky Fund East",
+          amount: "849,315.07",
+          share: "(100.00%)",
+        },
+      ],
+    },
+    nestedRows: [
+      {
+        id: "document-2",
+        document: "Soultrain - Drawdown 01-01-2025",
+        transaction: "Interest Payment [Lender]",
+        subType: "Final Notice",
+        deal: "Soultrain",
+        customer: "Funky Fund East",
+        documentDate: "2025-01-01",
+        status: "Published",
+      },
+    ],
+  },
+  {
+    id: "document-3",
+    document: "Soultrain 02-03-2025",
+    documentType: "Transaction",
+    subType: "Final Notice",
+    customer: "Soul Train Music Awards",
+    transaction: "Interest Payment [Borrower]",
+    documentDate: "2025-01-20",
+    status: "Published",
+    documentDetails: {
+      lastUpdated: "2024-01-14",
+      type: "Transaction",
+      subType: "Final Notice",
+      documentDate: "2025-01-20",
+      fileType: "PDF",
+      status: "Published",
+    },
+    transactionDetails: {
+      transactionDetailsList: [
+        {
+          type: "Interest Payment",
+          amount: "$849,315.07",
+          tnxUpdated: "2025-01-14 9:51 AM",
+        },
+      ],
+      transactionInfo: {
+        effectiveDate: "2025-02-01",
+        paymentDate: "2025-02-03",
+        amount: "849,315.07 USD",
+      },
+      rateInfo: {
+        type: "Fixed",
+        dayCount: "ACT/360",
+        pikOption: "Cash or PIK",
+        includeAccrualEnd: "Yes",
+        accrualStartDate: "2025-01-01",
+        accrualEndDate: "2025-01-31",
+      },
+      interestAmount: [
+        {
+          date: "2025-01-01",
+          rate: "10.0000%",
+          principal: "$100,000.00",
+          amount: "$849,315.07",
+        },
+      ],
+      allocations: [
+        {
+          role: "Borrower",
+          counterparty: "Soul Train Music Awards",
+          amount: "(849,315.07)",
+          share: "(100.00%)",
+        },
+        {
+          role: "Lender",
+          counterparty: "Funky Fund East",
+          amount: "849,315.07",
+          share: "(100.00%)",
+        },
+      ],
+    },
+    nestedRows: [
+      {
+        id: "document-2-1",
+        document: "Soultrain - Drawdown 01-01-2025",
+        transaction: "Interest Payment [Lender]",
+        subType: "Final Notice",
+        deal: "Soultrain",
+        customer: "Funky Fund East",
+        documentDate: "2025-01-01",
+        status: "Published",
+      },
+    ],
+  },
+];
 
 const instrumentData: InstrumentType[] = [
   {
@@ -428,7 +725,7 @@ const instrumentData: InstrumentType[] = [
       feeType: "Fixed",
       appliesTo: "Drawdown Amount",
       rate: "1.0000%",
-      amount: null,
+      amount: "-",
     },
     rateInfo: {
       rateType: "Fixed",

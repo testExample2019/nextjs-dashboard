@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { DocumentType } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
-import Status from "@/app/ui/components/status";
 import Image from "next/image";
 import { useNextStep } from "nextstepjs";
+import { DrawerContent } from "@/app/ui/components/drawer-content";
+import { DrawerTable } from "@/app/ui/components/drawer-table";
 
 const DocumentView = ({ document }: { document?: DocumentType }) => {
   const { setCurrentStep, startNextStep, currentStep } = useNextStep();
@@ -62,7 +63,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
             <div className="flex justify-between items-end border-b pb-4 mb-4">
               <div>
                 <h3 className="text-sm text-grey font-semibold uppercase">
-                  {document.fileType}
+                  {document.documentDetails.fileType}
                 </h3>
                 <p className="text-base text-grey-dark font-semibold">
                   {document.document}
@@ -198,76 +199,20 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                 </div>
 
                 <div className="mt-4">
-                  <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
-                    Details
-                  </h2>
-                  <div className="grid grid-cols-2 gap-4">
-                    <p className="text-sm text-grey font-semibold">
-                      Last Updated / Uploaded
-                    </p>
-                    <p className="text-grey-primary font-medium">
-                      {document.amount}
-                    </p>
-
-                    <p className="text-sm text-grey font-semibold">Type</p>
-                    <p className="text-grey-primary font-medium">
-                      {document.documentType}
-                    </p>
-
-                    <p className="text-sm text-grey font-semibold">Sub-Type</p>
-                    <p className="text-grey-primary font-medium">
-                      {document.subType}
-                    </p>
-
-                    <p className="text-sm text-grey font-semibold">
-                      Document Date
-                    </p>
-                    <p className="text-grey-primary font-medium">
-                      {document.documentDate}
-                    </p>
-
-                    <p className="text-sm text-grey font-semibold">File Type</p>
-                    <p className="text-grey-primary font-medium">
-                      {document.fileType}
-                    </p>
-
-                    <p className="text-sm text-grey font-semibold">Status</p>
-                    <Status status={document.status} />
-                  </div>
+                  <DrawerContent
+                    title={"Details"}
+                    horizontal={true}
+                    rows={document.documentDetails}
+                  />
                 </div>
               </>
             )}
 
             {activeTab === DocumentTabsType.TransactionDetails && (
               <>
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr>
-                      <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                        Type
-                      </th>
-                      <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                        Amount
-                      </th>
-                      <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                        Tnx Updated
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className={"bg-blue-o"}>
-                      <td className="p-2 text-grey-primary text-base">
-                        {document.transactionDetails.type}
-                      </td>
-                      <td className="p-2 text-grey-primary text-base">
-                        {document.transactionDetails.amount}
-                      </td>
-                      <td className="p-2 text-grey-primary text-base">
-                        {document.transactionDetails.txnUpdated}
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <DrawerTable
+                  rows={document.transactionDetails.transactionDetailsList}
+                />
 
                 <div className="flex justify-between mb-4 mt-20">
                   {SubTabItems.map(({ id, label }) => (
@@ -287,196 +232,31 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
 
                 {activeSubTab === DocumentSubTabsType.TransactionInfo && (
                   <>
-                    <div className="space-y-6">
-                      <div className="grid grid-cols-2 gap-4">
-                        <div>
-                          <p className="text-sm text-grey font-semibold">
-                            Effective Date
-                          </p>
-                          <p className="font-medium text-grey-primary">
-                            {
-                              document.transactionDetails.transactionInfo
-                                .effectiveDate
-                            }
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold">
-                            Payment Date
-                          </p>
-                          <p className="font-medium text-grey-primary">
-                            {
-                              document.transactionDetails.transactionInfo
-                                .paymentDate
-                            }
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div></div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold">
-                            Amount
-                          </p>
-                          <p className="font-medium text-grey-primary">
-                            {document.transactionDetails.transactionInfo.amount}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-6 pt-4">
-                      <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
-                        Rate Info
-                      </h2>
-                      <div className="grid grid-cols-4 gap-4">
-                        <div>
-                          <p className="text-sm text-grey font-semibold">
-                            Type
-                          </p>
-                          <p className="font-medium text-grey-primary">
-                            {document.transactionDetails.rateInfo.type}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold">
-                            Day Count
-                          </p>
-                          <p className="font-medium text-grey-primary">
-                            {document.transactionDetails.rateInfo.dayCount}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold">
-                            PIK Option
-                          </p>
-                          <p className="font-medium text-grey-primary">
-                            {document.transactionDetails.rateInfo.pikOption}
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold">
-                            Incl. Accrual End
-                          </p>
-                          <p className="font-medium text-grey-primary">
-                            {
-                              document.transactionDetails.rateInfo
-                                .includeAccrualEnd
-                            }
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold">
-                            Accrual Start
-                          </p>
-                          <p className="font-medium text-grey-primary">
-                            {
-                              document.transactionDetails.rateInfo
-                                .accrualStartDate
-                            }
-                          </p>
-                        </div>
-                        <div>
-                          <p className="text-sm text-grey font-semibold">
-                            Accrual End
-                          </p>
-                          <p className="font-medium text-grey-primary">
-                            {
-                              document.transactionDetails.rateInfo
-                                .accrualEndDate
-                            }
-                          </p>
-                        </div>
-                      </div>
+                    <DrawerContent
+                      rows={document.transactionDetails.transactionInfo}
+                    />
+                    <div className="mt-6">
+                      <DrawerContent
+                        title={"Rate Info"}
+                        cols={4}
+                        rows={document.transactionDetails.rateInfo}
+                      />
                     </div>
                     <div className="mt-6">
                       <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
                         Interest Amount
                       </h2>
-                      <table className="w-full text-left border-collapse">
-                        <thead>
-                          <tr>
-                            <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                              Date
-                            </th>
-                            <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                              Rate
-                            </th>
-                            <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                              Principal
-                            </th>
-                            <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                              Amount
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {document.transactionDetails.interestAmount?.map(
-                            (interest, index) => (
-                              <tr key={index}>
-                                <td className="p-2 text-grey-primary text-base">
-                                  {interest.date}
-                                </td>
-                                <td className="p-2 text-grey-primary text-base">
-                                  {interest.rate}
-                                </td>
-                                <td className="p-2 text-grey-primary text-base">
-                                  {interest.principal}
-                                </td>
-                                <td className="p-2 text-grey-primary text-base">
-                                  {interest.amount}
-                                </td>
-                              </tr>
-                            ),
-                          )}
-                        </tbody>
-                      </table>
+                      <DrawerTable
+                        rows={document.transactionDetails.interestAmount}
+                      />
                     </div>
                   </>
                 )}
                 {activeSubTab === DocumentSubTabsType.Allocations && (
-                  <>
-                    <table className="w-full text-left border-collapse">
-                      <thead>
-                        <tr>
-                          <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                            Role
-                          </th>
-                          <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                            Counterparty
-                          </th>
-                          <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                            Amount
-                          </th>
-                          <th className="border-b p-2 text-xs text-grey font-bold uppercase">
-                            Share
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {document.transactionDetails.allocations.map(
-                          (allocation, index) => (
-                            <tr key={index}>
-                              <td className="py-2 text-grey-primary text-base">
-                                {allocation.role}
-                              </td>
-                              <td className="py-2 text-grey-primary text-base">
-                                {allocation.counterparty}
-                              </td>
-                              <td
-                                className={`py-2 ${allocation.role === "Lender" ? "text-green" : "text-red"} text-base`}
-                              >
-                                {allocation.amount}
-                              </td>
-                              <td className="py-2 text-red text-base">
-                                {allocation.share}
-                              </td>
-                            </tr>
-                          ),
-                        )}
-                      </tbody>
-                    </table>
-                  </>
+                  <DrawerTable
+                    highlight={true}
+                    rows={document.transactionDetails.allocations}
+                  />
                 )}
               </>
             )}

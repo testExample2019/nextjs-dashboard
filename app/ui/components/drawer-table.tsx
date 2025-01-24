@@ -1,12 +1,15 @@
-"use client";
 import React from "react";
 import { separateWords } from "@/app/lib/utils";
 
 interface TableProps {
-  rows: { [key: string]: string | number }[];
+  rows?: { [key: string]: string | number }[];
+  highlight?: boolean;
 }
 
-export const DrawerTable: React.FC<TableProps> = ({ rows = [] }) => {
+export const DrawerTable: React.FC<TableProps> = ({
+  rows = [],
+  highlight = false,
+}) => {
   // Extract headers dynamically from the first row
   const headers =
     rows?.length > 0 ? Object.keys(rows[0]).filter((key) => key !== "id") : [];
@@ -45,7 +48,7 @@ export const DrawerTable: React.FC<TableProps> = ({ rows = [] }) => {
                   className="p-3 text-base text-grey-primary truncate"
                 >
                   <span
-                    className={` block ${header === "amount" || header === "share" ? "text-right" : "text-left"}`}
+                    className={` block ${header === "amount" || header === "share" ? `text-right ${highlight ? (`${row[header]}`.startsWith("(") ? "text-red" : "text-green") : ""} ` : "text-left text-grey-primary"}`}
                   >
                     {row[header]}
                   </span>

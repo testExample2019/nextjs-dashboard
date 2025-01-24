@@ -20,11 +20,13 @@ export default async function PositionDrawer({
       />
       <div
         className={
-          "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto"
+          "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto border-b border-grey-border"
         }
       >
         <div className="flex justify-between items-center px-6 py-3">
-          <h2 className="text-lg font-semibold">View Transaction</h2>
+          <h2 className="text-lg font-semibold text-grey-dark ">
+            View Transaction
+          </h2>
           <DrawerClose
             children={
               <button className="text-grey-blue ">

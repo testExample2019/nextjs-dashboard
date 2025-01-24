@@ -44,10 +44,7 @@ export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
         >
           {headers.map((header, cellIndex) => {
             let cellVal: React.JSX.Element;
-            const colTextLeft =
-              header === "amount" ? "text-left" : "text-right";
 
-            console.log(header);
             if (header === "docs") {
               cellVal = <Document />;
             } else if (header.includes("status")) {
@@ -109,7 +106,7 @@ export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
             {headers.map((header, index) => (
               <th
                 key={index}
-                className={`p-3 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[125px] truncate ${header === "amount" ? "text-right" : "text-left"}`}
+                className={`px-3 py-4 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[125px] truncate ${header === "amount" ? "text-right" : "text-left"}`}
               >
                 {separateWords(header)}
               </th>

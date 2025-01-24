@@ -27,7 +27,7 @@ export default async function InstrumentDrawer({
       >
         <div className="flex flex-col justify-between h-full pb-2">
           <div>
-            <div className="flex justify-between items-center px-6 py-3">
+            <div className="flex justify-between items-center px-6 py-3 border-b border-grey-border">
               <h2 className="text-lg font-semibold text-grey-dark">
                 View Instrument
               </h2>
