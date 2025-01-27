@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect } from "react";
-import { DealNavType, DealPages, DealViews } from "@/app/lib/definitions";
+import { DealNavType, DealPages } from "@/app/lib/definitions";
 import { SideNavLink } from "@/app/ui/deals/side-nav-link";
 import { useNextStep } from "nextstepjs";
-import { usePathname, useRouter } from "next/navigation";
-import { replaceViewItemInURL } from "@/app/lib/utils";
+import { usePathname } from "next/navigation";
 
 export default function DealsSideNav({
   dealsNavData,
@@ -12,7 +11,6 @@ export default function DealsSideNav({
   dealsNavData: DealNavType[];
 }) {
   const path = usePathname();
-  const router = useRouter();
   const { setCurrentStep, startNextStep, currentStep } = useNextStep();
 
   useEffect(() => {
@@ -24,7 +22,6 @@ export default function DealsSideNav({
       currentStep === 25
     ) {
       startNextStep("mainTour");
-      router.push(replaceViewItemInURL(path, DealViews.Lender));
       path.includes(DealPages.Dashboard) && setCurrentStep(7);
       path.includes(DealPages.Transactions) && setCurrentStep(21);
       path.includes(DealPages.Instruments) && setCurrentStep(23);
