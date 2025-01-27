@@ -23,11 +23,8 @@ const FormTable = () => {
   };
 
   useEffect(() => {
-    if (currentStep >= 4) {
-      handleInputChange(generateSyntheticEvent("15%"));
-    } else {
-      handleInputChange(generateSyntheticEvent("10%"));
-    }
+    currentStep === 4 && handleInputChange(generateSyntheticEvent("15%"));
+    currentStep === 3 && handleInputChange(generateSyntheticEvent("10%"));
   }, [currentStep]);
 
   // Debounced callback for updating the annual rate
