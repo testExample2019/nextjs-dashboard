@@ -955,7 +955,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        nextRoute: "/document/document-notice",
+        nextRoute: "/document/document-invoice",
       },
       {
         icon: <></>,

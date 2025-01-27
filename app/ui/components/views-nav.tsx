@@ -15,14 +15,14 @@ export default function ViewsNav() {
   const router = useRouter();
   const [activeView, setActiveView] = useState(DealViews.Lender);
   useEffect(() => {
-    if (currentStep >= 26 && activeView === DealViews.Lender) {
-      setActiveView(DealViews.Borrower);
+    if (currentStep >= 27 && activeView === DealViews.Lender) {
       router.push(replaceViewItemInURL(path, DealViews.Borrower));
     }
   }, [currentStep]);
 
   useEffect(() => {
     path.includes(DealViews.Borrower) && setActiveView(DealViews.Borrower);
+    path.includes(DealViews.Lender) && setActiveView(DealViews.Lender);
   }, [path]);
 
   return (

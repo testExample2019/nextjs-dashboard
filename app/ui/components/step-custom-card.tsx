@@ -1,6 +1,7 @@
 "use client";
 
 import { CardComponentProps } from "nextstepjs";
+import { Cross } from "@/app/ui/icons";
 
 const StepCustomCard: React.FC<CardComponentProps> = ({
   step,
@@ -60,7 +61,7 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
           onClick={skipTour}
           className="p-1 rounded-md bg-white text-grey-primary text-xs absolute top-0 right-0" // TODO: Add condition
         >
-          Skip
+          <Cross />
         </button>
       </div>
       {arrow}

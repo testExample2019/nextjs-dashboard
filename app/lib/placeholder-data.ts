@@ -512,7 +512,7 @@ const documentsData: DocumentType[] = [
     ],
   },
   {
-    id: "document-1",
+    id: "document-invoice",
     document: "Soultrain 02-03-2025",
     documentType: "Transaction",
     subType: "Final Notice",
@@ -574,7 +574,7 @@ const documentsData: DocumentType[] = [
     },
     nestedRows: [
       {
-        id: "document-1",
+        id: "document-invoice",
         document: "Soultrain - Drawdown 01-01-2025",
         transaction: "Multiple Transactions",
         subType: "Final Notice",
@@ -1015,7 +1015,7 @@ const deals: DealType[] = [
             status: "in 10 days",
             interest: "$849,315.07",
             total: "$849,315.07",
-            documentId: "document-1",
+            documentId: "document-invoice",
           },
         ],
         debits: [
@@ -1104,7 +1104,7 @@ const deals: DealType[] = [
             status: "in 10 days",
             interest: "$849,315.07",
             total: "$849,315.07",
-            documentId: "document-1",
+            documentId: "document-invoice",
           },
         ],
       },
