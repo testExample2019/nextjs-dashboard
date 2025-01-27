@@ -9,14 +9,15 @@ import { ViewDropdownItems } from "@/app/lib/constants";
 import { useNextStep } from "nextstepjs";
 
 export default function ViewsNav() {
-  const { currentStep, setCurrentStep, startNextStep } = useNextStep();
+  const { currentStep } = useNextStep();
 
   const path = usePathname();
   const router = useRouter();
   const [activeView, setActiveView] = useState(DealViews.Lender);
   useEffect(() => {
-    if (currentStep >= 27 && activeView === DealViews.Lender) {
+    if (currentStep >= 26 && activeView === DealViews.Lender) {
       setActiveView(DealViews.Borrower);
+      router.push(replaceViewItemInURL(path, DealViews.Borrower));
     }
   }, [currentStep]);
 
@@ -37,9 +38,8 @@ export default function ViewsNav() {
                     activeView === DealViews.Lender
                       ? "bg-blue-o text-blue-dark"
                       : "bg-orange-o text-orange"
-                  } flex justify-between gap-2 items-center px-3 py-0.5 z-20 shadow text-sm font-medium rounded-full transition min-w-[160px] hover:shadow-md`}
-                  id="view-button"
-                  aria-haspopup="true"
+                  } flex justify-between gap-1.5 items-center px-3 py-0.5 z-20 shadow text-sm font-medium rounded-full transition min-w-[160px] hover:shadow-md`}
+                  id={`view-button-${activeView}`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

@@ -39,13 +39,13 @@ export const DrawerContent: React.FC<TableProps> = ({
                 <p className="text-sm text-grey font-semibold capitalize">
                   {separateWords(header)}
                 </p>
-                <p className="text-base font-medium text-grey-primary ">
+                <div className="text-base font-medium text-grey-primary ">
                   {header.includes("status") ? (
                     <Status status={`${value}`} />
                   ) : (
                     value
                   )}
-                </p>
+                </div>
               </div>
             )
           );

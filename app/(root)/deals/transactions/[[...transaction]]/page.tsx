@@ -14,7 +14,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
   const transactions = await fetchTransactions(dealName, dealView);
   // Select only specific fields dynamically
   const selectedFields = transactions
-    ?.filter((transaction) => transaction.type !== "Transaction Request")
+    ?.filter((transaction) => transaction.type === "Transaction")
     .map(
       ({
         id,

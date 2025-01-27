@@ -17,14 +17,14 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
         "step-custom-card bg-white rounded-lg shadow-lg border border-grey-border relative"
       }
     >
-      <div className="p-4 flex flex-col w-[400px]">
-        <div className="flex items-center justify-between mb-2">
+      <div className="p-4 flex flex-col">
+        <div className="flex items-center justify-between mb-4">
           <h2 className="text-18 text-grey-primary font-semibold capitalize">
             {step.title}
           </h2>
           {step.icon}
         </div>
-        <div className={"max-h-[450px] overflow-y-auto text-sm relative"}>
+        <div className={"max-h-[350px] overflow-y-auto text-base relative"}>
           {step.content}
           <div className="sticky -bottom-0.5 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
         </div>

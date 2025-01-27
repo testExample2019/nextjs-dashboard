@@ -52,7 +52,7 @@ export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
             } else {
               cellVal = (
                 <Link
-                  className={`${header === "amount" ? "text-left" : "text-right"}`}
+                  className={`${header === "amount" ? "text-left" : "text-right"} truncate`}
                   href={`/${type}/${row.id}`}
                 >
                   {row[header]}

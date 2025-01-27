@@ -13,15 +13,20 @@ const FormTable = () => {
   const { updateAnnualRate } = useTableContext();
   const { currentStep } = useNextStep();
 
+  const generateSyntheticEvent = (val: string = "15%") => {
+    return {
+      target: {
+        name: "annualRate",
+        value: val,
+      },
+    } as React.ChangeEvent<HTMLInputElement>;
+  };
+
   useEffect(() => {
-    if (currentStep === 4) {
-      const syntheticEvent = {
-        target: {
-          name: "annualRate",
-          value: "15%",
-        },
-      } as React.ChangeEvent<HTMLInputElement>;
-      handleInputChange(syntheticEvent);
+    if (currentStep >= 4) {
+      handleInputChange(generateSyntheticEvent("15%"));
+    } else {
+      handleInputChange(generateSyntheticEvent("10%"));
     }
   }, [currentStep]);
 

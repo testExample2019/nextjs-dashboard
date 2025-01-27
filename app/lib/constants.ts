@@ -40,7 +40,6 @@ export const LenderPaymentOptionsDropdownItems = [
   {
     id: 2,
     label: "View Notice",
-    active: true,
     actionType: PaymentActions.ViewNotice,
   },
   { id: 3, label: "Confirm Bank Account", actionType: PaymentActions.Confirm },
@@ -55,7 +54,6 @@ export const BorrowerPaymentOptionsDropdownItems = [
   {
     id: 2,
     label: "View Invoice",
-    active: true,
     actionType: PaymentActions.ViewInvoice,
   },
   { id: 3, label: "Make Payment", actionType: PaymentActions.Confirm },

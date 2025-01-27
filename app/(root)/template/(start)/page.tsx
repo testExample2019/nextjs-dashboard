@@ -72,11 +72,11 @@ const LoanTemplatePage = () => {
   return (
     <div className="flex flex-col items-center justify-start">
       <div className="max-w-5xl w-full px-8 py-32 rounded-lg">
-        <h1 className="text-28 font-semibold text-grey-primary text-center">
+        <h1 className="text-28 font-semibold text-grey-primary text-center tracking-[0.3px]">
           Pick your first template and start using DirectLend <br /> for a new
           loan:
         </h1>
-        <p className="mt-4 text-grey text-center">
+        <p className="mt-4 text-grey text-center font-semibold">
           We will prepopulate most of the fields to simplify the loan
           onboarding.
         </p>

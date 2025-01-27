@@ -36,7 +36,6 @@ export const ButtonDropdown = <T,>({
     setIsDropdownOpen((prev) => !prev);
   };
 
-  console.log(id);
   useEffect(() => {
     (currentStep === 12 && id === "tour1-step11") ||
     (currentStep === 28 && id === "tour1-step27") ||
