@@ -13,15 +13,23 @@ export default function DealsSideNav({
 }) {
   const path = usePathname();
   const router = useRouter();
-  const { setCurrentStep, startNextStep } = useNextStep();
+  const { setCurrentStep, startNextStep, currentStep } = useNextStep();
 
   useEffect(() => {
-    startNextStep("mainTour");
-    router.push(replaceViewItemInURL(path, DealViews.Lender));
-    path.includes(DealPages.Dashboard) && setCurrentStep(7);
-    path.includes(DealPages.Transactions) && setCurrentStep(21);
-    path.includes(DealPages.Instruments) && setCurrentStep(23);
-    path.includes(DealPages.Documents) && setCurrentStep(25);
+    if (
+      currentStep === 0 ||
+      currentStep === 7 ||
+      currentStep === 21 ||
+      currentStep === 23 ||
+      currentStep === 25
+    ) {
+      startNextStep("mainTour");
+      router.push(replaceViewItemInURL(path, DealViews.Lender));
+      path.includes(DealPages.Dashboard) && setCurrentStep(7);
+      path.includes(DealPages.Transactions) && setCurrentStep(21);
+      path.includes(DealPages.Instruments) && setCurrentStep(23);
+      path.includes(DealPages.Documents) && setCurrentStep(25);
+    }
   }, [path]);
 
   return (
