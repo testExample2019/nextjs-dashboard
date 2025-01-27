@@ -13,18 +13,16 @@ export default function DealsSideNav({
 }) {
   const path = usePathname();
   const router = useRouter();
-  const { setCurrentStep, startNextStep, currentStep } = useNextStep();
+  const { setCurrentStep, startNextStep } = useNextStep();
 
   useEffect(() => {
-    if (currentStep === 0) {
-      startNextStep("mainTour");
-      router.push(replaceViewItemInURL(path, DealViews.Lender));
-      path.includes(DealPages.Dashboard) && setCurrentStep(7);
-      path.includes(DealPages.Transactions) && setCurrentStep(21);
-      path.includes(DealPages.Instruments) && setCurrentStep(23);
-      path.includes(DealPages.Documents) && setCurrentStep(25);
-    }
-  }, []);
+    startNextStep("mainTour");
+    router.push(replaceViewItemInURL(path, DealViews.Lender));
+    path.includes(DealPages.Dashboard) && setCurrentStep(7);
+    path.includes(DealPages.Transactions) && setCurrentStep(21);
+    path.includes(DealPages.Instruments) && setCurrentStep(23);
+    path.includes(DealPages.Documents) && setCurrentStep(25);
+  }, [path]);
 
   return (
     <div id={`tour1-step7`} className={"flex  md:flex-col gap-4"}>

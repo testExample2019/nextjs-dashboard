@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import {
-  DealPages,
   DealViews,
   PaymentActions,
   PaymentTypes,
@@ -36,13 +35,7 @@ export default function UpcomingPaymentsList({
   const hasPreviewBtn =
     activePaymentType === PaymentTypes.Debits && dealView === DealViews.Lender;
 
-  const { currentStep, setCurrentStep } = useNextStep();
-
-  useEffect(() => {
-    if (path.includes(DealPages.Dashboard) && currentStep === 21) {
-      setCurrentStep(16); // Handled return from prev step
-    }
-  }, []);
+  const { currentStep } = useNextStep();
 
   useEffect(() => {
     if (currentStep === 14 || currentStep === 21 || currentStep === 26) {
