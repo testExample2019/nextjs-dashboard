@@ -54,7 +54,7 @@ const TransactionsTableView = ({
         >
           Transactions
           <ChevronLeft />
-          <span className={"capitalize"}>
+          <span className={"uppercase"}>
             {handleDisplayCorrectDealName(dealName)}
           </span>
         </h1>
