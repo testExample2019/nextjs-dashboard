@@ -45,7 +45,7 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
             <button
               onClick={prevStep}
               disabled={currentStep === 0}
-              className="bg-white border text-sm border-grey-border uppercase text-grey-primary px-4 py-2 rounded-md font-semibold w-full"
+              className={`bg-white border text-sm border-grey-border uppercase text-grey-primary px-4 py-2 rounded-md font-semibold w-full ${currentStep === 0 ? "opacity-50" : "opacity-100"}`}
             >
               Previous
             </button>
