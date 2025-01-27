@@ -1,5 +1,5 @@
 import React from "react";
-import { separateWords } from "@/app/lib/utils";
+import { isLeftAligned, separateWords } from "@/app/lib/utils";
 
 interface TableProps {
   rows?: { [key: string]: string | number }[];
@@ -26,7 +26,7 @@ export const DrawerTable: React.FC<TableProps> = ({
                 className={`p-3 text-left text-xs font-bol text-grey uppercase`}
               >
                 <span
-                  className={` block ${header === "amount" || header === "share" ? "text-right" : "text-left"}`}
+                  className={` block ${isLeftAligned(header) ? "text-right" : "text-left"}`}
                 >
                   {separateWords(header)}
                 </span>
@@ -48,7 +48,7 @@ export const DrawerTable: React.FC<TableProps> = ({
                   className="p-3 text-base text-grey-primary truncate"
                 >
                   <span
-                    className={` block ${header === "amount" || header === "share" ? `text-right ${highlight ? (`${row[header]}`.startsWith("(") ? "text-red" : "text-green") : ""} ` : "text-left text-grey-primary"}`}
+                    className={` block ${isLeftAligned(header) ? `text-right ${highlight ? (`${row[header]}`.startsWith("(") ? "text-red" : "text-green") : ""} ` : "text-left text-grey-primary"}`}
                   >
                     {row[header]}
                   </span>

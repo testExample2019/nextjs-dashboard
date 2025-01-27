@@ -43,3 +43,14 @@ export const getDefaultPath = (
 ) => {
   return `/deals/${page}/${deals[0].slug}/${view}/`;
 };
+
+export const isLeftAligned = (header: string): boolean => {
+  const leftAlignedHeaders = [
+    "amount",
+    "committed",
+    "share",
+    "funded",
+    "unfunded",
+  ];
+  return leftAlignedHeaders.includes(header.toLowerCase());
+};

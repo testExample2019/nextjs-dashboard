@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Status from "@/app/ui/components/status";
-import { separateWords } from "@/app/lib/utils";
+import { isLeftAligned, separateWords } from "@/app/lib/utils";
 import { ChevronDown, ChevronLeft, Document } from "@/app/ui/icons";
 
 interface TableProps {
@@ -52,7 +52,7 @@ export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
             } else {
               cellVal = (
                 <Link
-                  className={`${header === "amount" ? "text-left" : "text-right"} truncate`}
+                  className={`${isLeftAligned(header) ? "text-left" : "text-right"} truncate`}
                   href={`/${type}/${row.id}`}
                 >
                   {row[header]}
@@ -77,7 +77,7 @@ export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
                   </button>
                 )}
                 <span
-                  className={`flex items-center whitespace-nowrap truncate ${header === "amount" ? "justify-end" : "justify-start"}`}
+                  className={`flex items-center whitespace-nowrap truncate ${isLeftAligned(header) ? "justify-end" : "justify-start"}`}
                 >
                   {type === "document" && cellIndex === 0 && (
                     <Document className={"flex-shrink-0"} />
@@ -106,7 +106,7 @@ export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
             {headers.map((header, index) => (
               <th
                 key={index}
-                className={`px-3 py-4 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[125px] truncate ${header === "amount" ? "text-right" : "text-left"}`}
+                className={`px-3 py-4 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[125px] truncate ${isLeftAligned(header) ? "text-right" : "text-left"}`}
               >
                 {separateWords(header)}
               </th>

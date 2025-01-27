@@ -970,9 +970,9 @@ const deals: DealType[] = [
     id: "2",
     slug: "abccapital",
     displayName: "Abc Capital",
-    totalCommitment: "$300,000,000.00",
-    funded: "$100,000,000.00",
-    unfunded: "$200,000,000.00",
+    totalCommitment: "$2,500,000",
+    funded: "$680,000.00",
+    unfunded: "$1,820,000.00",
     lender: {
       covenantsTracking: [
         {
