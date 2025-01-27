@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import {
+  DealPages,
   DealViews,
   PaymentActions,
   PaymentTypes,
@@ -32,10 +33,19 @@ export default function UpcomingPaymentsList({
   );
   const payments = upcomingPayments?.[activePaymentType];
 
-  const { currentStep } = useNextStep();
+  const hasPreviewBtn =
+    activePaymentType === PaymentTypes.Debits && dealView === DealViews.Lender;
+
+  const { currentStep, setCurrentStep } = useNextStep();
 
   useEffect(() => {
-    if (currentStep === 14 || currentStep === 26) {
+    if (path.includes(DealPages.Dashboard) && currentStep === 21) {
+      setCurrentStep(16); // Handled return from prev step
+    }
+  }, []);
+
+  useEffect(() => {
+    if (currentStep === 14 || currentStep === 21 || currentStep === 26) {
       setActivePaymentType(PaymentTypes.Debits);
     } else if (currentStep === 30) {
       setActivePaymentType(PaymentTypes.Credits);
@@ -151,26 +161,27 @@ export default function UpcomingPaymentsList({
                               </span>
                             </span>
                           )}
-                          {activePaymentType === PaymentTypes.Debits &&
-                            dealView === DealViews.Lender && (
-                              <button
-                                type="button"
-                                onClick={() =>
-                                  payment.transactionId &&
-                                  router.push(
-                                    `/transaction/${payment.transactionId}`,
-                                  )
-                                }
-                                className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
-                                id="tour1-step15"
-                                aria-haspopup="true"
-                              >
-                                Preview
-                              </button>
-                            )}
+                          {hasPreviewBtn && (
+                            <button
+                              type="button"
+                              onClick={() =>
+                                payment.transactionId &&
+                                router.push(
+                                  `/transaction/${payment.transactionId}`,
+                                )
+                              }
+                              className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
+                              id="tour1-step15"
+                              aria-haspopup="true"
+                            >
+                              Preview
+                            </button>
+                          )}
                         </div>
                       </div>
-                      <div className={"flex items-end justify-between gap-4"}>
+                      <div
+                        className={`flex items-end justify-between gap-4 ${hasPreviewBtn ? "-translate-y-1.5" : "translate-y-0"}`}
+                      >
                         <p className="font-semibold">
                           <span
                             className={
@@ -187,9 +198,7 @@ export default function UpcomingPaymentsList({
                           id={payment.id}
                           children={
                             <button
-                              className={
-                                "w-8 h-8 transition-all hover:bg-grey-lighter rounded-md"
-                              }
+                              className={`w-8 h-8 transition-all hover:bg-grey-lighter rounded-md`}
                             >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"

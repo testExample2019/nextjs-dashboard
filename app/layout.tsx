@@ -28,7 +28,7 @@ export default function RootLayout({
           className={`${openSans.className} antialiased bg-grey-o`}
         >
           <NextStep
-            shadowOpacity={"0.3"}
+            shadowOpacity={"0.4"}
             steps={steps}
             cardComponent={StepCustomCard}
           >
