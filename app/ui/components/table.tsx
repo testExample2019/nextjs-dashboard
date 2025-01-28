@@ -9,11 +9,16 @@ import { ChevronDown, ChevronLeft, Document } from "@/app/ui/icons";
 interface TableProps {
   type: "document" | "transaction" | "position" | "instrument";
   rows: { [key: string]: string | number | any }[];
+  expandedItems?: number[]; // Indices to expand initially
 }
 
-export const Table: React.FC<TableProps> = ({ type, rows = [] }) => {
+export const Table: React.FC<TableProps> = ({
+  type,
+  rows = [],
+  expandedItems = [],
+}) => {
   const path = usePathname();
-  const [expandedRows, setExpandedRows] = useState<number[]>([]);
+  const [expandedRows, setExpandedRows] = useState<number[]>(expandedItems);
 
   const toggleRow = (rowIndex: number) => {
     setExpandedRows(

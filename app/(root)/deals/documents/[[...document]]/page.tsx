@@ -61,7 +61,11 @@ const Page: React.FC<PageProps> = async ({ params }) => {
       </div>
       <div className={"p-4"}>
         <Suspense fallback={<TableSkeleton />}>
-          <Table type={"document"} rows={selectedFields} />
+          <Table
+            type={"document"}
+            expandedItems={[2]} // Row 0 (index 0) will be expanded initially
+            rows={selectedFields}
+          />
         </Suspense>
       </div>
     </section>

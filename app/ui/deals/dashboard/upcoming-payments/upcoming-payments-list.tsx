@@ -173,7 +173,7 @@ export default function UpcomingPaymentsList({
                         </div>
                       </div>
                       <div
-                        className={`flex items-end justify-between gap-4 ${hasPreviewBtn ? "-translate-y-1.5" : "translate-y-0"}`}
+                        className={`flex items-end justify-between gap-4 ${hasPreviewBtn ? "-translate-y-1.5" : ""}`}
                       >
                         <p className="font-semibold">
                           <span
