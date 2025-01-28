@@ -35,7 +35,7 @@ const PositionsTable: React.FC<DealParamsType> = async ({
     }),
   );
 
-  return <Table type={"position"} rows={selectedFields} />;
+  return <Table rows={selectedFields} />;
 };
 
 export default PositionsTable;

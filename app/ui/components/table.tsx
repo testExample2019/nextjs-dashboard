@@ -7,14 +7,14 @@ import { isLeftAligned, separateWords } from "@/app/lib/utils";
 import { ChevronDown, ChevronLeft, Document } from "@/app/ui/icons";
 
 interface TableProps {
-  type: "document" | "transaction" | "position" | "instrument";
   rows: { [key: string]: string | number | any }[];
+  type?: "document" | "transaction" | "instrument";
   expandedItems?: number[]; // Indices to expand initially
 }
 
 export const Table: React.FC<TableProps> = ({
-  type,
   rows = [],
+  type,
   expandedItems = [],
 }) => {
   const path = usePathname();
@@ -54,7 +54,7 @@ export const Table: React.FC<TableProps> = ({
               cellVal = <Document />;
             } else if (header.includes("status")) {
               cellVal = <Status status={`${row[header]}`} />;
-            } else {
+            } else if (!!type) {
               cellVal = (
                 <Link
                   className={`${isLeftAligned(header) ? "text-left" : "text-right"} truncate`}
@@ -62,6 +62,14 @@ export const Table: React.FC<TableProps> = ({
                 >
                   {row[header]}
                 </Link>
+              );
+            } else {
+              cellVal = (
+                <span
+                  className={`${isLeftAligned(header) ? "text-left" : "text-right"} truncate`}
+                >
+                  {row[header]}
+                </span>
               );
             }
             return (
