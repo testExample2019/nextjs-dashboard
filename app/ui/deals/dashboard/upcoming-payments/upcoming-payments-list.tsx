@@ -37,10 +37,11 @@ export default function UpcomingPaymentsList({
 
   const { currentStep } = useNextStep();
 
+  console.log(currentStep);
   useEffect(() => {
-    if (currentStep === 15 || currentStep === 22 || currentStep === 27) {
+    if (currentStep === 16 || currentStep === 22 || currentStep === 27) {
       setActivePaymentType(PaymentTypes.Debits);
-    } else if (currentStep === 31) {
+    } else if (currentStep === 14 || currentStep === 31) {
       setActivePaymentType(PaymentTypes.Credits);
     }
   }, [currentStep]);
@@ -76,7 +77,7 @@ export default function UpcomingPaymentsList({
                 {payments?.map((payment) => (
                   <div
                     key={payment.id}
-                    className={`${payment.transactionId && path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow-md border-grey-border`}
+                    className={`${payment.transactionId && path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow border-grey-border`}
                   >
                     <div className="flex justify-between items-end">
                       <div className="flex flex-col">

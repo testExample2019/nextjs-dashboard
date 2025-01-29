@@ -159,7 +159,7 @@ const AdvancedTable = () => {
                     Issue Date
                   </label>
                   <input
-                    type="date"
+                    type="text"
                     name="issueDate"
                     value={formData.issueDate}
                     onChange={handleInputChange}
@@ -171,7 +171,7 @@ const AdvancedTable = () => {
                     Maturity Date
                   </label>
                   <input
-                    type="date"
+                    type="text"
                     name="maturityDate"
                     value={formData.maturityDate}
                     onChange={handleInputChange}
@@ -297,7 +297,7 @@ const AdvancedTable = () => {
                       </select>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
                     <div>
                       <label className="block text-sm font-semibold text-grey-primary h-6">
                         Day Count
@@ -351,7 +351,7 @@ const AdvancedTable = () => {
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                     <div className="flex items-center space-x-3">
                       <span className="text-base text-grey-primary flex items-center gap-1">
                         Include Accrual End
@@ -454,7 +454,7 @@ const AdvancedTable = () => {
                         name="adjustmentType"
                         value={formData.adjustmentType}
                         onChange={handleInputChange}
-                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 truncate border-grey-border focus:border-action-primary focus:ring-0"
                       />
                     </div>
                   </div>
@@ -487,10 +487,10 @@ const AdvancedTable = () => {
                       <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
                         Spread Type
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase text-right">
                         Spread
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase text-right">
                         Spread Adj
                       </th>
                     </tr>
@@ -504,10 +504,10 @@ const AdvancedTable = () => {
                         <td className="py-2 px-4 text-base text-grey-primary">
                           {spread.spreadType}
                         </td>
-                        <td className="py-2 px-4 text-base text-grey-primary">
+                        <td className="py-2 px-4 text-base text-grey-primary text-right">
                           {spread.spread}
                         </td>
-                        <td className="py-2 px-4 text-base text-grey-primary">
+                        <td className="py-2 px-4 text-base text-grey-primary text-right">
                           {spread.spreadAdj}
                         </td>
                       </tr>
@@ -543,10 +543,10 @@ const AdvancedTable = () => {
                       <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
                         Applies To
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase text-right">
                         Rate
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase text-right">
                         Flat Amount
                       </th>
                     </tr>
@@ -564,10 +564,10 @@ const AdvancedTable = () => {
                         <td className="py-2 px-4 text-base text-grey-primary">
                           {facility.appliesTo}
                         </td>
-                        <td className="py-2 px-4 text-base text-grey-primary">
+                        <td className="py-2 px-4 text-base text-grey-primary text-right">
                           {facility.rate}
                         </td>
-                        <td className="py-2 px-4 text-base text-grey-primary">
+                        <td className="py-2 px-4 text-base text-grey-primary text-right">
                           {facility.flatAmount}
                         </td>
                       </tr>

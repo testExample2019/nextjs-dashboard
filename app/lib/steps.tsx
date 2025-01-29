@@ -654,7 +654,6 @@ export const steps: Tour[] = [
         showControls: true,
         showSkip: false,
         pointerPadding: 10,
-        prevRoute: defaultDashboardPath,
         pointerRadius: 10,
       },
       {
@@ -761,7 +760,6 @@ export const steps: Tour[] = [
         side: "left",
         showControls: true,
         showSkip: false,
-        prevRoute: defaultTransactionsPath,
         nextRoute: defaultInstrumentsPath,
         pointerPadding: 10,
         pointerRadius: 10,

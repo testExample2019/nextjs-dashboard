@@ -1,12 +1,15 @@
 "use client";
 import React from "react";
-import { DealNavType, DealViews } from "@/app/lib/definitions";
-import { usePathname } from "next/navigation";
+import {
+  DealBorrowerActions,
+  DealNavType,
+  DealViews,
+} from "@/app/lib/definitions";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { replaceDealItemInURL } from "@/app/lib/utils";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import { dealBorrowerDropdownItems } from "@/app/lib/constants";
-import { handleDealDropdownAction } from "@/app/lib/actions";
 
 export const SideNavLink = ({
   slug,
@@ -17,10 +20,11 @@ export const SideNavLink = ({
   stepId,
 }: DealNavType) => {
   const path = usePathname();
+  const router = useRouter();
   const href = replaceDealItemInURL(path, slug);
   return (
     <Link
-      className={`${path.includes(slug) ? "bg-blue-o" : "bg-white"} w-full max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
+      className={`${path.includes(slug) ? "bg-blue-o" : "bg-white"} ${slug === "soultrain" ? "" : "pointer-events-none"} w-full max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
       href={href}
     >
       <div className="flex justify-between items-center">
@@ -46,7 +50,11 @@ export const SideNavLink = ({
             }
             dropdownItems={dealBorrowerDropdownItems}
             disabled={!path.includes(DealViews.Borrower)}
-            onAction={handleDealDropdownAction}
+            onAction={(actionType: DealBorrowerActions) => {
+              if (actionType === DealBorrowerActions.Drawdown) {
+                return router.push(`/transaction/transaction-1`);
+              }
+            }}
             placeholder={"Request:"}
             id={stepId}
           />

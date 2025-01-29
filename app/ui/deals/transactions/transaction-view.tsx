@@ -37,6 +37,9 @@ const TransactionView = ({
   );
 
   useEffect(() => {
+    if (currentStep === 18) {
+      setActiveTab(TransactionTabsType.TransactionInfo);
+    }
     if (currentStep === 19) {
       setActiveTab(TransactionTabsType.RateInfo);
     }
@@ -142,13 +145,13 @@ const TransactionView = ({
                           <th className="border-b py-2 text-xs text-grey font-bold uppercase">
                             MARKET INDEX
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase text-right">
                             ADJ INDEX RATE
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase text-right">
                             ADJ SPREAD
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
+                          <th className="border-b py-2 text-xs text-grey font-bold uppercase text-right">
                             ALL IN RATE
                           </th>
                         </tr>
@@ -170,11 +173,11 @@ const TransactionView = ({
                             Fixed
                           </td>
                           <td className="px-4 py-2 border-t text-base">-</td>
-                          <td className="px-4 py-2 border-t text-base">
-                            8.5600%
+                          <td className="px-4 py-2 border-t text-base text-right">
+                            10%
                           </td>
-                          <td className="px-4 py-2 border-t text-base">
-                            8.5600%
+                          <td className="px-4 py-2 border-t text-base text-right">
+                            10%
                           </td>
                         </tr>
                       </tbody>
@@ -184,12 +187,13 @@ const TransactionView = ({
                 {activeTab === TransactionTabsType.Allocations && (
                   <>
                     <DrawerTable
+                      activeIndex={0}
                       highlight={true}
                       rows={transaction.transactionDetails.allocations}
                     />
                     <div className="mt-6 pt-4">
                       <DrawerContent
-                        title={`Bank Account`}
+                        title={`Bank Account - ${transaction.customer}`}
                         rows={transaction.transactionDetails.bankAccount}
                       />
                     </div>

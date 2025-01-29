@@ -10,14 +10,20 @@ const TransactionsSchedule = () => {
 
   // Track recently changed rows for animation
   const [updatedRows, setUpdatedRows] = useState<number[]>([]);
+  const [loading, setLoading] = useState(false); // Loading state for spinner
 
   useEffect(() => {
     // Add all row indices as updated initially
-    currentStep === 5 &&
+    if (currentStep === 5) {
+      setLoading(true);
       setUpdatedRows(transactionsTableData.map((_, idx) => idx));
+    }
 
-    // Remove the updated state after the animation duration
-    const timeout = setTimeout(() => setUpdatedRows([]), 1500); // Matches the animation duration
+    // Simulate animation/loading duration
+    const timeout = setTimeout(() => {
+      setLoading(false); // Hide loading spinner
+      setUpdatedRows([]);
+    }, 1000); // Matches the animation duration
     return () => clearTimeout(timeout);
   }, [transactionsTableData]);
 
@@ -26,7 +32,7 @@ const TransactionsSchedule = () => {
       <h2 className="text-18 font-semibold capitalize text-grey-primary py-2 px-4 border-b-1 border-grey-border">
         Preview transactions schedule
       </h2>
-      <div id={"tour1-step2"}>
+      <div id={"tour1-step2"} className={"relative"}>
         <div className="bg-blue-50 border border-blue-100 p-4 mx-4 my-6 rounded-lg flex items-start gap-2 text-grey-primary">
           <Tooltip content={""} />
 
@@ -37,6 +43,11 @@ const TransactionsSchedule = () => {
             more details.
           </p>
         </div>
+        {loading && (
+          <div className="absolute top-1/2 left-1/2 flex justify-center items-center h-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-blue-dark"></div>
+          </div>
+        )}
         <table
           id={"tour1-step3-1"}
           className="w-full text-left border-collapse"

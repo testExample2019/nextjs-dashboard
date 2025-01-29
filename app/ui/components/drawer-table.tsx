@@ -4,11 +4,13 @@ import { isLeftAligned, separateWords } from "@/app/lib/utils";
 interface TableProps {
   rows?: { [key: string]: string | number }[];
   highlight?: boolean;
+  activeIndex?: number;
 }
 
 export const DrawerTable: React.FC<TableProps> = ({
   rows = [],
   highlight = false,
+  activeIndex,
 }) => {
   // Extract headers dynamically from the first row
   const headers =
@@ -26,7 +28,7 @@ export const DrawerTable: React.FC<TableProps> = ({
                 className={`p-3 text-left text-xs font-bol text-grey uppercase`}
               >
                 <span
-                  className={` block ${isLeftAligned(header) ? "text-right" : "text-left"}`}
+                  className={`block ${isLeftAligned(header) ? "text-right" : "text-left"}`}
                 >
                   {separateWords(header)}
                 </span>
@@ -40,7 +42,7 @@ export const DrawerTable: React.FC<TableProps> = ({
           {rows.map((row, rowIndex) => (
             <tr
               key={rowIndex}
-              className="hover:bg-gray-50 transition-colors border-t border-grey-border"
+              className={`hover:bg-gray-50 transition-colors border-t border-grey-border ${activeIndex === rowIndex ? "bg-blue-o" : "bg-white"}`}
             >
               {headers.map((header, cellIndex) => (
                 <td

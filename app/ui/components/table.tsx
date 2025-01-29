@@ -111,7 +111,7 @@ export const Table: React.FC<TableProps> = ({
   };
 
   return (
-    <div className="overflow-x-auto shadow-md border border-grey-border rounded-lg">
+    <div className="overflow-x-auto shadow border border-grey-border rounded-lg">
       <table className="divide-y border-grey-border w-full">
         {/* Table Header */}
         <thead className="bg-gray-50">
