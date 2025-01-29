@@ -14,10 +14,7 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
     CashFlows = "cashflows",
   }
 
-  const TabItems = [
-    { id: TabsType.InstrumentInfo, label: "Instrument Info" },
-    { id: TabsType.CashFlows, label: "Cashflows" },
-  ];
+  const TabItems = [{ id: TabsType.InstrumentInfo, label: "Instrument Info" }];
 
   const [activeTab, setActiveTab] = useState<TabsType>(TabsType.InstrumentInfo);
 

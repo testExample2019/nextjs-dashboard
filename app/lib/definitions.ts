@@ -216,15 +216,15 @@ type TransactionDetailsType = {
   bankAccount: {
     accountName: string;
     bank: string;
-    bic: string;
-    aba: string;
-    iban: string;
+    BIC: string;
+    ABA: string;
+    IBAN: string;
     accountNumber: string;
     currency: string;
   };
   correspondingBankAccount?: {
     bank: string;
-    bic: string;
+    BIC: string;
   };
   interestAmount?: InterestAmountType[];
   feeInfo?: FeeInfoType;

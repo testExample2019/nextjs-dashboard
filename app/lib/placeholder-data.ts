@@ -60,15 +60,15 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "FCIBJMKN",
-        aba: "987654321",
-        iban: "-", // Use "-" if no IBAN is provided
+        BIC: "FCIBJMKN",
+        ABA: "987654321",
+        IBAN: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
         currency: "USD",
       },
       correspondingBankAccount: {
-        bank: "CitiBank N.A. (CITI)",
-        bic: "FCIBJMKN",
+        bank: "CitIBANk N.A. (CITI)",
+        BIC: "FCIBJMKN",
       },
     },
   },
@@ -125,9 +125,9 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "FunkyFunds Main USD",
         bank: "Barclays Bank PLC (BARC)",
-        bic: "BUKBGB222222",
-        aba: "-",
-        iban: "-",
+        BIC: "BUKBGB222222",
+        ABA: "-",
+        IBAN: "-",
         accountNumber: "99999999999",
         currency: "USD",
       },
@@ -184,15 +184,15 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "FCIBJMKN",
-        aba: "987654321",
-        iban: "-", // Use "-" if no IBAN is provided
+        BIC: "FCIBJMKN",
+        ABA: "987654321",
+        IBAN: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
         currency: "USD",
       },
       correspondingBankAccount: {
-        bank: "CitiBank N.A. (CITI)",
-        bic: "FCIBJMKN",
+        bank: "CitIBANk N.A. (CITI)",
+        BIC: "FCIBJMKN",
       },
     },
     nestedRows: [
@@ -259,15 +259,15 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "FCIBJMKN",
-        aba: "987654321",
-        iban: "-", // Use "-" if no IBAN is provided
+        BIC: "FCIBJMKN",
+        ABA: "987654321",
+        IBAN: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
         currency: "USD",
       },
       correspondingBankAccount: {
-        bank: "CitiBank N.A. (CITI)",
-        bic: "FCIBJMKN",
+        bank: "CitIBANk N.A. (CITI)",
+        BIC: "FCIBJMKN",
       },
     },
     nestedRows: [
@@ -334,15 +334,15 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "FCIBJMKN",
-        aba: "987654321",
-        iban: "-", // Use "-" if no IBAN is provided
+        BIC: "FCIBJMKN",
+        ABA: "987654321",
+        IBAN: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
         currency: "USD",
       },
       correspondingBankAccount: {
-        bank: "CitiBank N.A. (CITI)",
-        bic: "FCIBJMKN",
+        bank: "CitIBANk N.A. (CITI)",
+        BIC: "FCIBJMKN",
       },
     },
     nestedRows: [
@@ -366,7 +366,7 @@ export const transactionsData: TransactionType[] = [
     deal: "Soultrain",
     instrument: "New Fixed Loan",
     customer: "Soultrain Music Awards",
-    paymentDate: "2025-02-03",
+    paymentDate: "2025-03-01",
     amount: "767,123.29",
     role: "Lender",
     status: "Scheduled",
@@ -375,7 +375,7 @@ export const transactionsData: TransactionType[] = [
         deal: "Soultrain",
         counterparty: "Soultrain Music Awards",
         instrument: "New Fixed Loan",
-        paymentDate: "2025-02-03",
+        paymentDate: "2025-03-01",
         amount: "$767,123.29 USD",
       },
       feeInfo: {
@@ -409,15 +409,15 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "FCIBJMKN",
-        aba: "987654321",
-        iban: "-", // Use "-" if no IBAN is provided
+        BIC: "FCIBJMKN",
+        ABA: "987654321",
+        IBAN: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
         currency: "USD",
       },
       correspondingBankAccount: {
-        bank: "CitiBank N.A. (CITI)",
-        bic: "FCIBJMKN",
+        bank: "CitIBANk N.A. (CITI)",
+        BIC: "FCIBJMKN",
       },
     },
     nestedRows: [
@@ -427,8 +427,8 @@ export const transactionsData: TransactionType[] = [
         deal: "Soultrain",
         instrument: "New Fixed Loan",
         customer: "Funky Fund East",
-        paymentDate: "2025-02-03",
-        amount: "849,315.07",
+        paymentDate: "2025-03-01",
+        amount: "767,123.29",
         status: "Scheduled",
       },
     ],
@@ -506,7 +506,7 @@ const documentsData: DocumentType[] = [
         subType: "Final Notice",
         deal: "Soultrain",
         customer: "Funky Fund East",
-        documentDate: "2025-01-01",
+        documentDate: "2025-01-20",
         status: "Published",
       },
     ],
@@ -580,7 +580,7 @@ const documentsData: DocumentType[] = [
         subType: "Final Notice",
         deal: "Soultrain",
         customer: "Funky Fund East",
-        documentDate: "2025-01-01",
+        documentDate: "2025-01-20",
         status: "Published",
       },
     ],
@@ -654,81 +654,7 @@ const documentsData: DocumentType[] = [
         subType: "Final Notice",
         deal: "Soultrain",
         customer: "Funky Fund East",
-        documentDate: "2025-01-01",
-        status: "Published",
-      },
-    ],
-  },
-  {
-    id: "document-3",
-    document: "Soultrain 02-03-2025",
-    documentType: "Transaction",
-    subType: "Final Notice",
-    customer: "Soul Train Music Awards",
-    transaction: "Interest Payment [Borrower]",
-    documentDate: "2025-01-20",
-    status: "Published",
-    documentDetails: {
-      lastUpdated: "2024-01-14",
-      type: "Transaction",
-      subType: "Final Notice",
-      documentDate: "2025-01-20",
-      fileType: "PDF",
-      status: "Published",
-    },
-    transactionDetails: {
-      transactionDetailsList: [
-        {
-          type: "Interest Payment",
-          amount: "$849,315.07",
-          tnxUpdated: "2025-01-14 9:51 AM",
-        },
-      ],
-      transactionInfo: {
-        effectiveDate: "2025-02-01",
-        paymentDate: "2025-02-03",
-        amount: "849,315.07 USD",
-      },
-      rateInfo: {
-        type: "Fixed",
-        dayCount: "ACT/360",
-        pikOption: "Cash or PIK",
-        includeAccrualEnd: "Yes",
-        accrualStartDate: "2025-01-01",
-        accrualEndDate: "2025-01-31",
-      },
-      interestAmount: [
-        {
-          date: "2025-01-01",
-          rate: "10.0000%",
-          principal: "$100,000,000.00",
-          amount: "$849,315.07",
-        },
-      ],
-      allocations: [
-        {
-          role: "Borrower",
-          counterparty: "Soul Train Music Awards",
-          amount: "(849,315.07)",
-          share: "(100.00%)",
-        },
-        {
-          role: "Lender",
-          counterparty: "Funky Fund East",
-          amount: "849,315.07",
-          share: "(100.00%)",
-        },
-      ],
-    },
-    nestedRows: [
-      {
-        id: "document-2-1",
-        document: "Soultrain - Drawdown 01-01-2025",
-        transaction: "Interest Payment [Lender]",
-        subType: "Final Notice",
-        deal: "Soultrain",
-        customer: "Funky Fund East",
-        documentDate: "2025-01-01",
+        documentDate: "2025-01-20",
         status: "Published",
       },
     ],

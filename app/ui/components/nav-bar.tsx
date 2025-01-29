@@ -56,6 +56,7 @@ export default function NavBar() {
             <div className="relative w-full max-w-[300px]">
               <select
                 name={"filter"}
+                disabled={true}
                 aria-label={"Filter By Counterparty/Group"}
                 defaultValue={"Filter By Counterparty/Group"}
                 className="block truncate  bg-transparent w-full px-4 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
@@ -71,6 +72,7 @@ export default function NavBar() {
               <input
                 type="text"
                 name={"search"}
+                disabled={true}
                 aria-label={"Search Input"}
                 defaultValue={"Search for Data"}
                 className="block truncate bg-transparent w-full px-8 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
