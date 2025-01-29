@@ -62,8 +62,8 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
               </div>
               <div>
                 <p className="text-sm text-grey font-semibold px-2">Type</p>
-                <p className="font-medium text-grey-primary p-2">
-                  {instrument.type}
+                <p className="font-medium text-grey-primary p-2 capitalize">
+                  {instrument.type}- {instrument.subType}
                 </p>
               </div>
             </div>
@@ -71,7 +71,7 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
               <h2 className="text-base font-semibold text-grey-blue py-4 mb-4 border-b-1 border-grey-border">
                 Issue Info
               </h2>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-4 gap-4">
                 <div>
                   <p className="text-sm text-grey font-semibold px-2">Issuer</p>
                   <p className="font-medium text-grey-primary p-2">

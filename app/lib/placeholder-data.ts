@@ -171,14 +171,14 @@ export const transactionsData: TransactionType[] = [
         {
           role: "Borrower",
           counterparty: "Soul Train Music Awards",
-          amount: "5,000,000.00",
-          share: "100.00%",
+          amount: "(100,000,000.00)",
+          share: "(100.00%)",
         },
         {
           role: "Lender",
           counterparty: "Funky Fund East",
-          amount: "(5,000,000.00)",
-          share: "(100.00%)",
+          amount: "100,000,000.00",
+          share: "100.00%",
         },
       ],
       bankAccount: {
@@ -246,14 +246,14 @@ export const transactionsData: TransactionType[] = [
         {
           role: "Borrower",
           counterparty: "Soul Train Music Awards",
-          amount: "5,000,000.00",
-          share: "100.00%",
+          amount: "(100,000.00)",
+          share: "(100.00%)",
         },
         {
           role: "Lender",
           counterparty: "Funky Fund East",
-          amount: "(5,000,000.00)",
-          share: "(100.00%)",
+          amount: "100,000.00",
+          share: "100.00%",
         },
       ],
       bankAccount: {
@@ -321,14 +321,14 @@ export const transactionsData: TransactionType[] = [
         {
           role: "Borrower",
           counterparty: "Soul Train Music Awards",
-          amount: "5,000,000.00",
-          share: "100.00%",
+          amount: "(849,315.07)",
+          share: "(100.00%)",
         },
         {
           role: "Lender",
           counterparty: "Funky Fund East",
-          amount: "(5,000,000.00)",
-          share: "(100.00%)",
+          amount: "849,315.07",
+          share: "100.00%",
         },
       ],
       bankAccount: {
@@ -396,14 +396,14 @@ export const transactionsData: TransactionType[] = [
         {
           role: "Borrower",
           counterparty: "Soul Train Music Awards",
-          amount: "5,000,000.00",
-          share: "100.00%",
+          amount: "(767,123.29)",
+          share: "(100.00%)",
         },
         {
           role: "Lender",
           counterparty: "Funky Fund East",
-          amount: "(5,000,000.00)",
-          share: "(100.00%)",
+          amount: "767,123.29)",
+          share: "100.00%",
         },
       ],
       bankAccount: {
