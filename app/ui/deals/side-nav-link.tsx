@@ -1,15 +1,13 @@
 "use client";
 import React from "react";
-import {
-  DealBorrowerActions,
-  DealNavType,
-  DealViews,
-} from "@/app/lib/definitions";
-import { usePathname, useRouter } from "next/navigation";
+import { DealNavType, DealViews } from "@/app/lib/definitions";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { replaceDealItemInURL } from "@/app/lib/utils";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import { dealBorrowerDropdownItems } from "@/app/lib/constants";
+import { handleBorrowerDropdownAction } from "@/app/lib/actions";
+import { deals } from "@/app/lib/placeholder-data";
 
 export const SideNavLink = ({
   slug,
@@ -20,11 +18,10 @@ export const SideNavLink = ({
   stepId,
 }: DealNavType) => {
   const path = usePathname();
-  const router = useRouter();
   const href = replaceDealItemInURL(path, slug);
   return (
     <Link
-      className={`${path.includes(slug) ? "bg-blue-o" : "bg-white"} ${slug === "soultrain" ? "" : "pointer-events-none"} w-full max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
+      className={`${path.includes(slug) ? "bg-blue-o" : "bg-white"} ${slug === deals[0].slug ? "" : "pointer-events-none"} w-full max-w-sm  border rounded-medium shadow-md p-2 block transition-all hover:shadow-lg`}
       href={href}
     >
       <div className="flex justify-between items-center">
@@ -50,11 +47,7 @@ export const SideNavLink = ({
             }
             dropdownItems={dealBorrowerDropdownItems}
             disabled={!path.includes(DealViews.Borrower)}
-            onAction={(actionType: DealBorrowerActions) => {
-              if (actionType === DealBorrowerActions.Drawdown) {
-                return router.push(`/transaction/transaction-1`);
-              }
-            }}
+            onAction={handleBorrowerDropdownAction}
             placeholder={"Request:"}
             id={stepId}
           />

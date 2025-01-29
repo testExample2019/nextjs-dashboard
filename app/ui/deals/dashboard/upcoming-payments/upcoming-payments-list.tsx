@@ -37,7 +37,6 @@ export default function UpcomingPaymentsList({
 
   const { currentStep } = useNextStep();
 
-  console.log(currentStep);
   useEffect(() => {
     if (currentStep === 16 || currentStep === 22 || currentStep === 27) {
       setActivePaymentType(PaymentTypes.Debits);
