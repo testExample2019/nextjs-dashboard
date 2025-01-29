@@ -56,7 +56,7 @@ const FormTable = () => {
         <div className={"grid grid-cols-1 gap-1.5"}>
           {/* General info */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
+            <h2 className="text-base font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               General Info
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
@@ -169,7 +169,7 @@ const FormTable = () => {
 
           {/* Borrower and Lender Details */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
+            <h2 className="text-base font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
               Borrower & Lender
               <div>
                 <button
@@ -233,7 +233,7 @@ const FormTable = () => {
 
           {/* Rate and Payment Details */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
+            <h2 className="text-base font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               Rate and Payment
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
@@ -295,7 +295,7 @@ const FormTable = () => {
 
           {/* Amortization */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
+            <h2 className="text-base font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               Amortization
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
@@ -315,7 +315,7 @@ const FormTable = () => {
 
           {/* Documentation */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
+            <h2 className="text-base font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               Documentation
             </h2>
             <div className="mt-4 border-dashed border-1 bg-grey-o border-grey-light rounded-lg p-4 flex flex-col items-center">

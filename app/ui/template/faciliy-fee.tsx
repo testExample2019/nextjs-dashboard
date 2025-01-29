@@ -89,7 +89,7 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
       {/*  Facility Rates */}
       <div className={"p-6"}>
         <div>
-          <h2 className="text-lg font-semibold text-grey-blue py-2 border-b-1 border-grey-border flex items-center justify-between">
+          <h2 className="text-base font-semibold text-grey-blue py-2 border-b-1 border-grey-border flex items-center justify-between">
             Facility Rates
             <div className={"flex items-center gap-6"}>
               <button
