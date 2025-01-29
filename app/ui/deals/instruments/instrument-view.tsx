@@ -32,21 +32,21 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
           </div>
         </div>
 
-        <div className="flex justify-between mb-4">
-          {TabItems.map(({ id, label }) => (
-            <button
-              key={id}
-              onClick={() => setActiveTab(id)}
-              className={`text-sm font-semibold  border-b-2  capitalize pb-2 w-full ${
-                activeTab === id
-                  ? "border-action-primary text-action-primary"
-                  : "text-grey-secondary"
-              }`}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+        {/*<div className="flex justify-between mb-4">*/}
+        {/*  {TabItems.map(({ id, label }) => (*/}
+        {/*    <button*/}
+        {/*      key={id}*/}
+        {/*      onClick={() => setActiveTab(id)}*/}
+        {/*      className={`text-sm font-semibold  border-b-2  capitalize pb-2 w-full ${*/}
+        {/*        activeTab === id*/}
+        {/*          ? "border-action-primary text-action-primary"*/}
+        {/*          : "text-grey-secondary"*/}
+        {/*      }`}*/}
+        {/*    >*/}
+        {/*      {label}*/}
+        {/*    </button>*/}
+        {/*  ))}*/}
+        {/*</div>*/}
 
         {activeTab === TabsType.InstrumentInfo && (
           <>

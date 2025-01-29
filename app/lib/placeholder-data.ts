@@ -439,7 +439,7 @@ const documentsData: DocumentType[] = [
   {
     id: "document-notice",
     stepId: "tour1-step12",
-    document: "Soultrain 01-01-2025",
+    document: "Soultrain - Drawdown 01-01-2025",
     documentType: "Transaction",
     subType: "Final Notice",
     customer: "Soul Train Music Awards",
@@ -513,7 +513,7 @@ const documentsData: DocumentType[] = [
   },
   {
     id: "document-invoice",
-    document: "Soultrain 02-03-2025",
+    document: "Soultrain - Drawdown 01-01-2025",
     documentType: "Transaction",
     subType: "Final Notice",
     customer: "Soul Train Music Awards",
@@ -587,7 +587,7 @@ const documentsData: DocumentType[] = [
   },
   {
     id: "document-2",
-    document: "Soultrain 01-01-2025",
+    document: "Soultrain - Drawdown 02-03-2025",
     documentType: "Transaction",
     subType: "Final Notice",
     customer: "Soul Train Music Awards",
@@ -649,7 +649,7 @@ const documentsData: DocumentType[] = [
     nestedRows: [
       {
         id: "document-2",
-        document: "Soultrain - Drawdown 01-01-2025",
+        document: "Soultrain - Drawdown 02-03-2025",
         transaction: "Interest Payment [Lender]",
         subType: "Final Notice",
         deal: "SOULTRAIN",

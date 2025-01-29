@@ -51,7 +51,7 @@ export const isLeftAligned = (header: string): boolean => {
     "share",
     "funded",
     "unfunded",
-    "spread",
+    "adjSpread",
   ];
   return leftAlignedHeaders.includes(header.toLowerCase());
 };
