@@ -60,7 +60,7 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "09676",
+        bic: "FCIBJMKN",
         aba: "987654321",
         iban: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
@@ -68,7 +68,7 @@ export const transactionsData: TransactionType[] = [
       },
       correspondingBankAccount: {
         bank: "CitiBank N.A. (CITI)",
-        bic: "09676",
+        bic: "FCIBJMKN",
       },
     },
   },
@@ -184,7 +184,7 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "09676",
+        bic: "FCIBJMKN",
         aba: "987654321",
         iban: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
@@ -192,7 +192,7 @@ export const transactionsData: TransactionType[] = [
       },
       correspondingBankAccount: {
         bank: "CitiBank N.A. (CITI)",
-        bic: "09676",
+        bic: "FCIBJMKN",
       },
     },
     nestedRows: [
@@ -259,7 +259,7 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "09676",
+        bic: "FCIBJMKN",
         aba: "987654321",
         iban: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
@@ -267,7 +267,7 @@ export const transactionsData: TransactionType[] = [
       },
       correspondingBankAccount: {
         bank: "CitiBank N.A. (CITI)",
-        bic: "09676",
+        bic: "FCIBJMKN",
       },
     },
     nestedRows: [
@@ -334,7 +334,7 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "09676",
+        bic: "FCIBJMKN",
         aba: "987654321",
         iban: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
@@ -342,7 +342,7 @@ export const transactionsData: TransactionType[] = [
       },
       correspondingBankAccount: {
         bank: "CitiBank N.A. (CITI)",
-        bic: "09676",
+        bic: "FCIBJMKN",
       },
     },
     nestedRows: [
@@ -409,7 +409,7 @@ export const transactionsData: TransactionType[] = [
       bankAccount: {
         accountName: "Account USD",
         bank: "FirstCaribbean International",
-        bic: "09676",
+        bic: "FCIBJMKN",
         aba: "987654321",
         iban: "-", // Use "-" if no IBAN is provided
         accountNumber: "6665554433",
@@ -417,7 +417,7 @@ export const transactionsData: TransactionType[] = [
       },
       correspondingBankAccount: {
         bank: "CitiBank N.A. (CITI)",
-        bic: "09676",
+        bic: "FCIBJMKN",
       },
     },
     nestedRows: [
