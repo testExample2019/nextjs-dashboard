@@ -142,8 +142,9 @@ const FormTable = () => {
                     Issue Date
                   </label>
                   <input
-                    type="date"
+                    type="text"
                     name="issueDate"
+                    disabled={true}
                     value={formData.issueDate}
                     onChange={handleInputChange}
                     className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
@@ -154,7 +155,8 @@ const FormTable = () => {
                     Maturity Date
                   </label>
                   <input
-                    type="date"
+                    type="text"
+                    disabled={true}
                     name="maturityDate"
                     value={formData.maturityDate}
                     onChange={handleInputChange}

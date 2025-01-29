@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Tooltip from "@/app/ui/components/tooltip";
 import { formTableDataAdvanced } from "@/app/lib/placeholder-data";
 import { Cross, Reload } from "@/app/ui/icons";
@@ -23,6 +23,16 @@ const AdvancedTable = () => {
     { id: AdvancedTableTabsType.Spreads, label: "Spreads" },
     { id: AdvancedTableTabsType.FacilityFees, label: "Facility Fees" },
   ];
+
+  // Use effect to scroll to RateAndPayment when the component is mounted
+  useEffect(() => {
+    const rateAndPaymentElement = document.getElementById(
+      AdvancedTableTabsType.RateAndPayment,
+    );
+    if (rateAndPaymentElement) {
+      rateAndPaymentElement.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
 
   const [activeTab, setActiveTab] = useState<AdvancedTableTabsType>(
     AdvancedTableTabsType.RateAndPayment,
@@ -241,8 +251,9 @@ const AdvancedTable = () => {
               {Tabs.map(({ id, label }) => (
                 <button
                   key={id}
+                  id={id}
                   onClick={() => setActiveTab(id)}
-                  className={`text-sm font-semibold  border-b-2 py-4 ${
+                  className={`text-sm font-semibold  border-b-2 py-6 ${
                     activeTab === id
                       ? "border-action-primary text-action-primary"
                       : "text-grey-secondary border-transparent"
