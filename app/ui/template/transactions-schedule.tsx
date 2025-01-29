@@ -1,16 +1,19 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useTableContext } from "@/app/lib/contexts/template-context";
+import { useNextStep } from "nextstepjs";
 
 const TransactionsSchedule = () => {
   const { transactionsTableData } = useTableContext();
+  const { currentStep } = useNextStep();
 
   // Track recently changed rows for animation
   const [updatedRows, setUpdatedRows] = useState<number[]>([]);
 
   useEffect(() => {
     // Add all row indices as updated initially
-    setUpdatedRows(transactionsTableData.map((_, idx) => idx));
+    currentStep === 5 &&
+      setUpdatedRows(transactionsTableData.map((_, idx) => idx));
 
     // Remove the updated state after the animation duration
     const timeout = setTimeout(() => setUpdatedRows([]), 1500); // Matches the animation duration
@@ -43,7 +46,10 @@ const TransactionsSchedule = () => {
             more details.
           </p>
         </div>
-        <table className="w-full text-left border-collapse">
+        <table
+          id={"tour1-step3-1"}
+          className="w-full text-left border-collapse"
+        >
           <thead>
             <tr>
               <th className="border-b p-3 text-grey-secondary text-xs font-semibold">

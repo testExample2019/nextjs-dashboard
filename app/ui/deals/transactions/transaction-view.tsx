@@ -37,10 +37,10 @@ const TransactionView = ({
   );
 
   useEffect(() => {
-    if (currentStep === 18) {
+    if (currentStep === 19) {
       setActiveTab(TransactionTabsType.RateInfo);
     }
-    if (currentStep === 19) {
+    if (currentStep === 20) {
       setActiveTab(TransactionTabsType.Allocations);
     }
   }, [currentStep]);

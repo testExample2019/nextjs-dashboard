@@ -37,9 +37,9 @@ export const ButtonDropdown = <T,>({
   };
 
   useEffect(() => {
-    (currentStep === 12 && id === "tour1-step11") ||
-    (currentStep === 28 && id === "tour1-step27") ||
-    (currentStep === 30 && id === "tour1-step29")
+    (currentStep === 13 && id === "tour1-step11") ||
+    (currentStep === 29 && id === "tour1-step27") ||
+    (currentStep === 31 && id === "tour1-step29")
       ? setIsDropdownOpen(true)
       : setIsDropdownOpen(false);
   }, [currentStep]);

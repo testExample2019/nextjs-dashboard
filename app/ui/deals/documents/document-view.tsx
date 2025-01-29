@@ -9,7 +9,7 @@ import { DrawerContent } from "@/app/ui/components/drawer-content";
 import { DrawerTable } from "@/app/ui/components/drawer-table";
 
 const DocumentView = ({ document }: { document?: DocumentType }) => {
-  const { setCurrentStep, startNextStep, currentStep } = useNextStep();
+  const { setCurrentStep, currentStep } = useNextStep();
 
   if (!document) {
     notFound();
@@ -43,14 +43,13 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
   );
 
   useEffect(() => {
-    if (currentStep === 12) {
-      startNextStep("mainTour");
-      setCurrentStep(12);
-    }
     if (currentStep === 13) {
-      setActiveTab(DocumentTabsType.Document);
+      setCurrentStep(13);
     }
     if (currentStep === 14) {
+      setActiveTab(DocumentTabsType.Document);
+    }
+    if (currentStep === 15) {
       setActiveTab(DocumentTabsType.TransactionDetails);
     }
   }, [currentStep]);

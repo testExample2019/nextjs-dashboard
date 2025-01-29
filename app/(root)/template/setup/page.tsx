@@ -17,7 +17,7 @@ const LoanSetupPage = () => {
     setCurrentStep(2);
   }, []);
   useEffect(() => {
-    if (currentStep === 6 || currentStep === 7) {
+    if (currentStep === 7 || currentStep === 8) {
       setIsAdvanced(true);
     } else {
       setIsAdvanced(false);

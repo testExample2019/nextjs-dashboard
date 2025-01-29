@@ -13,7 +13,7 @@ const FormTable = () => {
   const { updateAnnualRate } = useTableContext();
   const { currentStep } = useNextStep();
 
-  const generateSyntheticEvent = (val: string = "15%") => {
+  const generateSyntheticEvent = (val: string = "15.00%") => {
     return {
       target: {
         name: "annualRate",
@@ -23,8 +23,8 @@ const FormTable = () => {
   };
 
   useEffect(() => {
-    currentStep === 4 && handleInputChange(generateSyntheticEvent("15%"));
-    currentStep === 3 && handleInputChange(generateSyntheticEvent("10%"));
+    currentStep >= 5 && handleInputChange(generateSyntheticEvent("15.00%"));
+    currentStep === 3 && handleInputChange(generateSyntheticEvent("10.00%"));
   }, [currentStep]);
 
   // Debounced callback for updating the annual rate

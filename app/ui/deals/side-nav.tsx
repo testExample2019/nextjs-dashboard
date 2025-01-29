@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { DealNavType, DealPages } from "@/app/lib/definitions";
+import { DealNavType, DealPages, DealViews } from "@/app/lib/definitions";
 import { SideNavLink } from "@/app/ui/deals/side-nav-link";
 import { useNextStep } from "nextstepjs";
 import { usePathname } from "next/navigation";
@@ -16,10 +16,10 @@ export default function DealsSideNav({
   useEffect(() => {
     if (
       currentStep === 0 ||
-      currentStep === 7 ||
-      currentStep === 21 ||
-      currentStep === 23 ||
-      currentStep === 25
+      currentStep === 8 ||
+      currentStep === 22 ||
+      currentStep === 24 ||
+      currentStep === 26
     ) {
       if (
         path.includes(DealPages.Dashboard) ||
@@ -29,15 +29,15 @@ export default function DealsSideNav({
       ) {
         startNextStep("mainTour");
       }
-
-      path.includes(DealPages.Dashboard) && setCurrentStep(7);
-      path.includes(DealPages.Transactions) && setCurrentStep(21);
-      path.includes(DealPages.Instruments) && setCurrentStep(23);
-      path.includes(DealPages.Documents) && setCurrentStep(25);
+      path.includes(DealPages.Dashboard) && setCurrentStep(8);
+      path.includes(DealPages.Transactions) && setCurrentStep(22);
+      path.includes(DealPages.Instruments) && setCurrentStep(24);
+      path.includes(DealPages.Documents) && setCurrentStep(26);
+      path.includes(DealPages.Dashboard) &&
+        path.includes(DealViews.Borrower) &&
+        setCurrentStep(27);
     }
   }, [path]);
-
-  console.log(currentStep);
 
   return (
     <div id={`tour1-step7`} className={"flex  md:flex-col gap-4"}>

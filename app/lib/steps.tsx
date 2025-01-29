@@ -187,6 +187,28 @@ export const steps: Tour[] = [
       },
       {
         icon: <></>,
+        title: "Annual Rate Adjusted",
+        content: (
+          <div className="text-grey-primary min-w-[400px]">
+            <p>
+              You have successfully adjusted the interest rate to{" "}
+              <span className="font-semibold">15%</span>.
+            </p>
+            <p>
+              The Preview Transactions Schedule panel on the right-hand side has
+              been updated to reflect this change automatically.
+            </p>
+          </div>
+        ),
+        selector: "#tour1-step3-1",
+        side: "left",
+        showSkip: false,
+        showControls: true,
+        pointerPadding: 10,
+        pointerRadius: 10,
+      },
+      {
+        icon: <></>,
         title: "Advanced mode",
         content: (
           <div className="text-grey-primary min-w-[400px]">

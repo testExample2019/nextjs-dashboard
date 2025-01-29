@@ -17,7 +17,7 @@ const config: Config = {
         },
       },
       animation: {
-        highlight: "highlight 2s ease-out",
+        highlight: "highlight 1.5s ease-out",
       },
       colors: {
         "action-primary": "#4A90E2",
