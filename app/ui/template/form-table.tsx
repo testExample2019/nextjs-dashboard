@@ -51,15 +51,15 @@ const FormTable = () => {
 
   return (
     <>
-      <div className="py-1 px-8 overflow-y-auto">
+      <div className="py-2 px-8 overflow-y-auto">
         {/* Loan Details Form */}
-        <div className={"grid grid-cols-1 gap-2"}>
+        <div className={"grid grid-cols-1 gap-1.5"}>
           {/* General info */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               General Info
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
               <div className={"flex gap-4 justify-between"}>
                 <div className={"w-full"}>
                   <label className="block text-sm font-semibold text-grey-primary h-6">
@@ -71,19 +71,19 @@ const FormTable = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="New Fixed Loan"
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   />
                 </div>
                 <div className={"w-full"}>
                   <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 relative h-6">
                     Loan Type
-                    <Tooltip content={"lorem"} />
+                    <Tooltip content={""} />
                   </label>
                   <select
                     name="loanType"
                     defaultValue={formData.loanType}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   >
                     <option>{formData.loanType}</option>
                   </select>
@@ -98,7 +98,7 @@ const FormTable = () => {
                   name="deal"
                   defaultValue={formData.deal}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                  className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                 >
                   <option>{formData.deal}</option>
                 </select>
@@ -110,7 +110,7 @@ const FormTable = () => {
                 <div className={"w-full"}>
                   <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 h-6">
                     Loan Amount
-                    <Tooltip content={"lorem"} />
+                    <Tooltip content={""} />
                   </label>
                   <input
                     type="text"
@@ -118,7 +118,7 @@ const FormTable = () => {
                     value={formData.loanAmount}
                     onChange={handleInputChange}
                     placeholder="Loan Amount"
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   />
                 </div>
                 <div className={"w-full"}>
@@ -129,7 +129,7 @@ const FormTable = () => {
                     name="ccy"
                     defaultValue={formData.ccy}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   >
                     <option>{formData.ccy}</option>
                   </select>
@@ -146,7 +146,7 @@ const FormTable = () => {
                     name="issueDate"
                     value={formData.issueDate}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   />
                 </div>
                 <div className={"w-full"}>
@@ -158,7 +158,7 @@ const FormTable = () => {
                     name="maturityDate"
                     value={formData.maturityDate}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   />
                 </div>
               </div>
@@ -167,7 +167,7 @@ const FormTable = () => {
 
           {/* Borrower and Lender Details */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
               Borrower & Lender
               <div>
                 <button
@@ -178,17 +178,17 @@ const FormTable = () => {
                 </button>
               </div>
             </h2>
-            <div className="grid grid-cols-1 gap-4 mt-4">
+            <div className="grid grid-cols-1 gap-4 mt-2">
               <div>
                 <label className="text-sm font-semibold text-grey-primary flex items-center gap-1">
                   Borrower
-                  <Tooltip content={"lorem"} />
+                  <Tooltip content={""} />
                 </label>
                 <select
                   name="borrower"
                   defaultValue={formData.borrower}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                  className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                 >
                   <option>{formData.borrower}</option>
                 </select>
@@ -197,13 +197,13 @@ const FormTable = () => {
                 <div className={"w-full"}>
                   <label className="text-sm font-semibold text-grey-primary flex items-center gap-1">
                     Lenders
-                    <Tooltip content={"lorem"} />
+                    <Tooltip content={""} />
                   </label>
                   <select
                     name="lender"
                     defaultValue={formData.lender}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   >
                     <option>{formData.lender}</option>
                   </select>
@@ -212,14 +212,14 @@ const FormTable = () => {
                   <div>
                     <label className="text-sm font-semibold text-grey-primary flex items-center gap-1">
                       Lender share
-                      <Tooltip content={"lorem"} />
+                      <Tooltip content={""} />
                     </label>
                     <input
                       type="text"
                       name="lenderShare"
                       value={formData.lenderShare}
                       onChange={handleInputChange}
-                      className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0 truncate"
+                      className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0 truncate"
                     />
                   </div>
 
@@ -231,20 +231,20 @@ const FormTable = () => {
 
           {/* Rate and Payment Details */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               Rate and Payment
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
               <div>
                 <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 relative h-6">
                   Rate Type
-                  <Tooltip content={"lorem"} />
+                  <Tooltip content={""} />
                 </label>
                 <select
                   name="rateType"
                   defaultValue={formData.rateType}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                  className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                 >
                   <option>{formData.rateType}</option>
                 </select>
@@ -252,14 +252,14 @@ const FormTable = () => {
               <div id={"tour1-step3"}>
                 <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 relative h-6">
                   Annual Rate
-                  <Tooltip content={"lorem"} />
+                  <Tooltip content={""} />
                 </label>
                 <input
                   type="text"
                   name="annualRate"
                   value={formData.annualRate}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                  className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                 />
               </div>
               <div>
@@ -270,7 +270,7 @@ const FormTable = () => {
                   name="paid"
                   defaultValue={formData.paid}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                  className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                 >
                   <option>{formData.paid}</option>
                 </select>
@@ -283,7 +283,7 @@ const FormTable = () => {
                   name="dayCount"
                   defaultValue={formData.dayCount}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                  className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                 >
                   <option>{formData.dayCount}</option>
                 </select>
@@ -293,14 +293,14 @@ const FormTable = () => {
 
           {/* Amortization */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               Amortization
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
               <div className="flex items-center space-x-3">
                 <span className="text-base text-grey-primary flex items-center gap-1 whitespace-nowrap">
                   Amortized Loan
-                  <Tooltip content={"lorem"} />
+                  <Tooltip content={""} />
                 </span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" />
@@ -313,10 +313,10 @@ const FormTable = () => {
 
           {/* Documentation */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               Documentation
             </h2>
-            <div className="my-4 border-dashed border-1 bg-grey-o border-grey-light rounded-lg p-4 flex flex-col items-center">
+            <div className="mt-4 border-dashed border-1 bg-grey-o border-grey-light rounded-lg p-4 flex flex-col items-center">
               <p className="text-base font-semibold text-grey-primary">
                 Drag & Drop files here to upload or
               </p>

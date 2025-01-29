@@ -57,16 +57,16 @@ const AdvancedTable = () => {
 
   return (
     <div>
-      <div className="py-1 px-8">
+      <div className="py-2 px-8">
         {/* Loan Details Form */}
 
-        <div className={"grid grid-cols-1 gap-2"}>
+        <div className={"grid grid-cols-1 gap-1.5"}>
           {/* General info */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               General Info
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
               <div className={"flex gap-4 justify-between"}>
                 <div className={"w-full"}>
                   <label className="block text-sm font-semibold text-grey-primary h-6">
@@ -78,19 +78,19 @@ const AdvancedTable = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="New Fixed Loan"
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   />
                 </div>
                 <div className={"w-full"}>
                   <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 relative h-6">
                     Loan Type
-                    <Tooltip content={"lorem"} />
+                    <Tooltip content={""} />
                   </label>
                   <select
                     name="loanType"
                     defaultValue={formData.loanType}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   >
                     <option>{formData.loanType}</option>
                   </select>
@@ -105,7 +105,7 @@ const AdvancedTable = () => {
                   name="deal"
                   defaultValue={formData.deal}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                  className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                 >
                   <option>{formData.deal}</option>
                 </select>
@@ -117,7 +117,7 @@ const AdvancedTable = () => {
                 <div className={"w-full"}>
                   <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 h-6">
                     Loan Amount
-                    <Tooltip content={"lorem"} />
+                    <Tooltip content={""} />
                   </label>
                   <input
                     type="text"
@@ -125,7 +125,7 @@ const AdvancedTable = () => {
                     value={formData.loanAmount}
                     onChange={handleInputChange}
                     placeholder="Loan Amount"
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   />
                 </div>
                 <div className={"w-full"}>
@@ -136,7 +136,7 @@ const AdvancedTable = () => {
                     name="ccy"
                     defaultValue={formData.ccy}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   >
                     <option>{formData.ccy}</option>
                   </select>
@@ -153,7 +153,7 @@ const AdvancedTable = () => {
                     name="issueDate"
                     value={formData.issueDate}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   />
                 </div>
                 <div className={"w-full"}>
@@ -165,7 +165,7 @@ const AdvancedTable = () => {
                     name="maturityDate"
                     value={formData.maturityDate}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   />
                 </div>
               </div>
@@ -174,7 +174,7 @@ const AdvancedTable = () => {
 
           {/* Borrower and Lender Details */}
           <div className={"mb-6"}>
-            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
               Borrower & Lender
               <div>
                 <button
@@ -185,17 +185,17 @@ const AdvancedTable = () => {
                 </button>
               </div>
             </h2>
-            <div className="grid grid-cols-1 gap-4 mt-4">
+            <div className="grid grid-cols-1 gap-4 mt-2">
               <div>
                 <label className="text-sm font-semibold text-grey-primary flex items-center gap-1">
                   Borrower
-                  <Tooltip content={"lorem"} />
+                  <Tooltip content={""} />
                 </label>
                 <select
                   name="borrower"
                   defaultValue={formData.borrower}
                   onChange={handleInputChange}
-                  className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                  className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                 >
                   <option>{formData.borrower}</option>
                 </select>
@@ -204,13 +204,13 @@ const AdvancedTable = () => {
                 <div className={"w-full"}>
                   <label className="text-sm font-semibold text-grey-primary flex items-center gap-1">
                     Lenders
-                    <Tooltip content={"lorem"} />
+                    <Tooltip content={""} />
                   </label>
                   <select
                     name="lender"
                     defaultValue={formData.lender}
                     onChange={handleInputChange}
-                    className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                    className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                   >
                     <option>{formData.lender}</option>
                   </select>
@@ -219,14 +219,14 @@ const AdvancedTable = () => {
                   <div>
                     <label className="text-sm font-semibold text-grey-primary flex items-center gap-1">
                       Lender share
-                      <Tooltip content={"lorem"} />
+                      <Tooltip content={""} />
                     </label>
                     <input
                       type="text"
                       name="lenderShare"
                       value={formData.lenderShare}
                       onChange={handleInputChange}
-                      className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0 truncate"
+                      className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0 truncate"
                     />
                   </div>
 
@@ -237,15 +237,15 @@ const AdvancedTable = () => {
           </div>
 
           <div>
-            <div className="flex justify-start border-b border-grey-border">
+            <div className="flex justify-start border-b border-grey-border gap-4">
               {Tabs.map(({ id, label }) => (
                 <button
                   key={id}
                   onClick={() => setActiveTab(id)}
-                  className={`text-sm font-semibold  border-b-2 capitalize py-4 px-6 ${
+                  className={`text-sm font-semibold  border-b-2 py-4 ${
                     activeTab === id
                       ? "border-action-primary text-action-primary"
-                      : "text-grey-secondary"
+                      : "text-grey-secondary border-transparent"
                   }`}
                 >
                   {label}
@@ -258,7 +258,7 @@ const AdvancedTable = () => {
               <>
                 {/* Rate and Payment Details */}
                 <div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
                     <div>
                       <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 relative h-6">
                         Business Day Calendars
@@ -267,7 +267,7 @@ const AdvancedTable = () => {
                         name="businessDayCalendars"
                         defaultValue={formData.businessDayCalendars}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       >
                         <option>{formData.businessDayCalendars}</option>
                       </select>
@@ -280,13 +280,13 @@ const AdvancedTable = () => {
                         name="nonBusinessDayRule"
                         defaultValue={formData.nonBusinessDayRule}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       >
                         <option>{formData.nonBusinessDayRule}</option>
                       </select>
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
                     <div>
                       <label className="block text-sm font-semibold text-grey-primary h-6">
                         Day Count
@@ -295,7 +295,7 @@ const AdvancedTable = () => {
                         name="dayCount"
                         defaultValue={formData.dayCount}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       >
                         <option>{formData.dayCount}</option>
                       </select>
@@ -303,13 +303,13 @@ const AdvancedTable = () => {
                     <div>
                       <label className="text-sm font-semibold text-grey-primary flex items-center gap-1 relative h-6">
                         PIK Option
-                        <Tooltip content={"lorem"} />
+                        <Tooltip content={""} />
                       </label>
                       <select
                         name="pikOption"
                         defaultValue={formData.pikOption}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       >
                         <option>{formData.pikOption}</option>
                       </select>
@@ -322,7 +322,7 @@ const AdvancedTable = () => {
                         name="pikReducesUnfunded"
                         defaultValue={formData.pikReducesUnfunded}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       >
                         <option>{formData.pikReducesUnfunded}</option>
                       </select>
@@ -336,15 +336,15 @@ const AdvancedTable = () => {
                         name="rateScale"
                         value={formData.rateScale}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       />
                     </div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
                     <div className="flex items-center space-x-3">
                       <span className="text-base text-grey-primary flex items-center gap-1">
                         Include Accrual End
-                        <Tooltip content={"Lorem"} />
+                        <Tooltip content={""} />
                       </span>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
@@ -359,7 +359,7 @@ const AdvancedTable = () => {
                     <div className="flex items-center space-x-3">
                       <span className="text-base text-grey-primary flex items-center gap-1">
                         Adjust Accrual End to Business Days
-                        <Tooltip content={"Lorem"} />
+                        <Tooltip content={""} />
                       </span>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input
@@ -376,7 +376,7 @@ const AdvancedTable = () => {
 
                 {/*   Interest Periods */}
                 <div>
-                  <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
+                  <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
                     Interest Periods
                     <div className={"flex items-center gap-6"}>
                       <button
@@ -392,13 +392,13 @@ const AdvancedTable = () => {
 
                 {/*   1ME (Pay 1st BD) */}
                 <div>
-                  <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
+                  <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
                     1ME (Pay 1st BD)
                     <button type="button">
                       <Cross />
                     </button>
                   </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
                     <div>
                       <label className="block text-sm font-semibold text-grey-primary h-6">
                         Accrual Frequency
@@ -408,7 +408,7 @@ const AdvancedTable = () => {
                         name="accrualFrequency"
                         value={formData.accrualFrequency}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       />
                     </div>
                     <div>
@@ -418,7 +418,7 @@ const AdvancedTable = () => {
                         name="accrualFrequencyUnit"
                         defaultValue={formData.accrualFrequencyUnit}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       >
                         <option>{formData.accrualFrequencyUnit}</option>
                       </select>
@@ -432,7 +432,7 @@ const AdvancedTable = () => {
                         name="adjustmentValue"
                         value={formData.adjustmentValue}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       />
                     </div>
                     <div>
@@ -443,7 +443,7 @@ const AdvancedTable = () => {
                         name="adjustmentType"
                         value={formData.adjustmentType}
                         onChange={handleInputChange}
-                        className="w-full mt-1 p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
+                        className="w-full p-1 border-t-0 border-l-0 border-r-0 border-b-1 border-grey-border focus:border-action-primary focus:ring-0"
                       />
                     </div>
                   </div>
@@ -454,7 +454,7 @@ const AdvancedTable = () => {
             {/*  Spreads */}
             {activeTab === AdvancedTableTabsType.Spreads && (
               <div>
-                <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
+                <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
                   Spreads
                   <div className={"flex items-center gap-6"}>
                     <button
@@ -509,7 +509,7 @@ const AdvancedTable = () => {
             {/*  Facility Fees */}
             {activeTab === AdvancedTableTabsType.FacilityFees && (
               <div>
-                <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border flex items-center justify-between">
+                <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
                   Facility Fees
                   <div className={"flex items-center gap-6"}>
                     <button
@@ -569,14 +569,14 @@ const AdvancedTable = () => {
 
           {/* Amortization */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               Amortization
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-2">
               <div className="flex items-center space-x-3">
                 <span className="text-base text-grey-primary flex items-center gap-1 whitespace-nowrap">
                   Amortized Loan
-                  <Tooltip content={"lorem"} />
+                  <Tooltip content={""} />
                 </span>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" className="sr-only peer" />
@@ -589,10 +589,10 @@ const AdvancedTable = () => {
 
           {/* Documentation */}
           <div>
-            <h2 className="text-lg font-semibold text-grey-blue py-4 border-b-1 border-grey-border">
+            <h2 className="text-lg font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border">
               Documentation
             </h2>
-            <div className="my-4 border-dashed border-1 bg-grey-o border-grey-light rounded-lg p-4 flex flex-col items-center">
+            <div className="mt-2 border-dashed border-1 bg-grey-o border-grey-light rounded-lg p-4 flex flex-col items-center">
               <p className="text-base font-semibold text-grey-primary">
                 Drag & Drop files here to upload or
               </p>

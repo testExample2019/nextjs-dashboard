@@ -72,7 +72,7 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
           <div className="flex items-center space-x-3">
             <span className="text-base text-grey-primary flex items-center gap-1 whitespace-nowrap">
               Include Accrual End
-              <Tooltip content={"Lorem"} />
+              <Tooltip content={""} />
             </span>
             <label className="relative inline-flex items-center cursor-pointer">
               <input

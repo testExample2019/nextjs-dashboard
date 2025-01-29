@@ -44,23 +44,6 @@ export const ButtonDropdown = <T,>({
       : setIsDropdownOpen(false);
   }, [currentStep]);
 
-  // Close dropdown if clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>
       <div

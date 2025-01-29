@@ -479,7 +479,7 @@ const documentsData: DocumentType[] = [
         {
           date: "2025-01-01",
           rate: "10.0000%",
-          principal: "$100,000.00",
+          principal: "$100,000,000.00",
           amount: "$849,315.07",
         },
       ],
@@ -553,7 +553,7 @@ const documentsData: DocumentType[] = [
         {
           date: "2025-01-01",
           rate: "10.0000%",
-          principal: "$100,000.00",
+          principal: "$100,000,000.00",
           amount: "$849,315.07",
         },
       ],
@@ -627,7 +627,7 @@ const documentsData: DocumentType[] = [
         {
           date: "2025-01-01",
           rate: "10.0000%",
-          principal: "$100,000.00",
+          principal: "$100,000,000.00",
           amount: "$849,315.07",
         },
       ],
@@ -701,7 +701,7 @@ const documentsData: DocumentType[] = [
         {
           date: "2025-01-01",
           rate: "10.0000%",
-          principal: "$100,000.00",
+          principal: "$100,000,000.00",
           amount: "$849,315.07",
         },
       ],
