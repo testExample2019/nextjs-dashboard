@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Tooltip from "@/app/ui/components/tooltip";
 import { formTableDataAdvanced } from "@/app/lib/placeholder-data";
 import { Cross, Reload } from "@/app/ui/icons";
@@ -17,6 +17,14 @@ const AdvancedTable = () => {
   const [formData, setFormData] = useState(formTableDataAdvanced);
   const [showNewFacility, setShowNewFacility] = useState(false);
   const [selectedRow, setSelectedRow] = useState(null); // Tracks selected row data
+  const elementRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // Scroll to the referenced element when the component mounts
+    if (elementRef.current) {
+      elementRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, []);
 
   const Tabs = [
     { id: AdvancedTableTabsType.RateAndPayment, label: "Rate and Payment" },
@@ -26,12 +34,9 @@ const AdvancedTable = () => {
 
   // Use effect to scroll to RateAndPayment when the component is mounted
   useEffect(() => {
-    const rateAndPaymentElement = document.getElementById(
-      AdvancedTableTabsType.RateAndPayment,
-    );
-    if (rateAndPaymentElement) {
-      rateAndPaymentElement.scrollIntoView({ behavior: "smooth" });
-    }
+    const scrollTo = document.getElementById("advanced-tabs");
+
+    scrollTo?.scrollIntoView({ behavior: "smooth" });
   }, []);
 
   const [activeTab, setActiveTab] = useState<AdvancedTableTabsType>(
@@ -247,7 +252,10 @@ const AdvancedTable = () => {
           </div>
 
           <div>
-            <div className="flex justify-start border-b border-grey-border gap-4">
+            <div
+              ref={elementRef}
+              className="flex justify-start border-b border-grey-border gap-4"
+            >
               {Tabs.map(({ id, label }) => (
                 <button
                   key={id}
