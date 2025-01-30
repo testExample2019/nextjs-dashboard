@@ -91,7 +91,7 @@ export type DocumentType = {
   id: string;
   stepId?: string;
   document: string;
-  documentType: "Transaction" | "Customer" | "Invoice" | "Contract" | string;
+  documentType: "Notice" | "Invoice" | string;
   subType: "Other" | "Final notice" | string;
   customer: string;
   transaction:

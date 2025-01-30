@@ -440,7 +440,7 @@ const documentsData: DocumentType[] = [
     id: "document-notice",
     stepId: "tour1-step12",
     document: "Soultrain - Drawdown 01-01-2025",
-    documentType: "Transaction",
+    documentType: "Notice",
     subType: "Final Notice",
     customer: "Soul Train Music Awards",
     transaction: "Multiple Transactions",
@@ -514,7 +514,7 @@ const documentsData: DocumentType[] = [
   {
     id: "document-invoice",
     document: "Soultrain - Drawdown 01-01-2025",
-    documentType: "Transaction",
+    documentType: "Invoice",
     subType: "Final Notice",
     customer: "Soul Train Music Awards",
     transaction: "Multiple Transactions",
@@ -588,7 +588,7 @@ const documentsData: DocumentType[] = [
   {
     id: "document-2",
     document: "Soultrain - Drawdown 02-03-2025",
-    documentType: "Transaction",
+    documentType: "Notice",
     subType: "Final Notice",
     customer: "Soul Train Music Awards",
     transaction: "Interest Payment [Borrower]",

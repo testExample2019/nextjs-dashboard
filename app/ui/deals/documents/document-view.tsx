@@ -104,10 +104,14 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
               <>
                 <div className={"h-[380px] overflow-auto"}>
                   <Image
-                    src="/images/invoice.jpg"
+                    src={
+                      document.documentType === "Invoice"
+                        ? "/images/invoice.jpg"
+                        : "/images/notice.jpg"
+                    }
                     width={550}
                     height={380}
-                    alt="Picture of document"
+                    alt="PDF of document"
                   />
                 </div>
                 <div className="flex items-center justify-between w-full px-4 py-2 border-t border-gray-300 bg-white">
