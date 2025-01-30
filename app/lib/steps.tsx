@@ -81,7 +81,7 @@ export const steps: Tour[] = [
               </li>
               <li>
                 <span className="font-semibold pe-1">
-                  Designate Borrower and Lenders:
+                  Designate borrower and lenders:
                 </span>
                 Identify the Borrower for this loan and specify one or multiple
                 lenders. You can easily allocate their respective shares in the
@@ -1163,7 +1163,7 @@ export const steps: Tour[] = [
               </li>
               <li>
                 <span className="font-semibold pe-1">
-                  Direct Communication with Lenders:
+                  Direct Communication with lenders:
                 </span>
                 All requests are communicated directly to the lenders through
                 the portal, ensuring a streamlined process and timely updates.
