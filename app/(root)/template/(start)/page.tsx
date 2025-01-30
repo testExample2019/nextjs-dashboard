@@ -80,13 +80,11 @@ const LoanTemplatePage = () => {
           We will prepopulate most of the fields to simplify the loan
           onboarding.
         </p>
-        <div
-          id="tour1-step0"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
           {templates.map((template, index) => (
             <button
               key={index}
+              id={index === 0 ? "tour1-step0" : ""}
               onClick={() => redirect(`/template/setup`)}
               className="flex text-left p-6 border border-grey-border rounded-lg hover:shadow-md transition-shadow duration-200 cursor-pointer"
             >
