@@ -64,7 +64,7 @@ export const steps: Tour[] = [
             <p className="font-semibold mb-3">
               Here’s what you can do in this wizard:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Specify Key Information:
@@ -130,7 +130,7 @@ export const steps: Tour[] = [
             <p className="font-semibold mb-3">
               Here’s what you can expect from this panel:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Instant Updates:</span>As
                 you fill out the loan details, the preview will automatically
@@ -237,7 +237,7 @@ export const steps: Tour[] = [
             <p className="font-semibold mb-3">
               Here’s what you can access in Advanced Mode:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Accrual Frequency Options:
@@ -319,7 +319,7 @@ export const steps: Tour[] = [
               The Deals Panel on your Dashboard provides an efficient way to
               view all your Loan deals and their current positions:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 Access a comprehensive list of both active and closed loan
                 deals, showcasing key details such as deal name, Committed,
@@ -352,7 +352,7 @@ export const steps: Tour[] = [
               on your Dashboard highlights the closest scheduled payments,
               including both debits and credits.
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Overview of Scheduled Payments:
@@ -406,7 +406,7 @@ export const steps: Tour[] = [
               Displays the results of Financial Covenants calculations based on
               the latest financial statements provided by the borrower.
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Regular Updates:</span>Stay
                 informed with up-to-date calculations as financial statements
@@ -450,7 +450,7 @@ export const steps: Tour[] = [
         title: "Information About Scheduled Events",
         content: (
           <div className="text-grey-primary min-w-[400px]">
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Upcoming Payments Widget:
@@ -505,7 +505,7 @@ export const steps: Tour[] = [
               When you select to view the notice document, a drawer will open to
               display the document preview.
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Document Preview:</span>
                 Easily review the contents of the notice document within the
@@ -537,7 +537,7 @@ export const steps: Tour[] = [
               tab provides a comprehensive list of transactions related to the
               Notice.
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Detailed Transaction List:
@@ -586,7 +586,7 @@ export const steps: Tour[] = [
               ability to efficiently review these requests.
             </p>
 
-            <ul className="list-disc list-inside space-y-3 max-h-60 overflow-y-auto">
+            <ul className="list-disc ps-5  list-outside space-y-3 max-h-60 overflow-y-auto">
               <li>
                 <span className="font-semibold pe-1">Request Overview:</span>
                 Easily access a summary of all pending requests from borrowers
@@ -631,7 +631,7 @@ export const steps: Tour[] = [
               principal prepayments, you will find detailed information that
               includes:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Requested Payment Date:
@@ -666,7 +666,7 @@ export const steps: Tour[] = [
         title: "Detailed Request Information",
         content: (
           <div className="text-grey-primary min-w-[400px]">
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Requested Rate Option:
@@ -689,7 +689,7 @@ export const steps: Tour[] = [
         title: "Preferred Bank Account",
         content: (
           <div className="text-grey-primary min-w-[400px]">
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Preferred Bank Account:
@@ -739,7 +739,7 @@ export const steps: Tour[] = [
               transactions, enabling you to effectively track their status and
               access detailed information.
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Comprehensive List:</span>
                 View an entire list of both historical and scheduled
@@ -769,7 +769,7 @@ export const steps: Tour[] = [
         title: "Transaction Details",
         content: (
           <div className="text-grey-primary min-w-[400px]">
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Access Transaction Details:
@@ -790,6 +790,7 @@ export const steps: Tour[] = [
         side: "left",
         showControls: true,
         showSkip: false,
+        prevRoute: defaultTransactionsPath,
         nextRoute: defaultInstrumentsPath,
         pointerPadding: 10,
         pointerRadius: 10,
@@ -831,7 +832,7 @@ export const steps: Tour[] = [
               , where you can view comprehensive information and make
               adjustments as needed.
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   View Instrument Details:
@@ -862,13 +863,13 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Documents Screen",
         content: (
-          <div className="text-grey-primary min-w-[50vw]">
+          <div className="text-grey-primary min-w-[75vw]">
             <p className="mb-3">
               <span className="font-semibold pe-1">The Documents Screen:</span>
               serves as a comprehensive repository for all Loan documentation,
               providing a centralized location for managing your documents.
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Complete Document Repository:
@@ -907,7 +908,7 @@ export const steps: Tour[] = [
           <div className="text-grey-primary min-w-[250px]">
             <p className="mb-3">
               Switching to the
-              <span className="font-semibold pe-1">Borrower View</span>
+              <span className="font-semibold px-1">Borrower View</span>
             </p>
           </div>
         ),
@@ -931,7 +932,7 @@ export const steps: Tour[] = [
               </span>
               showcases scheduled payments from the borrower’s perspective.
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Scheduled Debit Transactions:
@@ -981,7 +982,7 @@ export const steps: Tour[] = [
               for borrowers, users can quickly access essential features related
               to their scheduled payments:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Access Transaction Details:
@@ -1033,7 +1034,7 @@ export const steps: Tour[] = [
               in the Upcoming Payments Widget, the invoice document addressed to
               the Borrower will be displayed in a drawer.
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Document Preview:</span>
                 The drawer provides a clear preview of the invoice document,
@@ -1067,7 +1068,7 @@ export const steps: Tour[] = [
               In the Borrower View, users have the ability to initiate
               unscheduled transactions, including:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Drawdown Requests:</span>
                 Borrowers can submit requests for unscheduled drawdowns,
@@ -1092,6 +1093,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
+        prevRoute: "/document/document-invoice",
         nextRoute: "/transaction/drawdown-request",
       },
       {
@@ -1103,7 +1105,7 @@ export const steps: Tour[] = [
               Initiating an unscheduled transaction is straightforward for
               borrowers:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Specify Payment Date:
@@ -1147,12 +1149,12 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Unscheduled Transaction Requests Tracking",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary min-w-[75vw]">
             <p className="mb-3">
               Borrowers can easily track the current status of their unscheduled
               transaction requests directly on their Dashboard:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Status Overview:</span>The
                 Dashboard provides a clear overview of all submitted requests,
@@ -1175,12 +1177,12 @@ export const steps: Tour[] = [
                 and any actions needed.
               </li>
             </ul>
-            <p className="mt-3">
+            <p className="my-3">
               Once an unscheduled transaction is confirmed by the lender, the
               system will automatically recalculate the affected payment
               schedule:
             </p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
                   Automatic Recalculation:
@@ -1212,6 +1214,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
+        prevRoute: "/transaction/drawdown-request",
       },
       {
         icon: <></>,
@@ -1225,7 +1228,7 @@ export const steps: Tour[] = [
               Lenders.
             </p>
             <p className="mb-3">To summarize, you have learned how to:</p>
-            <ul className="list-disc list-inside space-y-3">
+            <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 Navigate the Dashboard and access key features such as Upcoming
                 Payments, Transactions, and Instruments.

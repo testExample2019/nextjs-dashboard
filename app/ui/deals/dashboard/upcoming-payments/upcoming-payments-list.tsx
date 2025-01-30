@@ -38,9 +38,14 @@ export default function UpcomingPaymentsList({
   const { currentStep } = useNextStep();
 
   useEffect(() => {
-    if (currentStep === 16 || currentStep === 22 || currentStep === 27) {
+    if (
+      currentStep === 16 ||
+      currentStep === 22 ||
+      currentStep === 27 ||
+      currentStep === 30
+    ) {
       setActivePaymentType(PaymentTypes.Debits);
-    } else if (currentStep === 14 || currentStep === 31) {
+    } else if (currentStep === 14 || currentStep === 33) {
       setActivePaymentType(PaymentTypes.Credits);
     }
   }, [currentStep]);

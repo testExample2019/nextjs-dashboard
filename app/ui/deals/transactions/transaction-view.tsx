@@ -53,12 +53,12 @@ const TransactionView = ({
   }
 
   return (
-    <div className="bg-white rounded-lg px-6 py-4">
-      <div id={"tour1-step21"}>
-        <div id={"tour1-step30"}>
-          <div id={"tour1-step16"}>
-            <div id={"tour1-step17"}>
-              <div id={"tour1-step18"}>
+    <div id={"tour1-step21"}>
+      <div id={"tour1-step30"}>
+        <div id={"tour1-step16"}>
+          <div id={"tour1-step17"}>
+            <div id={"tour1-step18"}>
+              <div className="bg-white rounded-lg px-6 py-4">
                 <div className="flex justify-between items-end border-b pb-4 mb-4">
                   <div>
                     <h3 className="text-sm text-grey font-semibold uppercase">
