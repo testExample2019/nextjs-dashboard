@@ -111,7 +111,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                     }
                     width={550}
                     height={380}
-                    alt="PDF of document"
+                    alt={`${document.documentType} document`}
                   />
                 </div>
                 <div className="flex items-center justify-between w-full px-4 py-2 border-t border-gray-300 bg-white">
