@@ -17,7 +17,7 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary min-w-[400px]">
             We’re excited to have you on board. Our platform is designed to
-            cater to both Borrowers and Lenders, ensuring a seamless experience
+            cater to both borrowers and lenders, ensuring a seamless experience
             for all users. In this guided tour, we will walk you through the key
             features and functionalities of the platform, starting with the
             Lender view.
@@ -36,12 +36,12 @@ export const steps: Tour[] = [
           <div className="text-grey-primary min-w-[650px]">
             <p>
               To kick things off, we will begin with the onboarding process for
-              a new Loan. To simplify the Loan creation, we invite you to select
+              a new loan. To simplify the loan creation, we invite you to select
               a template that best fits your needs. By choosing a template, we
               can automatically repopulate many fields in the system, saving you
               time and effort in the process.
             </p>
-            <p>Let’s get started by selecting a simple Fixed loan template.</p>
+            <p>Let’s get started by selecting a simple fixed loan template.</p>
           </div>
         ),
         selector: "#tour1-step0",
@@ -54,7 +54,7 @@ export const steps: Tour[] = [
       },
       {
         icon: <></>,
-        title: "Here is the New Loan Setup Wizard!",
+        title: "Here is the new loan Setup Wizard!",
         content: (
           <div className="text-grey-primary min-w-[400px]">
             <p className="mb-3">
@@ -96,7 +96,7 @@ export const steps: Tour[] = [
               </li>
               <li>
                 <span className="font-semibold pe-1">
-                  Upload Loan-Related Documentation:
+                  Upload loan-related Documentation:
                 </span>
                 For a comprehensive setup, upload any relevant documentation
                 that pertains to the loan, ensuring all necessary information is
@@ -165,7 +165,7 @@ export const steps: Tour[] = [
       },
       {
         icon: <></>,
-        title: "Adjust Annual Rate in Your Loan",
+        title: "Adjust annual rate in Your loan",
         content: (
           <div className="text-grey-primary min-w-[400px]">
             <p>
@@ -262,7 +262,7 @@ export const steps: Tour[] = [
               </li>
               <li>
                 <span className="font-semibold pe-1">
-                  Unitranche Loan Setup:
+                  Unitranche loan Setup:
                 </span>
                 Set up unitranche loans, which combine senior and subordinated
                 debt into a single facility, simplifying the capital structure.
@@ -317,7 +317,7 @@ export const steps: Tour[] = [
           <div className="text-grey-primary min-w-[400px]">
             <p className="mb-3">
               The Deals Panel on your Dashboard provides an efficient way to
-              view all your Loan deals and their current positions:
+              view all your loan deals and their current positions:
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
@@ -383,7 +383,7 @@ export const steps: Tour[] = [
             <p className="mb-3">
               <span className="font-semibold pe-1">The Positions Widget</span>
               provides a detailed breakdown of your current positions for every
-              Loan Instrument in your portfolio.
+              loan Instrument in your portfolio.
             </p>
           </div>
         ),
@@ -403,7 +403,7 @@ export const steps: Tour[] = [
               <span className="font-semibold pe-1">
                 Covenants Tracking Widget
               </span>
-              Displays the results of Financial Covenants calculations based on
+              Displays the results of financial covenants calculations based on
               the latest financial statements provided by the borrower.
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
@@ -418,7 +418,7 @@ export const steps: Tour[] = [
                   Custom Covenants Creation:
                 </span>
                 Utilize the Formula Builder to create custom covenants and
-                metrics that can combine both Financial Data and Loan Data,
+                metrics that can combine both financial data and loan data,
                 tailored to your specific requirements.
               </li>
               <li>
@@ -646,7 +646,7 @@ export const steps: Tour[] = [
               </li>
               <li>
                 <span className="font-semibold pe-1">Associated Fees:</span>
-                Fees calculated automatically based on the Loan Terms, providing
+                Fees calculated automatically based on the loan terms, providing
                 transparency and clarity regarding any costs associated with the
                 request.
               </li>
@@ -804,7 +804,7 @@ export const steps: Tour[] = [
               <span className="font-semibold pe-1">
                 The Instruments Screen:
               </span>
-              displays a comprehensive list of all Loan instruments in your
+              displays a comprehensive list of all loan instruments in your
               portfolio, making it easy to find and filter specific instruments.
             </p>
           </div>
@@ -824,7 +824,7 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary min-w-[400px]">
             <p className="mb-3">
-              By selecting a specific Loan instrument from the Instruments
+              By selecting a specific loan instrument from the Instruments
               Screen, you can access the
               <span className="font-semibold px-1">
                 Instrument Details Drawer
@@ -866,7 +866,7 @@ export const steps: Tour[] = [
           <div className="text-grey-primary min-w-[75vw]">
             <p className="mb-3">
               <span className="font-semibold pe-1">The Documents Screen:</span>
-              serves as a comprehensive repository for all Loan documentation,
+              serves as a comprehensive repository for all loan documentation,
               providing a centralized location for managing your documents.
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
@@ -1130,7 +1130,7 @@ export const steps: Tour[] = [
                   Automatic Population of Attributes:
                 </span>
                 Remaining attributes will be automatically populated based on
-                the associated Loan Terms, ensuring a hassle-free and accurate
+                the associated loan terms, ensuring a hassle-free and accurate
                 submission process.
               </li>
             </ul>
@@ -1224,8 +1224,8 @@ export const steps: Tour[] = [
             <p className="mb-3">
               Thank you for taking the time to explore the DirectLend Platform!
               We hope this demo has provided you with valuable insights into the
-              features and functionalities available for both Borrowers and
-              Lenders.
+              features and functionalities available for both borrowers and
+              lenders.
             </p>
             <p className="mb-3">To summarize, you have learned how to:</p>
             <ul className="list-disc ps-5  list-outside space-y-3">

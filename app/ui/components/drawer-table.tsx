@@ -25,7 +25,7 @@ export const DrawerTable: React.FC<TableProps> = ({
             {headers.map((header, index) => (
               <th
                 key={index}
-                className={`p-3 text-left text-xs font-bol text-grey capitalize`}
+                className={`p-3 text-left text-xs font-bol text-grey uppercase`}
               >
                 <span
                   className={`block ${isLeftAligned(header) ? "text-right" : "text-left"}`}

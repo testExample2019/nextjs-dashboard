@@ -191,7 +191,7 @@ const AdvancedTable = () => {
               <div>
                 <button
                   type="button"
-                  className={`inline-flex justify-center gap-x-1.5 text-sm capitalize font-semibold text-action-primary  hover:text-blue-dark`}
+                  className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
                 >
                   + Add lender
                 </button>
@@ -394,7 +394,7 @@ const AdvancedTable = () => {
                     <div className={"flex items-center gap-6"}>
                       <button
                         type="button"
-                        className={`inline-flex justify-center gap-x-1.5 text-sm capitalize font-semibold text-action-primary  hover:text-blue-dark`}
+                        className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
                       >
                         + Add
                       </button>
@@ -472,7 +472,7 @@ const AdvancedTable = () => {
                   <div className={"flex items-center gap-6"}>
                     <button
                       type="button"
-                      className={`inline-flex justify-center gap-x-1.5 text-sm capitalize font-semibold text-action-primary  hover:text-blue-dark`}
+                      className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
                     >
                       + Add
                     </button>
@@ -483,16 +483,16 @@ const AdvancedTable = () => {
                 <table className="w-full border-collapse text-left mt-2">
                   <thead>
                     <tr>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
                         Date
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
                         Spread Type
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize text-right">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase text-right">
                         Spread
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize text-right">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase text-right">
                         Spread Adj
                       </th>
                     </tr>
@@ -528,7 +528,7 @@ const AdvancedTable = () => {
                     <button
                       type="button"
                       onClick={handleFacilityAddClick}
-                      className={`inline-flex justify-center gap-x-1.5 text-sm capitalize font-semibold text-action-primary  hover:text-blue-dark`}
+                      className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
                     >
                       + Add
                     </button>
@@ -539,16 +539,16 @@ const AdvancedTable = () => {
                 <table className="w-full border-collapse text-left mt-2">
                   <thead>
                     <tr>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
                         Type
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
                         Applies To
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize text-right">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase text-right">
                         Rate
                       </th>
-                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize text-right">
+                      <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase text-right">
                         Flat Amount
                       </th>
                     </tr>
@@ -609,7 +609,7 @@ const AdvancedTable = () => {
               <p className="text-base font-semibold text-grey-primary">
                 Drag & Drop files here to upload or
               </p>
-              <button className="mt-2 px-4 py-2 capitalize border border-action-primary text-action-primary rounded-md">
+              <button className="mt-2 px-4 py-2 uppercase border border-action-primary text-action-primary rounded-md">
                 Browse Files
               </button>
             </div>

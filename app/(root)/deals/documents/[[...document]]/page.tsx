@@ -54,7 +54,7 @@ const Page: React.FC<PageProps> = async ({ params }) => {
         >
           Documents
           <ChevronLeft />
-          <span className={"capitalize"}>
+          <span className={"uppercase"}>
             {handleDisplayCorrectDealName(dealName)}
           </span>
         </h1>
