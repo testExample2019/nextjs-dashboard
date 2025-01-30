@@ -25,7 +25,7 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
           </h2>
           {step.icon}
         </div>
-        <div className={"max-h-[350px] overflow-y-auto text-base relative"}>
+        <div className={"max-h-[350px] overflow-y-auto text-sm relative"}>
           {step.content}
           <div className="sticky -bottom-0.5 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
         </div>
