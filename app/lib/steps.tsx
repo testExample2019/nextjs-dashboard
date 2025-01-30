@@ -61,7 +61,7 @@ export const steps: Tour[] = [
               This intuitive tool is designed to help you efficiently configure
               all the essential details of your loan.
             </p>
-            <p className="text-base font-semibold mb-3">
+            <p className="font-semibold mb-3">
               Here’s what you can do in this wizard:
             </p>
             <ul className="list-disc list-inside space-y-3">
@@ -127,7 +127,7 @@ export const steps: Tour[] = [
               transactions associated with your loan based on the inputs you’ve
               entered.
             </p>
-            <p className="text-base font-semibold mb-3">
+            <p className="font-semibold mb-3">
               Here’s what you can expect from this panel:
             </p>
             <ul className="list-disc list-inside space-y-3">
@@ -234,7 +234,7 @@ export const steps: Tour[] = [
               This mode provides you with enhanced features and options tailored
               for more complex lending scenarios.
             </p>
-            <p className="text-base font-semibold mb-3">
+            <p className="font-semibold mb-3">
               Here’s what you can access in Advanced Mode:
             </p>
             <ul className="list-disc list-inside space-y-3">
