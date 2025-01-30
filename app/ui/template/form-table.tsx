@@ -174,7 +174,7 @@ const FormTable = () => {
               <div>
                 <button
                   type="button"
-                  className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
+                  className={`inline-flex justify-center gap-x-1.5 text-sm capitalize font-semibold text-action-primary  hover:text-blue-dark`}
                 >
                   + Add lender
                 </button>
@@ -322,7 +322,7 @@ const FormTable = () => {
               <p className="text-base font-semibold text-grey-primary">
                 Drag & Drop files here to upload or
               </p>
-              <button className="mt-2 px-4 py-2 uppercase border border-action-primary text-action-primary rounded-md">
+              <button className="mt-2 px-4 py-2 capitalize border border-action-primary text-action-primary rounded-md">
                 Browse Files
               </button>
             </div>

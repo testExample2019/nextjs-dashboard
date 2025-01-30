@@ -100,7 +100,7 @@ export default function UpcomingPaymentsList({
 
                         <div className="text-xs text-grey flex justify-start gap-4 items-center">
                           {payment.drawDown && (
-                            <span className={"uppercase font-semibold"}>
+                            <span className={"capitalize font-semibold"}>
                               DrawDown
                               <span
                                 className={
@@ -112,7 +112,7 @@ export default function UpcomingPaymentsList({
                             </span>
                           )}
                           {payment.drawDownFee && (
-                            <span className={"uppercase font-semibold"}>
+                            <span className={"capitalize font-semibold"}>
                               DrawDown Fee
                               <span
                                 className={
@@ -124,7 +124,7 @@ export default function UpcomingPaymentsList({
                             </span>
                           )}
                           {payment.prepaymentFee && (
-                            <span className={"uppercase font-semibold"}>
+                            <span className={"capitalize font-semibold"}>
                               Prepayment Fee:
                               <span
                                 className={
@@ -136,7 +136,7 @@ export default function UpcomingPaymentsList({
                             </span>
                           )}
                           {payment.interest && (
-                            <span className="uppercase font-semibold">
+                            <span className="capitalize font-semibold">
                               Interest:
                               <span
                                 className={
@@ -148,7 +148,7 @@ export default function UpcomingPaymentsList({
                             </span>
                           )}
                           {payment.principalRepayment && (
-                            <span className="uppercase font-semibold">
+                            <span className="capitalize font-semibold">
                               Principal Repayment:
                               <span
                                 className={
@@ -168,7 +168,7 @@ export default function UpcomingPaymentsList({
                                   `/transaction/${payment.transactionId}`,
                                 )
                               }
-                              className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
+                              className={`text-sm capitalize border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
                               id="tour1-step15"
                               aria-haspopup="true"
                             >
@@ -183,7 +183,7 @@ export default function UpcomingPaymentsList({
                         <p className="font-semibold">
                           <span
                             className={
-                              "text-grey text-xs uppercase block text-right"
+                              "text-grey text-xs capitalize block text-right"
                             }
                           >
                             Total

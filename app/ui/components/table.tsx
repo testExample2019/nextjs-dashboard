@@ -119,7 +119,7 @@ export const Table: React.FC<TableProps> = ({
             {headers.map((header, index) => (
               <th
                 key={index}
-                className={`px-3 py-4 text-left text-xs font-bold text-grey-secondary uppercase tracking-wider max-w-[125px] truncate ${isLeftAligned(header) ? "text-right" : "text-left"}`}
+                className={`px-3 py-4 text-left text-xs font-bold text-grey-secondary capitalize tracking-wider max-w-[125px] truncate ${isLeftAligned(header) ? "text-right" : "text-left"}`}
               >
                 {separateWords(header)}
               </th>

@@ -22,7 +22,7 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
     <div id={"tour1-step23"} className="bg-white rounded-lg p-6 relative">
       <div className="flex justify-between items-end border-b pb-4 mb-4">
         <div>
-          <h3 className="text-sm text-grey font-semibold uppercase">
+          <h3 className="text-sm text-grey font-semibold capitalize">
             Instrument
           </h3>
           <p className="text-base text-grey-dark font-semibold">
@@ -139,16 +139,16 @@ const InstrumentView = ({ instrument }: { instrument?: InstrumentType }) => {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr>
-                <th className="border-b p-2 text-xs text-grey font-semibold uppercase">
+                <th className="border-b p-2 text-xs text-grey font-semibold capitalize">
                   Rate Type
                 </th>
-                <th className="border-b p-2 text-xs text-grey font-semibold uppercase">
+                <th className="border-b p-2 text-xs text-grey font-semibold capitalize">
                   Index
                 </th>
-                <th className="border-b p-2 text-xs text-grey font-semibold uppercase">
+                <th className="border-b p-2 text-xs text-grey font-semibold capitalize">
                   ACCRUAL FREQUENCY
                 </th>
-                <th className="border-b p-2 text-xs text-grey font-semibold uppercase">
+                <th className="border-b p-2 text-xs text-grey font-semibold capitalize">
                   ADJ SPREAD
                 </th>
               </tr>

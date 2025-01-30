@@ -61,7 +61,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
           <div className="bg-white rounded-lg p-6">
             <div className="flex justify-between items-end border-b pb-4 mb-4">
               <div>
-                <h3 className="text-sm text-grey font-semibold uppercase">
+                <h3 className="text-sm text-grey font-semibold capitalize">
                   {document.documentDetails.fileType}
                 </h3>
                 <p className="text-base text-grey-dark font-semibold">

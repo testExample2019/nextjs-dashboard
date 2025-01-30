@@ -11,7 +11,7 @@ export const transactionsData: TransactionType[] = [
     type: "Transaction Request",
     paymentType: "Credit",
     transaction: "Drawdown",
-    deal: "SOULTRAIN",
+    deal: "Soultrain",
     instrument: "Soultrain Revolver",
     customer: "Soultrain Music Awards",
     paymentDate: "2025-01-24",
@@ -20,7 +20,7 @@ export const transactionsData: TransactionType[] = [
     status: "Pending",
     transactionDetails: {
       transactionInfo: {
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         counterparty: "Soultrain Music Awards",
         instrument: "Soultrain Revolver",
         paymentDate: "2025-01-24",
@@ -77,7 +77,7 @@ export const transactionsData: TransactionType[] = [
     type: "Drawdown Request",
     paymentType: "Debit",
     transaction: "Drawdown",
-    deal: "SOULTRAIN",
+    deal: "Soultrain",
     instrument: "Soultrain Revolver",
     customer: "Soultrain Music Awards",
     paymentDate: "2025-01-24",
@@ -86,7 +86,7 @@ export const transactionsData: TransactionType[] = [
     status: "Pending",
     transactionDetails: {
       transactionInfo: {
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         counterparty: "Soultrain Music Awards",
         instrument: "Soultrain Revolver",
         paymentDate: "2025-01-24",
@@ -138,7 +138,7 @@ export const transactionsData: TransactionType[] = [
     type: "Transaction",
     paymentType: "Credit",
     transaction: "Drawdown",
-    deal: "SOULTRAIN",
+    deal: "Soultrain",
     instrument: "New Fixed Loan",
     customer: "Soultrain Music Awards",
     paymentDate: "2025-01-01",
@@ -147,7 +147,7 @@ export const transactionsData: TransactionType[] = [
     status: "Paid",
     transactionDetails: {
       transactionInfo: {
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         counterparty: "Soultrain Music Awards",
         instrument: "Soultrain Revolver",
         paymentDate: "2025-01-01",
@@ -199,7 +199,7 @@ export const transactionsData: TransactionType[] = [
       {
         id: "transaction-1",
         transaction: "Drawdown",
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         instrument: "New Fixed Loan",
         customer: "Funky Fund East",
         paymentDate: "2025-01-01",
@@ -213,7 +213,7 @@ export const transactionsData: TransactionType[] = [
     type: "Transaction",
     paymentType: "Credit",
     transaction: "Fee Payment",
-    deal: "SOULTRAIN",
+    deal: "Soultrain",
     instrument: "New Fixed Loan",
     customer: "Soultrain Music Awards",
     paymentDate: "2025-01-18",
@@ -222,7 +222,7 @@ export const transactionsData: TransactionType[] = [
     status: "NotPaid",
     transactionDetails: {
       transactionInfo: {
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         counterparty: "Soultrain Music Awards",
         instrument: "Soultrain Revolver",
         paymentDate: "2025-01-18",
@@ -274,7 +274,7 @@ export const transactionsData: TransactionType[] = [
       {
         id: "transaction-2",
         transaction: "Fee Payment",
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         instrument: "New Fixed Loan",
         customer: "Funky Fund East",
         paymentDate: "2025-01-18",
@@ -288,7 +288,7 @@ export const transactionsData: TransactionType[] = [
     type: "Transaction",
     paymentType: "Credit",
     transaction: "Interest Payment",
-    deal: "SOULTRAIN",
+    deal: "Soultrain",
     instrument: "New Fixed Loan",
     customer: "Soultrain Music Awards",
     paymentDate: "2025-02-03",
@@ -297,7 +297,7 @@ export const transactionsData: TransactionType[] = [
     status: "Scheduled",
     transactionDetails: {
       transactionInfo: {
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         counterparty: "Soultrain Music Awards",
         instrument: "New Fixed Loan",
         paymentDate: "2025-02-03",
@@ -349,7 +349,7 @@ export const transactionsData: TransactionType[] = [
       {
         id: "transaction-3",
         transaction: "Interest Payment",
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         instrument: "New Fixed Loan",
         customer: "Funky Fund East",
         paymentDate: "2025-02-03",
@@ -363,7 +363,7 @@ export const transactionsData: TransactionType[] = [
     type: "Transaction",
     paymentType: "Credit",
     transaction: "Interest Payment",
-    deal: "SOULTRAIN",
+    deal: "Soultrain",
     instrument: "New Fixed Loan",
     customer: "Soultrain Music Awards",
     paymentDate: "2025-03-01",
@@ -372,7 +372,7 @@ export const transactionsData: TransactionType[] = [
     status: "Scheduled",
     transactionDetails: {
       transactionInfo: {
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         counterparty: "Soultrain Music Awards",
         instrument: "New Fixed Loan",
         paymentDate: "2025-03-01",
@@ -424,7 +424,7 @@ export const transactionsData: TransactionType[] = [
       {
         id: "transaction-4",
         transaction: "Interest Payment",
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         instrument: "New Fixed Loan",
         customer: "Funky Fund East",
         paymentDate: "2025-03-01",
@@ -504,7 +504,7 @@ const documentsData: DocumentType[] = [
         document: "Soultrain - Drawdown 01-01-2025",
         transaction: "Multiple Transactions",
         subType: "Final Notice",
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         customer: "Funky Fund East",
         documentDate: "2025-01-20",
         status: "Published",
@@ -578,7 +578,7 @@ const documentsData: DocumentType[] = [
         document: "Soultrain - Drawdown 01-01-2025",
         transaction: "Multiple Transactions",
         subType: "Final Notice",
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         customer: "Funky Fund East",
         documentDate: "2025-01-20",
         status: "Published",
@@ -652,7 +652,7 @@ const documentsData: DocumentType[] = [
         document: "Soultrain - Drawdown 02-03-2025",
         transaction: "Interest Payment [Lender]",
         subType: "Final Notice",
-        deal: "SOULTRAIN",
+        deal: "Soultrain",
         customer: "Funky Fund East",
         documentDate: "2025-01-20",
         status: "Published",
@@ -664,7 +664,7 @@ const documentsData: DocumentType[] = [
 const instrumentData: InstrumentType[] = [
   {
     id: "instrument-1",
-    deal: "SOULTRAIN",
+    deal: "Soultrain",
     instrument: "New Fixed Loan",
     type: "Loan",
     subType: "Term Loan",
@@ -694,7 +694,7 @@ const instrumentData: InstrumentType[] = [
   },
   {
     id: "instrument-2",
-    deal: "SOULTRAIN",
+    deal: "Soultrain",
     instrument: "Soultrain Revolver",
     type: "Loan",
     subType: "Revolver",
@@ -728,7 +728,7 @@ const deals: DealType[] = [
   {
     id: "1",
     slug: "soultrain",
-    displayName: "SOULTRAIN",
+    displayName: "Soultrain",
     totalCommitment: "$300,000,000.00",
     funded: "$100,000,000.00",
     unfunded: "$200,000,000.00",
@@ -792,7 +792,7 @@ const deals: DealType[] = [
       positions: [
         {
           id: "position-1",
-          deal: "SOULTRAIN",
+          deal: "Soultrain",
           instrument: "New Fixed Loan",
           borrower: "Soultrain",
           ccy: "USD",
@@ -869,7 +869,7 @@ const deals: DealType[] = [
       positions: [
         {
           id: "position-1",
-          deal: "SOULTRAIN",
+          deal: "Soultrain",
           instrument: "New Fixed Loan",
           borrower: "Soultrain",
           ccy: "USD",

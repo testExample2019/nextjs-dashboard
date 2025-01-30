@@ -28,7 +28,7 @@ const Page = async ({ params }: { params: Promise<{ dashboard: string }> }) => {
         >
           Dashboard
           <ChevronLeft />
-          <span className={"uppercase"}>
+          <span className={"capitalize"}>
             {handleDisplayCorrectDealName(dealName)}
           </span>
         </h1>

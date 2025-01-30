@@ -94,7 +94,7 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
             <div className={"flex items-center gap-6"}>
               <button
                 type="button"
-                className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
+                className={`inline-flex justify-center gap-x-1.5 text-sm capitalize font-semibold text-action-primary  hover:text-blue-dark`}
               >
                 + Add
               </button>
@@ -104,13 +104,13 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
           <table className="w-full border-collapse text-left mt-2">
             <thead>
               <tr>
-                <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
+                <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize">
                   START DATE
                 </th>
-                <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
+                <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize">
                   RATE
                 </th>
-                <th className="py-2 px-4 text-xs font-bold text-grey-secondary uppercase">
+                <th className="py-2 px-4 text-xs font-bold text-grey-secondary capitalize">
                   AMOUNT
                 </th>
               </tr>

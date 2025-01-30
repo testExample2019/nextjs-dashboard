@@ -61,7 +61,7 @@ const TransactionView = ({
               <div className="bg-white rounded-lg px-6 py-4">
                 <div className="flex justify-between items-end border-b pb-4 mb-4">
                   <div>
-                    <h3 className="text-sm text-grey font-semibold uppercase">
+                    <h3 className="text-sm text-grey font-semibold capitalize">
                       Transaction
                     </h3>
                     <p className="text-base text-grey-dark font-semibold">
@@ -139,20 +139,20 @@ const TransactionView = ({
                     <table className="w-full text-left border-collapse">
                       <thead>
                         <tr>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
-                            DATE
+                          <th className="border-b py-2 text-xs text-grey font-bold capitalize">
+                            Date
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase">
-                            MARKET INDEX
+                          <th className="border-b py-2 text-xs text-grey font-bold capitalize">
+                            Market Index
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase text-right">
-                            ADJ INDEX RATE
+                          <th className="border-b py-2 text-xs text-grey font-bold capitalize text-right">
+                            Adj Index Rate
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase text-right">
-                            ADJ SPREAD
+                          <th className="border-b py-2 text-xs text-grey font-bold capitalize text-right">
+                            Adj Spread
                           </th>
-                          <th className="border-b py-2 text-xs text-grey font-bold uppercase text-right">
-                            ALL IN RATE
+                          <th className="border-b py-2 text-xs text-grey font-bold capitalize text-right">
+                            All In Rate
                           </th>
                         </tr>
                       </thead>

@@ -1,7 +1,6 @@
 import React from "react";
 import { PositionType } from "@/app/lib/definitions";
 import { notFound } from "next/navigation";
-import Status from "@/app/ui/components/status";
 
 const PositionView = ({ position }: { position?: PositionType }) => {
   if (!position) {
@@ -12,7 +11,7 @@ const PositionView = ({ position }: { position?: PositionType }) => {
     <div className="bg-white rounded-lg p-6">
       <div className="flex justify-between items-end border-b pb-4 mb-4">
         <div>
-          <h3 className="text-sm text-grey font-semibold uppercase">
+          <h3 className="text-sm text-grey font-semibold capitalize">
             Position
           </h3>
         </div>

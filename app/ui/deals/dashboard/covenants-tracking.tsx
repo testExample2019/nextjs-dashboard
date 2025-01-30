@@ -43,7 +43,7 @@ function CovenantsCard({
 }: CovenantMetricType) {
   return (
     <div className="flex-1 bg-white shadow rounded-lg p-4 border border-grey-border w-full">
-      <h3 className="text-grey text-sm font-semibold uppercase truncate whitespace-nowrap">
+      <h3 className="text-grey text-sm font-semibold capitalize truncate whitespace-nowrap">
         {title}
       </h3>
       <div className={"flex justify-between items-end flex-col xl:flex-row"}>
