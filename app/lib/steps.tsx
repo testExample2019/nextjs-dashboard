@@ -33,7 +33,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Get Started with DirectLend",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary min-w-[650px]">
             <p>
               To kick things off, we will begin with the onboarding process for
               a new Loan. To simplify the Loan creation, we invite you to select
@@ -45,7 +45,7 @@ export const steps: Tour[] = [
           </div>
         ),
         selector: "#tour1-step0",
-        side: "right",
+        side: "top",
         showSkip: false,
         showControls: true,
         pointerPadding: 10,
