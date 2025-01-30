@@ -97,7 +97,7 @@ export const transactionsData: TransactionType[] = [
       feeInfo: {
         feeType: "Drawdown Fee",
         appliesTo: "Drawdown Amount",
-        rate: "1%",
+        rate: "1.00%",
         feeAmount: "50,000.00 USD",
       },
       rateInfo: {
