@@ -579,7 +579,7 @@ export const steps: Tour[] = [
             <p className="mb-3">
               <span className="font-semibold pe-1">
                 Borrower Requests for Unscheduled Drawdowns and Principal
-                Prepayments
+                Prepayments:
               </span>
               Borrowers may occasionally request unscheduled drawdowns or
               principal prepayments. The Dashboard provides lenders with the
