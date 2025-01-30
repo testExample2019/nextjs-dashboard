@@ -21,6 +21,7 @@ const AdvancedTable = () => {
 
   useEffect(() => {
     // Scroll to the referenced element when the component mounts
+    console.log(elementRef);
     if (elementRef.current) {
       elementRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
