@@ -13,14 +13,14 @@ export const steps: Tour[] = [
     steps: [
       {
         icon: <></>,
-        title: "Welcome to DirectLend Platform!",
+        title: "Welcome to DirectLend platform!",
         content: (
           <div className="text-grey-primary min-w-[400px]">
             We’re excited to have you on board. Our platform is designed to
             cater to both borrowers and lenders, ensuring a seamless experience
             for all users. In this guided tour, we will walk you through the key
             features and functionalities of the platform, starting with the
-            Lender view.
+            lender view.
           </div>
         ),
         side: "top",
@@ -31,7 +31,7 @@ export const steps: Tour[] = [
       },
       {
         icon: <></>,
-        title: "Get Started with DirectLend",
+        title: "Get started with DirectLend",
         content: (
           <div className="text-grey-primary min-w-[650px]">
             <p>
@@ -41,7 +41,9 @@ export const steps: Tour[] = [
               can automatically repopulate many fields in the system, saving you
               time and effort in the process.
             </p>
-            <p>Let’s get started by selecting a simple fixed loan template.</p>
+            <p className={"mt-3"}>
+              Let’s get started by selecting a simple fixed loan template.
+            </p>
           </div>
         ),
         selector: "#tour1-step0",
@@ -54,27 +56,25 @@ export const steps: Tour[] = [
       },
       {
         icon: <></>,
-        title: "Here is the new loan Setup Wizard!",
+        title: "Here is the new loan setup wizard!",
         content: (
           <div className="text-grey-primary min-w-[400px]">
             <p className="mb-3">
               This intuitive tool is designed to help you efficiently configure
               all the essential details of your loan.
             </p>
-            <p className="font-semibold mb-3">
-              Here’s what you can do in this wizard:
-            </p>
+            <p className="font-semibold mb-3">Here’s what you can do:</p>
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
-                  Specify Key Information:
+                  Specify key information:
                 </span>
                 Enter the fundamental details about the loan, including the loan
                 amount and key dates.
               </li>
               <li>
                 <span className="font-semibold pe-1">
-                  Add to Existing Deal or Create New:
+                  Add to existing deal or create new:
                 </span>
                 Choose whether to add this loan instrument to an existing deal
                 or create a brand-new deal from scratch.
@@ -83,20 +83,20 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Designate borrower and lenders:
                 </span>
-                Identify the Borrower for this loan and specify one or multiple
+                Identify the borrower for this loan and specify one or multiple
                 lenders. You can easily allocate their respective shares in the
                 loan.
               </li>
               <li>
                 <span className="font-semibold pe-1">
-                  Customize Interest Rate Settings:
+                  Customize interest rate settings:
                 </span>
                 Tailor the interest rate settings to fit your requirements,
                 whether it be fixed, floating, or a specific structure.
               </li>
               <li>
                 <span className="font-semibold pe-1">
-                  Upload loan-related Documentation:
+                  Upload loan-related documentation:
                 </span>
                 For a comprehensive setup, upload any relevant documentation
                 that pertains to the loan, ensuring all necessary information is
