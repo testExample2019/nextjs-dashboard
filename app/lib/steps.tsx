@@ -115,30 +115,28 @@ export const steps: Tour[] = [
       },
       {
         icon: <></>,
-        title: "Preview Transactions Schedule Panel",
+        title: "Preview transactions schedule panel",
         content: (
           <div className="text-grey-primary min-w-[400px]">
             <p className="mb-3">
               On the right-hand side, you’ll find the
               <span className="font-semibold px-1">
-                Preview Transactions Schedule
+                preview transactions schedule
               </span>
               panel. This feature provides a real-time overview of the
               transactions associated with your loan based on the inputs you’ve
               entered.
             </p>
-            <p className="font-semibold mb-3">
-              Here’s what you can expect from this panel:
-            </p>
+            <p className="font-semibold mb-3">Here’s what you can expect:</p>
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
-                <span className="font-semibold pe-1">Instant Updates:</span>As
+                <span className="font-semibold pe-1">Instant updates:</span>As
                 you fill out the loan details, the preview will automatically
                 update to reflect your inputs, giving you immediate visibility
                 into how your selections impact the transaction schedule.
               </li>
               <li>
-                <span className="font-semibold pe-1">Detailed Breakdown:</span>
+                <span className="font-semibold pe-1">Detailed breakdown:</span>
                 View a clear breakdown of all scheduled payments, including
                 principal and interest allocations, due dates, and any other
                 relevant transaction details.
