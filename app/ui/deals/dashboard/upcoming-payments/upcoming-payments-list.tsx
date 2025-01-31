@@ -78,6 +78,26 @@ export default function UpcomingPaymentsList({
     });
   };
 
+  const handleUpcomingPaymentDropdownAction = (
+    actionType: string,
+    payment: PaymentType,
+  ) => {
+    switch (actionType) {
+      case PaymentActions.ViewTransaction:
+        payment.transactionId &&
+          router.push(`/transaction/${payment.transactionId}`);
+        break;
+      case PaymentActions.ViewNotice:
+        payment.documentId && router.push(`/document/${payment.documentId}`);
+        break;
+      case PaymentActions.ViewInvoice:
+        payment.documentId && router.push(`/document/${payment.documentId}`);
+        break;
+      default:
+        console.log("Unknown action");
+    }
+  };
+
   return (
     <div className={"flex justify-between w-full flex-col lg:flex-row"}>
       {/* Content */}
@@ -191,9 +211,9 @@ export default function UpcomingPaymentsList({
                             <button
                               type="button"
                               onClick={() =>
-                                payment.transactionId &&
-                                router.push(
-                                  `/transaction/${payment.transactionId}`,
+                                handleUpcomingPaymentDropdownAction(
+                                  PaymentActions.ViewTransaction,
+                                  payment,
                                 )
                               }
                               className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
@@ -239,23 +259,12 @@ export default function UpcomingPaymentsList({
                             </button>
                           }
                           dropdownItems={generateDropdownItems(payment)}
-                          onAction={(actionType) => {
-                            if (
-                              actionType === PaymentActions.ViewTransaction &&
-                              payment.transactionId
-                            ) {
-                              router.push(
-                                `/transaction/${payment.transactionId}`,
-                              );
-                            }
-                            if (
-                              (actionType === PaymentActions.ViewNotice ||
-                                actionType === PaymentActions.ViewInvoice) &&
-                              payment.documentId
-                            ) {
-                              router.push(`/document/${payment.documentId}`);
-                            } else return;
-                          }}
+                          onAction={(actionType) =>
+                            handleUpcomingPaymentDropdownAction(
+                              actionType,
+                              payment,
+                            )
+                          }
                         />
                       </div>
                     </div>
