@@ -57,8 +57,6 @@ export default function UpcomingPaymentsList({
         ? LenderPaymentOptionsDropdownItems
         : BorrowerPaymentOptionsDropdownItems;
 
-    console.log(payment);
-
     // Return new array of dropdown items with disabled unset if needed
     return baseItems.map((item) => {
       if (
@@ -251,7 +249,8 @@ export default function UpcomingPaymentsList({
                               );
                             }
                             if (
-                              actionType === PaymentActions.ViewNotice &&
+                              (actionType === PaymentActions.ViewNotice ||
+                                actionType === PaymentActions.ViewInvoice) &&
                               payment.documentId
                             ) {
                               router.push(`/document/${payment.documentId}`);

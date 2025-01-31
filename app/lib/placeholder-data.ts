@@ -1611,7 +1611,7 @@ const deals: DealType[] = [
             status: "in 10 days",
             interest: "$849,315.07",
             total: "$849,315.07",
-            documentId: "document-notice",
+            documentId: "document-invoice",
           },
         ],
       },
