@@ -20,7 +20,7 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
     >
       <div className="p-4 flex flex-col">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-18 text-grey-primary font-semibold capitalize">
+          <h2 className="text-18 text-grey-primary font-semibold">
             {step.title}
           </h2>
           {step.icon}
