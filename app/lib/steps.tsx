@@ -730,7 +730,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Transactions screen",
         content: (
-          <div className="text-grey-primary">
+          <div className="text-grey-primary min-w-[200px] xl:min-w-[265px]">
             <p className="mb-3">
               <span className="font-semibold pe-1">Transactions screen:</span>
               provides a complete overview of all historical and scheduled
@@ -754,7 +754,7 @@ export const steps: Tour[] = [
           </div>
         ),
         selector: "#tour1-step20",
-        side: "top",
+        side: "left",
         showControls: true,
         showSkip: false,
         prevRoute: defaultDashboardPath,
