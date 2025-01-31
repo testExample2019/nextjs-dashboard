@@ -324,7 +324,7 @@ export const steps: Tour[] = [
                 funded, and unfunded positions.
               </li>
               <li>
-                By selecting a specific deal, you can filter the Dashboard
+                By selecting a specific deal, you can filter the dashboard
                 content to display only the relevant information, allowing you
                 to concentrate on what matters most.
               </li>
