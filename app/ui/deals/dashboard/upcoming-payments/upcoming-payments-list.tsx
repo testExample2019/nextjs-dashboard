@@ -83,7 +83,7 @@ export default function UpcomingPaymentsList({
                     key={payment.id}
                     className={`${payment.transactionId && path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow border-grey-border`}
                   >
-                    <div className="flex justify-between items-end">
+                    <div className="flex justify-between flex-row md:flex-col lg:flex-row lg:items-end gap-2 lg:gap-4">
                       <div className="flex flex-col">
                         <div className="flex items-center gap-2">
                           <p className="text-base font-medium text-grey-primary">
@@ -178,7 +178,7 @@ export default function UpcomingPaymentsList({
                         </div>
                       </div>
                       <div
-                        className={`flex items-end justify-between gap-4 ${hasPreviewBtn ? "-translate-y-1.5" : ""}`}
+                        className={`flex items-end lg:justify-between gap-4 ${hasPreviewBtn ? "-translate-y-1.5" : ""}`}
                       >
                         <p className="font-semibold">
                           <span
