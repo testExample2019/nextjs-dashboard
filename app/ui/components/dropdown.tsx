@@ -69,7 +69,7 @@ export const ButtonDropdown = <T,>({
             key={id}
             className={`flex w-full px-4 py-2 text-sm capitalize text-nowrap  transition-all ${
               label.includes("Reject") ? "text-red" : "text-grey-primary"
-            }  ${!disabled ? "bg-blue-o hover:bg-blue-o hover:text-action-primary" : "opacity-40 hover:bg-grey-lighter"} `}
+            }  ${disabled ? "opacity-40 hover:bg-grey-lighter" : "opacity-100 hover:bg-blue-o"} `}
             aria-label={label}
             role="menuitem"
             id={`menu-item-${id}`}

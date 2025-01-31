@@ -20,7 +20,7 @@ export default async function PositionDrawer({
       />
       <div
         className={
-          "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto"
+          "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto z-20"
         }
       >
         <div className="flex justify-between items-center px-6 py-3 border-b border-grey-border">

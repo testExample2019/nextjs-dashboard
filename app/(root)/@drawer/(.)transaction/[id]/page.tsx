@@ -25,7 +25,7 @@ export default async function TransactionDrawer({
       <div
         id={"transactionInnerDrawer"}
         className={
-          "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto"
+          "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto z-20"
         }
       >
         <div className="flex flex-col justify-between h-full pb-2">
