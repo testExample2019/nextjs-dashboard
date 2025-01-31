@@ -6,7 +6,7 @@ interface DropdownItem<T> {
   id: number | string;
   label: string;
   actionType: T; // Action identifier
-  active?: boolean;
+  disabled?: boolean;
 }
 
 interface ButtonDropdownProps<T> {
@@ -64,12 +64,12 @@ export const ButtonDropdown = <T,>({
             {placeholder}
           </span>
         )}
-        {dropdownItems.map(({ id, label, actionType, active }) => (
+        {dropdownItems.map(({ id, label, actionType, disabled = false }) => (
           <button
             key={id}
             className={`flex w-full px-4 py-2 text-sm capitalize text-nowrap  transition-all ${
               label.includes("Reject") ? "text-red" : "text-grey-primary"
-            }  ${active ? "bg-blue-o hover:bg-blue-o hover:text-action-primary" : "hover:bg-grey-lighter"} `}
+            }  ${!disabled ? "bg-blue-o hover:bg-blue-o hover:text-action-primary" : "opacity-40 hover:bg-grey-lighter"} `}
             aria-label={label}
             role="menuitem"
             id={`menu-item-${id}`}

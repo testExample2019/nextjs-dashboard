@@ -16,48 +16,92 @@ export const ViewDropdownItems = [
 ];
 
 export const dealsDropdownItems = [
-  { id: 1, label: "Import Deal", actionType: DealsActions.Import },
-  { id: 2, label: "Add New Deal", actionType: DealsActions.Add },
-  { id: 3, label: "Use Template", active: true, actionType: DealsActions.Use },
+  {
+    id: 1,
+    label: "Import Deal",
+    disabled: true,
+    actionType: DealsActions.Import,
+  },
+  {
+    id: 2,
+    label: "Add New Deal",
+    disabled: true,
+    actionType: DealsActions.Add,
+  },
+  {
+    id: 3,
+    label: "Use Template",
+    disabled: false,
+    actionType: DealsActions.Use,
+  },
 ];
 
 export const dealBorrowerDropdownItems = [
   {
     id: 1,
     label: "Drawdown",
-    active: true,
+    disabled: false,
     actionType: DealBorrowerActions.Drawdown,
   },
-  { id: 2, label: "Prepayment", actionType: DealBorrowerActions.Prepayment },
+  {
+    id: 2,
+    label: "Prepayment",
+    disabled: true,
+    actionType: DealBorrowerActions.Prepayment,
+  },
 ];
 
 export const LenderPaymentOptionsDropdownItems = [
   {
     id: 1,
+    disabled: true,
     label: "View Transaction",
     actionType: PaymentActions.ViewTransaction,
   },
   {
     id: 2,
     label: "View Notice",
+    disabled: true,
     actionType: PaymentActions.ViewNotice,
   },
-  { id: 3, label: "Confirm Bank Account", actionType: PaymentActions.Confirm },
-  { id: 4, label: "Contact", actionType: PaymentActions.Contact },
+  {
+    id: 3,
+    label: "Confirm Bank Account",
+    disabled: true,
+    actionType: PaymentActions.Confirm,
+  },
+  {
+    id: 4,
+    label: "Contact",
+    disabled: true,
+    actionType: PaymentActions.Contact,
+  },
 ];
 export const BorrowerPaymentOptionsDropdownItems = [
   {
     id: 1,
+    disabled: true,
     label: "View Transaction",
     actionType: PaymentActions.ViewTransaction,
   },
   {
     id: 2,
+    disabled: true,
     label: "View Invoice",
     actionType: PaymentActions.ViewInvoice,
   },
-  { id: 3, label: "Make Payment", actionType: PaymentActions.Confirm },
-  { id: 4, label: "Contact Lender", actionType: PaymentActions.Contact },
+  {
+    id: 3,
+    disabled: true,
+    label: "Make Payment",
+    actionType: PaymentActions.Confirm,
+  },
+  {
+    id: 4,
+    disabled: true,
+    label: "Contact Lender",
+    actionType: PaymentActions.Contact,
+  },
 ];
 
 export const today = new Date(2025, 0, 24); // Month is 0-indexed: 11 = December

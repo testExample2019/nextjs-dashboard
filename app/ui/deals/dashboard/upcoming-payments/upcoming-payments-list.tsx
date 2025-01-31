@@ -4,6 +4,7 @@ import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import {
   DealViews,
   PaymentActions,
+  PaymentType,
   PaymentTypes,
   UpcomingPaymentsType,
 } from "@/app/lib/definitions";
@@ -49,6 +50,35 @@ export default function UpcomingPaymentsList({
       setActivePaymentType(PaymentTypes.Credits);
     }
   }, [currentStep]);
+
+  const generateDropdownItems = (payment: PaymentType) => {
+    const baseItems =
+      dealView === DealViews.Lender
+        ? LenderPaymentOptionsDropdownItems
+        : BorrowerPaymentOptionsDropdownItems;
+
+    console.log(payment);
+
+    // Return new array of dropdown items with disabled unset if needed
+    return baseItems.map((item) => {
+      if (
+        item.actionType === PaymentActions.ViewTransaction &&
+        payment.transactionId
+      ) {
+        return { ...item, disabled: false };
+      }
+      if (
+        (item.actionType === PaymentActions.ViewNotice ||
+          item.actionType === PaymentActions.ViewInvoice) &&
+        payment.documentId
+      ) {
+        return { ...item, disabled: false };
+      }
+
+      // Otherwise leave item as-is
+      return item;
+    });
+  };
 
   return (
     <div className={"flex justify-between w-full flex-col lg:flex-row"}>
@@ -210,11 +240,7 @@ export default function UpcomingPaymentsList({
                               </svg>
                             </button>
                           }
-                          dropdownItems={
-                            path.includes(DealViews.Lender)
-                              ? LenderPaymentOptionsDropdownItems
-                              : BorrowerPaymentOptionsDropdownItems
-                          }
+                          dropdownItems={generateDropdownItems(payment)}
                           onAction={(actionType) => {
                             if (
                               actionType === PaymentActions.ViewTransaction &&
