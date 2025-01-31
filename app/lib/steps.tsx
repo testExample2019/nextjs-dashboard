@@ -69,21 +69,21 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Specify key information:
                 </span>
-                Enter the fundamental details about the loan, including the loan
+                enter the fundamental details about the loan, including the loan
                 amount and key dates.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Add to existing deal or create new:
                 </span>
-                Choose whether to add this loan instrument to an existing deal
+                choose whether to add this loan instrument to an existing deal
                 or create a brand-new deal from scratch.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Designate borrower and lenders:
                 </span>
-                Identify the borrower for this loan and specify one or multiple
+                identify the borrower for this loan and specify one or multiple
                 lenders. You can easily allocate their respective shares in the
                 loan.
               </li>
@@ -91,14 +91,14 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Customize interest rate settings:
                 </span>
-                Tailor the interest rate settings to fit your requirements,
+                tailor the interest rate settings to fit your requirements,
                 whether it be fixed, floating, or a specific structure.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Upload loan-related documentation:
                 </span>
-                For a comprehensive setup, upload any relevant documentation
+                for a comprehensive setup, upload any relevant documentation
                 that pertains to the loan, ensuring all necessary information is
                 readily available.
               </li>
@@ -130,19 +130,19 @@ export const steps: Tour[] = [
             <p className="font-semibold mb-3">Here’s what you can expect:</p>
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
-                <span className="font-semibold pe-1">Instant updates:</span>As
+                <span className="font-semibold pe-1">Instant updates:</span>as
                 you fill out the loan details, the preview will automatically
                 update to reflect your inputs, giving you immediate visibility
                 into how your selections impact the transaction schedule.
               </li>
               <li>
                 <span className="font-semibold pe-1">Detailed breakdown:</span>
-                View a clear breakdown of all scheduled payments, including
+                view a clear breakdown of all scheduled payments, including
                 principal and interest allocations, due dates, and any other
                 relevant transaction details.
               </li>
               <li>
-                <span className="font-semibold pe-1">Adjustments:</span>If you
+                <span className="font-semibold pe-1">Adjustments:</span>if you
                 need to make changes to your inputs, you can easily return to
                 the relevant sections of the wizard, and the preview will adjust
                 accordingly.
@@ -240,21 +240,21 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Accrual frequency options:
                 </span>
-                Select the accrual frequency for interest calculations, whether
+                select the accrual frequency for interest calculations, whether
                 it be daily, monthly, quarterly, or annually.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Various spread types:
                 </span>
-                Choose from different spread types to customize how the interest
+                choose from different spread types to customize how the interest
                 rate is calculated in relation to a benchmark rate.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Payment in kind settings:
                 </span>
-                Configure payment in kind (PIK) options to allow for interest
+                configure payment in kind (PIK) options to allow for interest
                 payments to be added to the principal balance instead of being
                 paid in cash.
               </li>
@@ -262,14 +262,14 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Unitranche loan setup:
                 </span>
-                Set up unitranche loans, which combine senior and subordinated
+                set up unitranche loans, which combine senior and subordinated
                 debt into a single facility, simplifying the capital structure.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Business day calendars:
                 </span>
-                Specify business day calendars for payment due dates to ensure
+                specify business day calendars for payment due dates to ensure
                 that payments are scheduled accurately, taking into account
                 holidays and weekends.
               </li>
@@ -277,7 +277,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Different types of fees:
                 </span>
-                Add and customize various fees associated with the loan, such as
+                add and customize various fees associated with the loan, such as
                 origination fees, commitment fees, or prepayment penalties.
               </li>
             </ul>
@@ -355,7 +355,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Overview of scheduled payments:
                 </span>
-                Utilize the calendar view to quickly locate scheduled events,
+                utilize the calendar view to quickly locate scheduled events,
                 allowing you to visualize payment timelines and plan
                 accordingly.
               </li>
