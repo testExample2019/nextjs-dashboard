@@ -69,21 +69,21 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Specify key information:
                 </span>
-                enter the fundamental details about the loan, including the loan
+                Enter the fundamental details about the loan, including the loan
                 amount and key dates.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Add to existing deal or create new:
                 </span>
-                choose whether to add this loan instrument to an existing deal
+                Choose whether to add this loan instrument to an existing deal
                 or create a brand-new deal from scratch.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Designate borrower and lenders:
                 </span>
-                identify the borrower for this loan and specify one or multiple
+                Identify the borrower for this loan and specify one or multiple
                 lenders. You can easily allocate their respective shares in the
                 loan.
               </li>
@@ -91,14 +91,14 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Customize interest rate settings:
                 </span>
-                tailor the interest rate settings to fit your requirements,
+                Tailor the interest rate settings to fit your requirements,
                 whether it be fixed, floating, or a specific structure.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Upload loan-related documentation:
                 </span>
-                for a comprehensive setup, upload any relevant documentation
+                For a comprehensive setup, upload any relevant documentation
                 that pertains to the loan, ensuring all necessary information is
                 readily available.
               </li>
@@ -130,19 +130,19 @@ export const steps: Tour[] = [
             <p className="font-semibold mb-3">Here’s what you can expect:</p>
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
-                <span className="font-semibold pe-1">Instant updates:</span>as
+                <span className="font-semibold pe-1">Instant updates:</span>As
                 you fill out the loan details, the preview will automatically
                 update to reflect your inputs, giving you immediate visibility
                 into how your selections impact the transaction schedule.
               </li>
               <li>
                 <span className="font-semibold pe-1">Detailed breakdown:</span>
-                view a clear breakdown of all scheduled payments, including
+                View a clear breakdown of all scheduled payments, including
                 principal and interest allocations, due dates, and any other
                 relevant transaction details.
               </li>
               <li>
-                <span className="font-semibold pe-1">Adjustments:</span>if you
+                <span className="font-semibold pe-1">Adjustments:</span>If you
                 need to make changes to your inputs, you can easily return to
                 the relevant sections of the wizard, and the preview will adjust
                 accordingly.
@@ -240,21 +240,21 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Accrual frequency options:
                 </span>
-                select the accrual frequency for interest calculations, whether
+                Select the accrual frequency for interest calculations, whether
                 it be daily, monthly, quarterly, or annually.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Various spread types:
                 </span>
-                choose from different spread types to customize how the interest
+                Choose from different spread types to customize how the interest
                 rate is calculated in relation to a benchmark rate.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Payment in kind settings:
                 </span>
-                configure payment in kind (PIK) options to allow for interest
+                Configure payment in kind (PIK) options to allow for interest
                 payments to be added to the principal balance instead of being
                 paid in cash.
               </li>
@@ -262,14 +262,14 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Unitranche loan setup:
                 </span>
-                set up unitranche loans, which combine senior and subordinated
+                Set up unitranche loans, which combine senior and subordinated
                 debt into a single facility, simplifying the capital structure.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Business day calendars:
                 </span>
-                specify business day calendars for payment due dates to ensure
+                Specify business day calendars for payment due dates to ensure
                 that payments are scheduled accurately, taking into account
                 holidays and weekends.
               </li>
@@ -277,7 +277,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Different types of fees:
                 </span>
-                add and customize various fees associated with the loan, such as
+                Add and customize various fees associated with the loan, such as
                 origination fees, commitment fees, or prepayment penalties.
               </li>
             </ul>
@@ -355,7 +355,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Overview of scheduled payments:
                 </span>
-                utilize the calendar view to quickly locate scheduled events,
+                Utilize the calendar view to quickly locate scheduled events,
                 allowing you to visualize payment timelines and plan
                 accordingly.
               </li>
@@ -406,7 +406,7 @@ export const steps: Tour[] = [
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
-                <span className="font-semibold pe-1">Regular updates:</span>stay
+                <span className="font-semibold pe-1">Regular updates:</span>Stay
                 informed with up-to-date calculations as financial statements
                 are submitted, ensuring you have the latest insights into
                 compliance.
@@ -415,13 +415,13 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Custom covenants creation:
                 </span>
-                utilize the formula builder to create custom covenants and
+                Utilize the formula builder to create custom covenants and
                 metrics that can combine both financial data and loan data,
                 tailored to your specific requirements.
               </li>
               <li>
                 <span className="font-semibold pe-1">Interactive reports:</span>
-                generate custom charts and reports to build and share various
+                Generate custom charts and reports to build and share various
                 interactive reports, enhancing your ability to analyze and
                 present covenant performance.
               </li>
@@ -429,7 +429,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Comprehensive monitoring:
                 </span>
-                this widget is designed to help you effectively monitor
+                This widget is designed to help you effectively monitor
                 compliance and gain deeper insights into your borrowers'
                 financial health!
               </li>
@@ -453,33 +453,33 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Upcoming payments widget:
                 </span>
-                allows you to quickly access all crucial information about
+                Allows you to quickly access all crucial information about
                 scheduled events.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   View transaction details:
                 </span>
-                get comprehensive information about each scheduled payment,
+                Get comprehensive information about each scheduled payment,
                 including amounts and due dates.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Access notices or invoices:
                 </span>
-                easily view related notice or invoice documents for reference
+                Easily view related notice or invoice documents for reference
                 and record-keeping.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Switch bank accounts:
                 </span>
-                change your bank account settings to ensure payments are
+                Change your bank account settings to ensure payments are
                 received correctly and without delay.
               </li>
               <li>
                 <span className="font-semibold pe-1">Contact borrower:</span>
-                reach out to the borrower directly through the platform to
+                Reach out to the borrower directly through the platform to
                 discuss any details or necessary adjustments regarding the
                 payment.
               </li>
@@ -506,11 +506,11 @@ export const steps: Tour[] = [
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Document preview:</span>
-                easily review the contents of the notice document within the
+                Easily review the contents of the notice document within the
                 drawer for quick reference.
               </li>
               <li>
-                <span className="font-semibold pe-1">Download option:</span>if
+                <span className="font-semibold pe-1">Download option:</span>If
                 you need a copy for your records, simply click the download
                 button to save the PDF file to your device.
               </li>
@@ -540,13 +540,13 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Detailed transaction list:
                 </span>
-                view all relevant transactions associated with the notice,
+                View all relevant transactions associated with the notice,
                 ensuring you have a complete understanding of the financial
                 activities.
               </li>
               <li>
                 <span className="font-semibold pe-1">Key information:</span>
-                access important details for each transaction, including due
+                Access important details for each transaction, including due
                 dates, utilized rates, payment amounts, and any other pertinent
                 information.
               </li>
@@ -554,7 +554,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Comprehensive overview:
                 </span>
-                this tab is designed to give you a clear overview of the
+                This tab is designed to give you a clear overview of the
                 transactions linked to the notice, helping you stay organized
                 and informed about your financial commitments!
               </li>
@@ -587,7 +587,7 @@ export const steps: Tour[] = [
             <ul className="list-disc ps-5  list-outside space-y-3 max-h-60 overflow-y-auto">
               <li>
                 <span className="font-semibold pe-1">Request overview:</span>
-                easily access a summary of all pending requests from borrowers
+                Easily access a summary of all pending requests from borrowers
                 for unscheduled drawdowns or principal prepayments, ensuring you
                 stay informed about their needs.
               </li>
@@ -634,17 +634,17 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Requested payment date:
                 </span>
-                the date on which the borrower wishes the funds to be disbursed
+                The date on which the borrower wishes the funds to be disbursed
                 or the prepayment to be applied.
               </li>
               <li>
                 <span className="font-semibold pe-1">Requested amount:</span>
-                the specific amount that the borrower is requesting for the
+                The specific amount that the borrower is requesting for the
                 drawdown or prepayment.
               </li>
               <li>
                 <span className="font-semibold pe-1">Associated fees:</span>
-                fees calculated automatically based on the loan terms, providing
+                Fees calculated automatically based on the loan terms, providing
                 transparency and clarity regarding any costs associated with the
                 request.
               </li>
@@ -669,7 +669,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Requested rate option:
                 </span>
-                information about the rate option the borrower is requesting,
+                Information about the rate option the borrower is requesting,
                 ensuring you understand the implications for the loan structure.
               </li>
             </ul>
@@ -692,7 +692,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Preferred bank account:
                 </span>
-                details about the borrower’s preferred bank account for fund
+                Details about the borrower’s preferred bank account for fund
                 transfers, streamlining the process for disbursement.
               </li>
             </ul>
@@ -733,20 +733,20 @@ export const steps: Tour[] = [
           <div className="text-grey-primary min-w-[200px] xl:min-w-[265px]">
             <p className="mb-3">
               <span className="font-semibold pe-1">Transactions screen:</span>
-              provides a complete overview of all historical and scheduled
+              Provides a complete overview of all historical and scheduled
               transactions, enabling you to effectively track their status and
               access detailed information.
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Comprehensive list:</span>
-                view an entire list of both historical and scheduled
+                View an entire list of both historical and scheduled
                 transactions, ensuring you have a complete picture of your
                 financial activities.
               </li>
               <li>
                 <span className="font-semibold pe-1">Status tracking:</span>
-                easily monitor the status of each transaction, whether it is
+                Easily monitor the status of each transaction, whether it is
                 pending, completed, or in progress, helping you stay organized
                 and informed.
               </li>
@@ -772,7 +772,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Access transaction details:
                 </span>
-                click on any transaction to access detailed information,
+                Click on any transaction to access detailed information,
                 including amounts, dates, associated fees, and any relevant
                 documentation.
               </li>
@@ -802,7 +802,7 @@ export const steps: Tour[] = [
               <span className="font-semibold pe-1">
                 The instruments screen:
               </span>
-              displays a comprehensive list of all loan instruments in your
+              Displays a comprehensive list of all loan instruments in your
               portfolio, making it easy to find and filter specific instruments.
             </p>
           </div>
@@ -835,12 +835,12 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   View instrument details:
                 </span>
-                access all relevant information about the selected loan
+                Access all relevant information about the selected loan
                 instrument, including terms, interest rates, repayment
                 schedules, and associated borrower.
               </li>
               <li>
-                <span className="font-semibold pe-1">Adjust settings:</span>if
+                <span className="font-semibold pe-1">Adjust settings:</span>If
                 necessary, you can modify settings related to the loan
                 instrument, such as updating interest rates or changing payment
                 terms.
@@ -864,7 +864,7 @@ export const steps: Tour[] = [
           <div className="text-grey-primary min-w-[75vw]">
             <p className="mb-3">
               <span className="font-semibold pe-1">The documents screen:</span>
-              serves as a comprehensive repository for all loan documentation,
+              Serves as a comprehensive repository for all loan documentation,
               providing a centralized location for managing your documents.
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
@@ -872,13 +872,13 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Complete document repository:
                 </span>
-                quickly find and access any document related to a specific loan,
+                Quickly find and access any document related to a specific loan,
                 transaction, or counterparty, streamlining your workflow and
                 enhancing collaboration.
               </li>
               <li>
                 <span className="font-semibold pe-1">Upload and share:</span>
-                easily upload new documents or share existing ones with relevant
+                Easily upload new documents or share existing ones with relevant
                 parties, ensuring everyone has access to the necessary
                 information.
               </li>
@@ -935,7 +935,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Scheduled debit transactions:
                 </span>
-                the widget reflects the interest payment as a scheduled debit
+                The widget reflects the interest payment as a scheduled debit
                 transaction, clearly indicating the amount due and the payment
                 date.
               </li>
@@ -943,12 +943,12 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Comprehensive overview:
                 </span>
-                borrowers can easily see all upcoming payments, allowing them to
+                Borrowers can easily see all upcoming payments, allowing them to
                 manage their cash flow effectively and ensure timely payments.
               </li>
               <li>
-                <span className="font-semibold pe-1">Payment details:</span>if
-                The widget provides essential details about each transaction,
+                <span className="font-semibold pe-1">Payment details:</span>If
+                the widget provides essential details about each transaction,
                 helping borrowers stay informed about their financial
                 obligations.
               </li>
@@ -985,7 +985,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Access transaction details:
                 </span>
-                borrowers can easily view detailed information about each
+                Borrowers can easily view detailed information about each
                 scheduled payment, including amounts, due dates, and any
                 associated fees.
               </li>
@@ -993,18 +993,18 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   View invoice document:
                 </span>
-                the widget allows borrowers to access the related invoice
+                The widget allows borrowers to access the related invoice
                 document for reference, ensuring they have all necessary
                 information at hand.
               </li>
               <li>
                 <span className="font-semibold pe-1">Proceed to payment:</span>
-                borrowers can initiate the payment process directly from the
+                Borrowers can initiate the payment process directly from the
                 widget, streamlining the transaction and ensuring timely
                 payments.
               </li>
               <li>
-                <span className="font-semibold pe-1">Contact lender:</span>if
+                <span className="font-semibold pe-1">Contact lender:</span>If
                 any issues or adjustments are needed, borrowers can quickly
                 reach out to their lender through the widget to discuss their
                 concerns.
@@ -1035,12 +1035,12 @@ export const steps: Tour[] = [
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Document preview:</span>
-                the drawer provides a clear preview of the invoice document,
+                The drawer provides a clear preview of the invoice document,
                 allowing the borrower to review all relevant information,
                 including amounts due, payment terms, and any additional notes.
               </li>
               <li>
-                <span className="font-semibold pe-1">Download option:</span>if
+                <span className="font-semibold pe-1">Download option:</span>If
                 the borrower needs a copy for their records, they can easily
                 download the PDF file by clicking the download button, ensuring
                 they have access to important documentation.
@@ -1069,7 +1069,7 @@ export const steps: Tour[] = [
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">Drawdown requests:</span>
-                borrowers can submit requests for unscheduled drawdowns,
+                Borrowers can submit requests for unscheduled drawdowns,
                 allowing them to access additional funds as needed. This feature
                 enables flexibility in managing their financial needs.
               </li>
@@ -1077,7 +1077,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Principal prepayment requests:
                 </span>
-                borrowers can also initiate requests for principal prepayments,
+                Borrowers can also initiate requests for principal prepayments,
                 allowing them to pay down their loan balance earlier than
                 scheduled. This can help reduce interest costs and improve their
                 overall financial position.
@@ -1108,11 +1108,11 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Specify payment date:
                 </span>
-                borrowers need to enter the desired payment date for the
+                Borrowers need to enter the desired payment date for the
                 transaction.
               </li>
               <li>
-                <span className="font-semibold pe-1">Enter amount:</span>specify
+                <span className="font-semibold pe-1">Enter amount:</span>Specify
                 the amount they wish to request for the drawdown or principal
                 prepayment.
               </li>
@@ -1120,14 +1120,14 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Select rate option (if applicable):
                 </span>
-                borrowers can choose from the available rate options to tailor
+                Borrowers can choose from the available rate options to tailor
                 the transaction according to their needs.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Automatic population of attributes:
                 </span>
-                remaining attributes will be automatically populated based on
+                Remaining attributes will be automatically populated based on
                 the associated loan terms, ensuring a hassle-free and accurate
                 submission process.
               </li>
@@ -1154,7 +1154,7 @@ export const steps: Tour[] = [
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
-                <span className="font-semibold pe-1">Status overview:</span>the
+                <span className="font-semibold pe-1">Status overview:</span>The
                 dashboard provides a clear overview of all submitted requests,
                 allowing borrowers to see whether their requests are pending,
                 approved, or declined.
@@ -1163,14 +1163,14 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Direct communication with lenders:
                 </span>
-                all requests are communicated directly to the lenders through
+                All requests are communicated directly to the lenders through
                 the portal, ensuring a streamlined process and timely updates.
               </li>
               <li>
                 <span className="font-semibold pe-1">
                   Confirmation requirement:
                 </span>
-                borrowers will be notified when their requests require lender
+                Borrowers will be notified when their requests require lender
                 confirmation, allowing them to stay informed about the progress
                 and any actions needed.
               </li>
@@ -1185,12 +1185,12 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Automatic recalculation:
                 </span>
-                the payment schedule will be adjusted to reflect the new
+                The payment schedule will be adjusted to reflect the new
                 transaction details, ensuring that all parties have the most
                 up-to-date information.
               </li>
               <li>
-                <span className="font-semibold pe-1">Impact analysis:</span>the
+                <span className="font-semibold pe-1">Impact analysis:</span>The
                 recalculated schedule will clearly show how the transaction
                 affects the loan, including changes to payment amounts, due
                 dates, and overall loan balance.
@@ -1199,7 +1199,7 @@ export const steps: Tour[] = [
                 <span className="font-semibold pe-1">
                   Visibility for counterparties:
                 </span>
-                both borrowers and lenders can view the updated payment
+                Both borrowers and lenders can view the updated payment
                 schedule, promoting transparency and understanding of the loan's
                 new terms.
               </li>
