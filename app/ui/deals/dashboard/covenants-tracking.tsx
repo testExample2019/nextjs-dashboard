@@ -94,7 +94,8 @@ function CovenantsCard({
               {changeValue}
             </span>
             <span className="text-grey-primary text-[28px] font-bold flex items-center justify-center gap-4">
-              <span className={"text-grey text-base"}>|</span> {value}
+              <span className={"text-grey font-normal text-base"}>|</span>{" "}
+              {value}
             </span>
           </div>
 
