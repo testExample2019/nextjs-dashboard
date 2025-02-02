@@ -29,14 +29,14 @@ const TransactionsSchedule = () => {
 
   return (
     <div className="w-full lg:w-[40%] bg-white h-full overflow-y-auto absolute top-0 right-0">
-      <h2 className="text-18 font-semibold capitalize text-grey-primary py-2 px-4 border-b-1 border-grey-border">
+      <h2 className="text-subtitle font-semibold capitalize text-grey-primary py-2 px-4 border-b-1 border-grey-border">
         Preview transactions schedule
       </h2>
       <div id={"tour1-step2"} className={"relative"}>
         <div className="bg-blue-50 border border-blue-100 p-4 mx-4 my-6 rounded-lg flex items-start gap-2 text-grey-primary">
           <Tooltip content={""} />
 
-          <p className="text-13 text-grey-primary">
+          <p className="text-sm text-grey-primary">
             This is a preliminary preview of transactions based on provided
             inputs. You will be able to adjust and create new transactions
             during the loan lifecycle. Check for the Advanced mode to customize

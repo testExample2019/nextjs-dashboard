@@ -38,7 +38,7 @@ export default function ViewsNav() {
                     activeView === DealViews.Lender
                       ? "bg-blue-o text-blue-dark"
                       : "bg-orange-o text-orange"
-                  } flex justify-between gap-1.5 items-center px-3 py-0.5 z-20 shadow text-sm font-medium rounded-full transition min-w-[160px] hover:shadow-md`}
+                  } flex justify-between gap-1.5 items-center px-3 py-0.5 z-20 shadow text-sm font-medium rounded-full transition cursor-pointer min-w-[160px] hover:shadow-md`}
                   id={`view-button-${activeView}`}
                 >
                   <svg

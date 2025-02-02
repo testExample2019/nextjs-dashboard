@@ -50,7 +50,7 @@ const TransactionsTableView = ({
         }
       >
         <h1
-          className={`text-18 w-full text-grey-primary font-semibold flex items-center gap-2`}
+          className={`text-subtitle w-full text-grey-primary font-semibold flex items-center gap-2`}
         >
           Transactions
           <ChevronLeft />
@@ -59,7 +59,7 @@ const TransactionsTableView = ({
           </span>
         </h1>
         <div className="flex items-center space-x-3">
-          <span className="text-13 text-grey-primary flex items-center gap-1 whitespace-nowrap">
+          <span className="text-sm text-grey-primary flex items-center gap-1 whitespace-nowrap">
             Show Scheduled Transactions
           </span>
           <label className="relative inline-flex items-center cursor-pointer">

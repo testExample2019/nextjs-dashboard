@@ -34,7 +34,7 @@ const LoanSetupPage = () => {
         >
           {/* Header */}
           <div className="flex justify-between items-center py-2 px-4 border-b-1 border-grey-border">
-            <h1 className="text-18 font-semibold text-grey-primary">
+            <h1 className="text-subtitle font-semibold text-grey-primary">
               New Loan Setup
             </h1>
             <div id={"tour1-step4"} className="flex items-center space-x-3">
@@ -68,13 +68,13 @@ const LoanSetupPage = () => {
           <div className="flex justify-between py-2 px-6 gap-4 border-t-1 border-grey-border">
             <button
               onClick={() => redirect(`/template`)}
-              className="px-4 py-2 uppercase text-action-primary rounded hover:bg-gray-100 font-semibold"
+              className="px-4 py-2 uppercase text-action-primary rounded-sm hover:bg-gray-100 font-semibold"
             >
               Cancel
             </button>
             <button
               onClick={() => redirect(defaultDashboardPath)}
-              className="px-4 py-2 uppercase bg-action-primary text-white rounded hover:bg-blue-dark font-semibold"
+              className="px-4 py-2 uppercase bg-action-primary text-white rounded-sm hover:bg-blue-dark font-semibold"
             >
               Save
             </button>

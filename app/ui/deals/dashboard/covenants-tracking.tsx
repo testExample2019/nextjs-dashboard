@@ -42,7 +42,7 @@ function CovenantsCard({
   status,
 }: CovenantMetricType) {
   return (
-    <div className="flex-1 bg-white shadow rounded-lg p-4 border border-grey-border w-full">
+    <div className="flex-1 bg-white shadow-sm rounded-lg p-4 border border-grey-border w-full">
       <h3 className="text-grey text-sm font-semibold uppercase truncate whitespace-nowrap">
         {title}
       </h3>
@@ -93,8 +93,9 @@ function CovenantsCard({
             <span className="text-grey-primary text-base px-2">
               {changeValue}
             </span>
-            <span className="text-grey-primary text-28 font-bold flex items-center justify-center gap-4">
-              <span className={"text-grey text-base"}>|</span> {value}
+            <span className="text-grey-primary text-[28px] font-bold flex items-center justify-center gap-4">
+              <span className={"text-grey font-normal text-base"}>|</span>{" "}
+              {value}
             </span>
           </div>
 

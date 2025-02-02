@@ -15,7 +15,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Welcome to DirectLend platform!",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             We’re excited to have you on board. Our platform is designed to
             cater to both borrowers and lenders, ensuring a seamless experience
             for all users. In this guided tour, we will walk you through the key
@@ -33,7 +33,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Get started with DirectLend",
         content: (
-          <div className="text-grey-primary min-w-[650px]">
+          <div className="text-grey-primary text-sm  min-w-[650px]">
             <p>
               To kick things off, we will begin with the onboarding process for
               a new loan. To simplify the loan creation, we invite you to select
@@ -58,7 +58,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Here is the new loan setup wizard!",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               This intuitive tool is designed to help you efficiently configure
               all the essential details of your loan.
@@ -117,7 +117,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Preview transactions schedule panel",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               On the right-hand side, you’ll find the
               <span className="font-semibold px-1">
@@ -165,7 +165,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Adjust annual rate in your loan",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className={"mb-3"}>
               Let’s adjust the interest rate to
               <span className="font-semibold px-1">15%</span>.
@@ -188,7 +188,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Annual rate adjusted",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className={"mb-3"}>
               You have successfully adjusted the interest rate to
               <span className="font-semibold px-1">15%</span>.
@@ -210,7 +210,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Advanced mode",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             If you require more sophisticated controls for your loan setup, you
             can easily switch the wizard to
             <span className="font-semibold px-1">advanced mode</span>.
@@ -227,7 +227,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Advanced mode features",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               This mode provides you with enhanced features and options tailored
               for more complex lending scenarios.
@@ -295,7 +295,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Welcome to the dashboard!",
         content: (
-          <div className="text-grey-primary w-[400px]">
+          <div className="text-grey-primary text-sm  w-[400px]">
             This central hub provides you with a comprehensive overview of all
             your deals, loans, and related events, allowing you to effortlessly
             track and manage your lending activities.
@@ -312,7 +312,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Deals panel",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               The deals panel on your dashboard provides an efficient way to
               view all your loan deals and their current positions:
@@ -342,7 +342,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "The upcoming payments widget",
         content: (
-          <div className="text-grey-primary min-w-[65vw]">
+          <div className="text-grey-primary text-sm  min-w-[65vw]">
             <p className="mb-3">
               <span className="font-semibold pe-1">
                 The upcoming payments widget
@@ -377,7 +377,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "The positions widget",
         content: (
-          <div className="text-grey-primary">
+          <div className="text-grey-primary text-sm ">
             <p className="mb-3">
               <span className="font-semibold pe-1">The positions widget</span>
               provides a detailed breakdown of your current positions for every
@@ -396,7 +396,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "The covenants tracking widget",
         content: (
-          <div className="text-grey-primary">
+          <div className="text-grey-primary text-sm ">
             <p className="mb-3">
               <span className="font-semibold pe-1">
                 Covenants tracking widget
@@ -447,7 +447,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Information about scheduled events",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
@@ -498,7 +498,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Document preview",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               When you select to view the notice document, a drawer will open to
               display the document preview.
@@ -529,7 +529,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Transaction details",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               The<span className="font-semibold px-1">transaction details</span>
               tab provides a comprehensive list of transactions related to the
@@ -573,7 +573,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Borrower requests",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               <span className="font-semibold pe-1">
                 Borrower requests for unscheduled drawdowns and principal
@@ -606,7 +606,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "View transaction request",
         content: (
-          <div className="text-grey-primary min-w-[300px]">
+          <div className="text-grey-primary text-sm  min-w-[300px]">
             Click <span className={"font-semibold pe-1"}>preview</span> to
             access information
           </div>
@@ -623,7 +623,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Detailed request information",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               When reviewing borrower requests for unscheduled drawdowns or
               principal prepayments, you will find detailed information that
@@ -663,7 +663,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Detailed request information",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
@@ -686,7 +686,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Preferred bank account",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
@@ -709,7 +709,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Decision making",
         content: (
-          <div className="text-grey-primary">
+          <div className="text-grey-primary text-sm ">
             <p>
               This feature allows lenders to assess and respond to requests
               promptly, facilitating effective communication and decision-making
@@ -730,7 +730,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Transactions screen",
         content: (
-          <div className="text-grey-primary min-w-[200px] xl:min-w-[265px]">
+          <div className="text-grey-primary text-sm  min-w-[200px] xl:min-w-[265px]">
             <p className="mb-3">
               <span className="font-semibold pe-1">Transactions screen:</span>
               Provides a complete overview of all historical and scheduled
@@ -766,7 +766,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Transaction details",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
                 <span className="font-semibold pe-1">
@@ -797,7 +797,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Instruments screen",
         content: (
-          <div className="text-grey-primary">
+          <div className="text-grey-primary text-sm ">
             <p className="mb-3">
               <span className="font-semibold pe-1">
                 The instruments screen:
@@ -820,7 +820,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Instrument details",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               By selecting a specific loan instrument from the instruments
               screen, you can access the
@@ -861,7 +861,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Documents screen",
         content: (
-          <div className="text-grey-primary min-w-[75vw]">
+          <div className="text-grey-primary text-sm  min-w-[75vw]">
             <p className="mb-3">
               <span className="font-semibold pe-1">The documents screen:</span>
               Serves as a comprehensive repository for all loan documentation,
@@ -903,7 +903,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Borrower view",
         content: (
-          <div className="text-grey-primary min-w-[250px]">
+          <div className="text-grey-primary text-sm  min-w-[250px]">
             <p className="mb-3">
               Switching to the
               <span className="font-semibold px-1">borrower view</span>
@@ -922,7 +922,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Borrower view upcoming payments",
         content: (
-          <div className="text-grey-primary min-w-[50vw]">
+          <div className="text-grey-primary text-sm  min-w-[50vw]">
             <p className="mb-3">
               The
               <span className="font-semibold px-1">
@@ -971,7 +971,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Information about upcoming payments",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               In the
               <span className="font-semibold px-1">
@@ -1024,7 +1024,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Invoice information",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               <span className="font-semibold pe-1">
                 Upon clicking view invoice
@@ -1061,7 +1061,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Unscheduled transactions actions",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               In the borrower view, users have the ability to initiate
               unscheduled transactions, including:
@@ -1098,7 +1098,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Requesting an unscheduled transaction",
         content: (
-          <div className="text-grey-primary min-w-[400px]">
+          <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
               Initiating an unscheduled transaction is straightforward for
               borrowers:
@@ -1147,7 +1147,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Unscheduled transaction requests tracking",
         content: (
-          <div className="text-grey-primary min-w-[75vw]">
+          <div className="text-grey-primary text-sm  min-w-[75vw]">
             <p className="mb-3">
               Borrowers can easily track the current status of their unscheduled
               transaction requests directly on their dashboard:
@@ -1218,7 +1218,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Thank you for exploring DirectLend!",
         content: (
-          <div className="text-grey-primary min-w-[40vw]">
+          <div className="text-grey-primary text-sm  min-w-[40vw]">
             <p className="mb-3">
               Thank you for taking the time to explore the DirectLend platform!
               We hope this demo has provided you with valuable insights into the

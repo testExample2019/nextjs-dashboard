@@ -72,7 +72,7 @@ const LoanTemplatePage = () => {
   return (
     <div className="flex flex-col items-center justify-start">
       <div className="max-w-5xl w-full px-8 py-32 rounded-lg">
-        <h1 className="text-28 font-semibold text-grey-primary text-center tracking-[0.3px]">
+        <h1 className="text-[28px] font-semibold text-grey-primary text-center tracking-[0.3px]">
           Pick your first template and start using DirectLend <br /> for a new
           loan:
         </h1>
@@ -100,11 +100,11 @@ const LoanTemplatePage = () => {
                   </div>
                 </div>
 
-                <h3 className="text-18 font-semibold text-grey-primary">
+                <h3 className="text-subtitle font-semibold text-grey-primary">
                   {template.title}
                 </h3>
-                <p className="mt-2 text-13 text-grey">{template.subtitle}</p>
-                <p className="mt-2 text-13 text-grey-primary">
+                <p className="mt-2 text-sm text-grey">{template.subtitle}</p>
+                <p className="mt-2 text-sm text-grey-primary">
                   {template.description}
                 </p>
               </div>

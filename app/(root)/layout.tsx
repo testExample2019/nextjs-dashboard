@@ -9,7 +9,7 @@ export default function PagesLayout(props: {
     <>
       <div
         id={"tour1-step6"}
-        className="flex flex-col h-screen max-w-screen-2xl m-auto"
+        className="flex flex-col h-screen max-w-(--breakpoint-2xl) m-auto"
       >
         <NavBar />
         <main className="h-full">{props.children}</main>

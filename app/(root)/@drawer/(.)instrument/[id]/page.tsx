@@ -15,9 +15,7 @@ export default async function InstrumentDrawer({
   return (
     <>
       <DrawerClose
-        children={
-          <div className={"fixed inset-0 bg-grey-dark bg-opacity-40"} />
-        }
+        children={<div className={"fixed inset-0 bg-grey-dark opacity-40"} />}
       />
       <div
         id={"instrumentDrawer"}

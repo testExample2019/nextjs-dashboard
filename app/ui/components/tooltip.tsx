@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 
 type TooltipProps = {
   content: ReactNode; // Tooltip content, can be text or JSX
@@ -40,7 +40,7 @@ const Tooltip: React.FC<TooltipProps> = ({
 
       {/* Tooltip Content */}
       <div
-        className={`absolute z-10 p-2 w-max max-w-[240px] text-xs text-grey-primary bg-white border border-gray-300 rounded shadow-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 transition-opacity ${visible ? "opacity-1" : "opacity-0"}`}
+        className={`absolute z-10 p-2 w-max max-w-[240px] text-xs text-grey-primary bg-white border border-gray-300 rounded-sm shadow-md bottom-full mb-2 left-1/2 transform -translate-x-1/2 transition-opacity ${visible ? "opacity-1" : "opacity-0"}`}
       >
         <div className="relative">
           {/* Tooltip Content */}
