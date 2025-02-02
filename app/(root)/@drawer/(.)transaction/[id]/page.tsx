@@ -18,9 +18,7 @@ export default async function TransactionDrawer({
   return (
     <div>
       <DrawerClose
-        children={
-          <div className={"fixed inset-0 bg-grey-dark bg-opacity-40"} />
-        }
+        children={<div className={"fixed inset-0 bg-grey-dark opacity-40"} />}
       />
       <div
         id={"transactionInnerDrawer"}
@@ -53,15 +51,15 @@ export default async function TransactionDrawer({
                     className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all text-sm font-semibold"
                   >
                     <div>
-                      <button className="px-4 py-2 uppercase border border-red text-red rounded hover:border-action-primary hover:text-action-primary">
+                      <button className="px-4 py-2 uppercase border border-red text-red rounded-sm hover:border-action-primary hover:text-action-primary">
                         Reject
                       </button>
                     </div>
                     <div className={"flex gap-4"}>
-                      <button className="px-4 py-2 uppercase border border-action-primary text-action-primary rounded hover:border-blue-dark hover:text-blue-dark">
+                      <button className="px-4 py-2 uppercase border border-action-primary text-action-primary rounded-sm hover:border-blue-dark hover:text-blue-dark">
                         Contact borrower
                       </button>
-                      <button className="px-4 py-2 uppercase bg-action-primary text-white rounded hover:bg-blue-dark">
+                      <button className="px-4 py-2 uppercase bg-action-primary text-white rounded-sm hover:bg-blue-dark">
                         Approve & Pay
                       </button>
                     </div>
@@ -69,11 +67,11 @@ export default async function TransactionDrawer({
                 ) : (
                   <div className="flex justify-between gap-4 px-4 py-2 border-t-1 border-grey-border transition-all text-sm font-semibold">
                     <div>
-                      <button className="px-4 py-2 uppercase border border-action-primary text-action-primary rounded hover:border-blue-dark hover:text-blue-dark">
+                      <button className="px-4 py-2 uppercase border border-action-primary text-action-primary rounded-sm hover:border-blue-dark hover:text-blue-dark">
                         Contact Lender
                       </button>
                     </div>
-                    <button className="px-4 py-2 uppercase bg-action-primary text-white rounded hover:bg-blue-dark">
+                    <button className="px-4 py-2 uppercase bg-action-primary text-white rounded-sm hover:bg-blue-dark">
                       Make Payment
                     </button>
                   </div>

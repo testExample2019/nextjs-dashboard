@@ -53,7 +53,7 @@ export const ButtonDropdown = <T,>({
         {children}
       </div>
       <div
-        className={`${isDropdownOpen ? "flex" : "hidden"} flex-col overflow-hidden absolute right-0 z-10 mt-0 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none`}
+        className={`${isDropdownOpen ? "flex" : "hidden"} flex-col overflow-hidden absolute right-0 z-10 mt-0 w-auto origin-top-right rounded-md bg-white shadow-lg focus:outline-hidden`}
         role="menu"
         aria-orientation="vertical"
         aria-labelledby="menu-button"
@@ -67,7 +67,7 @@ export const ButtonDropdown = <T,>({
         {dropdownItems.map(({ id, label, actionType, disabled = false }) => (
           <button
             key={id}
-            className={`flex w-full px-4 py-2 text-sm capitalize text-nowrap  transition-all ${
+            className={`flex cursor-pointer w-full px-4 py-2 text-sm capitalize text-nowrap  transition-all ${
               label.includes("Reject") ? "text-red" : "text-grey-primary"
             }  ${disabled ? "opacity-40 hover:bg-grey-lighter" : "opacity-100 hover:bg-blue-o"} `}
             aria-label={label}

@@ -111,7 +111,7 @@ export default function UpcomingPaymentsList({
                     <button
                       key={index}
                       onClick={() => setActivePaymentType(payment)}
-                      className={`flex gap-2 px-4 py-2 text-sm font-semibold relative capitalize ${
+                      className={`flex cursor-pointer gap-2 px-4 py-2 text-sm font-semibold relative capitalize ${
                         activePaymentType === payment
                           ? "border-b-2 border-action-primary text-action-primary"
                           : "text-grey-secondary"
@@ -129,7 +129,7 @@ export default function UpcomingPaymentsList({
                 {payments?.map((payment) => (
                   <div
                     key={payment.id}
-                    className={`${payment.transactionId && path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-medium border shadow border-grey-border`}
+                    className={`${payment.transactionId && path.includes(payment.transactionId) ? "bg-[#EDF4FC]" : "bg-white"} px-4 py-2  rounded-lg border shadow-sm border-grey-border`}
                   >
                     <div className="flex justify-between flex-row md:flex-col lg:flex-row lg:items-end gap-2 lg:gap-4">
                       <div className="flex flex-col">
@@ -216,7 +216,7 @@ export default function UpcomingPaymentsList({
                                   payment,
                                 )
                               }
-                              className={`text-sm uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
+                              className={`text-sm cursor-pointer uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
                               id="tour1-step15"
                               aria-haspopup="true"
                             >
@@ -244,7 +244,7 @@ export default function UpcomingPaymentsList({
                           id={payment.id}
                           children={
                             <button
-                              className={`w-8 h-8 transition-all hover:bg-grey-lighter rounded-md`}
+                              className={`w-8 h-8 cursor-pointer transition-all hover:bg-grey-lighter rounded-md`}
                             >
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"

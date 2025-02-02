@@ -15,7 +15,7 @@ export default function NavBar() {
       >
         <Link
           href="/template"
-          className="flex items-center justify-center divide-grey-light lg:divide-x logo"
+          className="flex items-center justify-center gap-4"
         >
           <span className="w-24 hidden lg:inline-flex">
             <svg
@@ -43,7 +43,10 @@ export default function NavBar() {
               </defs>
             </svg>
           </span>
-          <span className="lg:ms-4 lg:pl-4 text-22 translate-y-px">
+          <span
+            className={"h-[30px] w-[1px] bg-grey-light hidden lg:inline-flex"}
+          />
+          <span className="text-[22px] translate-y-px">
             <span className="sr-only">Harmonic DirectLend</span>
             Direct<span className="font-semibold">Lend</span>
           </span>
@@ -54,17 +57,28 @@ export default function NavBar() {
             {/* Filter Dropdown */}
 
             <div className="relative w-full max-w-[300px]">
-              <select
+              <input
+                type={"text"}
                 name={"filter"}
                 disabled={true}
                 aria-label={"Filter By Counterparty/Group"}
                 defaultValue={"Filter By Counterparty/Group"}
-                className="block truncate  bg-transparent w-full px-4 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
-              >
-                <option disabled={true}>Filter By Counterparty/Group</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </select>
+                className="block truncate  bg-transparent w-full px-4 py-2 text-grey text-sm border border-grey-border rounded-lg focus:ring-action-primary focus:border-action-primary"
+              ></input>
+              <div className="absolute top-1/2 right-3 transform -translate-y-1/2 text-grey">
+                <svg
+                  width="12"
+                  height="6"
+                  viewBox="0 0 12 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.984375 0.984375H11.0156L6 6L0.984375 0.984375Z"
+                    fill="#909090"
+                  />
+                </svg>
+              </div>
             </div>
 
             {/* Search Input */}
@@ -75,7 +89,7 @@ export default function NavBar() {
                 disabled={true}
                 aria-label={"Search Input"}
                 defaultValue={"Search for Data"}
-                className="block truncate bg-transparent w-full px-8 py-2 text-grey text-sm border border-grey-border rounded-medium focus:ring-action-primary focus:border-action-primary"
+                className="block truncate bg-transparent w-full px-8 py-2 text-grey text-sm border border-grey-border rounded-lg focus:ring-action-primary focus:border-action-primary"
               />
               <div className="absolute top-1/2 left-3 transform -translate-y-1/2 text-grey">
                 <svg
@@ -108,7 +122,7 @@ export default function NavBar() {
                   height="20"
                   viewBox="0 0 16 16"
                   fill="none"
-                  className="focus:outline-none"
+                  className="focus:outline-hidden"
                 >
                   <path
                     d="M13.875 7.83342L12.6667 6.83341V4.83341C12.6667 4.75008 12.5833 4.66675 12.5 4.66675H11.8333C11.7292 4.68758 11.6667 4.75008 11.6667 4.83341V6.02091L8.72917 3.60425C8.54167 3.43758 8.27083 3.35425 8 3.35425C7.70833 3.35425 7.4375 3.43758 7.25 3.60425L2.10417 7.83342C2.04167 7.89592 2 7.97925 2 8.08342C2 8.16675 2.02083 8.25008 2.0625 8.29175L2.29167 8.56258C2.33333 8.62508 2.4375 8.66675 2.54167 8.66675C2.625 8.66675 2.6875 8.64592 2.75 8.60425L3.33333 8.12508V12.0001C3.33333 12.3751 3.625 12.6667 4 12.6667H6.66667C7.02083 12.6667 7.3125 12.3751 7.33333 12.0001V9.83342H8.66667V12.0001C8.66667 12.3751 8.95833 12.6667 9.33333 12.6667H12C12.3542 12.6667 12.6458 12.3751 12.6667 12.0209V8.12508L13.2292 8.60425C13.2917 8.64592 13.3542 8.68758 13.4375 8.68758C13.5417 8.68758 13.6458 8.62508 13.7083 8.56258L13.9167 8.29175C13.9583 8.25008 14 8.16675 14 8.08342C14 7.97925 13.9375 7.89592 13.875 7.83342ZM11.6458 11.6667H9.66667V9.50008C9.64583 9.14592 9.35417 8.85425 9 8.83342H7C6.625 8.85425 6.33333 9.14592 6.33333 9.50008V11.6667H4.33333V7.31258L8 4.29175L11.6667 7.31258L11.6458 11.6667Z"
@@ -127,7 +141,7 @@ export default function NavBar() {
                   height="20"
                   viewBox="0 0 16 16"
                   fill="none"
-                  className="focus:outline-none"
+                  className="focus:outline-hidden"
                 >
                   <path
                     d="M13.25 6.1875C13.3542 6.08333 13.3542 5.9375 13.25 5.83333L11.1667 3.75C11.0625 3.64583 10.8958 3.64583 10.8125 3.75L10.3958 4.16667C10.2917 4.25 10.2917 4.41667 10.3958 4.52083L11.4583 5.5H2.91666C2.77082 5.5 2.66666 5.625 2.66666 5.75V6.25C2.66666 6.39583 2.77082 6.5 2.91666 6.5H11.4583L10.3958 7.5C10.2917 7.60417 10.2917 7.77083 10.3958 7.85417L10.8125 8.27083C10.8958 8.375 11.0625 8.375 11.1667 8.27083L13.25 6.1875ZM2.72916 10.1875L4.81249 12.2708C4.91666 12.375 5.08332 12.375 5.16666 12.2708L5.58332 11.8542C5.68749 11.7708 5.68749 11.6042 5.58332 11.5L4.52082 10.5H13.0833C13.2083 10.5 13.3333 10.3958 13.3333 10.25V9.75C13.3333 9.625 13.2083 9.5 13.0833 9.5H4.52082L5.58332 8.52083C5.68749 8.41667 5.68749 8.25 5.58332 8.16667L5.16666 7.75C5.08332 7.64583 4.91666 7.64583 4.81249 7.75L2.72916 9.83333C2.62499 9.9375 2.62499 10.0833 2.72916 10.1875Z"
@@ -146,7 +160,7 @@ export default function NavBar() {
                   height="20"
                   viewBox="0 0 16 16"
                   fill="none"
-                  className="focus:outline-none"
+                  className="focus:outline-hidden"
                 >
                   <path
                     d="M13.0833 11H3.66666V4.25C3.66666 4.125 3.54166 4 3.41666 4H2.91666C2.77083 4 2.66666 4.125 2.66666 4.25V11.75C2.66666 11.8958 2.77083 12 2.91666 12H13.0833C13.2083 12 13.3333 11.8958 13.3333 11.75V11.25C13.3333 11.125 13.2083 11 13.0833 11ZM10.4167 5.35417L8.66666 6.52083L6.875 4.75C6.77083 4.64583 6.58333 4.66667 6.5 4.79167L4.66666 8V10H12.6667L10.7708 5.45833C10.7083 5.3125 10.5417 5.27083 10.4167 5.35417ZM5.66666 8.29167L6.85416 6.14583L8.52083 7.8125C10.0208 6.8125 8.70833 7.70833 10.2083 6.6875L11.1458 9H5.66666V8.29167Z"
@@ -166,7 +180,7 @@ export default function NavBar() {
                   height="20"
                   viewBox="0 0 16 16"
                   fill="none"
-                  className="focus:outline-none"
+                  className="focus:outline-hidden"
                 >
                   <path
                     d="M12.3541 4.04169L11.2916 2.97919C11.1041 2.79169 10.8541 2.66669 10.5833 2.66669H6.99998C6.43748 2.66669 5.99998 3.12502 5.99998 3.66669V4.66669H4.33331C3.77081 4.66669 3.33331 5.12502 3.33331 5.66669V12.3334C3.33331 12.8959 3.77081 13.3334 4.33331 13.3334H8.99998C9.54165 13.3334 9.99998 12.8959 9.99998 12.3334V11.3334H11.6666C12.2083 11.3334 12.6666 10.8959 12.6666 10.3334V4.75002C12.6666 4.47919 12.5416 4.22919 12.3541 4.04169ZM8.87498 12.3334H4.45831C4.37498 12.3334 4.33331 12.2917 4.33331 12.2084V5.79169C4.33331 5.72919 4.37498 5.66669 4.45831 5.66669H5.99998V10.3334C5.99998 10.8959 6.43748 11.3334 6.99998 11.3334H8.99998V12.2084C8.99998 12.2917 8.93748 12.3334 8.87498 12.3334ZM11.5416 10.3334H7.12498C7.04165 10.3334 6.99998 10.2917 6.99998 10.2084V3.79169C6.99998 3.72919 7.04165 3.66669 7.12498 3.66669H9.33331V5.50002C9.33331 5.79169 9.54165 6.00002 9.83331 6.00002H11.6666V10.2084C11.6666 10.2917 11.6041 10.3334 11.5416 10.3334ZM11.6666 5.00002H10.3333V3.66669H10.5208C10.5625 3.66669 10.5833 3.68752 10.6041 3.70835L11.625 4.72919C11.6458 4.75002 11.6666 4.77085 11.6666 4.81252V5.00002Z"
@@ -181,7 +195,7 @@ export default function NavBar() {
             <Link
               href={item.href}
               key={idx}
-              className={`${path.includes(item.label.toLowerCase()) ? "border-action-primary text-action-primary" : "text-grey"}  inline-flex items-center justify-center w-10 h-10 bg-transparent border rounded-full shadow hover:shadow-md outline-none focus:outline-none`}
+              className={`${path.includes(item.label.toLowerCase()) ? "border-action-primary text-action-primary" : "text-grey"}  inline-flex items-center justify-center w-10 h-10 bg-transparent border rounded-full shadow-sm hover:shadow-md outline-hidden focus:outline-hidden`}
               aria-label={item.label}
             >
               {item.icon}

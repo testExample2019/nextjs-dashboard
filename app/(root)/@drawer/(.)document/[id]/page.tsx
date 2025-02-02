@@ -14,9 +14,7 @@ export default async function PositionDrawer({
   return (
     <>
       <DrawerClose
-        children={
-          <div className={"fixed inset-0 bg-grey-dark bg-opacity-40"} />
-        }
+        children={<div className={"fixed inset-0 bg-grey-dark opacity-40"} />}
       />
       <div
         className={

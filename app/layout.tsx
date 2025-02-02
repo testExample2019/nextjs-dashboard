@@ -1,10 +1,10 @@
-import "@/app/ui/global.css";
 import { NextStep, NextStepProvider } from "nextstepjs";
 import { openSans } from "@/app/ui/fonts";
 import { Metadata } from "next";
 import { steps } from "./lib/steps";
 import { ToastProvider } from "@/app/lib/contexts/toast-context";
 import StepCustomCard from "@/app/ui/components/step-custom-card";
+import "@/app/ui/global.css";
 
 export const metadata: Metadata = {
   title: {

@@ -80,7 +80,7 @@ export const Table: React.FC<TableProps> = ({
                 {row.nestedRows && cellIndex === 0 && (
                   <button
                     onClick={() => toggleRow(index)}
-                    className="text-grey focus:outline-none absolute left-1"
+                    className="text-grey focus:outline-hidden absolute left-1"
                   >
                     {expandedRows.includes(index) ? (
                       <ChevronDown />
@@ -93,7 +93,7 @@ export const Table: React.FC<TableProps> = ({
                   className={`flex items-center whitespace-nowrap truncate ${isLeftAligned(header) ? "justify-end" : "justify-start"}`}
                 >
                   {type === "document" && cellIndex === 0 && (
-                    <Document className={"flex-shrink-0"} />
+                    <Document className={"shrink-0"} />
                   )}
                   {cellVal}
                 </span>
@@ -111,7 +111,7 @@ export const Table: React.FC<TableProps> = ({
   };
 
   return (
-    <div className="overflow-x-auto shadow border border-grey-border rounded-lg">
+    <div className="overflow-x-auto shadow-sm border border-grey-border rounded-lg">
       <table className="divide-y border-grey-border w-full">
         {/* Table Header */}
         <thead className="bg-gray-50">

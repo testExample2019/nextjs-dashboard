@@ -1,8 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+@source '../../node_modules/nextstepjs/dist/**/*.{js,ts,jsx,tsx}';
 
-.step-custom-card #triangle{
-    fill: white;
+@theme {
+  --animate-highlight: highlight 1.5s ease-out;
+
+  --color-action-primary: #4a90e2;
+  --color-grey-primary: #3b414c;
+  --color-grey-secondary: #797275;
+  --color-grey-border: #e3e3e3;
+  --color-grey-light: #abb8c3;
+  --color-grey-lighter: #f1f1f1;
+  --color-grey-blue: #6b98a2;
+  --color-grey-dark: #4e4b4b;
+  --color-grey: #909090;
+  --color-grey-o: rgba(241, 241, 241, 0.4);
+  --bg-grey-o: rgba(171, 184, 195, 0.4);
+  --color-blue-dark: #226ec8;
+  --color-blue-light: #4a90e21a;
+  --color-blue-o: #edf4fc;
+  --color-purple: #3f51b5;
+  --color-purple-o: #3f51b57f;
+  --color-orange: #d13a00;
+  --color-orange-o: rgba(242, 153, 74, 0.2);
+  --color-red: #d20000;
+  --color-green: #70ad47;
+  --color-white: #ffffff;
+
+  --font-sans: Open Sans, sans-serif;
+  --text-subtitle: 18px;
+  --rounded-lg: 10px;
+
+  @keyframes highlight {
+    0% {
+      background-color: #ffffff;
+    }
+    50% {
+      background-color: #edf4fc;
+    }
+    100% {
+      background-color: #ffffff;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+.step-custom-card #triangle {
+  fill: white;
 }

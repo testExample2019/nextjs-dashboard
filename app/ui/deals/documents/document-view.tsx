@@ -132,7 +132,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                     </button>
 
                     <div className="relative">
-                      <select className="border-none bg-transparent text-grey-primary text-center focus:outline-none">
+                      <select className="border-none bg-transparent text-grey-primary text-center focus:outline-hidden">
                         <option value="1">1</option>
                       </select>
                     </div>

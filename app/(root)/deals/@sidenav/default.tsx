@@ -14,12 +14,14 @@ const SideNavPage = async () => {
           "flex justify-between items-center h-[50px] border-b-1 border-grey-border py-2 px-4"
         }
       >
-        <h3 className={"text-18 font-semibold text-grey-primary"}>Deals</h3>
+        <h3 className={"text-subtitle font-semibold text-grey-primary"}>
+          Deals
+        </h3>
         <ButtonDropdown
           children={
             <button
               type="button"
-              className={`inline-flex w-full justify-center gap-x-1.5 rounded bg-white px-3 py-2 text-sm uppercase font-semibold text-action-primary outline-1 shadow-sm border border-action-primary  hover:bg-gray-50`}
+              className={`inline-flex w-full justify-center gap-x-1.5 rounded-sm bg-white px-3 py-2 text-sm uppercase font-semibold cursor-pointer text-action-primary shadow-xs border border-action-primary  hover:bg-gray-50`}
               id="menu-button"
               aria-haspopup="true"
             >

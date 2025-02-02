@@ -20,14 +20,14 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
     >
       <div className="p-4 flex flex-col">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-18 text-grey-primary font-semibold">
+          <h2 className="text-subtitle text-grey-primary font-semibold">
             {step.title}
           </h2>
           {step.icon}
         </div>
         <div className={"max-h-[70vh] overflow-y-auto text-sm relative"}>
           {step.content}
-          <div className="sticky -bottom-0.5 left-0 right-0 h-6 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+          <div className="sticky -bottom-0.5 left-0 right-0 h-6 bg-linear-to-t from-white to-transparent pointer-events-none"></div>
         </div>
         <div className="bg-grey-border rounded-full h-2 mb-2">
           <div
