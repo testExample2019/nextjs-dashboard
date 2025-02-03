@@ -344,11 +344,8 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary text-sm  min-w-[65vw]">
             <p className="mb-3">
-              <span className="font-semibold pe-1">
-                The upcoming payments widget
-              </span>
-              on your dashboard highlights the closest scheduled payments,
-              including both debits and credits.
+              Highlights the closest scheduled payments, including both debits
+              and credits.
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
               <li>
@@ -379,8 +376,7 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary text-sm ">
             <p className="mb-3">
-              <span className="font-semibold pe-1">The positions widget</span>
-              provides a detailed breakdown of your current positions for every
+              Provides a detailed breakdown of your current positions for every
               loan instrument in your portfolio.
             </p>
           </div>
@@ -398,10 +394,7 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary text-sm ">
             <p className="mb-3">
-              <span className="font-semibold pe-1">
-                Covenants tracking widget
-              </span>
-              displays the results of financial covenants calculations based on
+              Displays the results of financial covenants calculations based on
               the latest financial statements provided by the borrower.
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
@@ -531,8 +524,7 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
-              The<span className="font-semibold px-1">transaction details</span>
-              tab provides a comprehensive list of transactions related to the
+              Provides a comprehensive list of transactions related to the
               notice.
             </p>
             <ul className="list-disc ps-5  list-outside space-y-3">
@@ -575,23 +567,16 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className="mb-3">
-              <span className="font-semibold pe-1">
-                Borrower requests for unscheduled drawdowns and principal
-                prepayments:
-              </span>
-              borrowers may occasionally request unscheduled drawdowns or
+              Borrowers may occasionally request unscheduled drawdowns or
               principal prepayments. The dashboard provides lenders with the
               ability to efficiently review these requests.
             </p>
 
-            <ul className="list-disc ps-5  list-outside space-y-3 max-h-60 overflow-y-auto">
-              <li>
-                <span className="font-semibold pe-1">Request overview:</span>
-                Easily access a summary of all pending requests from borrowers
-                for unscheduled drawdowns or principal prepayments, ensuring you
-                stay informed about their needs.
-              </li>
-            </ul>
+            <p>
+              Easily access a summary of all pending requests from borrowers for
+              unscheduled drawdowns or principal prepayments, ensuring you stay
+              informed about their needs.
+            </p>
           </div>
         ),
         selector: "#tour1-step14",
@@ -607,8 +592,8 @@ export const steps: Tour[] = [
         title: "View transaction request",
         content: (
           <div className="text-grey-primary text-sm  min-w-[300px]">
-            Click <span className={"font-semibold pe-1"}>preview</span> to
-            access information
+            Click <span className={"font-semibold pe-1"}>preview</span>to access
+            information.
           </div>
         ),
         selector: "#tour1-step15",
@@ -664,15 +649,11 @@ export const steps: Tour[] = [
         title: "Detailed request information",
         content: (
           <div className="text-grey-primary text-sm  min-w-[400px]">
-            <ul className="list-disc ps-5  list-outside space-y-3">
-              <li>
-                <span className="font-semibold pe-1">
-                  Requested rate option:
-                </span>
-                Information about the rate option the borrower is requesting,
-                ensuring you understand the implications for the loan structure.
-              </li>
-            </ul>
+            <p>
+              <span className="font-semibold pe-1">Requested rate option:</span>
+              Information about the rate option the borrower is requesting,
+              ensuring you understand the implications for the loan structure.
+            </p>
           </div>
         ),
         selector: "#tour1-step17",
@@ -687,15 +668,10 @@ export const steps: Tour[] = [
         title: "Preferred bank account",
         content: (
           <div className="text-grey-primary text-sm  min-w-[400px]">
-            <ul className="list-disc ps-5  list-outside space-y-3">
-              <li>
-                <span className="font-semibold pe-1">
-                  Preferred bank account:
-                </span>
-                Details about the borrower’s preferred bank account for fund
-                transfers, streamlining the process for disbursement.
-              </li>
-            </ul>
+            <p>
+              Details about the borrower’s preferred bank account for fund
+              transfers, streamlining the process for disbursement.
+            </p>
           </div>
         ),
         selector: "#tour1-step18",
@@ -730,9 +706,8 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Transactions screen",
         content: (
-          <div className="text-grey-primary text-sm  min-w-[200px] xl:min-w-[265px]">
+          <div className="text-grey-primary text-sm min-w-[200px] 2xl:min-w-[265px]">
             <p className="mb-3">
-              <span className="font-semibold pe-1">Transactions screen:</span>
               Provides a complete overview of all historical and scheduled
               transactions, enabling you to effectively track their status and
               access detailed information.
@@ -767,16 +742,13 @@ export const steps: Tour[] = [
         title: "Transaction details",
         content: (
           <div className="text-grey-primary text-sm  min-w-[400px]">
-            <ul className="list-disc ps-5  list-outside space-y-3">
-              <li>
-                <span className="font-semibold pe-1">
-                  Access transaction details:
-                </span>
-                Click on any transaction to access detailed information,
-                including amounts, dates, associated fees, and any relevant
-                documentation.
-              </li>
-            </ul>
+            <p>
+              <span className="font-semibold pe-1">
+                Access transaction details:
+              </span>
+              Click on any transaction to access detailed information, including
+              amounts, dates, associated fees, and any relevant documentation.
+            </p>
             <p className={"mt-3"}>
               This screen is designed to enhance your transaction management,
               providing you with the tools you need to monitor and review all
@@ -799,9 +771,6 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary text-sm ">
             <p className="mb-3">
-              <span className="font-semibold pe-1">
-                The instruments screen:
-              </span>
               Displays a comprehensive list of all loan instruments in your
               portfolio, making it easy to find and filter specific instruments.
             </p>
@@ -863,7 +832,6 @@ export const steps: Tour[] = [
         content: (
           <div className="text-grey-primary text-sm  min-w-[75vw]">
             <p className="mb-3">
-              <span className="font-semibold pe-1">The documents screen:</span>
               Serves as a comprehensive repository for all loan documentation,
               providing a centralized location for managing your documents.
             </p>
@@ -906,7 +874,7 @@ export const steps: Tour[] = [
           <div className="text-grey-primary text-sm  min-w-[250px]">
             <p className="mb-3">
               Switching to the
-              <span className="font-semibold px-1">borrower view</span>
+              <span className="font-semibold px-1">borrower view.</span>
             </p>
           </div>
         ),
