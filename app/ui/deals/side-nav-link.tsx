@@ -27,7 +27,7 @@ export const SideNavLink = ({
       <div className="flex justify-between items-center">
         <h3 className="text-grey-primary text-base uppercase">{displayName}</h3>
         <div className="flex gap- items-center">
-          <span className="text-xs font-medium bg-grey-blue text-white px-1 rounded-sm">
+          <span className="text-xs font-medium bg-grey-blue text-white px-1 rounded">
             USD
           </span>
           <ButtonDropdown

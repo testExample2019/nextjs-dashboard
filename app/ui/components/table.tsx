@@ -75,7 +75,7 @@ export const Table: React.FC<TableProps> = ({
             return (
               <td
                 key={cellIndex}
-                className={`relative px-3 py-3 text-sm text-grey-primary whitespace-nowrap max-w-[125px] truncate ${(row.nestedRows || isNested) && cellIndex === 0 ? "ps-8" : ""}`}
+                className={`relative px-3 py-3 text-sm text-grey-primary whitespace-nowrap max-w-[125px] truncate ${(row.nestedRows || isNested) && cellIndex === 0 ? "ps-8" : ""} ${isNested && cellIndex === 0 ? "ps-14" : ""}`}
               >
                 {row.nestedRows && cellIndex === 0 && (
                   <button
@@ -90,7 +90,7 @@ export const Table: React.FC<TableProps> = ({
                   </button>
                 )}
                 <span
-                  className={`flex items-center whitespace-nowrap truncate ${isLeftAligned(header) ? "justify-end" : "justify-start"}`}
+                  className={`flex items-center whitespace-nowrap truncate ${isLeftAligned(header) ? "justify-end" : "justify-start"} gap-1`}
                 >
                   {type === "document" && cellIndex === 0 && (
                     <Document className={"shrink-0"} />

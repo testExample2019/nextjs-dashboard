@@ -21,7 +21,7 @@ const SideNavPage = async () => {
           children={
             <button
               type="button"
-              className={`inline-flex w-full justify-center gap-x-1.5 rounded-sm bg-white px-3 py-2 text-sm uppercase font-semibold cursor-pointer text-action-primary shadow-xs border border-action-primary  hover:bg-gray-50`}
+              className={`inline-flex w-full justify-center gap-x-1.5 rounded bg-white px-3 py-2 text-sm uppercase font-semibold cursor-pointer text-action-primary shadow-xs border border-action-primary  hover:bg-gray-50`}
               id="menu-button"
               aria-haspopup="true"
             >

@@ -216,7 +216,7 @@ export default function UpcomingPaymentsList({
                                   payment,
                                 )
                               }
-                              className={`text-sm cursor-pointer uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
+                              className={`text-sm cursor-pointer transition-all uppercase border p-2 rounded-md tra border-action-primary font-semibold text-action-primary  hover:text-blue-dark`}
                               id="tour1-step15"
                               aria-haspopup="true"
                             >

@@ -45,13 +45,13 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
             <button
               onClick={prevStep}
               disabled={currentStep === 0}
-              className={`bg-white cursor-pointer border text-sm border-grey-border uppercase text-grey-primary px-4 py-2 rounded-md font-semibold w-full max-w-52 ${currentStep === 0 ? "opacity-50" : "opacity-100"}`}
+              className={`bg-white cursor-pointer outline-none border text-sm  transition-all border-grey-border uppercase text-grey-primary px-4 py-2 rounded-md font-semibold w-full max-w-52 ${currentStep === 0 ? "opacity-50" : "opacity-100"}`}
             >
               Previous
             </button>
             <button
               onClick={nextStep}
-              className="cursor-pointer bg-action-primary text-sm text-white uppercase px-4 py-2 rounded-md font-semibold w-full max-w-52"
+              className="cursor-pointer outline-none bg-action-primary  transition-all hover:bg-blue-dark text-sm text-white uppercase px-4 py-2 rounded-md font-semibold w-full max-w-52"
             >
               {currentStep === totalSteps - 1 ? "Finish" : "Next"}
             </button>

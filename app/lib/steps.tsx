@@ -1121,7 +1121,7 @@ export const steps: Tour[] = [
         icon: <></>,
         title: "Unscheduled transaction requests tracking",
         content: (
-          <div className="text-grey-primary text-sm  min-w-[75vw]">
+          <div className="text-grey-primary text-sm min-w-[200px] 2xl:min-w-[265px] max-h-[35vh] overflow-y-auto relative">
             <p className="mb-3">
               Borrowers can easily track the current status of their unscheduled
               transaction requests directly on their dashboard:
@@ -1178,6 +1178,7 @@ export const steps: Tour[] = [
                 new terms.
               </li>
             </ul>
+            <div className="sticky -bottom-0.5 left-0 right-0 h-6 bg-linear-to-t from-white to-transparent pointer-events-none"></div>
           </div>
         ),
         selector: "#tour1-step31",
