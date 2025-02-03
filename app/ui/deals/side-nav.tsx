@@ -20,7 +20,6 @@ export default function DealsSideNav({
   const { setCurrentStep, startNextStep, currentStep } = useNextStep();
 
   useEffect(() => {
-    console.log(currentStep);
     if (
       currentStep === 0 ||
       currentStep === 8 ||
@@ -36,9 +35,7 @@ export default function DealsSideNav({
       ) {
         startNextStep("mainTour");
       }
-      path.includes(DealPages.Dashboard) &&
-        currentStep === 0 &&
-        setCurrentStep(8);
+      path.includes(DealPages.Dashboard) && setCurrentStep(8);
       if (path.includes(DealPages.Dashboard) && currentStep === 22) {
         router.push(transactionRequestDrawerPath);
         setCurrentStep(20);
@@ -47,7 +44,7 @@ export default function DealsSideNav({
       if (path.includes(DealPages.Transactions) && currentStep === 24) {
         router.push(transactionDrawerPath);
         setCurrentStep(22);
-      } // Handled return from Documents page
+      } // Handled return from Instruments page
       path.includes(DealPages.Instruments) && setCurrentStep(24);
       if (path.includes(DealPages.Instruments) && currentStep === 26) {
         router.push(instrumentDrawerPath);

@@ -174,7 +174,7 @@ export const steps: Tour[] = [
           <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className={"mb-3"}>
               Let’s adjust the interest rate to
-              <span className="font-semibold px-1">15%</span>.
+              <span className="font-semibold px-1">15%.</span>
             </p>
             <p>
               After entering the new interest rate, the preview transactions
@@ -197,7 +197,7 @@ export const steps: Tour[] = [
           <div className="text-grey-primary text-sm  min-w-[400px]">
             <p className={"mb-3"}>
               You have successfully adjusted the interest rate to
-              <span className="font-semibold px-1">15%</span>.
+              <span className="font-semibold px-1">15%.</span>
             </p>
             <p>
               The preview transactions schedule panel on the right-hand side has
@@ -219,7 +219,7 @@ export const steps: Tour[] = [
           <div className="text-grey-primary text-sm  min-w-[400px]">
             If you require more sophisticated controls for your loan setup, you
             can easily switch the wizard to
-            <span className="font-semibold px-1">advanced mode</span>.
+            <span className="font-semibold px-1">advanced mode.</span>
           </div>
         ),
         selector: "#tour1-step4",
