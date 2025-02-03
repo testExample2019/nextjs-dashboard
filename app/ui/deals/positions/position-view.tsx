@@ -18,10 +18,10 @@ const PositionView = ({ position }: { position?: PositionType }) => {
       </div>
 
       <div className="flex justify-between space-x-4 mb-4">
-        <button className="text-sm text-action-primary border-b-2 border-action-primary pb-2 w-full">
+        <button className="cursor-pointer text-sm text-action-primary border-b-2 border-action-primary pb-2 w-full">
           Transaction Info
         </button>
-        <button className="text-sm text-grey-secondary hover:text-action-primary hover:border-action-primary pb-2 w-full">
+        <button className="cursor-pointer text-sm text-grey-secondary hover:text-action-primary hover:border-action-primary pb-2 w-full">
           Allocations
         </button>
       </div>

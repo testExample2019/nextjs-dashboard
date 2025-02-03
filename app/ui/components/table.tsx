@@ -80,7 +80,7 @@ export const Table: React.FC<TableProps> = ({
                 {row.nestedRows && cellIndex === 0 && (
                   <button
                     onClick={() => toggleRow(index)}
-                    className="text-grey focus:outline-hidden absolute left-1"
+                    className="text-grey focus:outline-hidden absolute left-1 cursor-pointer"
                   >
                     {expandedRows.includes(index) ? (
                       <ChevronDown />

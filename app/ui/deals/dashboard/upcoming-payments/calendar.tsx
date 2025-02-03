@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  format,
-  startOfMonth,
-  endOfMonth,
-  startOfWeek,
   addDays,
+  endOfMonth,
+  format,
   isSameDay,
+  startOfMonth,
+  startOfWeek,
 } from "date-fns";
 import { PaymentType } from "@/app/lib/definitions";
 import { today } from "@/app/lib/constants";
@@ -36,7 +36,7 @@ const Calendar = ({ payments }: { payments: PaymentType[] }) => {
           {format(monthStart, "MMMM yyyy").toUpperCase()}
         </p>
         <div className="space-x-3 flex justify-center">
-          <button className="text-sm text-grey-primary">
+          <button className="text-sm text-grey-primary cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
@@ -51,7 +51,7 @@ const Calendar = ({ payments }: { payments: PaymentType[] }) => {
             </svg>
           </button>
           <span className="text-sm text-grey-primary font-semibold">Today</span>
-          <button className="text-sm text-grey-primary">
+          <button className="text-sm text-grey-primary cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"

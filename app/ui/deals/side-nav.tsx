@@ -20,8 +20,10 @@ export default function DealsSideNav({
   const { setCurrentStep, startNextStep, currentStep } = useNextStep();
 
   useEffect(() => {
+    console.log(currentStep);
     if (
       currentStep === 0 ||
+      currentStep === 2 ||
       currentStep === 8 ||
       currentStep === 22 ||
       currentStep === 24 ||
@@ -35,6 +37,9 @@ export default function DealsSideNav({
       ) {
         startNextStep("mainTour");
       }
+      path.includes(DealPages.Dashboard) &&
+        currentStep === 2 &&
+        setCurrentStep(8);
       path.includes(DealPages.Dashboard) && setCurrentStep(8);
       if (path.includes(DealPages.Dashboard) && currentStep === 22) {
         router.push(transactionRequestDrawerPath);

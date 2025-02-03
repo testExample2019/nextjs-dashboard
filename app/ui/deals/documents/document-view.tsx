@@ -89,7 +89,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                 <button
                   key={id}
                   onClick={() => setActiveTab(id)}
-                  className={`text-sm font-semibold  border-b-2  capitalize pb-2 w-full ${
+                  className={`text-sm font-semibold cursor-pointer border-b-2  capitalize pb-2 w-full ${
                     activeTab === id
                       ? "border-action-primary text-action-primary"
                       : "text-grey-secondary"
@@ -116,7 +116,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                 </div>
                 <div className="flex items-center justify-between w-full px-4 py-2 border-t border-gray-300 bg-white">
                   <div className="flex items-center space-x-2">
-                    <button className="text-grey hover:text-grey-primary">
+                    <button className="text-grey hover:text-grey-primary cursor-pointer">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -138,7 +138,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                     </div>
                     <span className="text-grey-primary">of 1 pages</span>
 
-                    <button className="text-gray-500 hover:text-grey-primary">
+                    <button className="text-gray-500 hover:text-grey-primary cursor-pointer">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -155,7 +155,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                   </div>
 
                   <div className="flex items-center space-x-2">
-                    <button className="text-greyhover:text-grey-primary">
+                    <button className="text-greyhover:text-grey-primary cursor-pointer">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -170,7 +170,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                       </svg>
                     </button>
                     <span className="text-grey-primary text-base">100%</span>
-                    <button className="text-grey hover:text-grey-primary">
+                    <button className="text-grey hover:text-grey-primary cursor-pointer">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -184,7 +184,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                         />
                       </svg>
                     </button>
-                    <button className="text-grey hover:text-grey-primary">
+                    <button className="text-grey hover:text-grey-primary cursor-pointer">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -222,7 +222,7 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
                     <button
                       key={id}
                       onClick={() => setActiveSubTab(id)}
-                      className={`text-sm font-semibold  border-b-2  capitalize pb-2 w-full ${
+                      className={`cursor-pointer text-sm font-semibold  border-b-2  capitalize pb-2 w-full ${
                         activeSubTab === id
                           ? "border-action-primary text-action-primary"
                           : "text-grey-secondary"

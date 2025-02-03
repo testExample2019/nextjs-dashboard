@@ -6,12 +6,12 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
     <div className="bg-white absolute top-0 right-0 w-full lg:w-[40%] h-full z-10">
       <h2 className="text-subtitle font-semibold capitalize text-grey-primary py-2 px-4 border-b-1 border-grey-border flex justify-between items-center">
         <div className={"flex items-center justify-center gap-2"}>
-          <button onClick={onClose}>
+          <button className={"cursor-pointer"} onClick={onClose}>
             <ChevronLeft className={"rotate-180"} />
           </button>
           {data?.type ? "Facility Fee" : "New Facility Fee"}
         </div>
-        <button onClick={onClose}>
+        <button className={"cursor-pointer"} onClick={onClose}>
           <Cross />
         </button>
       </h2>
@@ -94,7 +94,7 @@ export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
             <div className={"flex items-center gap-6"}>
               <button
                 type="button"
-                className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
+                className={`cursor-pointer inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
               >
                 + Add
               </button>

@@ -191,7 +191,7 @@ const AdvancedTable = () => {
               <div>
                 <button
                   type="button"
-                  className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
+                  className={`cursor-pointer inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
                 >
                   + Add lender
                 </button>
@@ -255,7 +255,7 @@ const AdvancedTable = () => {
                   key={id}
                   id={id}
                   onClick={() => setActiveTab(id)}
-                  className={`text-sm font-semibold  border-b-2 py-6 ${
+                  className={`text-sm cursor-pointer font-semibold  border-b-2 py-6 ${
                     activeTab === id
                       ? "border-action-primary text-action-primary"
                       : "text-grey-secondary border-transparent"
@@ -394,7 +394,7 @@ const AdvancedTable = () => {
                     <div className={"flex items-center gap-6"}>
                       <button
                         type="button"
-                        className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
+                        className={`cursor-pointer inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
                       >
                         + Add
                       </button>
@@ -407,7 +407,7 @@ const AdvancedTable = () => {
                 <div>
                   <h2 className="text-base font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
                     1ME (Pay 1st BD)
-                    <button type="button">
+                    <button className={"cursor-pointer"} type="button">
                       <Cross />
                     </button>
                   </h2>
@@ -472,7 +472,7 @@ const AdvancedTable = () => {
                   <div className={"flex items-center gap-6"}>
                     <button
                       type="button"
-                      className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
+                      className={`cursor-pointer inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
                     >
                       + Add
                     </button>
@@ -528,7 +528,7 @@ const AdvancedTable = () => {
                     <button
                       type="button"
                       onClick={handleFacilityAddClick}
-                      className={`inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
+                      className={`cursor-pointer inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
                     >
                       + Add
                     </button>
@@ -609,7 +609,7 @@ const AdvancedTable = () => {
               <p className="text-base font-semibold text-grey-primary">
                 Drag & Drop files here to upload or
               </p>
-              <button className="mt-2 px-4 py-2 uppercase border border-action-primary text-action-primary rounded-md">
+              <button className="cursor-pointer mt-2 px-4 py-2 uppercase border border-action-primary text-action-primary rounded-md">
                 Browse Files
               </button>
             </div>

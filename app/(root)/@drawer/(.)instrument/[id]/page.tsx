@@ -31,7 +31,7 @@ export default async function InstrumentDrawer({
               </h2>
               <DrawerClose
                 children={
-                  <button className="text-grey-blue ">
+                  <button className="text-grey-blue cursor-pointer">
                     <Cross />
                   </button>
                 }

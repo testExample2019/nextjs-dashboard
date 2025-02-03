@@ -79,7 +79,7 @@ const TransactionView = ({
                     <button
                       key={id}
                       onClick={() => setActiveTab(id)}
-                      className={`text-sm font-semibold  border-b-2  capitalize pb-2 w-full ${
+                      className={`cursor-pointer text-sm font-semibold  border-b-2  capitalize pb-2 w-full ${
                         activeTab === id
                           ? "border-action-primary text-action-primary"
                           : "text-grey-secondary"
