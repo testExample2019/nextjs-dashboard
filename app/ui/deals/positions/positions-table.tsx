@@ -11,6 +11,7 @@ const PositionsTable: React.FC<DealParamsType> = async ({
 
   const selectedFields = positions?.map(
     ({
+      id,
       deal,
       instrument,
       borrower,
@@ -22,6 +23,7 @@ const PositionsTable: React.FC<DealParamsType> = async ({
       unfunded,
       docs,
     }) => ({
+      id,
       deal,
       instrument,
       borrower,
