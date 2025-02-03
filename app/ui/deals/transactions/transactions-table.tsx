@@ -35,13 +35,15 @@ const TransactionsTableView = ({
     hideScheduledTransactions,
   );
   const [showScheduledTransactions, setShowScheduledTransactions] =
-    useState(true);
+    useState<boolean>(true);
 
   useEffect(() => {
-    showScheduledTransactions
-      ? setTransactionsRows(transactions)
-      : setTransactionsRows(hideScheduledTransactions);
-  }, [showScheduledTransactions]);
+    if (showScheduledTransactions) {
+      setTransactionsRows(transactions);
+    } else {
+      setTransactionsRows(hideScheduledTransactions);
+    }
+  }, [hideScheduledTransactions, showScheduledTransactions, transactions]);
   return (
     <section id="tour1-step20">
       <div

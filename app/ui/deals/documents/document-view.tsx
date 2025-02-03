@@ -52,7 +52,12 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
     if (currentStep === 15) {
       setActiveTab(DocumentTabsType.TransactionDetails);
     }
-  }, [currentStep]);
+  }, [
+    DocumentTabsType.Document,
+    DocumentTabsType.TransactionDetails,
+    currentStep,
+    setCurrentStep,
+  ]);
 
   return (
     <div id={"tour1-step12"}>

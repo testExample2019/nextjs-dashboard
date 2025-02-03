@@ -14,9 +14,9 @@ export default async function InstrumentDrawer({
 
   return (
     <>
-      <DrawerClose
-        children={<div className={"fixed inset-0 bg-grey-dark opacity-40"} />}
-      />
+      <DrawerClose>
+        <div className={"fixed inset-0 bg-grey-dark opacity-40"} />
+      </DrawerClose>
       <div
         id={"instrumentDrawer"}
         className={
@@ -29,13 +29,11 @@ export default async function InstrumentDrawer({
               <h2 className="text-lg font-semibold text-grey-dark">
                 View Instrument
               </h2>
-              <DrawerClose
-                children={
-                  <button className="text-grey-blue cursor-pointer">
-                    <Cross />
-                  </button>
-                }
-              />
+              <DrawerClose>
+                <button className="text-grey-blue cursor-pointer">
+                  <Cross />
+                </button>
+              </DrawerClose>
             </div>
             <InstrumentView instrument={instrument} />
           </div>

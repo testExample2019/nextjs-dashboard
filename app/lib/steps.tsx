@@ -429,7 +429,7 @@ export const steps: Tour[] = [
                   Comprehensive monitoring:
                 </span>
                 This widget is designed to help you effectively monitor
-                compliance and gain deeper insights into your borrowers'
+                compliance and gain deeper insights into your borrowers&#39;
                 financial health!
               </li>
             </ul>
@@ -1174,8 +1174,8 @@ export const steps: Tour[] = [
                   Visibility for counterparties:
                 </span>
                 Both borrowers and lenders can view the updated payment
-                schedule, promoting transparency and understanding of the loan's
-                new terms.
+                schedule, promoting transparency and understanding of the
+                loan&#39;s new terms.
               </li>
             </ul>
             <div className="sticky -bottom-0.5 left-0 right-0 h-6 bg-linear-to-t from-white to-transparent pointer-events-none"></div>

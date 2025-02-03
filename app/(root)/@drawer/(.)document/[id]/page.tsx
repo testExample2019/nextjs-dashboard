@@ -13,9 +13,9 @@ export default async function PositionDrawer({
   const document = await fetchDocumentById(id);
   return (
     <>
-      <DrawerClose
-        children={<div className={"fixed inset-0 bg-grey-dark opacity-40"} />}
-      />
+      <DrawerClose>
+        <div className={"fixed inset-0 bg-grey-dark opacity-40"} />
+      </DrawerClose>
       <div
         className={
           "fixed top-0 mr-auto right-0 h-full w-[40vw] bg-white overflow-auto z-20"
@@ -25,13 +25,11 @@ export default async function PositionDrawer({
           <h2 className="text-lg font-semibold text-grey-dark ">
             View Document
           </h2>
-          <DrawerClose
-            children={
-              <button className="text-grey-blue cursor-pointer">
-                <Cross />
-              </button>
-            }
-          />
+          <DrawerClose>
+            <button className="text-grey-blue cursor-pointer">
+              <Cross />
+            </button>
+          </DrawerClose>
         </div>
         <DocumentView document={document} />
       </div>

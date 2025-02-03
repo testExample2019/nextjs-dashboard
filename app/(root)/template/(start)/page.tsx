@@ -8,7 +8,7 @@ const LoanTemplatePage = () => {
   const { startNextStep } = useNextStep();
   useEffect(() => {
     startNextStep("mainTour");
-  }, []);
+  }, [startNextStep]);
 
   const templates = [
     {

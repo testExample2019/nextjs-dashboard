@@ -35,14 +35,17 @@ export const ButtonDropdown = <T,>({
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
   };
-
   useEffect(() => {
-    (currentStep === 13 && id === "tour1-step11") ||
-    (currentStep === 29 && id === "tour1-step27") ||
-    (currentStep === 31 && id === "tour1-step29")
-      ? setIsDropdownOpen(true)
-      : setIsDropdownOpen(false);
-  }, [currentStep]);
+    if (
+      (currentStep === 13 && id === "tour1-step11") ||
+      (currentStep === 29 && id === "tour1-step27") ||
+      (currentStep === 31 && id === "tour1-step29")
+    ) {
+      setIsDropdownOpen(true);
+    } else {
+      setIsDropdownOpen(false);
+    }
+  }, [currentStep, id]);
 
   return (
     <div className="relative inline-block text-left" ref={dropdownRef}>

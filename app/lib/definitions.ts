@@ -124,8 +124,18 @@ export type DocumentType = {
     interestAmount?: InterestAmountType[];
     allocations?: AllocationType[];
   };
-  nestedRows: any;
+  nestedRows: DocumentNestedType[];
 };
+
+type DocumentNestedType = Omit<
+  DocumentType,
+  | "documentType"
+  | "stepId"
+  | "paymentType"
+  | "documentDetails"
+  | "transactionDetails"
+  | "nestedRows"
+>;
 
 export type InstrumentType = {
   id: string;
@@ -229,6 +239,13 @@ type TransactionDetailsType = {
   interestAmount?: InterestAmountType[];
   feeInfo?: FeeInfoType;
 };
+
+export type FacilityFeeType = {
+  type: string;
+  appliesTo: string;
+  rate: string;
+  flatAmount: string;
+}
 
 export enum DealsActions {
   Import = "IMPORT",

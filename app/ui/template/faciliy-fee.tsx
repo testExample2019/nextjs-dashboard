@@ -1,7 +1,14 @@
 import Tooltip from "@/app/ui/components/tooltip";
 import { ChevronLeft, Cross } from "@/app/ui/icons";
+import { FacilityFeeType } from "@/app/lib/definitions";
 
-export const FacilityFee = ({ data, onClose }: { data: any; onClose: any }) => {
+export const FacilityFee = ({
+  data,
+  onClose,
+}: {
+  data: FacilityFeeType;
+  onClose: () => void;
+}) => {
   return (
     <div className="bg-white absolute top-0 right-0 w-full lg:w-[40%] h-full z-10">
       <h2 className="text-subtitle font-semibold capitalize text-grey-primary py-2 px-4 border-b-1 border-grey-border flex justify-between items-center">

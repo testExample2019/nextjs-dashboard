@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { formTableData } from "@/app/lib/placeholder-data";
 import Tooltip from "@/app/ui/components/tooltip";
 import TransactionsSchedule from "@/app/ui/template/transactions-schedule";
@@ -22,11 +22,6 @@ const FormTable = () => {
     } as React.ChangeEvent<HTMLInputElement>;
   };
 
-  useEffect(() => {
-    currentStep >= 5 && handleInputChange(generateSyntheticEvent("15.00%"));
-    currentStep === 3 && handleInputChange(generateSyntheticEvent("10.00%"));
-  }, [currentStep]);
-
   // Debounced callback for updating the annual rate
   const debouncedUpdateAnnualRate = useDebouncedCallback(
     (annualRate: string) => {
@@ -35,19 +30,32 @@ const FormTable = () => {
     1000,
   );
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-    // Trigger debounced updateAnnualRate only for annualRate field
-    if (name === "annualRate") {
-      debouncedUpdateAnnualRate(value);
+  // Memoize handleInputChange so its reference is stable
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      const { name, value } = e.target;
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+      // Trigger debounced updateAnnualRate only for annualRate field
+      if (name === "annualRate") {
+        debouncedUpdateAnnualRate(value);
+      }
+    },
+    [debouncedUpdateAnnualRate],
+  );
+
+  useEffect(() => {
+    if (currentStep) {
+      if (currentStep >= 5) {
+        handleInputChange(generateSyntheticEvent("15.00%"));
+      }
+      if (currentStep === 3) {
+        handleInputChange(generateSyntheticEvent("10.00%"));
+      }
     }
-  };
+  }, [currentStep, handleInputChange]);
 
   return (
     <>

@@ -6,6 +6,7 @@ import { formTableDataAdvanced } from "@/app/lib/placeholder-data";
 import { Cross, Reload } from "@/app/ui/icons";
 import { FacilityFee } from "@/app/ui/template/faciliy-fee";
 import TransactionsSchedule from "@/app/ui/template/transactions-schedule";
+import { FacilityFeeType } from "@/app/lib/definitions";
 
 enum AdvancedTableTabsType {
   RateAndPayment = "rateAndPayment",
@@ -16,7 +17,7 @@ enum AdvancedTableTabsType {
 const AdvancedTable = () => {
   const [formData, setFormData] = useState(formTableDataAdvanced);
   const [showNewFacility, setShowNewFacility] = useState(false);
-  const [selectedRow, setSelectedRow] = useState(null); // Tracks selected row data
+  const [selectedRow, setSelectedRow] = useState<FacilityFeeType | null>(null); // Tracks selected row data
 
   const Tabs = [
     { id: AdvancedTableTabsType.RateAndPayment, label: "Rate and Payment" },
@@ -41,7 +42,7 @@ const AdvancedTable = () => {
   );
 
   // Handle row click
-  const handleFacilityClick = (row: any) => {
+  const handleFacilityClick = (row: FacilityFeeType) => {
     setSelectedRow(row);
     setShowNewFacility(true);
   };
@@ -619,7 +620,7 @@ const AdvancedTable = () => {
         <TransactionsSchedule />
 
         {/* New Facility Fee Form */}
-        {showNewFacility && (
+        {showNewFacility && selectedRow && (
           <FacilityFee data={selectedRow} onClose={handleFacilityCloseForm} />
         )}
       </div>

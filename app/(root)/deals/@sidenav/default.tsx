@@ -18,32 +18,31 @@ const SideNavPage = async () => {
           Deals
         </h3>
         <ButtonDropdown
-          children={
-            <button
-              type="button"
-              className={`inline-flex w-full justify-center gap-x-1.5 rounded bg-white px-3 py-2 text-sm uppercase font-semibold cursor-pointer text-action-primary shadow-xs border border-action-primary  hover:bg-gray-50`}
-              id="menu-button"
-              aria-haspopup="true"
-            >
-              {"Add Deal"}
-              <svg
-                className="-mr-1 size-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-                data-slot="icon"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-          }
           dropdownItems={dealsDropdownItems}
           onAction={handleDealDropdownAction}
-        />
+        >
+          <button
+            type="button"
+            className={`inline-flex w-full justify-center gap-x-1.5 rounded bg-white px-3 py-2 text-sm uppercase font-semibold cursor-pointer text-action-primary shadow-xs border border-action-primary  hover:bg-gray-50`}
+            id="menu-button"
+            aria-haspopup="true"
+          >
+            {"Add Deal"}
+            <svg
+              className="-mr-1 size-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+              data-slot="icon"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+        </ButtonDropdown>
       </div>
 
       <div className={"py-2 px-4 sticky top-0"}>

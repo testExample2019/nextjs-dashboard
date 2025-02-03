@@ -25,7 +25,7 @@ const TransactionsSchedule = () => {
       setUpdatedRows([]);
     }, 1000); // Matches the animation duration
     return () => clearTimeout(timeout);
-  }, [transactionsTableData]);
+  }, [currentStep, transactionsTableData]);
 
   return (
     <div className="w-full lg:w-[40%] bg-white h-full overflow-y-auto absolute top-0 right-0">

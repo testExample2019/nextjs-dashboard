@@ -6,8 +6,15 @@ import Status from "@/app/ui/components/status";
 import { isLeftAligned, separateWords } from "@/app/lib/utils";
 import { ChevronDown, ChevronLeft, Document } from "@/app/ui/icons";
 
+interface TableRow {
+  id: string | number;
+  nestedRows?: TableRow[]; // For nested rows, if applicable
+  // Allow additional dynamic fields that are strings, numbers, or (if applicable) nested rows.
+  [key: string]: string | number | TableRow[] | undefined;
+}
+
 interface TableProps {
-  rows: { [key: string]: string | number | any }[];
+  rows: TableRow[];
   type?: "document" | "transaction" | "instrument";
   expandedItems?: number[]; // Indices to expand initially
 }
@@ -29,6 +36,15 @@ export const Table: React.FC<TableProps> = ({
     );
   };
 
+  const renderCellValue = (
+    value: string | number | TableRow[] | undefined,
+  ): React.ReactNode => {
+    if (typeof value === "string" || typeof value === "number") {
+      return value;
+    }
+    return ""; // or null, depending on your design
+  };
+
   // Extract headers dynamically from the first row
   const headers =
     rows?.length > 0
@@ -37,11 +53,8 @@ export const Table: React.FC<TableProps> = ({
         )
       : [];
 
-  const renderRows = (
-    rows: { [key: string]: string | number | [] }[],
-    isNested = false,
-  ) => {
-    return rows.map((row, index: number) => (
+  const renderRows = (rows: TableRow[], isNested = false): React.ReactNode => {
+    return rows.map((row, index) => (
       <React.Fragment key={index}>
         {/* Main or Nested Row */}
         <tr
@@ -54,13 +67,13 @@ export const Table: React.FC<TableProps> = ({
               cellVal = <Document />;
             } else if (header.includes("status")) {
               cellVal = <Status status={`${row[header]}`} />;
-            } else if (!!type) {
+            } else if (type) {
               cellVal = (
                 <Link
                   className={`${isLeftAligned(header) ? "text-left" : "text-right"} truncate`}
                   href={`/${type}/${row.id}`}
                 >
-                  {row[header]}
+                  {renderCellValue(row[header])}
                 </Link>
               );
             } else {
@@ -68,14 +81,17 @@ export const Table: React.FC<TableProps> = ({
                 <span
                   className={`${isLeftAligned(header) ? "text-left" : "text-right"} truncate`}
                 >
-                  {row[header]}
+                  {renderCellValue(row[header])}
                 </span>
               );
             }
+
             return (
               <td
                 key={cellIndex}
-                className={`relative px-3 py-3 text-sm text-grey-primary whitespace-nowrap max-w-[125px] truncate ${(row.nestedRows || isNested) && cellIndex === 0 ? "ps-8" : ""} ${isNested && cellIndex === 0 ? "ps-14" : ""}`}
+                className={`relative px-3 py-3 text-sm text-grey-primary whitespace-nowrap max-w-[125px] truncate ${
+                  (row.nestedRows || isNested) && cellIndex === 0 ? "ps-8" : ""
+                } ${isNested && cellIndex === 0 ? "ps-14" : ""}`}
               >
                 {row.nestedRows && cellIndex === 0 && (
                   <button
@@ -90,10 +106,12 @@ export const Table: React.FC<TableProps> = ({
                   </button>
                 )}
                 <span
-                  className={`flex items-center whitespace-nowrap truncate ${isLeftAligned(header) ? "justify-end" : "justify-start"} gap-1`}
+                  className={`flex items-center whitespace-nowrap truncate ${
+                    isLeftAligned(header) ? "justify-end" : "justify-start"
+                  } gap-1`}
                 >
                   {type === "document" && cellIndex === 0 && (
-                    <Document className={"shrink-0"} />
+                    <Document className="shrink-0" />
                   )}
                   {cellVal}
                 </span>
@@ -102,10 +120,10 @@ export const Table: React.FC<TableProps> = ({
           })}
         </tr>
 
-        {/* Render Nested Rows */}
+        {/* Render Nested Rows if applicable */}
         {expandedRows.includes(index) &&
           row.nestedRows &&
-          renderRows(row.nestedRows as [], true)}
+          renderRows(row.nestedRows, true)}
       </React.Fragment>
     ));
   };

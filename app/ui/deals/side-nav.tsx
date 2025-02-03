@@ -20,7 +20,6 @@ export default function DealsSideNav({
   const { setCurrentStep, startNextStep, currentStep } = useNextStep();
 
   useEffect(() => {
-    console.log(currentStep);
     if (
       currentStep === 0 ||
       currentStep === 2 ||
@@ -37,30 +36,41 @@ export default function DealsSideNav({
       ) {
         startNextStep("mainTour");
       }
-      path.includes(DealPages.Dashboard) &&
-        currentStep === 2 &&
+      if (path.includes(DealPages.Dashboard) && currentStep === 2) {
         setCurrentStep(8);
-      path.includes(DealPages.Dashboard) && setCurrentStep(8);
+      }
+      if (path.includes(DealPages.Dashboard)) {
+        setCurrentStep(8);
+      }
       if (path.includes(DealPages.Dashboard) && currentStep === 22) {
         router.push(transactionRequestDrawerPath);
         setCurrentStep(20);
-      } // Handled return from Transactions page
-      path.includes(DealPages.Transactions) && setCurrentStep(22);
+      }
+      if (path.includes(DealPages.Transactions)) {
+        setCurrentStep(22);
+      }
       if (path.includes(DealPages.Transactions) && currentStep === 24) {
         router.push(transactionDrawerPath);
         setCurrentStep(22);
-      } // Handled return from Instruments page
-      path.includes(DealPages.Instruments) && setCurrentStep(24);
+      }
+      if (path.includes(DealPages.Instruments)) {
+        setCurrentStep(24);
+      }
       if (path.includes(DealPages.Instruments) && currentStep === 26) {
         router.push(instrumentDrawerPath);
         setCurrentStep(24);
-      } // Handled return from Documents page
-      path.includes(DealPages.Documents) && setCurrentStep(26);
-      path.includes(DealPages.Dashboard) &&
-        path.includes(DealViews.Borrower) &&
+      }
+      if (path.includes(DealPages.Documents)) {
+        setCurrentStep(26);
+      }
+      if (
+        path.includes(DealPages.Dashboard) &&
+        path.includes(DealViews.Borrower)
+      ) {
         setCurrentStep(27);
+      }
     }
-  }, [path]);
+  }, [path, currentStep, startNextStep, setCurrentStep, router]);
 
   return (
     <div id={`tour1-step7`} className={"flex  md:flex-col gap-4"}>
