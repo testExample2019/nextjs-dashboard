@@ -5,6 +5,12 @@ import {
   defaultDocumentsPath,
   defaultInstrumentsPath,
   defaultTransactionsPath,
+  documentInvoiceDrawerPath,
+  documentNoticeDrawerPath,
+  instrumentDrawerPath,
+  transactionDrawdownRequestDrawerPath,
+  transactionDrawerPath,
+  transactionRequestDrawerPath,
 } from "@/app/lib/constants";
 
 export const steps: Tour[] = [
@@ -485,7 +491,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        nextRoute: "/document/document-notice",
+        nextRoute: documentNoticeDrawerPath,
       },
       {
         icon: <></>,
@@ -583,7 +589,7 @@ export const steps: Tour[] = [
         side: "bottom",
         showControls: true,
         showSkip: false,
-        prevRoute: "/document/document-notice",
+        prevRoute: documentNoticeDrawerPath,
         pointerPadding: 10,
         pointerRadius: 10,
       },
@@ -602,7 +608,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        nextRoute: "/transaction/transaction-request",
+        nextRoute: transactionRequestDrawerPath,
       },
       {
         icon: <></>,
@@ -733,7 +739,7 @@ export const steps: Tour[] = [
         showControls: true,
         showSkip: false,
         prevRoute: defaultDashboardPath,
-        nextRoute: "/transaction/transaction-3",
+        nextRoute: transactionDrawerPath,
         pointerPadding: 10,
         pointerRadius: 10,
       },
@@ -781,7 +787,7 @@ export const steps: Tour[] = [
         showControls: true,
         showSkip: false,
         prevRoute: defaultTransactionsPath,
-        nextRoute: "/instrument/instrument-1",
+        nextRoute: instrumentDrawerPath,
         pointerPadding: 10,
         pointerRadius: 10,
       },
@@ -986,7 +992,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        nextRoute: "/document/document-invoice",
+        nextRoute: documentInvoiceDrawerPath,
       },
       {
         icon: <></>,
@@ -1059,8 +1065,8 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        prevRoute: "/document/document-invoice",
-        nextRoute: "/transaction/drawdown-request",
+        prevRoute: documentInvoiceDrawerPath,
+        nextRoute: transactionDrawdownRequestDrawerPath,
       },
       {
         icon: <></>,
@@ -1180,7 +1186,7 @@ export const steps: Tour[] = [
         showSkip: false,
         pointerPadding: 10,
         pointerRadius: 10,
-        prevRoute: "/transaction/drawdown-request",
+        prevRoute: transactionDrawdownRequestDrawerPath,
       },
       {
         icon: <></>,

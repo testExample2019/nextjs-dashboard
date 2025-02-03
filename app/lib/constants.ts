@@ -113,3 +113,11 @@ export const defaultDashboardBorrowerPath = getDefaultPath(
   "dashboard",
   DealViews.Borrower,
 );
+
+export const transactionDrawerPath = "/transaction/transaction-3";
+export const transactionDrawdownRequestDrawerPath =
+  "/transaction/drawdown-request";
+export const transactionRequestDrawerPath = "/transaction/transaction-request";
+export const instrumentDrawerPath = "/instrument/instrument-1";
+export const documentNoticeDrawerPath = "/document/document-notice";
+export const documentInvoiceDrawerPath = "/document/document-invoice";

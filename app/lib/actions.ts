@@ -2,6 +2,7 @@
 
 import { DealBorrowerActions, DealsActions } from "@/app/lib/definitions";
 import { redirect } from "next/navigation";
+import { transactionDrawdownRequestDrawerPath } from "@/app/lib/constants";
 
 export async function handleDealDropdownAction(actionType: string) {
   switch (actionType) {
@@ -22,7 +23,7 @@ export async function handleDealDropdownAction(actionType: string) {
 export async function handleBorrowerDropdownAction(actionType: string) {
   switch (actionType) {
     case DealBorrowerActions.Drawdown:
-      redirect("/transaction/drawdown-request");
+      redirect(transactionDrawdownRequestDrawerPath);
       break;
     default:
       console.log("Unknown action");
