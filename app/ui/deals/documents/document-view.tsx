@@ -43,9 +43,6 @@ const DocumentView = ({ document }: { document?: DocumentType }) => {
   );
 
   useEffect(() => {
-    if (currentStep === 13) {
-      setCurrentStep(13);
-    }
     if (currentStep === 14) {
       setActiveTab(DocumentTabsType.Document);
     }

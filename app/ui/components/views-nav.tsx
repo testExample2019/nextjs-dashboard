@@ -6,19 +6,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { DealViews } from "@/app/lib/definitions";
 import { ButtonDropdown } from "@/app/ui/components/dropdown";
 import { ViewDropdownItems } from "@/app/lib/constants";
-import { useNextStep } from "nextstepjs";
 
 export default function ViewsNav() {
-  const { currentStep } = useNextStep();
-
   const path = usePathname();
   const router = useRouter();
   const [activeView, setActiveView] = useState(DealViews.Lender);
-  useEffect(() => {
-    if (currentStep >= 27 && activeView === DealViews.Lender) {
-      router.push(replaceViewItemInURL(path, DealViews.Borrower));
-    }
-  }, [activeView, currentStep, path, router]);
 
   useEffect(() => {
     if (path.includes(DealViews.Borrower)) {

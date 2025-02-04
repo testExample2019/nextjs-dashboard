@@ -3,6 +3,7 @@ import { openSans } from "@/app/ui/fonts";
 import { Metadata } from "next";
 import { steps } from "./lib/steps";
 import { ToastProvider } from "@/app/lib/contexts/toast-context";
+import { StepsProvider } from "@/app/lib/contexts/steps-context";
 import StepCustomCard from "@/app/ui/components/step-custom-card";
 import "@/app/ui/global.css";
 
@@ -32,7 +33,9 @@ export default function RootLayout({
             steps={steps}
             cardComponent={StepCustomCard}
           >
-            <ToastProvider>{children}</ToastProvider>
+            <StepsProvider>
+              <ToastProvider>{children}</ToastProvider>
+            </StepsProvider>
           </NextStep>
         </body>
       </html>
