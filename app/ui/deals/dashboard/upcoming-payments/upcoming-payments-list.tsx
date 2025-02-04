@@ -256,6 +256,7 @@ export default function UpcomingPaymentsList({
                           }
                         >
                           <button
+                            aria-label={`More options for ${payment.total}`}
                             className={`w-8 h-8 cursor-pointer transition-all hover:bg-grey-lighter rounded-md`}
                           >
                             <svg
