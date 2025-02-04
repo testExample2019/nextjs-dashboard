@@ -281,6 +281,7 @@ export enum DealPages {
   Transactions = "transactions",
   Documents = "documents",
   Instruments = "instruments",
+  Setup = "setup",
 }
 
 export enum PaymentTypes {

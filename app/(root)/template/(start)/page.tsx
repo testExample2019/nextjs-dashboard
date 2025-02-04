@@ -1,15 +1,8 @@
 "use client";
 
 import { redirect } from "next/navigation";
-import { useNextStep } from "nextstepjs";
-import { useEffect } from "react";
 
 const LoanTemplatePage = () => {
-  const { startNextStep } = useNextStep();
-  useEffect(() => {
-    startNextStep("mainTour");
-  }, [startNextStep]);
-
   const templates = [
     {
       title: "Fixed",

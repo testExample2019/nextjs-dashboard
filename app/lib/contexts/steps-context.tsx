@@ -1,7 +1,7 @@
 // StepsContext.tsx
 "use client";
 
-import React, { createContext, useContext, useEffect } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { useNextStep } from "nextstepjs";
 import { usePathname, useRouter } from "next/navigation";
 import { DealPages, DealViews } from "@/app/lib/definitions";
@@ -11,8 +11,11 @@ import {
   transactionRequestDrawerPath,
 } from "@/app/lib/constants";
 
-// Define the shape of the context if you need to expose any values.
-type StepsContextProps = object;
+// Define the shape of the context.
+type StepsContextProps = {
+  tourFinished: boolean;
+  restartTour: () => void;
+};
 
 const StepsContext = createContext<StepsContextProps | undefined>(undefined);
 
@@ -22,9 +25,33 @@ export const StepsProvider: React.FC<{ children: React.ReactNode }> = ({
   const router = useRouter();
   const path = usePathname();
   const { currentStep, setCurrentStep, startNextStep } = useNextStep();
+  const [tourFinished, setTourFinished] = useState<boolean>(false);
 
   useEffect(() => {
-    // Trigger the tour logic when the currentStep matches one of these values.
+    const isFinished = localStorage.getItem("tourFinished") === "true";
+    if (isFinished) {
+      setTourFinished(true);
+    } else {
+      startNextStep("mainTour");
+    }
+  }, [startNextStep, tourFinished]);
+
+  useEffect(() => {
+    const isFinished = localStorage.getItem("tourFinished") === "true";
+
+    // If the tour is marked as finished, do not run the tour logic.
+    if (isFinished) {
+      return;
+    }
+
+    // If currentStep is 34, mark the tour as finished in both local storage and state.
+    if (currentStep === 34) {
+      localStorage.setItem("tourFinished", "true");
+      setTourFinished(true);
+      return;
+    }
+
+    // Run the tour logic for the specified steps.
     if (
       currentStep === 0 ||
       currentStep === 2 ||
@@ -41,6 +68,10 @@ export const StepsProvider: React.FC<{ children: React.ReactNode }> = ({
         path.includes(DealPages.Documents)
       ) {
         startNextStep("mainTour");
+      }
+
+      if (path.includes(DealPages.Setup) && currentStep === 0) {
+        setCurrentStep(2);
       }
 
       if (path.includes(DealPages.Dashboard) && currentStep === 2) {
@@ -86,9 +117,22 @@ export const StepsProvider: React.FC<{ children: React.ReactNode }> = ({
         setCurrentStep(27);
       }
     }
-  }, [path, currentStep, startNextStep, setCurrentStep, router]);
+  }, [tourFinished, path, currentStep, startNextStep, setCurrentStep, router]);
 
-  return <StepsContext.Provider value={{}}>{children}</StepsContext.Provider>;
+  // Function to restart the tour by clearing the finished flag from local storage,
+  // resetting the state, and setting currentStep back to the initial value (0).
+  const restartTour = () => {
+    router.push("/template");
+    setCurrentStep(0);
+    setTourFinished(false);
+    localStorage.removeItem("tourFinished");
+  };
+
+  return (
+    <StepsContext.Provider value={{ tourFinished, restartTour }}>
+      {children}
+    </StepsContext.Provider>
+  );
 };
 
 // Custom hook for consuming the Steps context.

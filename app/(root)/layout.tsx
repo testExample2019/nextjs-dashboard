@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "@/app/ui/components/nav-bar";
+import RestartTourFab from "@/app/ui/components/restart-tour";
 
 export default function PagesLayout(props: {
   children: React.ReactNode;
@@ -15,6 +16,7 @@ export default function PagesLayout(props: {
         <main className="h-full">{props.children}</main>
       </div>
       {props.drawer}
+      <RestartTourFab />
     </>
   );
 }

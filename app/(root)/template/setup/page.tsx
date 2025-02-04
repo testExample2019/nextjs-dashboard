@@ -11,11 +11,8 @@ import { useNextStep } from "nextstepjs";
 
 const LoanSetupPage = () => {
   const [isAdvanced, setIsAdvanced] = useState(false);
-  const { setCurrentStep, startNextStep, currentStep } = useNextStep();
-  useEffect(() => {
-    startNextStep("mainTour");
-    setCurrentStep(2);
-  }, [setCurrentStep, startNextStep]);
+  const { currentStep } = useNextStep();
+
   useEffect(() => {
     if (currentStep === 7 || currentStep === 8) {
       setIsAdvanced(true);
