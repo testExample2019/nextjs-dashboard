@@ -37,11 +37,17 @@ const Calendar = ({ payments }: { payments: PaymentType[] }) => {
           {format(monthStart, "MMMM yyyy").toUpperCase()}
         </p>
         <div className="space-x-3 flex justify-center items-center">
-          <button className="text-sm text-grey-primary cursor-pointer">
+          <button
+            aria-label={"Prev date"}
+            className="text-sm text-grey-primary cursor-pointer"
+          >
             <ChevronLeft className={"rotate-180"} />
           </button>
           <span className="text-sm text-grey-primary font-semibold">Today</span>
-          <button className="text-sm text-grey-primary cursor-pointer">
+          <button
+            aria-label={"Next date"}
+            className="text-sm text-grey-primary cursor-pointer"
+          >
             <ChevronLeft />
           </button>
         </div>
