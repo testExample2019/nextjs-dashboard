@@ -59,6 +59,7 @@ const StepCustomCard: React.FC<CardComponentProps> = ({
         )}
         <button
           onClick={skipTour}
+          aria-label={"Close tour"}
           className="p-1 cursor-pointer rounded-md bg-white text-grey-primary text-xs absolute top-0 right-0" // TODO: Add condition
         >
           <Cross />
