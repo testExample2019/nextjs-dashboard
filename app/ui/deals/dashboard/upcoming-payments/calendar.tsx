@@ -9,6 +9,7 @@ import {
 } from "date-fns";
 import { PaymentType } from "@/app/lib/definitions";
 import { today } from "@/app/lib/constants";
+import { ChevronLeft } from "@/app/ui/icons";
 
 const Calendar = ({ payments }: { payments: PaymentType[] }) => {
   const monthStart = startOfMonth(today);
@@ -35,35 +36,13 @@ const Calendar = ({ payments }: { payments: PaymentType[] }) => {
         <p className="text-sm font-semibold text-action-primary">
           {format(monthStart, "MMMM yyyy").toUpperCase()}
         </p>
-        <div className="space-x-3 flex justify-center">
+        <div className="space-x-3 flex justify-center items-center">
           <button className="text-sm text-grey-primary cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="16"
-              viewBox="0 0 17 16"
-              fill="none"
-            >
-              <path
-                d="M11.5607 11.9393L7.62128 7.99997L11.5607 4.06056L10.5 3L5.5 7.99997L10.5 13L11.5607 11.9393Z"
-                fill="currentColor"
-              />
-            </svg>
+            <ChevronLeft className={"rotate-180"} />
           </button>
           <span className="text-sm text-grey-primary font-semibold">Today</span>
           <button className="text-sm text-grey-primary cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="17"
-              height="16"
-              viewBox="0 0 17 16"
-              fill="none"
-            >
-              <path
-                d="M5.43945 4.06066L9.37883 8.00003L5.43945 11.9394L6.50011 13L11.5001 8.00003L6.50011 3L5.43945 4.06066Z"
-                fill="currentColor"
-              />
-            </svg>
+            <ChevronLeft />
           </button>
         </div>
       </div>
