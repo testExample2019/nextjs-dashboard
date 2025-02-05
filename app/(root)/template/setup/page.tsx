@@ -6,7 +6,7 @@ import Tooltip from "@/app/ui/components/tooltip";
 import AdvancedFormTable from "@/app/ui/template/advanced-form-table";
 import { TableProvider } from "@/app/lib/contexts/template-context";
 import { redirect } from "next/navigation";
-import { defaultDashboardPath } from "@/app/lib/constants";
+import { defaultDashboardPath, startPagePath } from "@/app/lib/constants";
 import { useNextStep } from "nextstepjs";
 
 const LoanSetupPage = () => {
@@ -64,7 +64,7 @@ const LoanSetupPage = () => {
           {/* Action Buttons */}
           <div className="flex justify-between py-2 px-6 gap-4 border-t-1 border-grey-border">
             <button
-              onClick={() => redirect(`/template`)}
+              onClick={() => redirect(startPagePath)}
               className="cursor-pointer px-4 py-2 uppercase text-action-primary transition-all rounded hover:bg-gray-100 font-semibold"
             >
               Cancel

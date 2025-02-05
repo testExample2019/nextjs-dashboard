@@ -114,6 +114,8 @@ export const defaultDashboardBorrowerPath = getDefaultPath(
   DealViews.Borrower,
 );
 
+export const startPagePath = "/template";
+export const setupPagePath = "/template/setup";
 export const transactionDrawerPath = "/transaction/transaction-3";
 export const transactionDrawdownRequestDrawerPath =
   "/transaction/drawdown-request";

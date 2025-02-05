@@ -2,7 +2,10 @@
 
 import { DealBorrowerActions, DealsActions } from "@/app/lib/definitions";
 import { redirect } from "next/navigation";
-import { transactionDrawdownRequestDrawerPath } from "@/app/lib/constants";
+import {
+  startPagePath,
+  transactionDrawdownRequestDrawerPath,
+} from "@/app/lib/constants";
 
 export async function handleDealDropdownAction(actionType: string) {
   switch (actionType) {
@@ -13,7 +16,7 @@ export async function handleDealDropdownAction(actionType: string) {
       console.log("Add Deal...");
       break;
     case DealsActions.Use:
-      redirect("/template");
+      redirect(startPagePath);
       break;
     default:
       console.log("Unknown action");

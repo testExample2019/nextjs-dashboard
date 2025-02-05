@@ -12,6 +12,7 @@ import {
   Search,
   Transactions,
 } from "@/app/ui/icons";
+import { startPagePath } from "@/app/lib/constants";
 
 export default function NavBar() {
   const path = usePathname();
@@ -23,7 +24,7 @@ export default function NavBar() {
         }
       >
         <Link
-          href="/template"
+          href={startPagePath}
           className="flex items-center justify-center gap-4"
         >
           <span className="w-24 hidden lg:inline-flex">

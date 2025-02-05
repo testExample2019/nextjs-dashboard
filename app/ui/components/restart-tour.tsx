@@ -3,6 +3,7 @@
 
 import React from "react";
 import { useSteps } from "@/app/lib/contexts/steps-context";
+import { Reload } from "@/app/ui/icons";
 
 const RestartTourFab: React.FC = () => {
   const { tourFinished, restartTour } = useSteps();
@@ -16,7 +17,7 @@ const RestartTourFab: React.FC = () => {
       className="fixed inline-flex transition-all items-center justify-center bottom-4 right-4 w-12 h-12 rounded-full shadow-md hover:shadow-xl bg-blue-dark text-white cursor-pointer text-xl z-20"
       title="Restart Tour"
     >
-      ↻
+      <Reload />
     </button>
   );
 };

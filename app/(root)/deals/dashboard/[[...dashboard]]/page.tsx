@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
-import DashboardSkeleton, {
+import {
   CovenantsTrackingSkeleton,
+  DashboardSkeleton,
   TableSkeleton,
   UpcomingPaymentsSkeleton,
 } from "@/app/ui/skeletons";

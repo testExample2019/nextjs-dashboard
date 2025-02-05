@@ -1,6 +1,7 @@
 "use client";
 
 import { redirect } from "next/navigation";
+import { setupPagePath } from "@/app/lib/constants";
 
 const LoanTemplatePage = () => {
   const templates = [
@@ -80,7 +81,7 @@ const LoanTemplatePage = () => {
           {templates.map((template, index) => (
             <button
               key={index}
-              onClick={() => redirect(`/template/setup`)}
+              onClick={() => redirect(setupPagePath)}
               className="flex text-left p-6 border border-grey-border rounded-lg hover:shadow-md transition-shadow duration-200 cursor-pointer"
             >
               <div className="flex flex-col">

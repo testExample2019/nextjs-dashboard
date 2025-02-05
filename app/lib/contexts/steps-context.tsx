@@ -7,6 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { DealPages, DealViews } from "@/app/lib/definitions";
 import {
   instrumentDrawerPath,
+  startPagePath,
   transactionDrawerPath,
   transactionRequestDrawerPath,
 } from "@/app/lib/constants";
@@ -122,7 +123,7 @@ export const StepsProvider: React.FC<{ children: React.ReactNode }> = ({
   // Function to restart the tour by clearing the finished flag from local storage,
   // resetting the state, and setting currentStep back to the initial value (0).
   const restartTour = () => {
-    router.push("/template");
+    router.push(startPagePath);
     setCurrentStep(0);
     setTourFinished(false);
     localStorage.removeItem("tourFinished");

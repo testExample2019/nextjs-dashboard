@@ -392,7 +392,7 @@ const AdvancedTable = () => {
                 <div>
                   <h2 className="text-base font-semibold text-grey-blue leading-5 py-4 border-b-1 border-grey-border flex items-center justify-between">
                     Interest Periods
-                    <div className={"flex items-center gap-6"}>
+                    <div className={"flex items-center gap-6 text-grey"}>
                       <button
                         type="button"
                         className={`cursor-pointer inline-flex justify-center gap-x-1.5 text-sm uppercase font-semibold text-action-primary  hover:text-blue-dark`}
